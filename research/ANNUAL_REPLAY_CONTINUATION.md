@@ -221,3 +221,22 @@ execution evidence, positive adjusted lower growth bounds in final holdout and
 forward shadow separately, perturbation/placebo checks, and the specified risk
 constraints. A positive continuation would justify a separately frozen future
 paper test. It would not establish profitability or authorize live trading.
+
+## Registered result, September 6, 2026
+
+Execution **129856**, report **165655**, evaluates all 13,824 training accounts
+and nine bootstrap cases. No policy-and-size pair qualifies on July 1, August 1
+or September 1. Every annual account variant therefore has **$200 cash and
+zero selected trades** through the requested end date. The full 365-day path
+includes the deliberately restricted 298-day cash prefix; this does not answer
+what an optimal strategy with every historical market opportunity would earn.
+
+Separate audit **166183**, report **166371**, reconstructs all account arithmetic
+from retained immutable intents and all monthly choices. It checks twelve
+annual prefixes and repeats all nine fixed-seed bootstrap results using the
+original bootstrap routine. It does not independently reimplement that routine,
+reconstruct raw quote signals, verify historical fills, or establish historical
+publication times. Original E023 remains unchanged.
+
+[Annual result](../evidence/E024_annual_replay.json),
+[separate audit and method](../evidence/E024_annual_audit.json).

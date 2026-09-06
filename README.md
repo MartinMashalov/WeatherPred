@@ -22,7 +22,7 @@ No real-money orders were submitted.
 
 | New work | Measured result |
 |---|---|
-| Restricted $200 annual replay | 13,824 training accounts across three scheduled selection dates; no policy-and-size pair qualifies at any date. All four annual account variants retain $200 with zero trades. This policy requires 298 cash days and permits at most 67 active days; it does not establish an optimal full-year trading return. Full-ledger audit is in progress. |
+| Restricted $200 annual replay | 13,824 training accounts across three scheduled selection dates; no policy-and-size pair qualifies at any date. All four annual account variants retain $200 with zero trades. This policy requires 298 cash days and permits at most 67 active days; it does not establish an optimal full-year trading return. A separate audit reproduces all account arithmetic and monthly choices. |
 | Execution and capital | 300 quantity/cost screens; the NYC rain pair supports only six pairs under the strongest tested depth/slippage stress. Early exit of existing holdings would lose $2.10–$2.37 per alternative account at the observed bids. |
 | Additional markets | 446 fresh books and 541 contract implications; zero positive quoted floors after fees. Weekly streak candidates also fail 1¢ slippage. |
 | Station transformer | A separate 200-step fit reaches 1.8872°F average absolute error versus 2.1501°F for the strongest ridge baseline, a 12.23% reduction on 28 development days. The pretrained checkpoint reaches 1.9072°F. All eight models and score audits are retained; trading benefit is unproven. |
@@ -54,7 +54,9 @@ retain the later results. The new daily dataset now contains all 1,736 events
 and 10,416 contracts across seven cities for January–September 2026. Its narrow
 metadata correction preserves four categorical settlement strings and the
 original failure. The [restricted annual replay](evidence/E024_annual_replay.json)
-retains $200 in all four account variants, with its full-ledger audit in progress. The sealed 2025 quarter
+retains $200 in all four account variants. Its [separate ledger audit](evidence/E024_annual_audit.json)
+reproduces all 13,824 accounts and three cash selections; fixed random draws
+reproduce through the original bootstrap routine. The sealed 2025 quarter
 remains untouched. The $341.87 maximum in E023 is a selected **training** balance,
 not a full-year return or independently supported trading result.
 The [current engineering verification](evidence/verification-2026-09-06-hybrids.txt)

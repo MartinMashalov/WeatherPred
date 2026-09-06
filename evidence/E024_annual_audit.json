@@ -1,0 +1,118 @@
+{
+  "record_id": 166371,
+  "actual_available_at": "2026-09-06T20:38:02.444616+00:00",
+  "body_sha256": "a190455e342e6b6dd10e75caaca2a4cfe6c86d49ce985fdc6aa27cd9138dc7c5",
+  "record_sha256": "5f2c1ec19c717cf8fcf0498b9fb44dedcded42730c014978e6515e3c70341232",
+  "summary_of_archived_report": true,
+  "payload": {
+    "all_training_accounts_independently_audited": true,
+    "audit_registration_id": 166183,
+    "bootstrap_random_draws_replayed": true,
+    "bootstrap_seed_replay_pending": false,
+    "bootstrap_vectors_audited": 9,
+    "historical_availability_verified": false,
+    "historical_fills_verified": false,
+    "holdout_accessed": false,
+    "monthly_choices_independently_reproduced": 3,
+    "prefix_accounts_audited": 12,
+    "profitability_proven": false,
+    "raw_quote_signal_reconstruction": false,
+    "run_registration_id": 129856,
+    "training_accounts": 13824,
+    "retained_audit_sections": {
+      "account_audits": 13824,
+      "bootstrap_audits": 9,
+      "prefix_audits": 12
+    },
+    "bootstrap_audits": [
+      {
+        "block_days": 1,
+        "candidate_vectors_checked": 4608,
+        "day_count": 181,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 141885,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 7,
+        "candidate_vectors_checked": 4608,
+        "day_count": 181,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 141887,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 14,
+        "candidate_vectors_checked": 4608,
+        "day_count": 181,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 141889,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 1,
+        "candidate_vectors_checked": 4608,
+        "day_count": 212,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 153582,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 7,
+        "candidate_vectors_checked": 4608,
+        "day_count": 212,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 153592,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 14,
+        "candidate_vectors_checked": 4608,
+        "day_count": 212,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 153600,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 1,
+        "candidate_vectors_checked": 4608,
+        "day_count": 243,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 165639,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 7,
+        "candidate_vectors_checked": 4608,
+        "day_count": 243,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 165641,
+        "uncertainty_estimates_independently_validated": false
+      },
+      {
+        "block_days": 14,
+        "candidate_vectors_checked": 4608,
+        "day_count": 243,
+        "mean_and_bound_arithmetic_reproduced": true,
+        "random_draws_replayed": true,
+        "record_id": 165643,
+        "uncertainty_estimates_independently_validated": false
+      }
+    ],
+    "account_totals": {
+      "journal_rows": 11068867,
+      "daily_rows": 2930688,
+      "entries": 1122980,
+      "releases": 1122710
+    },
+    "audit_method": "Separate code reconstructs account arithmetic from retained immutable trade intents and monthly selections. Fixed-seed draws are replayed using the original simultaneous_growth_bounds routine, not an independently implemented bootstrap. Raw quote-to-signal reconstruction and historical execution/availability proof are outside this audit."
+  }
+}

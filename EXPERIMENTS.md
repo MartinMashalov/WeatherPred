@@ -1498,6 +1498,11 @@ pairs qualify. The selected account stays in cash: **$200 ending cash, zero
 trades**, for both cost scenarios and both hypothetical/verified availability
 modes. Each path retains all 365 days; 298 are mandatory cash days. This is a
 restricted-policy result, not an optimal full-year return or proof that no
-weather strategy can work. Separate full-ledger audit **166183**, including
-independent bootstrap replay, is in progress.
+weather strategy can work. Separate full-ledger audit **166183** is complete as report **166371**.
+It reconstructs all 13,824 account ledgers from retained immutable intents,
+all twelve annual prefixes and all three choices. All nine fixed-seed bootstrap
+results reproduce using the original bootstrap routine; this is not an
+independently implemented uncertainty estimator or raw quote-to-signal replay.
 [Result summary](evidence/E024_annual_replay.json).
+
+[Annual account audit](evidence/E024_annual_audit.json) retains these limits.
