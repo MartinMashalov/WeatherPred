@@ -369,6 +369,14 @@ deduction for source uncertainty is a stress assumption, not an estimated
 probability. Reports show losses possible if one leg fails or the settlement
 relationship breaks. **No guaranteed arbitrage or validated profit is claimed.**
 
+**First forward checkpoint.** At 17:00, only NYC qualified. Both legs received
+simulated fills in all three scenarios, using six separate later book receipts.
+After fees, the conditional gains are $0.4113 on five matched pairs, $0.2873 on
+five pairs and $0.1690 on four pairs. The latter uses quarter depth and two cents
+extra slippage per leg. An independent audit reproduces all eight fill slices
+and the cash balances. Realized profit is zero until actual settlement; the
+three accounts reuse one underlying weekend and do not prove a durable edge.
+
 Code: [calendar rules and pair costs](../weatherpred/rain_relations.py),
 [registered runner](../research/experiments/e019_rain_pairs.py),
 [independent execution audit](../research/experiments/e019_audit.py).

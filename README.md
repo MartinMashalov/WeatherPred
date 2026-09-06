@@ -73,6 +73,11 @@ conditional. The [registered protocol](evidence/E019_registration.json) precedes
 17:00–18:20 paper decisions. See the [source check](evidence/E019_source_consistency.json)
 and [rain-pair mathematics](docs/MATHEMATICS.md#21-conditional-rain-calendar-pairs-and-unequal-fills).
 The [E019 verification log](evidence/E019_verification.txt) records the expanded checks.
+At the first 17:00 decision, NYC's two legs received simulated fills in all three
+scenarios. [Audited conditional settlement gains](evidence/E019_first_fills.json)
+are $0.4113, $0.2873 and $0.1690 per alternative account, with no realized profit
+yet. Different contracts retain their cash until settlement, and a source
+inconsistency could invalidate the expected combined payout.
 
 ## What is implemented
 

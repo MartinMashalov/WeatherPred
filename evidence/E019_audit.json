@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-09-06T17:00:41.021014+00:00",
+  "run_record_id": 72680,
+  "journal_records": 24,
+  "last_record_id": 75680,
+  "accounts": 3,
+  "paired_intents": 3,
+  "orders": 6,
+  "independent_arrivals": 6,
+  "fills_from_future_books": 8,
+  "settled_positions": 0,
+  "raw_sources_checked": 35,
+  "cash_and_positions_reproduced": true,
+  "fees_recomputed_without_production_accumulator": true,
+  "network_requests": 0,
+  "real_money_orders": 0,
+  "profitability_proven": false,
+  "limits": "Execution arithmetic and recorded source/order lineage; no actual fills, independent days, future source-failure guarantee or omitted-signal proof."
+}

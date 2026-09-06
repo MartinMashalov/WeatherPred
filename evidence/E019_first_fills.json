@@ -1,0 +1,91 @@
+{
+  "record_id": 75819,
+  "generated_at": "2026-09-06T17:01:15.963725+00:00",
+  "run_record_id": 72680,
+  "last_journal_record_id": 75680,
+  "decision_record_id": 75359,
+  "candidate_city_count": 19,
+  "other_city_scenario_rejections": 54,
+  "orders": 6,
+  "fill_slices": 8,
+  "accounts": [
+    {
+      "account": "taker_1s_full",
+      "city": "NYC",
+      "cash": "95.4113",
+      "fees": "0.087500",
+      "realized_pnl": "0",
+      "filled_quantities": [
+        "5",
+        "5.00"
+      ],
+      "open_cost": "4.5887",
+      "conditional_pnl_lower": "0.4113",
+      "conditional_pnl_upper": "0.4113",
+      "source_break_pnl_lower": "-4.5887",
+      "actual_arrival_latency_seconds": [
+        2.200359,
+        4.398338
+      ],
+      "arrival_book_record_ids": [
+        75430,
+        75465
+      ]
+    },
+    {
+      "account": "taker_5s_half",
+      "city": "NYC",
+      "cash": "95.2873",
+      "fees": "0.087100",
+      "realized_pnl": "0",
+      "filled_quantities": [
+        "5",
+        "5.00"
+      ],
+      "open_cost": "4.7127",
+      "conditional_pnl_lower": "0.2873",
+      "conditional_pnl_upper": "0.2873",
+      "source_break_pnl_lower": "-4.7127",
+      "actual_arrival_latency_seconds": [
+        6.349934,
+        8.30479
+      ],
+      "arrival_book_record_ids": [
+        75507,
+        75514
+      ]
+    },
+    {
+      "account": "taker_30s_quarter",
+      "city": "NYC",
+      "cash": "96.1690",
+      "fees": "0.071000",
+      "realized_pnl": "0",
+      "filled_quantities": [
+        "4",
+        "4"
+      ],
+      "open_cost": "3.8310",
+      "conditional_pnl_lower": "0.1690",
+      "conditional_pnl_upper": "0.1690",
+      "source_break_pnl_lower": "-3.8310",
+      "actual_arrival_latency_seconds": [
+        31.32126,
+        36.322623
+      ],
+      "arrival_book_record_ids": [
+        75601,
+        75678
+      ]
+    }
+  ],
+  "settled_positions": 0,
+  "real_money_orders": 0,
+  "profitability_proven": false,
+  "limitations": [
+    "Three alternative accounts reuse one NYC weekend, not three independent events.",
+    "All fills remain simulations from displayed future books.",
+    "Matched cross-contract cash stays locked until real final settlement.",
+    "Conditional bounds assume identical normal settlement sources; source-break losses are separate."
+  ]
+}

@@ -1082,3 +1082,28 @@ not necessarily the original public release. Collector source remains frozen.
   partial first-leg fill with failed second leg, and atomic intent reservations.
   Initial independent audit is deliberately not fill evidence. Forward results
   and sufficient independent events remain pending; profitability unproven.
+
+### E019 first prospective fills — 17:00 UTC
+
+Decision 75359 was published at 17:00:03.398157 before six independent order
+arrivals. Only NYC qualified; 54 other city/scenario combinations were rejected.
+Eight fill slices completed both legs in all three alternative accounts:
+
+| Scenario | Matched quantity | Cost including fees | Conditional settlement profit | Loss if the source relation breaks |
+|---|---:|---:|---:|---:|
+| Full depth, shortest delay | 5 | $4.5887 | $0.4113 | −$4.5887 |
+| Half depth, +1 cent | 5 | $4.7127 | $0.2873 | −$4.7127 |
+| Quarter depth, +2 cents | 4 | $3.8310 | $0.1690 | −$3.8310 |
+
+Actual daily/weekend receipt delays were 2.200/4.398, 6.350/8.305 and
+31.321/36.323 seconds. Each leg used a separate book requested after its intended
+arrival. The strongest stress improved slightly relative to its decision cost
+because the later book changed. The simulator retained its original limit.
+
+Audit at 17:00:41 independently reproduces 24 journal records, all six orders,
+six arrivals, eight fill slices, decision costs, actual fees and cash/positions
+from 35 raw sources. Snapshot 75819 is published as
+[first-fill evidence](evidence/E019_first_fills.json), alongside the
+[execution audit](evidence/E019_audit.json). Realized P&L is still zero; cash is
+locked pending actual finalized settlement. This is one NYC weekend across
+three alternative scenarios, not three independent events or proven profitability.
