@@ -941,3 +941,28 @@ remaining inventory/cost, positive and negative offsets, both eventual outcomes,
 no double credit, atomic failure and exact replay. An independent source audit
 now supports both journal types and reconstructs netted cash, fees, costs and
 realized P&L independently. Forward E016 results are pending; no promotion.
+
+## E017 — Exact-station observation receipts and adjacent market books
+
+This is a data-acquisition experiment, not another tested trading policy.
+Registration47846 precedes first collection15:36:59UTC. Once per60seconds, through
+18:30UTC or180cycles, it records a book batch, original NOAA AWC METAR reports for
+KAUS/KDEN/KHOU/KLAX/KMDW/KMIA/KNYC/KPHL, then another book batch. The four-market
+panel remains the one frozen by E015; the hourly contract is dropped after close.
+A dedicated lock and STOP_STATION_RECEIPTS prevent duplicate runs and stop cleanly.
+
+Preserve observation time, provider receiptTime, reportTime, raw METAR and all
+raw decoded fields alongside actual HTTP request/receipt and first-seen version
+records. The schema describes three distinct times; reportTime can be later than
+receiptTime and is not used as publication. An initial two-hour backfill and
+records whose provider receipt predates registration are explicitly labeled.
+Chicago uses KMDW (Midway), fixing the station coverage gap left by the older
+collector's KORD requests without changing that frozen process.
+
+First frame:17reports, all8stations present,17initial version records,0errors,
+book sources47847/47866 and METAR source47848. No future observation/provider
+receipt is accepted; missing stations, response-limit suspicion and errors remain
+visible. METAR does not substitute for official CLI daily or Synoptic hourly
+settlement. Provider receipt is not verified public first availability, and
+60second sampling cannot establish subminute reaction or fills. No model, size,
+forecast or real-money order is changed by this collector.

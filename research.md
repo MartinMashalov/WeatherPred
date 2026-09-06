@@ -213,3 +213,20 @@ P&L bounds remain negative-to-positive because unmatched positions remain; no
 extra trades are invented. This small paired gain is not portfolio profitability.
 New E016 registration45913 precedes its first15:40UTC forward decision. Fresh
 observed executions are required to measure any capital-reuse benefit.
+
+## Original aviation observation receipts — E017
+
+[NOAA Aviation Weather Center API](https://aviationweather.gov/data/api/), raw47868,
+and its [OpenAPI schema](https://aviationweather.gov/data/schema/openapi.yaml),
+raw47869, expose METAR observation time, provider receipt time, report time,
+decoded meteorology and the original report. Limited eight-station requests once
+per minute stay well below the documented100requests/minute ceiling. The existing
+client sends a descriptive User-Agent. An initial four-station probe47225 returned
+original Midway, Miami, Central Park and LAX reports with all three timestamps.
+
+E017 registration47846 now preserves exact eight-station versions with books
+immediately before/after each batch. First frame covers all8stations with17reports
+and0errors. This supports later conditional warming/cooling and observation-
+reaction tests, while retaining source precision, correction and actual receipt
+limitations. No historical API timestamp is relabeled as our receipt, and no
+trading signal or profitability result has been inferred from acquisition.
