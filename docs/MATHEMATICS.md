@@ -427,8 +427,9 @@ Thus the minimum and maximum payouts on already filled positions are
 $\min(q_Y,q_N)$ and $\max(q_Y,q_N)$. Across accounts, cash $K$ already includes
 acquisition costs. Bounds relative to initial capital $W_0$ are
 
-$$\Pi_{\min}=K+\sum_j\min(q_{Y,j},q_{N,j})-W_0,\qquad
-\Pi_{\max}=K+\sum_j\max(q_{Y,j},q_{N,j})-W_0.$$
+$$\Pi_{\min}=K+\sum_j\min(q_{Y,j},q_{N,j})-W_0,$$
+
+$$\Pi_{\max}=K+\sum_j\max(q_{Y,j},q_{N,j})-W_0.$$
 
 These bounds exclude future fills from outstanding orders and assume normal
 binary settlement. They are not an expected return or immediately available
@@ -439,8 +440,9 @@ For the inventory-skew benchmark, let $I=q_Y-q_N$ and
 $d=\operatorname{clip}(0.01I,-0.03,0.03)$. If current own-side bids are $b_Y,b_N$,
 candidate buy quotes before valid-tick rounding are
 
-$$p_Y=\min(b_Y+0.01-d,1-b_N-0.01),\qquad
-p_N=\min(b_N+0.01+d,1-b_Y-0.01).$$
+$$p_Y=\min(b_Y+0.01-d,1-b_N-0.01),$$
+
+$$p_N=\min(b_N+0.01+d,1-b_Y-0.01).$$
 
 The quotes must leave at least one cent per matched pair after current maker
 fees. A larger YES inventory lowers the YES bid and raises the NO bid, encouraging
