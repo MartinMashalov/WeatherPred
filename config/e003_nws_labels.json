@@ -1,0 +1,20 @@
+{
+  "experiment": "E003-NWS-label-audit-v2",
+  "amendment": "First run rejected duplicate ZIP filenames. Source 17708 contains original and CCA correction under the same archive filename, with later corrected WMO time. Read ZipInfo entries individually and preserve byte hashes; do not let ZipFile.read(name) silently select only the last entry.",
+  "start_day": "2025-01-01",
+  "end_day_exclusive": "2025-10-01",
+  "request_start": "2025-01-01T00:00Z",
+  "request_end": "2025-10-01T18:00Z",
+  "products": {
+    "KXHIGHAUS": "CLIAUS", "KXHIGHCHI": "CLIMDW", "KXHIGHDEN": "CLIDEN", "KXHIGHHOU": "CLIHOU",
+    "KXHIGHLAX": "CLILAX", "KXHIGHMIA": "CLIMIA", "KXHIGHNY": "CLINYC", "KXHIGHPHIL": "CLIPHL"
+  },
+  "purpose": "Reconcile development event settlement values with original NWS daily report versions before weather-distribution fitting",
+  "method": "Read report observation date before numeric values; exclude outside development dates, partial VALID TODAY reports and reports issued before the complete source period ended. Preserve every complete version; compare latest available at contract settlement, and latest at historical fit cutoff separately.",
+  "timestamp": "Filename issue timestamp must match WMO time unless explicitly marked CCx correction; then use later WMO issue time, resolving adjacent month and requiring <=24h delay. Preserve both timestamps and flag unresolved cases. Issue time is not independently observed receipt time.",
+  "source_window": "Existing preregistered NWS local-standard-time windows; no current TWC substitution",
+  "holdout": "No October-December target values parsed or scored; request extends into October 1 only to receive September 30 reports",
+  "mismatch_policy": "Retain and report all missing or disagreeing labels; do not infer true temperature from a winning bracket or force source agreement",
+  "scores_computed": false,
+  "real_money_size": 0
+}

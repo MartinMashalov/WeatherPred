@@ -1,0 +1,24 @@
+{
+  "experiment": "E003-NBM-source-v1",
+  "purpose": "Acquire point-in-time source evidence and daily early-morning NBM station forecasts before model fitting or validation scoring",
+  "start_day": "2025-01-01",
+  "end_day_exclusive": "2025-10-01",
+  "final_holdout": "October-December 2025 remains inaccessible to this acquisition",
+  "cycle_utc_hour": 1,
+  "product": "NBS",
+  "stations": {
+    "KXHIGHAUS": "KAUS", "KXHIGHCHI": "KMDW", "KXHIGHDEN": "KDEN", "KXHIGHHOU": "KHOU",
+    "KXHIGHLAX": "KLAX", "KXHIGHMIA": "KMIA", "KXHIGHNY": "KNYC", "KXHIGHPHIL": "KPHL"
+  },
+  "station_mapping_status": "Research candidates supported by retrieved rule place names and source directory; each historical event still needs station and final NWS label reconciliation before promotion",
+  "seed_full_object_record_id": 12809,
+  "availability_evidence": "Archive exact object LastModified and ETag from NOAA public S3, matched conditional GET responses and raw byte ranges; do not equate runtime with availability",
+  "availability_limit": "Object storage timestamp is stronger evidence than guessed release lag but does not independently prove historical public-access permissions or original dissemination time",
+  "variables": ["TMP", "TSD", "TXN", "XND"],
+  "window_warning": "TXN is the product's 18-hour extrema guidance, not a midnight-to-midnight contract label; TMP is a 3-hourly forecast, not a continuously sampled daily maximum",
+  "method": "Reuse known station offsets only as a request hint, validate exact station/runtime/version/columns, recover by full-object GET when hint fails; preserve missing requests",
+  "cost_bound": "At most one listed NBS object per development day, eight short ranges with full-object fallback; stop if free disk falls below 20 GiB",
+  "real_money_size": 0,
+  "scores_computed": false,
+  "global_validation_protocol_unchanged": true
+}

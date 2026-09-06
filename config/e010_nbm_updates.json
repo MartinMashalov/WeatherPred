@@ -1,0 +1,19 @@
+{
+  "experiment": "E010-NBM-update-source-v2",
+  "amendment": "Resource-only continuation after v1 stopped at295of546cycles with20full recoveries, all caused by station byte offsets moving. Observed maximum successive KAUS offset change16500bytes; widen symmetric ranges to65536bytes and cap total recoveries at40including20already archived. Reuse all prior exact-source records. No scoring, feature, date, station, availability or validation changes; v1 report remains in append-only archive.",
+  "range_radius_bytes": 65536,
+  "full_recovery_cap": 40,
+  "hypothesis": "As-issued NBM forecast updates may add information beyond a fixed01UTC forecast; acquire the original07/13UTC guidance before evaluating an updated-model hypothesis",
+  "start_day": "2025-01-01",
+  "end_day_exclusive": "2025-10-01",
+  "cycles_utc": [7, 13],
+  "stations": {"KXHIGHAUS":"KAUS", "KXHIGHCHI":"KMDW", "KXHIGHDEN":"KDEN", "KXHIGHHOU":"KHOU", "KXHIGHLAX":"KLAX", "KXHIGHMIA":"KMIA", "KXHIGHNY":"KNYC", "KXHIGHPHIL":"KPHL"},
+  "seed_offset_record_id": 12809,
+  "source": "Original NOAA NBS text objects; exact LastModified/ETag conditional byte ranges, exact station/runtime/version/column validation. Existing E00301UTC records remain untouched in their own record namespace.",
+  "availability": "Future scoring must join each object by actual archived object-storage time, not run initialization. Public dissemination history remains unverified; do not use updated forecasts before storage.",
+  "target_warning": "TXN covers18hours; three-hour TMP rows do not equal a continuously observed24hour extreme. Updated runs may omit earlier source-day grid times. Register an explicit feature/window rule before fitting.",
+  "cost_bounds": "Exactly546development date/cycle objects,8station ranges of at most131072bytes each with bounded full-object fallback;0.25second minimum request spacing; stop below20GiB free disk or after40total full-file recoveries including cached records. No final-holdout targets or objects requested.",
+  "scores_computed": false,
+  "holdout_accessed": false,
+  "real_money_orders": 0
+}

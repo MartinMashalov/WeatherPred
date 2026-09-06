@@ -1,0 +1,131 @@
+{
+  "research_date": "2026-09-06",
+  "purpose": "Dated public research evidence, not live investment performance",
+  "unique_policy_definitions": 612,
+  "policy_cost_comparisons": 1836,
+  "development_contracts": 11610,
+  "development_events": 1935,
+  "train_period": "2025-01-01 through 2025-06-30",
+  "development_validation_period": "2025-07-01 through 2025-09-30",
+  "final_holdout": "October-December2025 remains sealed",
+  "costed_positive_e013_validation_policies": 30,
+  "monthly_selector_conditional_pnl_usd": -4.449999999999999,
+  "monthly_selector_initial_bankroll_usd": 100,
+  "monthly_choices": [
+    {
+      "month": "2025-03-01",
+      "selected_policy": null,
+      "action": "cash",
+      "eligible_candidates": 0
+    },
+    {
+      "month": "2025-04-01",
+      "selected_policy": null,
+      "action": "cash",
+      "eligible_candidates": 0
+    },
+    {
+      "month": "2025-05-01",
+      "selected_policy": null,
+      "action": "cash",
+      "eligible_candidates": 0
+    },
+    {
+      "month": "2025-06-01",
+      "selected_policy": null,
+      "action": "cash",
+      "eligible_candidates": 0
+    },
+    {
+      "month": "2025-07-01",
+      "selected_policy": null,
+      "action": "cash",
+      "eligible_candidates": 0
+    },
+    {
+      "month": "2025-08-01",
+      "selected_policy": {
+        "family": "favorite_yes",
+        "lookback_hours": 0,
+        "threshold": 0.6,
+        "horizon_hours": 24,
+        "maximum_spread": 0.08,
+        "exit_hours": null,
+        "id": "b1cd5a42b355d92c"
+      },
+      "training_criterion": 3.081453031251503e-06,
+      "training_trade_days": 52,
+      "eligible_candidates": 1
+    },
+    {
+      "month": "2025-09-01",
+      "selected_policy": null,
+      "action": "cash",
+      "eligible_candidates": 0
+    }
+  ],
+  "raw_quote_audit": {
+    "generated_at": "2026-09-06T14:24:57.396994+00:00",
+    "protocol_record_id": 35387,
+    "report_record_id": 37200,
+    "candidates": 1728,
+    "decisions": 3343680,
+    "conditional_trades": 253227,
+    "quoted_exits": 100170,
+    "settlement_exits": 153057,
+    "raw_candle_contracts": 11610,
+    "maximum_arithmetic_difference": 1.1102230246251565e-16,
+    "network_requests": 0,
+    "actual_fills": 0,
+    "profitability_proven": false,
+    "audit_scope": "All saved conditional entry prices/limits and scheduled exit prices independently reproduced from raw candles; cent fees recomputed without execution fee code. Does not establish depth, availability, optimal selection or independent statistical success."
+  },
+  "paper_execution_audit": {
+    "generated_at": "2026-09-06T14:05:58.640452+00:00",
+    "run_record_id": 21756,
+    "last_journal_record_id": 32640,
+    "paper_events_replayed": 3870,
+    "accounts_reproduced": 32,
+    "orders_reproduced": 88,
+    "taker_fills_reproduced_from_future_books": 64,
+    "maker_fills_reproduced_from_trade_through": 22,
+    "settled_positions_reproduced": 0,
+    "source_records_checked": 16,
+    "cash_and_fees_reproduced": true,
+    "network_requests": 0,
+    "real_money_orders": 0,
+    "profitability_proven": false
+  },
+  "e014_calibration": {
+    "0": {
+      "training_days": 180,
+      "failure_days": 4,
+      "probability_no_lower_bound": 0.949871692713332
+    },
+    "1": {
+      "training_days": 180,
+      "failure_days": 0,
+      "probability_no_lower_bound": 0.9834947718043373
+    },
+    "2": {
+      "training_days": 180,
+      "failure_days": 0,
+      "probability_no_lower_bound": 0.9834947718043373
+    }
+  },
+  "e014_partial_reports": 3238,
+  "experiment_protocols": {
+    "E013": 35387,
+    "E014": 37584
+  },
+  "published_results_sha256": "d8ebbb711fccfd083228e6ff31b1cdc46f50ae6563a0f62018b9e5bec26cd771",
+  "real_money_orders": 0,
+  "profitability_proven": false,
+  "limitations": [
+    "Historical candles do not establish fills, depth or original public receipt.",
+    "Historical fee cases are assumptions, not verified contemporaneous2025schedules.",
+    "Candidate trades reuse weather outcomes across alternative policies; counts are not independent sample sizes.",
+    "Cash accounting carries unresolved positions at cost; realized drawdown understates possible liquidation risk.",
+    "Unit tests and raw-data replay establish engineering checks, not profitability."
+  ]
+}

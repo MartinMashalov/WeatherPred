@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-09-06T14:24:57.396994+00:00",
+  "protocol_record_id": 35387,
+  "report_record_id": 37200,
+  "candidates": 1728,
+  "decisions": 3343680,
+  "conditional_trades": 253227,
+  "quoted_exits": 100170,
+  "settlement_exits": 153057,
+  "raw_candle_contracts": 11610,
+  "maximum_arithmetic_difference": 1.1102230246251565e-16,
+  "network_requests": 0,
+  "actual_fills": 0,
+  "profitability_proven": false,
+  "audit_scope": "All saved conditional entry prices/limits and scheduled exit prices independently reproduced from raw candles; cent fees recomputed without execution fee code. Does not establish depth, availability, optimal selection or independent statistical success."
+}

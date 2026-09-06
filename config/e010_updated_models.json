@@ -1,0 +1,31 @@
+{
+  "experiment": "E010-updated-daily-models-v1",
+  "hypothesis": "Updated07/13UTC NBM forecasts improve12-hour daily bracket probabilities relative to fixed01UTC forecasts, and possibly market prices",
+  "status": "Development experiment after E003/E007/E008 results; new feature rule registered before updated-model errors are inspected",
+  "base_model_record_id": 20425,
+  "horizon_hours": 12,
+  "training_start": "2025-01-01",
+  "training_end_exclusive": "2025-07-01",
+  "validation_end_exclusive": "2025-10-01",
+  "fit_cutoff": "2025-07-01T00:00:00Z",
+  "models": [
+    "nbm_native_18h_gaussian_proxy",
+    "grid_global_gaussian",
+    "grid_station_gaussian",
+    "grid_station_empirical",
+    "txn_station_gaussian",
+    "nbm_spread_regression"
+  ],
+  "station_minimum_training_days": 30,
+  "features": "Start with the same eight3-hour UTC TMP points in the NWS24-hour standard-time day. For each point choose the highest-initialization available01/07/13UTC source containing that exact valid time; objectLastModified must be<=the12-hour decision. Earlier grid times omitted by newer text cards retain their earlier forecasts, never invented observations. Use the newest available next00UTC TXN/XND as an explicitly18-hour proxy. Keep per-grid and proxy source record IDs and publication times.",
+  "controls": "An explicit early-only control at source-day start must reproduce the fixed01UTC numeric features exactly. Compare all six updated distributions to their original frozen E003 counterparts and the same raw market and E002 logistic quotes, with unchanged quote gates. No raw01UTC data or existing experiment artifact is overwritten.",
+  "fitting": "Use exactly the same six fixed E003 fitting methods and hyperparameters, now with updated12-hour features. Retain original source-reconciled eligible events; training NWS issue and exchange settlement before July1. Day/event weights unchanged. No hyperparameter or station selection.",
+  "evaluation": "July-September development,12-hour quotes only, probability Brier/logloss, calibration, continuous error/interval coverage and full-bracket coherence. Paired comparisons against raw market and matched old weather model. Keep all six candidates whether successful or losing.",
+  "uncertainty": "Same consecutive-calendar-day circular block estimator,1/7/14days,10000resamples,seed20260906. Intended family includes six updated models and two references, for each metric/block; missing inference withholds a reduced-family claim. This is not the global promotion correction.",
+  "missing": "If a later original object is missing from the acquired archive or stored after the decision, retain earlier eligible guidance and explicitly record fallback. This is not proof a missing archive object was unavailable to historical traders. Acquisition census and errors must be retained before fitting.",
+  "target_limits": "NWS24-hour continuous maximum differs from NBS18-hour TXN and sampled TMP. Historical public dissemination, contract revisions and current TWC compatibility remain unverified.179training days do not meet global180day minimum.",
+  "holdout_accessed": false,
+  "promotion_eligible": false,
+  "real_money_orders": 0,
+  "control_clarification": "Before any updated-model fitting/errors: a07UTC object could legitimately be stored before the western08UTC source-day start. The control therefore intentionally uses only01UTC; do not reject an otherwise valid updated forecast merely for differing at that time."
+}

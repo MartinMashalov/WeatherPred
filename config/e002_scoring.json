@@ -1,0 +1,21 @@
+{
+  "experiment": "E002-v1",
+  "stage": "Implementation details fixed before training or validation score inspection",
+  "schema_correction": "First run produced no training rows because historical quotes use yes_bid.close/yes_ask.close fixed-dollar strings, while the live/batch endpoint uses close_dollars. Official historical endpoint documentation and raw acquired responses agree. A separate adapter corrects field names before the unchanged quote gates; no fit or validation score had been computed. Original failure retained.",
+  "fit_cutoff": "2025-07-01T00:00:00Z",
+  "training_label_gate": "Recorded settlement_ts must be strictly before fitting; later or missing timestamps excluded and counted",
+  "revision_caveat": "A recorded settlement time does not prove the retrieved outcome and metadata were unchanged since then",
+  "calibration_formula": "sigmoid(intercept + slope * logit(clipped market midpoint))",
+  "calibration_scope": "Separate intercept and slope per predefined horizon, pooled across all training cities; no city selection",
+  "objective": "Day-balanced weighted sum of binary log loss + 0.5 * lambda * slope^2, lambda=1 from original protocol; intercept unpenalized",
+  "weights": "Equal calendar-day weight, equal event weight within day, equal eligible-contract weight within event",
+  "solver": "L-BFGS-B, analytic gradient, starting intercept=0 slope=1, maxiter=1000 ftol=1e-12 gtol=1e-8; no parameter search",
+  "validation_gate": "No probability score until complete development acquisition accounting; no decision before fixed fit cutoff; exact candle-end match; open_time <= decision < close_time",
+  "primary_probability_comparison": "Logistic versus raw midpoint Brier difference, four horizons; daily equal-weight means",
+  "secondary_scores": ["log loss", "event-weighted decile calibration", "raw bid/ask scores", "event probability sum diagnostics"],
+  "bootstrap": "Paired circular blocks of consecutive calendar days, lengths 1/7/14, 10000 resamples, seed 20260906; endpoints wrap, approximate stationary-block inference",
+  "multiplicity": "Approximate one-sided bootstrap p-values adjusted with Holm across the four predefined horizons separately per block length; development evidence only",
+  "coherence": "Per-contract logistic and raw midpoint baselines need not sum to one across brackets. Measure this explicitly; neither is yet a production coherent bracket-distribution model.",
+  "holdout": "Sealed October–December 2025 never enters fitting or scoring; no holdout release in this stage",
+  "execution": "No fees, fills, P&L or capital-growth inference from these retrospective probability scores"
+}

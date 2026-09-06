@@ -1,0 +1,19 @@
+{
+  "experiment": "E014-observed-high-trading-v1",
+  "hypothesis": "A station's preliminary official daily high constrains its eventual maximum. Buy NO on brackets below that observed bound only when conservative error allowance exceeds fees and purchase cost.",
+  "development_start": "2025-01-01",
+  "train_end_exclusive": "2025-07-01",
+  "validation_end_exclusive": "2025-10-01",
+  "source": "All8original E003 CLI ZIP products, retaining partial reports and corrections by entry index; original E003 exchange numerical labels and E002raw hourly quotes. No currentTWC or final2025holdout substitution.",
+  "margins_f": [0, 1, 2],
+  "publication_delays_minutes": [15, 60, 120],
+  "maximum_no_prices": [0.8, 0.9, 0.95, 0.98],
+  "bound_probability": "For each margin, train on every Jan-Jun source day with a preliminary report and a numerical final exchange value released beforeJuly1. A day fails if ANYstation's preliminary maximum minus margin exceeds its final exchange maximum. Use1-minus-one-sided95%ClopperPearson upper failure rate; require at least100days. This conservative day-level bound is not a guarantee of station/conditional calibration.",
+  "selection": "For each event, at the first eligible report decision with a positive probability-minus-cost signal, choose the cheapest NO for a between/less bracket entirely below maximum-minus-margin; tie by ticker. No greater brackets. No retries or outcome-based timing. Reports must be issued within exact local-standard source day and pass original product/header validation. Latest eligible report, not the day's eventual maximum.",
+  "decision_timing": "Document issue plus assumed publication delay, rounded UP to the next whole hour; make signal then use next exact future hourly quote with frozen limit as in E013. Document issue is not verified receipt. Retain timing assumptions; no executable historical claim.",
+  "fees": "Reuse the three E013 explicit fee/slippage/delay scenarios; no verified2025fee-history claim.",
+  "validation": "Freeze probabilities using onlyJan-Jun reports and finalized labels beforeJuly1; then scoreJul-Sep. Report every bound violation, all36policies times3cost scenarios, source failures, coverage and7day familywise diagnostics. No final holdout or promotion.",
+  "parent_trading_protocol": 33420,
+  "actual_fills": 0,
+  "profitability_proven": false
+}

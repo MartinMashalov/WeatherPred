@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-09-06T14:24:58.280681+00:00",
+  "parent_protocol_record_id": 37584,
+  "model_record_id": 37585,
+  "event_coverage": {
+    "train": 1264,
+    "validation": 643
+  },
+  "violations": [
+    {
+      "event": "KXHIGHCHI-25APR19",
+      "split": "train",
+      "preliminary_maximum_f": 63,
+      "exchange_maximum_f": 62,
+      "difference_f": 1,
+      "issued_at": "2025-04-19T21:45:00+00:00",
+      "raw_record_id": 18425,
+      "entry_index": 222,
+      "raw_sha256": "7390655e818de9f54b759f31f44edf20719b1d5a7376292b1bda11af4d965b69"
+    },
+    {
+      "event": "KXHIGHCHI-25AUG20",
+      "split": "validation",
+      "preliminary_maximum_f": 79,
+      "exchange_maximum_f": 77,
+      "difference_f": 2,
+      "issued_at": "2025-08-20T21:34:00+00:00",
+      "raw_record_id": 18425,
+      "entry_index": 467,
+      "raw_sha256": "e89d9995fa7a6bd3d77cd4e75c586ee79aaa1855425e9a168b8dd4686cca7192"
+    },
+    {
+      "event": "KXHIGHDEN-25JUN20",
+      "split": "train",
+      "preliminary_maximum_f": 99,
+      "exchange_maximum_f": 98,
+      "difference_f": 1,
+      "issued_at": "2025-06-20T22:29:00+00:00",
+      "raw_record_id": 18441,
+      "entry_index": 657,
+      "raw_sha256": "a40f96e8a734e12d600b7ba4d63b8ebd029d898844f3509c52b1bf15b82396b6"
+    },
+    {
+      "event": "KXHIGHDEN-25JUN20",
+      "split": "train",
+      "preliminary_maximum_f": 99,
+      "exchange_maximum_f": 98,
+      "difference_f": 1,
+      "issued_at": "2025-06-20T23:31:00+00:00",
+      "raw_record_id": 18441,
+      "entry_index": 658,
+      "raw_sha256": "b6473bdfda494b1745e7aa7c922ab8dc58ae9d2f2ec8b832b229db46fad168a8"
+    },
+    {
+      "event": "KXHIGHLAX-25FEB08",
+      "split": "train",
+      "preliminary_maximum_f": 63,
+      "exchange_maximum_f": 62,
+      "difference_f": 1,
+      "issued_at": "2025-02-09T01:32:00+00:00",
+      "raw_record_id": 18460,
+      "entry_index": 89,
+      "raw_sha256": "d7b5b7f8b5e37cc01005edb85ecbc47f9ebd53e4d1ea15c3fc43799ac46d6f7d"
+    },
+    {
+      "event": "KXHIGHLAX-25MAR14",
+      "split": "train",
+      "preliminary_maximum_f": 53,
+      "exchange_maximum_f": 52,
+      "difference_f": 1,
+      "issued_at": "2025-03-15T01:28:00+00:00",
+      "raw_record_id": 18460,
+      "entry_index": 167,
+      "raw_sha256": "97052eef7d1e2f41ff58e7665cd738ea097b888382b493a4b82a0410157ce9cb"
+    },
+    {
+      "event": "KXHIGHLAX-25JUL04",
+      "split": "validation",
+      "preliminary_maximum_f": 74,
+      "exchange_maximum_f": 73,
+      "difference_f": 1,
+      "issued_at": "2025-07-05T01:30:00+00:00",
+      "raw_record_id": 18460,
+      "entry_index": 392,
+      "raw_sha256": "85399e15864bef913f646789b1063f36b8a9d89b575fadd67a419fc2553d77e6"
+    }
+  ],
+  "parse_errors": [
+    {
+      "source": 18441,
+      "index": 458,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18441,
+      "index": 459,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18450,
+      "index": 47,
+      "error": "Partial report has no numerical daily maximum"
+    },
+    {
+      "source": 18450,
+      "index": 52,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18450,
+      "index": 60,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18450,
+      "index": 87,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18450,
+      "index": 110,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18460,
+      "index": 166,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18492,
+      "index": 267,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18492,
+      "index": 268,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18492,
+      "index": 269,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    },
+    {
+      "source": 18492,
+      "index": 270,
+      "error": "Filename issue time conflicts with WMO header without correction marker"
+    }
+  ],
+  "violation_events_by_split": {
+    "validation": 2,
+    "train": 4
+  },
+  "maximum_discrepancy_f": 2,
+  "refits": 0,
+  "network_requests": 0,
+  "holdout_accessed": false,
+  "profitability_proven": false
+}

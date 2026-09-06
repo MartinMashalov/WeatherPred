@@ -1,0 +1,243 @@
+# Strategy guide
+
+WeatherPred is a research and paper-trading system for weather prediction markets.
+The strategies below are implemented experiments, not a list of profitable live
+investments. No real-money orders were submitted. Results are a dated research
+checkpoint, not a continuously updated performance advertisement.
+
+Read the [mathematics guide](MATHEMATICS.md) for equations and worked examples,
+the [evidence snapshot](../evidence/summary.json) for machine-readable counts,
+and the [experiment ledger](../EXPERIMENTS.md) for failed attempts and amendments.
+
+## The trading problem
+
+A YES contract pays $1 if its condition is satisfied and $0 otherwise. A NO
+contract pays the complementary outcome. For example, a daily temperature
+contract might resolve YES if a particular station's final maximum is 77–78°F.
+The station, date, temperature precision and source report are part of the
+contract. Nearby airports and preliminary reports are not interchangeable.
+
+There are two ways a long position can make money: sell it later above its
+purchase cost, or receive a settlement payout above that cost. Both require
+fees and execution to be included. A generally accurate forecast can still
+produce bad trades; a selective trading rule can be useful without improving
+average forecast accuracy.
+
+## 1. Complete-bracket consistency — E001
+
+**Idea.** If exactly one of six brackets must win, buying one YES in every
+bracket gives a $1 total payout at normal settlement. Buying every NO gives
+$5. A basket is interesting only if its guaranteed minimum payout exceeds
+the total price and fees across all legs.
+
+**Implementation.** Check exclusivity and coverage from numeric predicates,
+walk displayed order-book depth, and compare full, half and quarter retained
+depth with zero, one and two cents of slippage. Check current fee metadata,
+quote receipt age and complete event membership.
+
+**Finding.** No positive net conditional basket among 149 fully quoted scenarios
+covering 48 events. This was a snapshot study. Legs are not executed atomically,
+so even an apparent basket surplus would require a separate execution test.
+
+Code: [basket.py](../weatherpred/basket.py), [contracts.py](../weatherpred/contracts.py).
+
+## 2. Market-only probability calibration — E002
+
+**Idea.** Test whether market prices systematically overstate or understate
+probabilities, especially near zero and one. Fit a small logistic correction
+to the market probability using earlier outcomes.
+
+**Implementation.** Use strict historical dollar-price schemas, chronological
+training and equal day weighting. Missing winning-contract strike metadata is
+recovered only from explicit primary rules, preventing selective removal of
+winners. Midpoints are forecast benchmarks, never assumed purchase prices.
+
+**Finding.** Small development improvements have uncertainty intervals that
+include zero. This is a calibration benchmark, not a demonstrated trading edge.
+
+Code: [calibration.py](../weatherpred/calibration.py).
+
+## 3. Daily weather distributions — E003 and E010
+
+**Idea.** Turn NOAA guidance into a full distribution of final temperature,
+then calculate each bracket's probability. A distribution expresses how
+uncertain the forecast is instead of betting on a single predicted degree.
+
+Six implementations are compared:
+
+| Model | What it does |
+|---|---|
+| Native NBM proxy | Uses the model's native extrema mean and spread |
+| Global grid correction | Adds the average historical error to the maximum of the day's forecast grid |
+| Station grid correction | Learns a separate mean error and uncertainty for each station |
+| Station empirical residuals | Uses the observed distribution of earlier forecast errors instead of requiring a bell curve |
+| Station extrema correction | Corrects the native extrema proxy at each station |
+| Mean/spread regression | Adjusts mean using station and disagreement features; lets uncertainty depend on the model's reported spread |
+
+E010 repeats these methods with later 07:00 and 13:00 UTC model cycles. Each
+forecast point uses the latest eligible source; an update cannot replace earlier
+missing grid points with observations or forecasts published later.
+
+**Finding.** Later data improves several weather baselines, but all six still
+trail the market's probability scores. The best updated Brier score is 0.207857
+versus 0.145231 for the market; lower is better. The native extrema product has
+an 18-hour window and is explicitly treated as a proxy for the contract's daily
+maximum, not as an identical target.
+
+Code: [daily_forecasts.py](../weatherpred/daily_forecasts.py),
+[updated_forecasts.py](../weatherpred/updated_forecasts.py).
+
+## 4. Hourly persistence, trend and freshness — E004–E006
+
+**Idea.** Forecast Miami's hourly temperature index from the latest known index
+level, or extrapolate its recent slope. Estimate the remaining error from
+earlier examples. Test whether fresher inputs help.
+
+There are four base models: persistence with Gaussian errors, persistence with
+empirical errors, trend with Gaussian errors, and trend with empirical errors.
+The paper cohort compares the same four under five-minute and ten-minute input
+limits. Its eight model variants are alternative accounts, not eight independent
+weather outcomes.
+
+**Finding.** The four original baselines trail the market at all tested horizons
+over five development validation days. E005 finds pending source values can
+precede the final canonical index, but that is not evidence of leading traders.
+E006 compares freshness prospectively rather than repeatedly testing those
+same five days. The sample is too small for promotion.
+
+Code: [forecasts.py](../weatherpred/forecasts.py),
+[freshness.py](../weatherpred/freshness.py), [index_reconstruction.py](../weatherpred/index_reconstruction.py).
+
+## 5. Combine weather and market probabilities — E007–E008
+
+**Idea.** Weather information may help only when combined with market prices.
+Use a logarithmic probability pool with learnable weights on each source.
+
+**Implementation.** Train the weather component on earlier months and construct
+out-of-fit predictions for the combination stage. Regularization favors the
+market-only starting point. Probabilities remain coherent across a complete
+bracket partition. E008 then selects the largest positive expected edge at the
+ask, including an explicit fee and slippage assumption.
+
+**Finding.** The native-weather pool has a small development forecast-score gain,
+but its selected unit trades go from +$1.43 gross to −$2.0155 with assumed fees
+and one-cent slippage. These are conditional quote calculations, not fills.
+This directly demonstrates why better prediction is insufficient for trading.
+
+Code: [forecast_pool.py](../weatherpred/forecast_pool.py),
+[quote_screen.py](../weatherpred/quote_screen.py).
+
+## 6. Forward paper execution — E009
+
+**Idea.** A signal is useful only if an order placed before the outcome can
+actually interact with later market data at the proposed price and size.
+
+Thirty-two virtual $100 accounts compare eight frozen hourly models across four
+execution assumptions:
+
+| Execution case | What the simulator requires |
+|---|---|
+| Fast taker | New book after a one-second delay; walk full visible depth |
+| Reduced-depth taker | Five-second delay, half visible depth, one-cent worse prices |
+| Stressed taker | Thirty-second delay, quarter depth, two-cent worse prices |
+| Passive maker | Five-second arrival, post-only quote, displayed queue ahead, then only qualifying trades strictly through the quote |
+
+Taker orders cancel any unfilled remainder. Maker orders receive only 25% of
+qualifying excess trade volume after the queue ahead is exhausted. A touch,
+a cancellation elsewhere, an old trade or a duplicate trade cannot create a
+fill. Fees accumulate across partial fills. Orders reserve cash; positions keep
+capital locked until a valid exit or finalized settlement.
+
+At the published 14:28 UTC checkpoint on September 6, 2026, there were 88 orders,
+64 taker fill records and 22 maker fill records. None had settled. Those fills
+share one underlying event and cannot demonstrate profitability. Unfinalized
+closed positions are carried at cost, which is not a realizable account value.
+
+Code: [paper.py](../weatherpred/paper.py),
+[paper runner](../research/experiments/e009_paper.py),
+[independent audit](../research/experiments/e009_audit.py).
+
+## 7. Trading-policy autoresearch — E013
+
+**Idea.** Search trading behavior directly, without requiring a superior overall
+weather forecast. Each candidate specifies when to enter, which side to buy,
+its price limit and when to exit.
+
+| Family | Signal and direction |
+|---|---|
+| Momentum | Buy in the direction of a sufficiently large earlier price move |
+| Reversal | Trade against that earlier move |
+| Buy favorites | Buy YES where the market already assigns a high probability |
+| Fade favorites | Buy NO on those high-probability contracts |
+| Buy longshots | Buy YES on low-probability contracts |
+| Fade longshots | Buy NO on those low-probability contracts |
+
+The registered grid contains 576 policies: four decision horizons, two spread
+limits, three exit rules, and family-specific move/price thresholds and lookbacks.
+Each is evaluated under three fee/slippage/delay assumptions: **1,728 comparisons**.
+All outcomes, including abstentions, are kept. The runner supports interruption
+and resumption with frozen code and source cutoffs; it does not autonomously
+invent strategies or modify its success criteria.
+
+Training is January–June 2025; July–September is development validation. A
+separate monthly selector can use only returns released before that month.
+It requires at least 30 traded days, a positive conservative training criterion
+and positive stressed training growth. Otherwise it chooses cash.
+
+**Finding.** Thirty costed policies show a positive development validation P&L,
+but none survives the search adjustment. The best-looking reversal returns
++$3.33 over 31 conditional trades while losing $1.89 in training. The earlier-
+month selector loses $4.45. Selecting the reversal after seeing validation would
+be precisely the selection bias this process is intended to expose.
+
+The audit reconstructs 253,227 hypothetical entries across alternative cases,
+100,170 quoted exits and 153,057 settlements. They are repeated policy evaluations,
+not that many unique trades or independent samples.
+
+Code: [trading_research.py](../weatherpred/trading_research.py),
+[batch runner](../research/experiments/e013_autoresearch.py),
+[raw-quote audit](../research/experiments/e013_audit.py).
+
+## 8. Observed-high constraints — E011, E012 and E014
+
+**Idea.** Once a station has observed 79°F, a bracket ending at 77°F appears
+unlikely to win a daily-high market. Trade only if its NO price leaves enough
+room for fees and an allowance for preliminary-report errors.
+
+Source investigations first distinguish NWS daily climate reports, current
+Weather Company domestic tables, international METAR rules and retrospective
+observation archives. E014 then uses 3,238 eligible preliminary NWS reports.
+Three temperature margins, three publication delays, four price caps and
+three cost cases produce **108 comparisons**.
+
+The error allowance is estimated using 180 training days. A day counts as a
+failure if any station's preliminary bound exceeds its final exchange value.
+Four training days fail with no margin; none fail with one- or two-degree
+margins. The margin choices are fixed before validation.
+
+**Finding.** No positive costed result. The alternative-case trades collapse to
+one Chicago event: a preliminary 79°F report versus final 77°F settlement. The
+cheap NO loses. This two-degree validation discrepancy also shows why covering
+all training errors with a one-degree margin does not establish a safe rule.
+
+Code: [intraday_bounds.py](../weatherpred/intraday_bounds.py),
+[experiment](../research/experiments/e014_intraday_bounds.py),
+[source diagnostics](../research/experiments/e014_source_diagnostics.py).
+
+## What is still a research idea
+
+Two-sided maker spread capture, faster observation-reaction strategies, broader
+cross-market relative value, precipitation and snowfall strategies have not been
+validated by these experiments. The present maker simulator tests execution of
+one-sided forecast-driven orders, not a proven inventory-aware market maker.
+No neural model, HRRR ensemble strategy, live brokerage integration or production
+fund management is claimed.
+
+## What this project demonstrates
+
+The contribution is an auditable quantitative research process: acquire original
+sources, preserve when data became available, implement interpretable models,
+test trading rules with costs, account for alternative experiments, simulate
+orders prospectively, and reproduce results from raw records. Negative results
+are evidence about the tested mechanisms, not proof that all weather markets
+are efficient.

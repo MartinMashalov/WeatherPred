@@ -1,0 +1,23 @@
+{
+  "experiment": "E002",
+  "version": 1,
+  "registered_at": "2026-09-06T10:44:00Z",
+  "purpose": "Chronological market probability and tail calibration benchmark; no executable P&L without depth",
+  "universe": "All discovered daily temperature series, including inactive/legacy series; report historical coverage and missing series",
+  "development_start": "2025-01-01",
+  "train_end_exclusive": "2025-07-01",
+  "validation_end_exclusive": "2025-10-01",
+  "sealed_final_holdout_end_exclusive": "2026-01-01",
+  "holdout_access": "DENIED until candidate and code are frozen in an append-only release record",
+  "decision_hours_before_period_end": [24, 12, 6, 3],
+  "initial_data_scope": "Coverage metadata for all history; candles and labels scored only in development and validation",
+  "baseline": "Raw per-contract two-sided quote midpoint for forecast scoring only; bid/ask bounds also scored; never a midpoint fill",
+  "calibration_candidates": ["raw_market", "logistic_intercept_and_slope"],
+  "logistic_l2_penalty": 1.0,
+  "probability_clipping": 0.000001,
+  "calibration_bins": 10,
+  "cluster": "calendar day across cities",
+  "confidence": "paired block bootstrap by day, block lengths 1/7/14; no contract-level resampling",
+  "first_stage": "Coverage and source/window audit before any candle score analysis",
+  "limitations": ["series discoverability is not a complete historical listing audit", "historical candles have no depth", "observation-period mapping must be verified per source"]
+}

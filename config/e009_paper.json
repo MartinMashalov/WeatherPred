@@ -1,0 +1,67 @@
+{
+  "experiment": "E009-live-paper-v1",
+  "purpose": "Forward execution research with actual future books/tape, paper fills, cash and positions; all eight hourly forecasts retained, no real orders",
+  "original_model_record_id": 3768,
+  "fresh_parameter_record_id": 12323,
+  "first_decision_at": "2026-09-06T13:30:00Z",
+  "last_decision_at": "2026-09-06T16:55:00Z",
+  "stop_at": "2026-09-06T18:30:00Z",
+  "existing_parent_last_decision_at": "2026-09-06T13:55:00Z",
+  "horizons_minutes": [
+    30,
+    15,
+    5
+  ],
+  "initial_cash_per_account": "100",
+  "models": [
+    "original_10m_persistence_gaussian",
+    "original_10m_trend_gaussian",
+    "original_10m_persistence_empirical",
+    "original_10m_trend_empirical",
+    "fresh_5m_persistence_gaussian",
+    "fresh_5m_trend_gaussian",
+    "fresh_5m_persistence_empirical",
+    "fresh_5m_trend_empirical"
+  ],
+  "scenarios": [
+    {
+      "name": "taker_1s_full",
+      "style": "taker",
+      "latency_seconds": 1,
+      "depth_retained": "1",
+      "slippage": "0"
+    },
+    {
+      "name": "taker_5s_half",
+      "style": "taker",
+      "latency_seconds": 5,
+      "depth_retained": "0.5",
+      "slippage": "0.01"
+    },
+    {
+      "name": "taker_30s_quarter",
+      "style": "taker",
+      "latency_seconds": 30,
+      "depth_retained": "0.25",
+      "slippage": "0.02"
+    },
+    {
+      "name": "maker_5s_queue",
+      "style": "maker",
+      "latency_seconds": 5,
+      "depth_retained": "1",
+      "slippage": "0",
+      "trade_participation": "0.25"
+    }
+  ],
+  "decision_rule": "Choose at most one highest estimated net-edge contract/side per model and scenario per slot using that slot's frozen probabilities and book. Probability haircut 0.03; fee-aware limit floor to cents; separate 100 dollar accounts; 0.25 fractional Kelly using haircut probability and anticipated unit cost. Whole intended contracts, fractional fills down to 0.01. If quantity rounds below one, abstain. No statistical lower-confidence-bound claim.",
+  "taker_execution": "Submit immutable paper limit order first; wait registered delay; request fresh book only after arrival due. Use actual receipt as simulated arrival. Walk opposite-side depth with retention and slippage once, within fixed limit, partial IOC then cancel residue. Reject stale/slow/malformed/closed books. No maker-price or midpoint fills.",
+  "maker_execution": "At decision improve current best same-side bid by 0.01 when possible, capped below current ask and fee-aware probability limit. At delayed arrival reject any post-only crossing. Queue ahead is full displayed same-side size at or above our limit. Only non-block public prints with opposite taker direction and strictly lower same-side price consume queue; after queue consumed retain only 25% excess printed volume. A touch never fills; book cancellations never advance queue. Deduplicate trade IDs per order. Venue-style expiry is 60 seconds after scheduled arrival, capped before close; never infer fills from data first received after expiry. Missing tape means no maker fill.",
+  "fees": "Resolve contemporaneous public series/event schedule at decision; reject a changed/unsupported schedule at arrival. Actual 2026 fee accumulator applied across partial fills. Reserve max quadratic fee plus rounding allowance. No live account credentials or order endpoint.",
+  "risk": "At most 5% account equity committed to one hourly event, 10% to all Miami weather exposure including pending reservations, 25% total global ceiling, no cash overdraft. 20% drawdown from marked equity peak halts new paper orders and cancels resting orders. Initial single-city cluster limit is stricter than total limit.",
+  "monitoring": "Poll relevant trade tape while maker orders rest; mark positions with fresh liquidating bids (unfilled remainder zero); only finalize against exchange finalized results with unchanged event membership and strike predicates. Persist account/order/fill/cancel/settlement events before updating memory; replay on restart. Restart cancels outstanding orders instead of inventing offline fills. Settlement can remain pending at bounded stop and be resumed.",
+  "limits": "Paper fills remain simulations: polling can miss fleeting quotes/hidden queue changes, hypothetical orders have no market impact, timing includes observed collection latency, and no short run establishes profitability. Current models previously lost development scores; paper trades test execution/research, not validated recommendations. All 32 model/scenario accounts belong to the candidate family.",
+  "real_money_orders": 0,
+  "promotion_eligible": false,
+  "holdout_accessed": false
+}

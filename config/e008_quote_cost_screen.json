@@ -1,0 +1,23 @@
+{
+  "experiment": "E008-quote-cost-screen-v1",
+  "status": "Development diagnostic registered after E007 probability results, before inspecting selected-trade outcomes. This is not an executable backtest.",
+  "model_record_id": 21035,
+  "validation_start": "2025-07-01",
+  "validation_end_exclusive": "2025-10-01",
+  "horizon_hours": 24,
+  "models": ["raw_market", "normalized_market", "temperature_market", "nbm_native_18h_gaussian_proxy", "grid_global_gaussian", "grid_station_gaussian", "grid_station_empirical", "txn_station_gaussian", "nbm_spread_regression"],
+  "decision": "At each eligible complete six-bracket event, consider buying one YES or one NO. YES price is raw ask; NO price is one minus raw YES bid. Apply each scenario's slippage and fee; reject price>=1. Choose the greatest model probability minus total cost, if strictly positive. Deterministic ties by ticker then side. At most one conditional one-contract purchase per event per model/scenario. No confidence lower bound is claimed.",
+  "scenarios": [
+    {"name": "zero_fee_zero_delay_quote", "slippage_usd": "0.00", "fee_multiplier": "0", "balance_precision": "0.0001"},
+    {"name": "current_fee_plus_one_cent", "slippage_usd": "0.01", "fee_multiplier": "1", "balance_precision": "0.0001"},
+    {"name": "cent_rounded_fee_plus_two_cents", "slippage_usd": "0.02", "fee_multiplier": "1", "balance_precision": "0.01"}
+  ],
+  "fee_limits": "Quadratic coefficient 0.07 with scenario multipliers and explicit rounding. These are cost assumptions based on the retrieved 2026 schedule, NOT verified contemporaneous 2025 fees. No fee backdating claim; zero-fee scenario is a gross diagnostic.",
+  "fills": "Unit fill at the archived candle quote plus the assumed slippage is CONDITIONAL and unproven. No displayed size, receipt-time latency, partial fills, cancellations or adverse-selection model. A positive result cannot establish execution. No maker fills.",
+  "outcome": "Conditional held-to-final-resolution payout from the original binary contract result. Retain every attempt and abstention, entry cost, expected edge, and realized unit outcome. No reinvestment, geometric growth, available bankroll, capital-lockup return or ruin probabilities are inferred.",
+  "calendar_policy": "For this conditional trading rule only, all 92 validation source dates remain in the calendar; no complete quoted event or no positive expected edge means no conditional purchase and zero conditional P&L. Zeros represent policy abstention, never invented prices or probabilities. This is a different estimand from E007 conditional forecast accuracy, whose missing-date confidence stays unavailable.",
+  "uncertainty": "Sum conditional unit P&L across cities/events within each source day. Circular blocks 1/7/14, 10000 resamples, seed20260906. Approximate one-sided positive-mean diagnostics versus no-purchase cash. Holm over all 9 models x 3 scenarios x 3 block choices (81 diagnostics); this does not replace the global all-experiment promotion correction or actual execution evidence.",
+  "promotion_eligible": false,
+  "real_money_size": 0,
+  "holdout_accessed": false
+}

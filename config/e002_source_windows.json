@@ -1,0 +1,27 @@
+{
+  "experiment": "E002",
+  "registered_at": "2026-09-06T11:01:00Z",
+  "purpose": "Source/window implementation fixed after coverage and before probability scores",
+  "source": "NWS Daily Climate Report",
+  "window_evidence": "https://www.weather.gov/lot/weather_observations_faq",
+  "window": "midnight to midnight local standard time throughout the year",
+  "source_gate": "Actual per-market primary rules must name National Weather Service or NWS",
+  "period_end_is_not_market_close": true,
+  "candle_period_minutes": 60,
+  "candle_reason": "All preregistered decisions fall on whole UTC hours; use bid/ask close at that boundary without any later candle",
+  "maximum_candle_age_seconds": 0,
+  "historical_candles_are_not_fills": true,
+  "series": {
+    "KXHIGHAUS": {"station_label": "Austin Bergstrom", "standard_utc_offset_hours": -6},
+    "KXHIGHCHI": {"station_label": "Chicago Midway", "standard_utc_offset_hours": -6},
+    "KXHIGHDEN": {"station_label": "Denver, CO", "standard_utc_offset_hours": -7},
+    "KXHIGHHOU": {"station_label": "Houston Hobby", "standard_utc_offset_hours": -6},
+    "KXHIGHLAX": {"station_label": "Los Angeles Airport", "standard_utc_offset_hours": -8},
+    "KXHIGHMIA": {"station_label": "Miami International / Miami, FL", "standard_utc_offset_hours": -5},
+    "KXHIGHNY": {"station_label": "Central Park, New York", "standard_utc_offset_hours": -5},
+    "KXHIGHPHIL": {"station_label": "Philadelphia International / Philadelphia, PA", "standard_utc_offset_hours": -5}
+  },
+  "station_scope": "Labels transcribed from actual January and July 2025 contracts. This file maps source-city standard-time windows only; it does not authorize weather-feature station joins.",
+  "historical_metadata_conflicts": "Some January secondary text names ET despite a different numerical close_time. Enforce both source-period offsets and recorded open/close times; report disagreements rather than silently replacing either.",
+  "holdout": "2025-10-01 through 2025-12-31 remains sealed; no candle requests, label scoring, or fit access"
+}

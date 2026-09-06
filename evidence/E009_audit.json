@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-09-06T14:05:58.640452+00:00",
+  "run_record_id": 21756,
+  "last_journal_record_id": 32640,
+  "paper_events_replayed": 3870,
+  "accounts_reproduced": 32,
+  "orders_reproduced": 88,
+  "taker_fills_reproduced_from_future_books": 64,
+  "maker_fills_reproduced_from_trade_through": 22,
+  "settled_positions_reproduced": 0,
+  "source_records_checked": 16,
+  "cash_and_fees_reproduced": true,
+  "network_requests": 0,
+  "real_money_orders": 0,
+  "profitability_proven": false
+}

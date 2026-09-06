@@ -1,0 +1,47 @@
+{
+  "protocol_version": "2026-09-06-v1",
+  "status": "preregistered-before-strategy-results",
+  "initial_bankroll_usd": 100,
+  "research_only": true,
+  "primary_endpoint": "mean daily net log bankroll growth",
+  "cluster": "UTC day across all cities; sensitivity to 7-day weather-system blocks",
+  "chronological_development_fraction": 0.6,
+  "chronological_validation_fraction": 0.2,
+  "chronological_final_holdout_fraction": 0.2,
+  "minimum_train_days": 180,
+  "minimum_final_holdout_days": 90,
+  "minimum_final_holdout_event_days": 60,
+  "minimum_shadow_days": 90,
+  "minimum_shadow_event_days": 60,
+  "minimum_seasonal_regimes": 2,
+  "bootstrap_block_days": [1, 7, 14],
+  "bootstrap_resamples": 10000,
+  "familywise_alpha": 0.05,
+  "multiple_testing": "Holm correction over all registered candidates; nested selection within development only",
+  "promotion_requires": [
+    "positive Holm-adjusted lower confidence bound for net daily log growth in final holdout and forward shadow separately",
+    "positive realistic and pessimistic net P&L after contemporaneous fees and depth/latency/slippage",
+    "available-time and revision audits on all trade features",
+    "verified contract station/source/period/rounding/settlement lineage",
+    "no final holdout reuse; any change requires new unobserved forward data",
+    "parameter perturbations keep net log growth positive in >=80% of preregistered local variants",
+    "delay and shifted-signal placebo comparisons with mechanism-consistent results",
+    "risk estimates include serial/cross-city dependence, costs, capital lockup, and parameter uncertainty"
+  ],
+  "execution_sensitivity": {
+    "latency_seconds": [1, 5, 30],
+    "slippage_cents_per_contract": [0, 1, 2],
+    "visible_depth_retained": [1.0, 0.5, 0.25],
+    "maker": "zero fills without queue/trade-through evidence; touching is not a fill"
+  },
+  "risk_constraints": {
+    "max_event_bankroll_fraction": 0.05,
+    "max_weather_cluster_bankroll_fraction": 0.1,
+    "max_total_bankroll_fraction": 0.25,
+    "max_drawdown_kill_fraction": 0.2,
+    "max_one_year_probability_bankroll_below_50": 0.05,
+    "max_one_year_probability_operational_ruin": 0.01,
+    "operational_ruin_usd": 1
+  },
+  "notes": "Minimum sample sizes are necessary, not sufficient. No growth or target-hit probability estimate until independent edge evidence exists. Protocol amendments are append-only with date and rationale."
+}

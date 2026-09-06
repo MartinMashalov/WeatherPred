@@ -1,0 +1,15 @@
+All checks passed!
+87 files already formatted
+........................................................................ [ 80%]
+.................                                                        [100%]
+89 passed in 1.08s
+{
+  "records_verified": 38332,
+  "chain_head": "179457696d38302facf8bb1810b467c7508bc149a964f5989b6ecde3b9531adf"
+}
+{
+  "events_replayed_from_raw": 48,
+  "fully_quoted_scenarios_reproduced": 149,
+  "network_requests": 0,
+  "profitability_proven": false
+}

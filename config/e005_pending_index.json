@@ -1,0 +1,17 @@
+{
+  "experiment": "E005-v1",
+  "hypothesis": "Public pending station inputs permit a useful provisional index before canonical publication; compare that lead with market reaction before claiming an edge",
+  "stage": "Exploratory source arithmetic and actual-receipt latency audit, not a strategy test",
+  "registration_trigger": "Observed live incomplete index points already containing five pending station temperatures; no provisional error or return scores inspected",
+  "input_gate": "All five exact primary members; no fallback, backfill or future receipts; pending/ok codes only; finite temperatures in published hard range",
+  "calibration_gate": "Version effective at event minute and published before actual decision receipt; use archived calibration available by that receipt",
+  "formula_source": "https://assets.kalshi.com/contract_terms/TEMPH.pdf Appendix B Section 5",
+  "formula": "Weighted Celsius temperature minus station offset plus full-roster city reference; convert to Fahrenheit only at final output",
+  "quality_control": "Pending values have not completed source QC; the provisional result must never become a settlement label",
+  "rounding": "Report half-up and half-even nearest-cent alternatives; methodology does not specify ties explicitly",
+  "historical_arithmetic_audit": "All 24512 previously acquired E004 canonical points, conditional on published source QC flags",
+  "live_audit": "Every captured incomplete minute with all five primary readings; retain first eligible receipt, compare with first observed later canonical publication",
+  "metrics": ["canonical reconstruction mismatch count", "provisional error", "first-seen public lead seconds", "censoring and changed pending values"],
+  "independence": "Minute counts are operational observations within one day, not independent weather events",
+  "returns": "No P&L, fills, probability calibration or capital recommendation inferred; real-money size stays zero"
+}
