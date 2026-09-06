@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-09-06T16:12:43.274508+00:00",
+  "state_snapshot_at": "2026-09-06T16:12:15.504549+00:00",
+  "events": [
+    {
+      "event": "KXTEMPMIAH-26SEP0610",
+      "accounts_with_settlements": 32,
+      "positions_settled": 57,
+      "positive_accounts": 0,
+      "negative_accounts": 32,
+      "pnl_range_usd": [
+        "-4.1605",
+        "-0.4800"
+      ],
+      "source_record_ids": [
+        43062
+      ],
+      "source_received_at": "2026-09-06T15:11:11.719685+00:00",
+      "expiration_values": [
+        "84.56"
+      ],
+      "accounts": {
+        "fresh_5m_persistence_empirical:maker_5s_queue": "-0.5676",
+        "fresh_5m_persistence_empirical:taker_1s_full": "-3.4801",
+        "fresh_5m_persistence_empirical:taker_30s_quarter": "-3.6034",
+        "fresh_5m_persistence_empirical:taker_5s_half": "-3.6037",
+        "fresh_5m_persistence_gaussian:maker_5s_queue": "-0.5676",
+        "fresh_5m_persistence_gaussian:taker_1s_full": "-2.5574",
+        "fresh_5m_persistence_gaussian:taker_30s_quarter": "-2.5456",
+        "fresh_5m_persistence_gaussian:taker_5s_half": "-2.6089",
+        "fresh_5m_trend_empirical:maker_5s_queue": "-0.4800",
+        "fresh_5m_trend_empirical:taker_1s_full": "-3.0450",
+        "fresh_5m_trend_empirical:taker_30s_quarter": "-2.9849",
+        "fresh_5m_trend_empirical:taker_5s_half": "-3.1050",
+        "fresh_5m_trend_gaussian:maker_5s_queue": "-0.5676",
+        "fresh_5m_trend_gaussian:taker_1s_full": "-2.7467",
+        "fresh_5m_trend_gaussian:taker_30s_quarter": "-2.4131",
+        "fresh_5m_trend_gaussian:taker_5s_half": "-2.5007",
+        "original_10m_persistence_empirical:maker_5s_queue": "-1.0100",
+        "original_10m_persistence_empirical:taker_1s_full": "-2.1218",
+        "original_10m_persistence_empirical:taker_30s_quarter": "-2.2267",
+        "original_10m_persistence_empirical:taker_5s_half": "-2.2900",
+        "original_10m_persistence_gaussian:maker_5s_queue": "-1.0100",
+        "original_10m_persistence_gaussian:taker_1s_full": "-2.1218",
+        "original_10m_persistence_gaussian:taker_30s_quarter": "-2.2267",
+        "original_10m_persistence_gaussian:taker_5s_half": "-2.2900",
+        "original_10m_trend_empirical:maker_5s_queue": "-0.5676",
+        "original_10m_trend_empirical:taker_1s_full": "-4.1605",
+        "original_10m_trend_empirical:taker_30s_quarter": "-3.9197",
+        "original_10m_trend_empirical:taker_5s_half": "-4.1133",
+        "original_10m_trend_gaussian:maker_5s_queue": "-1.0100",
+        "original_10m_trend_gaussian:taker_1s_full": "-3.7130",
+        "original_10m_trend_gaussian:taker_30s_quarter": "-3.6985",
+        "original_10m_trend_gaussian:taker_5s_half": "-3.7948"
+      }
+    },
+    {
+      "event": "KXTEMPMIAH-26SEP0611",
+      "accounts_with_settlements": 28,
+      "positions_settled": 41,
+      "positive_accounts": 8,
+      "negative_accounts": 20,
+      "pnl_range_usd": [
+        "-4.3723",
+        "2.7589"
+      ],
+      "source_record_ids": [
+        60077
+      ],
+      "source_received_at": "2026-09-06T16:11:13.731589+00:00",
+      "expiration_values": [
+        "87.80"
+      ],
+      "accounts": {
+        "fresh_5m_persistence_empirical:taker_1s_full": "1.5467",
+        "fresh_5m_persistence_empirical:taker_30s_quarter": "0.3461",
+        "fresh_5m_persistence_empirical:taker_5s_half": "1.4124",
+        "fresh_5m_persistence_gaussian:taker_1s_full": "-2.0152",
+        "fresh_5m_persistence_gaussian:taker_30s_quarter": "-2.4231",
+        "fresh_5m_persistence_gaussian:taker_5s_half": "-1.9117",
+        "fresh_5m_trend_empirical:maker_5s_queue": "-4.3200",
+        "fresh_5m_trend_empirical:taker_1s_full": "-4.2083",
+        "fresh_5m_trend_empirical:taker_30s_quarter": "-4.3723",
+        "fresh_5m_trend_empirical:taker_5s_half": "-4.2775",
+        "fresh_5m_trend_gaussian:maker_5s_queue": "-4.3200",
+        "fresh_5m_trend_gaussian:taker_1s_full": "-4.2083",
+        "fresh_5m_trend_gaussian:taker_30s_quarter": "-4.3723",
+        "fresh_5m_trend_gaussian:taker_5s_half": "-4.2775",
+        "original_10m_persistence_empirical:taker_1s_full": "2.7589",
+        "original_10m_persistence_empirical:taker_30s_quarter": "-0.5843",
+        "original_10m_persistence_empirical:taker_5s_half": "2.1838",
+        "original_10m_persistence_gaussian:taker_1s_full": "-1.8188",
+        "original_10m_persistence_gaussian:taker_30s_quarter": "-2.0725",
+        "original_10m_persistence_gaussian:taker_5s_half": "-1.9696",
+        "original_10m_trend_empirical:maker_5s_queue": "-4.3200",
+        "original_10m_trend_empirical:taker_1s_full": "1.9370",
+        "original_10m_trend_empirical:taker_30s_quarter": "2.0608",
+        "original_10m_trend_empirical:taker_5s_half": "1.8463",
+        "original_10m_trend_gaussian:maker_5s_queue": "-4.3200",
+        "original_10m_trend_gaussian:taker_1s_full": "-3.3760",
+        "original_10m_trend_gaussian:taker_30s_quarter": "-3.6584",
+        "original_10m_trend_gaussian:taker_5s_half": "-3.5638"
+      }
+    }
+  ],
+  "cumulative_accounts": 32,
+  "cumulative_positive": 1,
+  "cumulative_negative": 31,
+  "cumulative_pnl_range_usd": [
+    "-7.3825",
+    "0.6371"
+  ],
+  "limits": "Two hourly events on one UTC day; alternative accounts are dependent and open third-event risk remains. Not independent performance evidence."
+}

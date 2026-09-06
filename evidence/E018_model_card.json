@@ -1,0 +1,674 @@
+{
+  "run_record_id": 59488,
+  "model_record_id": 59490,
+  "published_at": "2026-09-06T16:09:28.968475+00:00",
+  "training_record_id": 12322,
+  "training_sha256": "5dca4f0e17b3c7bb4615f1f9221884bfbb266451233ca8ecfb4a10b32ea1d771",
+  "selection_predictions_record_id": 59489,
+  "chosen_candidate": {
+    "id": "h2_ridge100_student_t5",
+    "harmonics": 2,
+    "ridge": 100,
+    "distribution": "student_t5"
+  },
+  "candidate_scores": [
+    {
+      "id": "h2_ridge100_student_t5",
+      "harmonics": 2,
+      "ridge": 100,
+      "distribution": "student_t5",
+      "mean_day_negative_log_density": 1.0241125047549602,
+      "daily_scores": {
+        "20689": 1.2687333761692139,
+        "20690": 1.089818113667739,
+        "20691": 0.9973881255545353,
+        "20692": 1.1652799357889445,
+        "20693": 0.741694081545478,
+        "20694": 0.9773656333270829,
+        "20695": 1.0583878862404053,
+        "20696": 0.8942328857462836
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7747838073758683
+    },
+    {
+      "id": "h2_ridge10_student_t5",
+      "harmonics": 2,
+      "ridge": 10,
+      "distribution": "student_t5",
+      "mean_day_negative_log_density": 1.043788604229444,
+      "daily_scores": {
+        "20689": 1.2336139034698126,
+        "20690": 1.0886738048975195,
+        "20691": 1.0728227712486595,
+        "20692": 1.1818070293819298,
+        "20693": 0.8043370000353237,
+        "20694": 1.0377627217509597,
+        "20695": 1.0390635521965494,
+        "20696": 0.8922280508547971
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7861765581727274
+    },
+    {
+      "id": "h2_ridge1_student_t5",
+      "harmonics": 2,
+      "ridge": 1,
+      "distribution": "student_t5",
+      "mean_day_negative_log_density": 1.0500669903854263,
+      "daily_scores": {
+        "20689": 1.237231098220014,
+        "20690": 1.0942787855046774,
+        "20691": 1.0871849469269481,
+        "20692": 1.186754235402783,
+        "20693": 0.8164395806500826,
+        "20694": 1.0473827510966625,
+        "20695": 1.0376606817074963,
+        "20696": 0.8936038435747471
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7907537750211188
+    },
+    {
+      "id": "h1_ridge100_student_t5",
+      "harmonics": 1,
+      "ridge": 100,
+      "distribution": "student_t5",
+      "mean_day_negative_log_density": 1.051525714888993,
+      "daily_scores": {
+        "20689": 1.3292761204269936,
+        "20690": 1.1013901744994092,
+        "20691": 1.0027210899137287,
+        "20692": 1.203540658069719,
+        "20693": 0.7577531289712488,
+        "20694": 0.9498306545678576,
+        "20695": 1.109344345842781,
+        "20696": 0.9583495468202045
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7987642828476806
+    },
+    {
+      "id": "h1_ridge10_student_t5",
+      "harmonics": 1,
+      "ridge": 10,
+      "distribution": "student_t5",
+      "mean_day_negative_log_density": 1.0740560378052844,
+      "daily_scores": {
+        "20689": 1.3514053759473506,
+        "20690": 1.0900511291235604,
+        "20691": 1.0717224138219887,
+        "20692": 1.2300652119069255,
+        "20693": 0.8021558274322693,
+        "20694": 0.9896495231370075,
+        "20695": 1.0980724703284268,
+        "20696": 0.9593263507447456
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.8172937401289313
+    },
+    {
+      "id": "h1_ridge1_student_t5",
+      "harmonics": 1,
+      "ridge": 1,
+      "distribution": "student_t5",
+      "mean_day_negative_log_density": 1.0806662815427417,
+      "daily_scores": {
+        "20689": 1.365669675178244,
+        "20690": 1.0937843224216037,
+        "20691": 1.085203634264369,
+        "20692": 1.2359858004724775,
+        "20693": 0.810901539255649,
+        "20694": 0.996186265476445,
+        "20695": 1.097384480501484,
+        "20696": 0.9602145347716614
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.8241048377076079
+    },
+    {
+      "id": "h2_ridge100_gaussian",
+      "harmonics": 2,
+      "ridge": 100,
+      "distribution": "gaussian",
+      "mean_day_negative_log_density": 1.1307561515096747,
+      "daily_scores": {
+        "20689": 1.2951448733752,
+        "20690": 1.243101162851595,
+        "20691": 1.0031769060564213,
+        "20692": 1.6204894653652488,
+        "20693": 0.825591989028758,
+        "20694": 1.0123130040237949,
+        "20695": 1.063758798621702,
+        "20696": 0.9824730127546771
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7747838073758683
+    },
+    {
+      "id": "h1_ridge100_gaussian",
+      "harmonics": 1,
+      "ridge": 100,
+      "distribution": "gaussian",
+      "mean_day_negative_log_density": 1.1525692206459575,
+      "daily_scores": {
+        "20689": 1.297849968854859,
+        "20690": 1.27063354841947,
+        "20691": 1.0086328937041449,
+        "20692": 1.6529896709502578,
+        "20693": 0.8438503289509592,
+        "20694": 1.0091789372464093,
+        "20695": 1.1148560244856187,
+        "20696": 1.0225623925559413
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7987642828476806
+    },
+    {
+      "id": "h2_ridge10_gaussian",
+      "harmonics": 2,
+      "ridge": 10,
+      "distribution": "gaussian",
+      "mean_day_negative_log_density": 1.159411969657954,
+      "daily_scores": {
+        "20689": 1.3075655592239697,
+        "20690": 1.2869057777951476,
+        "20691": 1.0935850434029981,
+        "20692": 1.6505007942029093,
+        "20693": 0.8615370114796423,
+        "20694": 1.0501459788921281,
+        "20695": 1.0381245135856227,
+        "20696": 0.9869310786812141
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7861765581727274
+    },
+    {
+      "id": "h2_ridge1_gaussian",
+      "harmonics": 2,
+      "ridge": 1,
+      "distribution": "gaussian",
+      "mean_day_negative_log_density": 1.1667923429037916,
+      "daily_scores": {
+        "20689": 1.3165671254620102,
+        "20690": 1.2995976777075846,
+        "20691": 1.112017850164853,
+        "20692": 1.6550151694353987,
+        "20693": 0.8696130301715179,
+        "20694": 1.0570335737725143,
+        "20695": 1.0357758239180515,
+        "20696": 0.9887184925984036
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.7907537750211188
+    },
+    {
+      "id": "h1_ridge10_gaussian",
+      "harmonics": 1,
+      "ridge": 10,
+      "distribution": "gaussian",
+      "mean_day_negative_log_density": 1.1868215781968137,
+      "daily_scores": {
+        "20689": 1.3456858892636008,
+        "20690": 1.340910655053163,
+        "20691": 1.0816735115159173,
+        "20692": 1.7001910704611631,
+        "20693": 0.8664675423070833,
+        "20694": 1.0337842704163458,
+        "20695": 1.0994544296670528,
+        "20696": 1.0264052568901845
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.8172937401289313
+    },
+    {
+      "id": "h1_ridge1_gaussian",
+      "harmonics": 1,
+      "ridge": 1,
+      "distribution": "gaussian",
+      "mean_day_negative_log_density": 1.1969667466393716,
+      "daily_scores": {
+        "20689": 1.3720371708811954,
+        "20690": 1.3607159700482567,
+        "20691": 1.0979173411068004,
+        "20692": 1.7088927334458819,
+        "20693": 0.8721247052903411,
+        "20694": 1.0382263995584937,
+        "20695": 1.0982876402514057,
+        "20696": 1.0275320125325977
+      },
+      "rows": 564,
+      "days": 8,
+      "rmse": 0.8241048377076079
+    }
+  ],
+  "models": {
+    "30": {
+      "candidate": {
+        "id": "h2_ridge100_student_t5",
+        "harmonics": 2,
+        "ridge": 100,
+        "distribution": "student_t5"
+      },
+      "horizon_minutes": 30,
+      "cutoff_ms": 1788220800000,
+      "latest_label_deadline_ms": 1788217500000,
+      "training_rows": 288,
+      "training_days": 12,
+      "center": [
+        0.04472400549053961,
+        -3.469446951953614e-17,
+        -7.112366251504909e-17,
+        -3.700743415417188e-17,
+        -3.8163916471489756e-17
+      ],
+      "feature_scale": [
+        1.1291392461578897,
+        0.7071067811865475,
+        0.7071067811865476,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "intercept": -0.02052083333333352,
+      "coefficients": [
+        0.183570295772245,
+        0.2317620920953185,
+        -0.14532450431751245,
+        -0.20550932039881467,
+        0.1304069421984258
+      ],
+      "distribution_scale": 0.7116595471060218,
+      "scale_fit": "earlier-fold prediction errors within August model-selection data",
+      "scale_training_rows": 188
+    },
+    "15": {
+      "candidate": {
+        "id": "h2_ridge100_student_t5",
+        "harmonics": 2,
+        "ridge": 100,
+        "distribution": "student_t5"
+      },
+      "horizon_minutes": 15,
+      "cutoff_ms": 1788220800000,
+      "latest_label_deadline_ms": 1788217500000,
+      "training_rows": 288,
+      "training_days": 12,
+      "center": [
+        -0.0035654430009457944,
+        -3.469446951953614e-17,
+        -7.112366251504909e-17,
+        -3.700743415417188e-17,
+        -3.8163916471489756e-17
+      ],
+      "feature_scale": [
+        0.6321032688818928,
+        0.7071067811865475,
+        0.7071067811865476,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "intercept": -0.020763888888889397,
+      "coefficients": [
+        0.1513375357681593,
+        0.1557162547948547,
+        -0.0776515893057367,
+        -0.13093262596441543,
+        0.08287529460465948
+      ],
+      "distribution_scale": 0.5123939995595358,
+      "scale_fit": "earlier-fold prediction errors within August model-selection data",
+      "scale_training_rows": 188
+    },
+    "5": {
+      "candidate": {
+        "id": "h2_ridge100_student_t5",
+        "harmonics": 2,
+        "ridge": 100,
+        "distribution": "student_t5"
+      },
+      "horizon_minutes": 5,
+      "cutoff_ms": 1788220800000,
+      "latest_label_deadline_ms": 1788217500000,
+      "training_rows": 288,
+      "training_days": 12,
+      "center": [
+        -0.010467079608939618,
+        -3.469446951953614e-17,
+        -7.112366251504909e-17,
+        -3.700743415417188e-17,
+        -3.8163916471489756e-17
+      ],
+      "feature_scale": [
+        0.2840317952984953,
+        0.7071067811865475,
+        0.7071067811865476,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "intercept": -0.001145833333333574,
+      "coefficients": [
+        0.10202488659371828,
+        0.0779186178649281,
+        -0.04444342292820691,
+        -0.07946085918319626,
+        0.016659030897513884
+      ],
+      "distribution_scale": 0.4020309564609625,
+      "scale_fit": "earlier-fold prediction errors within August model-selection data",
+      "scale_training_rows": 188
+    }
+  },
+  "archived_artifact_sha256": "d6d4a620df9a57f5c6fcd1e92a52bfaad45cbef2602b50d206a2e299bb9e6fbb",
+  "registered_config": {
+    "experiment": "E018-conditional-hourly-v1",
+    "purpose": "Test whether conditional diurnal means and heavier tails repair pooled hourly residuals; frozen August selection and new netted forward paper accounts.",
+    "training_start_ms": 1787184000000,
+    "training_end_ms": 1788220800000,
+    "training_model_record_id": 12323,
+    "training_record_id": 12322,
+    "parent_paper_run_record_id": 21756,
+    "parent_original_model_record_id": 3768,
+    "training_source_limit": "E006 August-only raw-derived training rows. Original historical publication remains unverified. September 1-5 development and October-December holdout are not read. No historical executable P&L.",
+    "horizons_minutes": [
+      30,
+      15,
+      5
+    ],
+    "fold_start_day_offsets": [
+      4,
+      6,
+      8,
+      10
+    ],
+    "fold_days": 2,
+    "candidates": [
+      {
+        "id": "h1_ridge1_gaussian",
+        "harmonics": 1,
+        "ridge": 1,
+        "distribution": "gaussian"
+      },
+      {
+        "id": "h1_ridge1_student_t5",
+        "harmonics": 1,
+        "ridge": 1,
+        "distribution": "student_t5"
+      },
+      {
+        "id": "h1_ridge10_gaussian",
+        "harmonics": 1,
+        "ridge": 10,
+        "distribution": "gaussian"
+      },
+      {
+        "id": "h1_ridge10_student_t5",
+        "harmonics": 1,
+        "ridge": 10,
+        "distribution": "student_t5"
+      },
+      {
+        "id": "h1_ridge100_gaussian",
+        "harmonics": 1,
+        "ridge": 100,
+        "distribution": "gaussian"
+      },
+      {
+        "id": "h1_ridge100_student_t5",
+        "harmonics": 1,
+        "ridge": 100,
+        "distribution": "student_t5"
+      },
+      {
+        "id": "h2_ridge1_gaussian",
+        "harmonics": 2,
+        "ridge": 1,
+        "distribution": "gaussian"
+      },
+      {
+        "id": "h2_ridge1_student_t5",
+        "harmonics": 2,
+        "ridge": 1,
+        "distribution": "student_t5"
+      },
+      {
+        "id": "h2_ridge10_gaussian",
+        "harmonics": 2,
+        "ridge": 10,
+        "distribution": "gaussian"
+      },
+      {
+        "id": "h2_ridge10_student_t5",
+        "harmonics": 2,
+        "ridge": 10,
+        "distribution": "student_t5"
+      },
+      {
+        "id": "h2_ridge100_gaussian",
+        "harmonics": 2,
+        "ridge": 100,
+        "distribution": "gaussian"
+      },
+      {
+        "id": "h2_ridge100_student_t5",
+        "harmonics": 2,
+        "ridge": 100,
+        "distribution": "student_t5"
+      }
+    ],
+    "selection": "One candidate across all horizons minimizes equal-day mean continuous negative log density over eight earlier-fold August selection days; tie by ID. Twelve candidates retained, no holdout claim. Refit mean on all August rows, distribution scale on selected candidate's earlier-fold prediction residuals. Fixed t degrees=5; scale floor .05 F, t scale search upper20 F. No September retuning.",
+    "first_decision_at": "2026-09-06T16:30:00Z",
+    "last_decision_at": "2026-09-06T16:55:00Z",
+    "stop_at": "2026-09-06T18:30:00Z",
+    "maximum_publication_lateness_seconds": 20,
+    "models": [
+      "conditional_selected",
+      "fresh_5m_persistence_gaussian",
+      "fresh_5m_trend_gaussian",
+      "fresh_5m_persistence_empirical",
+      "fresh_5m_trend_empirical"
+    ],
+    "forward_inputs": "Consume unchanged E009 original shadow snapshot at the same registered slot. Recompute five-minute lag features from that exact raw source, with all receipt lineage before publication. No later refresh or pending values.",
+    "paper": "Reuse frozen E009 submission, arrival, queue, fee, mark and settlement mechanics with E016 atomic same-contract netting in new $100 accounts. Same four execution scenarios and fixed .03 haircut, quarter Kelly, 5% event/10% cluster exposure. Opening reservations remain conservative. No real orders.",
+    "primary_forward_metric": "Event-averaged Brier versus all fresh baselines and contemporaneous market midpoint on identical eligible strikes; UTC day is the dependence cluster. Net settled paper P&L and fill evidence are separate required outcomes.",
+    "limits": "Three forward slots share one new hourly weather outcome. An engineering feasibility cohort cannot establish profitability or the bankroll target. Student scale and ridge selection use development training only; no confidence or promotion claim.",
+    "promotion_eligible": false,
+    "real_money_orders": 0,
+    "holdout_accessed": false,
+    "scenarios": [
+      {
+        "depth_retained": "1",
+        "latency_seconds": 1,
+        "name": "taker_1s_full",
+        "slippage": "0",
+        "style": "taker"
+      },
+      {
+        "depth_retained": "0.5",
+        "latency_seconds": 5,
+        "name": "taker_5s_half",
+        "slippage": "0.01",
+        "style": "taker"
+      },
+      {
+        "depth_retained": "0.25",
+        "latency_seconds": 30,
+        "name": "taker_30s_quarter",
+        "slippage": "0.02",
+        "style": "taker"
+      },
+      {
+        "depth_retained": "1",
+        "latency_seconds": 5,
+        "name": "maker_5s_queue",
+        "slippage": "0",
+        "style": "maker",
+        "trade_participation": "0.25"
+      }
+    ],
+    "initial_cash_per_account": "100"
+  },
+  "source_hashes": {
+    "research/experiments/e009_paper.py": "7ec577584934017a0e1929db2aa371def516c34c4c561523b6893434fa8871c8",
+    "config/e009_paper.json": "9d21241995e0f01f7fd12216b07d42b77b554acfdc9f3b59ce6cf4def14648f6",
+    "weatherpred/basket.py": "b2952af6004315f975e4338f5731f3564e66c976758a7aec99b5d00082e11f03",
+    "weatherpred/books.py": "34a759ecc8866fa71c1db7038fe8d790cfaedeb6f8d6bc17a97218093ea8dd0c",
+    "weatherpred/fees.py": "4f22ab4738fceeb1f0bbd3488981e265c80b339702330b6a41c936adefaf0fef",
+    "weatherpred/forecasts.py": "d48c3f46aebda1ee8a895166d0f8e032bde2a34322e568c545b8cbd2d6cb3c5d",
+    "weatherpred/freshness.py": "6f5e65b6d94f5e9e7a03b95ff15332427424a71ffe3ffc19db10b5d9a53cd38e",
+    "weatherpred/http.py": "a87e44bbc2411280934a4d64f80cd656fe5b397a530db73a959b0b886526b559",
+    "weatherpred/index.py": "fe455b25d6eaac8f2ff2c6f23bc70da7497ec6342456bc84c36f1ba4341a0b80",
+    "weatherpred/paper.py": "6f20d3b047d8b5c07276c91484cfe9f35b6c843da786338cdc59fccb5f81026a",
+    "weatherpred/report.py": "ad5cc666fa9d3a0d32225baf644b31c9cc10e586e2e340c4209502e578134be3",
+    "weatherpred/shadow.py": "231d5b7b84f07f4049a9c926a86846d725cc0b051a82f751c6225e54134a028c",
+    "weatherpred/shadow_outcomes.py": "34868568db2a73e631922c8614238aa22f59d167b9832b8b8bdb0e8ad38d841f",
+    "config/e018_conditional_hourly.json": "baea26703aa017f69d975522147ff8028ddda49c972cbb063b46709edfc72492",
+    "research/experiments/e018_conditional_hourly.py": "4f6f2b0609cdbeed90eb1e7260ee624452952849eae530d61fdac5d248c2448d",
+    "weatherpred/conditional_forecasts.py": "c2a11a266d8596860b02fa2c0206be1e74fe53b73efc637c49857064a53fefec",
+    "weatherpred/netted_paper.py": "6cb8b0dc04e70db93ddbb9ef886170cf3cc31b2847a3d533a9a013e47db346b2",
+    "weatherpred/market_making.py": "b4e70ce071d42d1ee3413d326c8266d859ba25520f9fedb913b86f6dd349afd4",
+    "weatherpred/archive.py": "360ec3ac19292e9ccd248ff86a5de3e6f4d68800394ceb4c6deb11ef8c474306",
+    "weatherpred/timeutil.py": "c23489ed48476376dc680957bfdfd1be0e1981ec36326bc266b9e8f85151e9ca"
+  },
+  "diagnostics": {
+    "generated_at": "2026-09-06T16:14:36.893098+00:00",
+    "run_record_id": 59488,
+    "model_record_id": 59490,
+    "training_rows_rebuilt_from_raw": 864,
+    "earlier_fold_predictions_replayed": 6768,
+    "candidate_count": 12,
+    "chosen_candidate": {
+      "distribution": "student_t5",
+      "harmonics": 2,
+      "id": "h2_ridge100_student_t5",
+      "ridge": 100
+    },
+    "coefficients_scales_and_selection_reproduced": true,
+    "comparisons": [
+      {
+        "model": "conditional_selected",
+        "horizon_minutes": null,
+        "rows": 564,
+        "days": 8,
+        "mean_day_negative_log_density": 1.0241125047549602,
+        "rmse_f": 0.7747838073758683,
+        "mean_error_f": 0.08517397785249328
+      },
+      {
+        "model": "conditional_selected",
+        "horizon_minutes": 30,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 1.3352434770386665,
+        "rmse_f": 0.9764028659885446,
+        "mean_error_f": 0.08449900070622378
+      },
+      {
+        "model": "conditional_selected",
+        "horizon_minutes": 15,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 1.0031708200637932,
+        "rmse_f": 0.7488254369216492,
+        "mean_error_f": 0.09327310049530398
+      },
+      {
+        "model": "conditional_selected",
+        "horizon_minutes": 5,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 0.733923217162421,
+        "rmse_f": 0.5355070053920833,
+        "mean_error_f": 0.07774983235595208
+      },
+      {
+        "model": "persistence_gaussian",
+        "horizon_minutes": null,
+        "rows": 564,
+        "days": 8,
+        "mean_day_negative_log_density": 1.1988832861641434,
+        "rmse_f": 0.8482058032467433,
+        "mean_error_f": 0.08143674891647243
+      },
+      {
+        "model": "persistence_gaussian",
+        "horizon_minutes": 30,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 1.499812930578947,
+        "rmse_f": 1.0775980575170712,
+        "mean_error_f": 0.08133612219267526
+      },
+      {
+        "model": "persistence_gaussian",
+        "horizon_minutes": 15,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 1.2267963529267263,
+        "rmse_f": 0.8174684559694904,
+        "mean_error_f": 0.08585786052009628
+      },
+      {
+        "model": "persistence_gaussian",
+        "horizon_minutes": 5,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 0.8700405749867568,
+        "rmse_f": 0.573486707705289,
+        "mean_error_f": 0.07711626403664575
+      },
+      {
+        "model": "trend_gaussian",
+        "horizon_minutes": null,
+        "rows": 564,
+        "days": 8,
+        "mean_day_negative_log_density": 1.3692340060742778,
+        "rmse_f": 1.0215429242243532,
+        "mean_error_f": 0.10825885054421369
+      },
+      {
+        "model": "trend_gaussian",
+        "horizon_minutes": 30,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 1.8935971266938958,
+        "rmse_f": 1.4211801946603535,
+        "mean_error_f": 0.11714206736188698
+      },
+      {
+        "model": "trend_gaussian",
+        "horizon_minutes": 15,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 1.3832331589733484,
+        "rmse_f": 0.8987515371266607,
+        "mean_error_f": 0.12678183351924338
+      },
+      {
+        "model": "trend_gaussian",
+        "horizon_minutes": 5,
+        "rows": 188,
+        "days": 8,
+        "mean_day_negative_log_density": 0.8308717325555897,
+        "rmse_f": 0.5505836602335311,
+        "mean_error_f": 0.0808526507515107
+      }
+    ],
+    "network_requests": 0,
+    "september_validation_accessed": false,
+    "holdout_accessed": false,
+    "profitability_proven": false,
+    "limits": "All comparators use the eight August model-selection days. The selected candidate benefited from that selection; these are development diagnostics, not unbiased generalization estimates. Historical publication is unverified and no historical fills/P&L are inferred."
+  },
+  "limits": "August-only model-selection evidence. Forward fills and profitability are not established by this card. Raw archive and registration source IDs refer to local immutable records."
+}

@@ -541,6 +541,58 @@ For a maker, there is another distinction. Buying one YES for 42¢ and one NO fo
 the YES fill leaves 42¢ at risk. The paired-maker experiments track that unmatched
 risk and the queue evidence required for each side separately.
 
+## 20. Conditional hourly regression and Student t errors
+
+E018 predicts the remaining temperature change rather than assuming all hours
+share one residual distribution. For the known target's Miami local hour $h$,
+define $\theta=2\pi h/24$. Features contain the trend forecast minus persistence,
+plus $\sin(k\theta),\cos(k\theta)$ for $k=1$ or $k=1,2$. The second pair permits a
+more flexible daily shape. Target time is known at the decision and is not a
+future observation.
+
+Let $r_i=T_i-f_{{\rm persist},i}$. Training-only means and standard deviations
+standardize each feature into a row of $Z$. Weights in diagonal matrix $W$ give
+each training day equal total influence and are normalized to sum to the number
+of rows. With weighted mean residual $\bar r$, the ridge solution is
+
+$$A=Z^T WZ+\lambda I,$$
+
+$$b=Z^T W(r-\bar r\mathbf1),\qquad\hat\beta=A^{-1}b.$$
+
+The forecast mean is
+
+$$\mu=f_{\rm persist}+\bar r+z^T\hat\beta.$$
+
+The intercept is unpenalized. The registered penalties are $\lambda\in\{1,10,100\}$;
+larger penalties shrink the fitted trend and daily-pattern effects more strongly.
+Parameters are fitted separately for 30-, 15- and 5-minute horizons.
+
+The error distribution is either Gaussian or a Student t with fixed five degrees
+of freedom. For the latter,
+
+$$T=\mu+sU,\qquad U\sim t_5,$$
+
+$$P(T>k)=\operatorname{SF}_{t_5}\!\left(\frac{b_k-\mu}{s}\right),$$
+
+where $b_k$ is the earlier 0.01°F rounding-cell boundary and SF is the survival
+function, the probability above a threshold. The t distribution has heavier
+tails. Its scale $s$ is not its standard deviation: the latter is
+$s\sqrt{5/3}$. The scale is chosen by minimizing negative log density, with a
+0.05°F floor and a 20°F upper search bound for the t case.
+
+There are twelve candidates. Expanding August fits predict the following two
+days; the candidate with the lowest equal-day average negative log density is
+selected. This is a probability-density score, distinct from the binary log
+loss of a YES contract. The mean is then refitted on all twelve August days,
+and its scale is calibrated using the selected candidate's earlier-fold errors.
+Those same eight days were used for selection, so their apparent improvement is
+not an unbiased estimate of future performance. The frozen forward cohort uses
+new receipts, orders and outcomes to test the result.
+
+Implementation: [conditional_forecasts.py](../weatherpred/conditional_forecasts.py),
+[forward runner](../research/experiments/e018_conditional_hourly.py),
+[model replay](../research/experiments/e018_diagnostics.py).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.

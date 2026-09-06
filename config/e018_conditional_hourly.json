@@ -1,0 +1,116 @@
+{
+  "experiment": "E018-conditional-hourly-v1",
+  "purpose": "Test whether conditional diurnal means and heavier tails repair pooled hourly residuals; frozen August selection and new netted forward paper accounts.",
+  "training_start_ms": 1787184000000,
+  "training_end_ms": 1788220800000,
+  "training_model_record_id": 12323,
+  "training_record_id": 12322,
+  "parent_paper_run_record_id": 21756,
+  "parent_original_model_record_id": 3768,
+  "training_source_limit": "E006 August-only raw-derived training rows. Original historical publication remains unverified. September 1-5 development and October-December holdout are not read. No historical executable P&L.",
+  "horizons_minutes": [
+    30,
+    15,
+    5
+  ],
+  "fold_start_day_offsets": [
+    4,
+    6,
+    8,
+    10
+  ],
+  "fold_days": 2,
+  "candidates": [
+    {
+      "id": "h1_ridge1_gaussian",
+      "harmonics": 1,
+      "ridge": 1,
+      "distribution": "gaussian"
+    },
+    {
+      "id": "h1_ridge1_student_t5",
+      "harmonics": 1,
+      "ridge": 1,
+      "distribution": "student_t5"
+    },
+    {
+      "id": "h1_ridge10_gaussian",
+      "harmonics": 1,
+      "ridge": 10,
+      "distribution": "gaussian"
+    },
+    {
+      "id": "h1_ridge10_student_t5",
+      "harmonics": 1,
+      "ridge": 10,
+      "distribution": "student_t5"
+    },
+    {
+      "id": "h1_ridge100_gaussian",
+      "harmonics": 1,
+      "ridge": 100,
+      "distribution": "gaussian"
+    },
+    {
+      "id": "h1_ridge100_student_t5",
+      "harmonics": 1,
+      "ridge": 100,
+      "distribution": "student_t5"
+    },
+    {
+      "id": "h2_ridge1_gaussian",
+      "harmonics": 2,
+      "ridge": 1,
+      "distribution": "gaussian"
+    },
+    {
+      "id": "h2_ridge1_student_t5",
+      "harmonics": 2,
+      "ridge": 1,
+      "distribution": "student_t5"
+    },
+    {
+      "id": "h2_ridge10_gaussian",
+      "harmonics": 2,
+      "ridge": 10,
+      "distribution": "gaussian"
+    },
+    {
+      "id": "h2_ridge10_student_t5",
+      "harmonics": 2,
+      "ridge": 10,
+      "distribution": "student_t5"
+    },
+    {
+      "id": "h2_ridge100_gaussian",
+      "harmonics": 2,
+      "ridge": 100,
+      "distribution": "gaussian"
+    },
+    {
+      "id": "h2_ridge100_student_t5",
+      "harmonics": 2,
+      "ridge": 100,
+      "distribution": "student_t5"
+    }
+  ],
+  "selection": "One candidate across all horizons minimizes equal-day mean continuous negative log density over eight earlier-fold August selection days; tie by ID. Twelve candidates retained, no holdout claim. Refit mean on all August rows, distribution scale on selected candidate's earlier-fold prediction residuals. Fixed t degrees=5; scale floor .05 F, t scale search upper20 F. No September retuning.",
+  "first_decision_at": "2026-09-06T16:30:00Z",
+  "last_decision_at": "2026-09-06T16:55:00Z",
+  "stop_at": "2026-09-06T18:30:00Z",
+  "maximum_publication_lateness_seconds": 20,
+  "models": [
+    "conditional_selected",
+    "fresh_5m_persistence_gaussian",
+    "fresh_5m_trend_gaussian",
+    "fresh_5m_persistence_empirical",
+    "fresh_5m_trend_empirical"
+  ],
+  "forward_inputs": "Consume unchanged E009 original shadow snapshot at the same registered slot. Recompute five-minute lag features from that exact raw source, with all receipt lineage before publication. No later refresh or pending values.",
+  "paper": "Reuse frozen E009 submission, arrival, queue, fee, mark and settlement mechanics with E016 atomic same-contract netting in new $100 accounts. Same four execution scenarios and fixed .03 haircut, quarter Kelly, 5% event/10% cluster exposure. Opening reservations remain conservative. No real orders.",
+  "primary_forward_metric": "Event-averaged Brier versus all fresh baselines and contemporaneous market midpoint on identical eligible strikes; UTC day is the dependence cluster. Net settled paper P&L and fill evidence are separate required outcomes.",
+  "limits": "Three forward slots share one new hourly weather outcome. An engineering feasibility cohort cannot establish profitability or the bankroll target. Student scale and ridge selection use development training only; no confidence or promotion claim.",
+  "promotion_eligible": false,
+  "real_money_orders": 0,
+  "holdout_accessed": false
+}

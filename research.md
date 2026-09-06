@@ -230,3 +230,32 @@ and0errors. This supports later conditional warming/cooling and observation-
 reaction tests, while retaining source precision, correction and actual receipt
 limitations. No historical API timestamp is relabeled as our receipt, and no
 trading signal or profitability result has been inferred from acquisition.
+
+
+## Conditional hourly regression and receipt evidence — E018/E017, 2026-09-06
+
+- [Gneiting et al. (2005)](https://sites.stat.washington.edu/MURI/PDF/gneiting2005.pdf),
+  original PDF archived 59386: conditional predictive means and uncertainty
+  calibration motivate a small distributional model. E018 implements ridge
+  trend/daily-cycle means with Gaussian/t errors, not the paper's ensemble
+  variance regression or minimum-CRPS estimator.
+- [ECMWF near-surface bias investigation](https://www.ecmwf.int/en/newsletter/157/meteorology/addressing-biases-near-surface-forecasts),
+  archived 59387: daily-cycle-dependent temperature errors motivate conditioning
+  on known target hour. This is motivation, not evidence about Miami profitability.
+- [Time-series EMOS study](https://arxiv.org/abs/2402.00555), archived 59388:
+  temporal dependence is a reason to inspect recent forecast evolution. E018
+  uses recent observed trend as a feature; it does not claim to reproduce that
+  study's full time-series estimator or its results.
+- E018 tests 12 fixed candidates on August-only expanding folds. Two harmonics,
+  strong shrinkage and Student t(5) rank first. Selected development RMSE = 0.7748°F
+  versus 0.8482°F persistence and 1.0215°F trend; selection days are not independent
+  validation. Model 59490 frozen at 16:09 before new 16:30 paper orders, with 20 alternative
+  netted accounts and identical raw snapshot inputs. Outcome/promotion pending.
+- E017 audit shows eight first new observations but repeated receiptTime-only
+  JSON versions. Treating each repeat as new weather news would inflate sample
+  size and distort latency estimates. Original strings/temperatures and first
+  own receipt remain the appropriate keys for subsequent reaction research.
+- The enhanced E009/E018 raw execution audit recomputes fees without sharing the
+  production accumulator and checks net costs/realized profit. Second E009
+  settlement leaves 31/32 alternatives negative overall, with further open risk.
+  No positive edge or bankroll-target probability is validated.

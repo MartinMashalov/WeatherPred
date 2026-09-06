@@ -4,15 +4,16 @@ Can run alongside the paper broker. Uses one consistent archive read snapshot.
 """
 
 import argparse
+import hashlib
 import json
 from collections import defaultdict
-from decimal import ROUND_FLOOR, Decimal
+from decimal import ROUND_CEILING, ROUND_FLOOR, Decimal
 from pathlib import Path
 
 from weatherpred.archive import Archive, canonical
 from weatherpred.books import parse_book
-from weatherpred.fees import FeeAccumulator
-from weatherpred.paper import empty_state, reduce_event, reserved, schedule_for
+from weatherpred.netted_paper import reduce_netted
+from weatherpred.paper import empty_state, reduce_event, reserved
 from weatherpred.shadow import validate_lineage
 from weatherpred.shadow_outcomes import finalized_labels
 from weatherpred.timeutil import iso, parse_time, utcnow
@@ -24,21 +25,38 @@ def main(run_id):
     archive = Archive()
     try:
         archive.db.execute("BEGIN")
+        registration = archive.db.execute("SELECT * FROM records WHERE id=?", (run_id,)).fetchone()
+        if registration is None or registration["kind"] != "experiment_protocol":
+            raise ValueError("Missing original paper registration")
+        protocol = archive.json(registration)
+        experiment = protocol["config"]["experiment"]
+        if experiment not in ("E009-live-paper-v1", "E018-conditional-hourly-v1"):
+            raise ValueError("This audit supports the E009/E018 directional cohorts")
+        netted = experiment == "E018-conditional-hourly-v1"
+        prefix = "E018" if netted else "E009"
+        for path, expected in protocol["code_sha256"].items():
+            if hashlib.sha256(Path(path).read_bytes()).hexdigest() != expected:
+                raise ValueError("Registered execution source changed: " + path)
         records = list(
             archive.db.execute(
-                "SELECT * FROM records WHERE kind='paper_event' AND key=? ORDER BY id", (str(run_id),)
+                "SELECT * FROM records WHERE kind=? AND key=? ORDER BY id",
+                ("netted_paper_event" if netted else "paper_event", str(run_id)),
             )
         )
         if not records:
             raise ValueError("No registered paper journal found")
         state, expected_slices, maker_allowed = empty_state(), {}, {}
-        cash, fees, accumulators = {}, defaultdict(lambda: D(0)), {}
+        cash, fees, carried = {}, defaultdict(lambda: D(0)), defaultdict(lambda: D(0))
+        quantities, costs, realized = (defaultdict(lambda: D(0)) for _ in range(3))
+        nettings = 0
         taker_count, maker_count, settlements, sources = 0, 0, 0, set()
 
         def raw(source_id):
             row = archive.db.execute("SELECT * FROM records WHERE id=?", (source_id,)).fetchone()
             if row is None:
                 raise ValueError("Missing original execution source")
+            if hashlib.sha256(archive.body(row)).hexdigest() != row["body_sha256"]:
+                raise ValueError("Original source bytes changed")
             sources.add(source_id)
             return row, archive.json(row)
 
@@ -67,7 +85,6 @@ def main(run_id):
                     str(member["floor_strike"])
                 ):
                     raise ValueError("Order probability/strike differs from frozen forecast")
-                accumulators[data["id"]] = FeeAccumulator(schedule_for(data))
             elif kind == "arrival":
                 order = state["orders"][data["order_id"]]
                 source, body = raw(data["book_record_id"])
@@ -147,29 +164,80 @@ def main(run_id):
                     ):
                         raise ValueError("Paper maker fill exceeds queue/tape evidence")
                     maker_count += 1
-                result = accumulators[order["id"]].fill(price, quantity, maker=order["style"] == "maker")
-                cash[order["account"]] += result["balance_change"]
-                fees[order["account"]] += result["net_fee"]
+                # Recompute fees without invoking the production fee accumulator.
+                schedule = order["fee_schedule"]
+                if schedule["fee_type"] not in ("quadratic", "quadratic_with_maker_fees"):
+                    raise ValueError("Unknown execution fee schedule")
+                coefficient = D(".07")
+                if order["style"] == "maker":
+                    coefficient = D(".0175") if schedule["fee_type"] == "quadratic_with_maker_fees" else D(0)
+                precision = D(schedule["balance_precision"])
+                if precision not in (D(".01"), D(".0001")):
+                    raise ValueError("Unknown balance precision")
+                trade_fee = (
+                    coefficient * D(schedule["multiplier"]) * price * (1 - price) * quantity
+                ).quantize(D(".000001"), rounding=ROUND_CEILING)
+                aligned = (-price * quantity - trade_fee).quantize(precision, rounding=ROUND_FLOOR)
+                rounding = -price * quantity - trade_fee - aligned
+                carried[order["id"]] += rounding
+                rebate = min(
+                    carried[order["id"]].quantize(precision, rounding=ROUND_FLOOR),
+                    (trade_fee + rounding).quantize(precision, rounding=ROUND_FLOOR),
+                )
+                carried[order["id"]] -= rebate
+                cash[order["account"]] += aligned + rebate
+                fees[order["account"]] += trade_fee + rounding - rebate
+                pkey = (order["account"], order["ticker"], order["side"])
+                quantities[pkey] += quantity
+                costs[pkey] -= aligned + rebate
+                if netted:
+                    keys = [(order["account"], order["ticker"], side) for side in ("yes", "no")]
+                    offset = min(quantities[k] for k in keys)
+                    if offset > 0:
+                        allocated = D(0)
+                        for k in keys:
+                            part = costs[k] * offset / quantities[k]
+                            allocated += part
+                            costs[k] -= part
+                            quantities[k] -= offset
+                        cash[order["account"]] += offset
+                        realized[order["account"]] += offset - allocated
+                        nettings += 1
             elif kind == "settlement":
                 source, body = raw(data["source_record_id"])
                 order = next(o for o in state["orders"].values() if o["event"] == data["event"])
                 _, forecast = raw(order["forecast_record_id"])
                 labels = finalized_labels(forecast, body)
-                if source["kind"] != "paper_settlement_source" or labels is None or labels != data["labels"]:
+                if (
+                    source["kind"] != "paper_settlement_source"
+                    or labels is None
+                    or labels != data["labels"]
+                    or parse_time(source["available_at"]) > parse_time(event["at"])
+                ):
                     raise ValueError("Paper settlement differs from finalized unchanged contracts")
                 for position in state["positions"].values():
                     if position["event"] == data["event"]:
                         y = labels[position["ticker"]]
-                        cash[position["account"]] += D(y if position["side"] == "yes" else 1 - y) * D(
-                            position["quantity"]
-                        )
+                        key = (position["account"], position["ticker"], position["side"])
+                        payout = D(y if position["side"] == "yes" else 1 - y) * quantities.pop(key)
+                        cash[position["account"]] += payout
+                        realized[position["account"]] += payout - costs.pop(key)
                         settlements += 1
-            state = reduce_event(state, event)
+            state = (reduce_netted if netted else reduce_event)(state, event)
         for account, actual in state["accounts"].items():
             if D(actual["cash"]) != cash[account] or D(actual["fees"]) != fees[account]:
                 raise ValueError("Independently accumulated cash/fees differ from ledger")
             if cash[account] < reserved(state, account):
                 raise ValueError("Paper reservations exceed remaining cash")
+            if D(actual["realized_pnl"]) != realized[account]:
+                raise ValueError("Independent realized profit differs from ledger")
+        actual_positions = {
+            (p["account"], p["ticker"], p["side"]): (D(p["quantity"]), D(p["cost"]))
+            for p in state["positions"].values()
+        }
+        expected_positions = {key: (quantity, costs[key]) for key, quantity in quantities.items() if quantity}
+        if actual_positions != expected_positions or (netted and len(state.get("nettings", [])) != nettings):
+            raise ValueError("Independent net positions or offsets differ from ledger")
         result = {
             "generated_at": iso(utcnow()),
             "run_record_id": run_id,
@@ -182,13 +250,19 @@ def main(run_id):
             "settled_positions_reproduced": settlements,
             "source_records_checked": len(sources),
             "cash_and_fees_reproduced": True,
+            "fees_recomputed_without_production_accumulator": True if taker_count + maker_count else None,
+            "net_positions_and_realized_pnl_reproduced": True if taker_count + maker_count else None,
+            "nettings_reproduced": nettings,
             "network_requests": 0,
             "real_money_orders": 0,
             "profitability_proven": False,
+            "scope_limit": "Raw execution arithmetic and recorded-order lineage; not actual fills, independent days, omitted-signal detection or forecast calibration.",
         }
         archive.db.commit()
-        archive.append("experiment_report", "E009_execution_replay", utcnow(), {}, canonical(result).encode())
-        Path("reports/E009_audit.json").write_text(json.dumps(result, indent=2))
+        archive.append(
+            "experiment_report", prefix + "_execution_replay", utcnow(), {}, canonical(result).encode()
+        )
+        Path("reports/" + prefix + "_audit.json").write_text(json.dumps(result, indent=2))
         print(json.dumps(result, indent=2))
     finally:
         archive.close()

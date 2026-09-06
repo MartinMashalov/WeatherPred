@@ -304,6 +304,39 @@ settlement source. No trading rule or profitable reaction effect is claimed.
 Source: [NOAA Aviation Weather Center data API](https://aviationweather.gov/data/api/).
 Code: [registered receipt collector](../research/experiments/e017_station_receipts.py).
 
+## 12. Conditional hourly forecasts with heavier tails — E018
+
+**Idea.** Warming and cooling hours need not have the same forecast error. Learn
+how the remaining temperature change depends on the recent trend and the time
+of day, while limiting how strongly a small training sample can change the model.
+Compare ordinary Gaussian errors with a fixed Student t distribution, which
+assigns more probability to large surprises.
+
+Twelve candidates combine one or two daily harmonics, three ridge penalties and
+two error distributions. A harmonic is a smooth repeating daily pattern; ridge
+penalization shrinks unstable coefficients. Four expanding training windows
+score the following two days each, all within August 20–31. One candidate is
+chosen across the three forecast horizons. September development data and the
+sealed final holdout are not used for this selection.
+
+**Development result.** The two-harmonic, strongest-penalty, Student t candidate
+is selected. Its earlier-fold temperature RMSE is 0.775°F versus 0.848°F for
+persistence and 1.022°F for trend. These eight August days also selected the
+candidate, so this comparison is a development diagnostic with selection bias.
+It is not independent validation or a profit result.
+
+**Forward test.** Model 59490 was frozen at 16:09 UTC on September 6, before the
+16:30, 16:45 and 16:55 decisions. A new cohort compares the chosen model and the
+four existing fresh-input baselines under four execution scenarios, in 20
+alternative $100 paper accounts. It uses original future books, conservative
+queues, fees, quarter-Kelly sizing, exposure caps and same-contract netting.
+All three decisions concern one hourly event; substantial forward evidence
+remains necessary.
+
+Code: [conditional distributions](../weatherpred/conditional_forecasts.py),
+[registered runner](../research/experiments/e018_conditional_hourly.py),
+[raw-source model replay](../research/experiments/e018_diagnostics.py).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,

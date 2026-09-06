@@ -56,6 +56,15 @@ matched cash offsets. Its [verification log](evidence/verification-2026-09-06-15
 records 95 passing tests. Audit counts across alternatives are not independent
 trades or proof of profitability.
 
+**16:21 UTC research update:** the second hourly event has finalized; cumulative
+realized results are negative in 31 of the 32 original paper alternatives, while
+one is +$0.6371 with further open positions. See the [two-event record](evidence/E009_two_settlements.json).
+A separately frozen [conditional hourly model](evidence/E018_model_card.json)
+adds time-of-day patterns, coefficient shrinkage and heavier-tailed errors.
+It was selected using August data only and registered before new 16:30–16:55
+paper decisions. Its development improvement is not independent validation.
+The [latest verification](evidence/E018_verification.txt) records 100 passing tests.
+
 ## What is implemented
 
 - **Data and provenance:** public GET ingestion; original forecast/report versions;

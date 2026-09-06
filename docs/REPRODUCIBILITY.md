@@ -95,6 +95,15 @@ projection places no orders. The E016 runner resumes with `--run-record-id 45913
 uses `data/netted_maker.lock`, and stops on `data/STOP_NETTED_MAKER`. Do not edit
 its pinned code while the registered cohort is running.
 
+E018 registration 59488 and model 59490 select a conditional hourly distribution
+using August data only, then create a separate netted paper cohort. With the
+original archive, run `uv run python research/experiments/e018_diagnostics.py`
+to rebuild its training rows and selection from raw sources. Run
+`uv run python research/experiments/e009_audit.py --run-record-id 59488` for the
+recorded execution audit. Resume the runner with both `--run-record-id 59488`
+and `--model-record-id 59490`; it uses `data/e018.lock` and `data/STOP_E018`.
+Missing a registered slot produces an explicit skip, never a backdated forecast.
+
 ## Evidence and limitations
 
 The [validation protocol](../config/validation.json) requires independent
