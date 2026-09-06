@@ -79,8 +79,8 @@ The [next model preflight](research/CHRONOS_COVARIATE_PREFLIGHT.md) separately
 runs twelve checks against the installed forecasting package. It catches a
 normalization problem before model evaluation and records a distinct proposed
 input design. The [guided-transformer experiment](research/GUIDED_TRANSFORMER.md)
-is registered and running after complete trajectory extraction; its results
-are not yet available. The [forecast-to-trade study design](research/FORECAST_TO_TRADE_BRIDGE.md)
+reduces quantile loss 12.01% versus the matched transformer, but remains
+5.18% worse than the 50/50 blend and fails its fixed advancement rule. The [forecast-to-trade study design](research/FORECAST_TO_TRADE_BRIDGE.md)
 identifies five matching hourly station markets and the remaining settlement
 identity checks before a new paper strategy can run.
 

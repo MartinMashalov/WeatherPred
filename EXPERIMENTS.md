@@ -1519,3 +1519,12 @@ with no fits or network requests. Integrity predictions are archived before
 comparisons, and completed forecasts before scoring labels. The run is in
 progress; no model result or trading improvement is claimed.
 [Design and explanation](research/GUIDED_TRANSFORMER.md).
+
+E031 report **167394** finishes in 70.56 seconds. Both new variants retain all
+9,870 cases, with 19,740 main predictions and 48 integrity predictions. Guided
+MAE is **1.6974°F** versus matched **1.9072°F**. Calibrated pinball loss improves
+12.01% against matched and 9.54% against NBH, but is **5.18% worse than the
+50/50 blend**. The fixed advancement rule fails. All six candidates and five
+comparisons remain; no criteria or references change. All four frozen reference
+scores reproduce and the internal independent scorer checks all six. A separate
+result audit is in preparation. [Results](evidence/E031_guided_forecasts.json).
