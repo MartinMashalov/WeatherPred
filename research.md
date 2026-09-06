@@ -455,3 +455,18 @@ forecast information on the reused development panel. It does not select a
 production model or establish an executable edge.
 [Full study](research/HYBRID_FORECASTS.md),
 [independent audit](evidence/E029_result_audit.json).
+
+## 2026-09-06 — One statistical trading referee, E032
+
+Hypothesis: learning conditional settlement probability or actual net dollars
+per attempted order may outperform the old fixedprice rules. Implemented
+15as-ofquote/calendar features, penalized logistic correction and two-head
+return ridge, six monthly fits, immutable fold predictions, strict labelmaturity,
+common delayedlimit broker, continuouscash and alltrial retention.
+
+Registered169699, completed169816/accepted169818 in49.96s. Costed/stress cash:
+cash200/200; midpoint200/200; logistic194.26/196.17; returnridge188.70/190.82.
+Reject both learnedmodels under fixedcriteria. Samefillslosebeforefees;
+returnridge67.3%hit rate doesnotcoverlossseverity. Next improveendpoint
+classification andtest a fixed market-regime hypothesis againstthe samebaseline.
+[Fullanalysis](research/STATISTICAL_LAB_RESULTS.md).

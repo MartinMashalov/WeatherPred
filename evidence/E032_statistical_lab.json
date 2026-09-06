@@ -1,0 +1,1029 @@
+{
+  "archive_record": {
+    "id": 169816,
+    "kind": "e032_report_gzip",
+    "body_sha256": "1f14d9feb4f5ad0304376308d15a9742f2c867ebe517abef45a6f0817679bbc1",
+    "record_sha256": "0852ceeb496ae0acb78e241e7bdaff72f1362b55f46f7e7f97c6961fb581b205"
+  },
+  "report": {
+    "actual_fills": 0,
+    "annual_account_scope": "365-day restricted research account; cash before March2026 and whenever unsupported/unselected. No historical data read from the sealed 2025 quarter. Not an optimal full-year opportunity result.",
+    "campaign_summary": {
+      "attempted_trials": 4,
+      "availability_mode": "conditional_historical",
+      "campaign_id": "E032-statistical-strategy-lab-v1:169699",
+      "committed_trials": 4,
+      "failures": 0,
+      "historical_availability_verified": false,
+      "os_sandbox": false,
+      "phase": "development",
+      "planned_trials": 4,
+      "profitability_proven": false,
+      "promotion_eligible": false,
+      "remaining_seconds": 1764.41951,
+      "reserved_seconds": 0,
+      "results": 4,
+      "running": [],
+      "source_lineage_independently_verified": false,
+      "spent_seconds": 35.58049
+    },
+    "campaign_verification": {
+      "chain_head": "0f160e31356da205d98280ae9b743e0d79a88fa05e0ace4b9c4bb6c161a9bb91",
+      "os_sandbox": false,
+      "records_verified": 13,
+      "source_lineage_independently_verified": false,
+      "trials": 4
+    },
+    "comparison": {
+      "bounds": {
+        "1": {
+          "active_candidates": 4,
+          "alpha": 0.016666666666666666,
+          "block_days": 1,
+          "critical_value": 2.6122529048363248,
+          "degenerate_candidates": 4,
+          "eligible": [
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "lower_bounds": [
+            null,
+            null,
+            -0.0005378548238577554,
+            -0.0004452124775761097,
+            null,
+            null,
+            -0.0007458450023683803,
+            -0.0006492425050466486
+          ],
+          "means": [
+            0.0,
+            0.0,
+            -0.00015407353742778927,
+            -0.00010230548310445732,
+            0.0,
+            0.0,
+            -0.0003077191226112779,
+            -0.0002486073609753263
+          ],
+          "n_candidates": 8,
+          "n_days": 189,
+          "quantile_method": "higher",
+          "resamples": 10000,
+          "seed": 6203201,
+          "standard_error_floor": 1e-14,
+          "standard_errors": [
+            0.0,
+            0.0,
+            0.0001469158233949835,
+            0.0001312686814652572,
+            0.0,
+            0.0,
+            0.00016771954926184836,
+            0.00015336767099754638
+          ]
+        },
+        "14": {
+          "active_candidates": 4,
+          "alpha": 0.016666666666666666,
+          "block_days": 14,
+          "critical_value": 2.46005623245453,
+          "degenerate_candidates": 4,
+          "eligible": [
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "lower_bounds": [
+            null,
+            null,
+            -0.00044783624857673793,
+            -0.0003698548912738665,
+            null,
+            null,
+            -0.0006964995547201263,
+            -0.0006865184516745562
+          ],
+          "means": [
+            0.0,
+            0.0,
+            -0.00015407353742778927,
+            -0.00010230548310445732,
+            0.0,
+            0.0,
+            -0.0003077191226112779,
+            -0.0002486073609753263
+          ],
+          "n_candidates": 8,
+          "n_days": 189,
+          "quantile_method": "higher",
+          "resamples": 10000,
+          "seed": 6203201,
+          "standard_error_floor": 1e-14,
+          "standard_errors": [
+            0.0,
+            0.0,
+            0.00011941300661076589,
+            0.00010875743596416116,
+            0.0,
+            0.0,
+            0.00015803721353187987,
+            0.00017800856944733432
+          ]
+        },
+        "7": {
+          "active_candidates": 4,
+          "alpha": 0.016666666666666666,
+          "block_days": 7,
+          "critical_value": 2.535022353063146,
+          "degenerate_candidates": 4,
+          "eligible": [
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "lower_bounds": [
+            null,
+            null,
+            -0.000478024971649874,
+            -0.0003662464110657223,
+            null,
+            null,
+            -0.0007176948638253336,
+            -0.0006752808918975504
+          ],
+          "means": [
+            0.0,
+            0.0,
+            -0.00015407353742778927,
+            -0.00010230548310445732,
+            0.0,
+            0.0,
+            -0.0003077191226112779,
+            -0.0002486073609753263
+          ],
+          "n_candidates": 8,
+          "n_days": 189,
+          "quantile_method": "higher",
+          "resamples": 10000,
+          "seed": 6203201,
+          "standard_error_floor": 1e-14,
+          "standard_errors": [
+            0.0,
+            0.0,
+            0.00012779036596290532,
+            0.00010411779116753624,
+            0.0,
+            0.0,
+            0.00016172470460415044,
+            0.00016831154581602062
+          ]
+        }
+      },
+      "columns": [
+        "cash:costed",
+        "cash:stress",
+        "logistic_offset:costed",
+        "logistic_offset:stress",
+        "midpoint:costed",
+        "midpoint:stress",
+        "ridge_net_return:costed",
+        "ridge_net_return:stress"
+      ],
+      "interpretation": "Descriptive reused-development bounds. No correction removes prior adaptive reuse; no untouched or forward validation. Cost-basis growth is not executable liquidation growth.",
+      "missing_columns": [],
+      "planned_columns": [
+        "cash:costed",
+        "cash:stress",
+        "midpoint:costed",
+        "midpoint:stress",
+        "logistic_offset:costed",
+        "logistic_offset:stress",
+        "ridge_net_return:costed",
+        "ridge_net_return:stress"
+      ],
+      "research_gate": {
+        "cash": {
+          "further_research_candidate": false,
+          "promotion_eligible": false,
+          "reasons": [
+            "costed:nonpositive_cash_profit",
+            "costed:insufficient_release_days",
+            "costed:nonpositive_or_degenerate_1d_bound",
+            "costed:nonpositive_or_degenerate_7d_bound",
+            "costed:nonpositive_or_degenerate_14d_bound",
+            "stress:nonpositive_cash_profit",
+            "stress:insufficient_release_days",
+            "stress:nonpositive_or_degenerate_1d_bound",
+            "stress:nonpositive_or_degenerate_7d_bound",
+            "stress:nonpositive_or_degenerate_14d_bound"
+          ]
+        },
+        "logistic_offset": {
+          "further_research_candidate": false,
+          "promotion_eligible": false,
+          "reasons": [
+            "costed:nonpositive_cash_profit",
+            "costed:insufficient_release_days",
+            "costed:nonpositive_or_degenerate_1d_bound",
+            "costed:nonpositive_or_degenerate_7d_bound",
+            "costed:nonpositive_or_degenerate_14d_bound",
+            "stress:nonpositive_cash_profit",
+            "stress:insufficient_release_days",
+            "stress:nonpositive_or_degenerate_1d_bound",
+            "stress:nonpositive_or_degenerate_7d_bound",
+            "stress:nonpositive_or_degenerate_14d_bound"
+          ]
+        },
+        "midpoint": {
+          "further_research_candidate": false,
+          "promotion_eligible": false,
+          "reasons": [
+            "costed:nonpositive_cash_profit",
+            "costed:insufficient_release_days",
+            "costed:nonpositive_or_degenerate_1d_bound",
+            "costed:nonpositive_or_degenerate_7d_bound",
+            "costed:nonpositive_or_degenerate_14d_bound",
+            "stress:nonpositive_cash_profit",
+            "stress:insufficient_release_days",
+            "stress:nonpositive_or_degenerate_1d_bound",
+            "stress:nonpositive_or_degenerate_7d_bound",
+            "stress:nonpositive_or_degenerate_14d_bound"
+          ]
+        },
+        "ridge_net_return": {
+          "further_research_candidate": false,
+          "promotion_eligible": false,
+          "reasons": [
+            "costed:nonpositive_cash_profit",
+            "costed:nonpositive_or_degenerate_1d_bound",
+            "costed:nonpositive_or_degenerate_7d_bound",
+            "costed:nonpositive_or_degenerate_14d_bound",
+            "stress:nonpositive_cash_profit",
+            "stress:insufficient_release_days",
+            "stress:nonpositive_or_degenerate_1d_bound",
+            "stress:nonpositive_or_degenerate_7d_bound",
+            "stress:nonpositive_or_degenerate_14d_bound"
+          ]
+        }
+      }
+    },
+    "config": {
+      "account_end": "2026-09-06",
+      "account_start": "2025-09-06",
+      "availability_mode": "conditional_historical",
+      "bootstrap_block_days": [
+        1,
+        7,
+        14
+      ],
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 6203201,
+      "candidates": [
+        {
+          "id": "cash",
+          "requires_fit": false
+        },
+        {
+          "id": "midpoint",
+          "requires_fit": false
+        },
+        {
+          "id": "logistic_offset",
+          "requires_fit": true
+        },
+        {
+          "id": "ridge_net_return",
+          "requires_fit": true
+        }
+      ],
+      "conditional_depth_cap": 100,
+      "cpu_threads": 2,
+      "dataset_body_sha256": "c66da448a05a72893cde1b1bc19f87074ca929e7eb3eac16a07f60f3c9d3eddc",
+      "dataset_record_id": 128360,
+      "decision_buffer_days": 5,
+      "decision_horizon_hours": 12,
+      "drawdown_kill_fraction": "0.20",
+      "experiment": "E032-statistical-strategy-lab-v1",
+      "familywise_alpha": 0.05,
+      "fit_dates": [
+        "2026-03-01",
+        "2026-04-01",
+        "2026-05-01",
+        "2026-06-01",
+        "2026-07-01",
+        "2026-08-01"
+      ],
+      "historical_execution_verified": false,
+      "initial_cash": "200.00",
+      "limit_allowance": "0.01",
+      "limits": "Historical bar closes are exact archived quotes, not measured fills. Unknown depth is explicitly capped at100 per attempted fill; displayed historical depth, queue position, intrabar path, trade tape and contemporaneous fees are unavailable. Actual September receipts remain separate from assumed earlier times. Candidates are trusted reviewed Python functions with restricted arguments, not OS-sandboxed programs. No inventory-conditioned maker policy, automatic trading or annual-optimality claim.",
+      "max_cluster_fraction": "0.10",
+      "max_event_fraction": "0.05",
+      "max_memory_bytes": 4294967296,
+      "max_total_fraction": "0.25",
+      "max_total_seconds": 1800,
+      "max_trial_seconds": 600,
+      "max_trials": 4,
+      "maximum_spread": "0.08",
+      "minimum_predicted_edge": 0.03,
+      "minimum_research_release_days": 60,
+      "minimum_training_days": 45,
+      "phase": "development",
+      "prior_research": "All 2026 data are reused development after E024. Its 576 rules, 2304 policy/risk pairs and 13824 annual training accounts remain prior comparisons, not independent evidence. E032 changes the model target and starts monthly development evaluation in March. It does not revise E024 or its cash result. The sealed 2025 quarter is never read; its account prefix is cash.",
+      "promotion_eligible": false,
+      "research_gate": "Only consider a candidate for another registered research batch if ending cash exceeds200 in BOTH fixed execution scenarios, no unresolved holdings or pending orders, at least60 distinct release days in BOTH, no drawdown kill, and all three day-block simultaneous lower bounds are positive. This is a descriptive reused-development gate, never production promotion or proof of future profit.",
+      "risk_fraction": "0.01",
+      "scenarios": [
+        {
+          "entry_coefficient": "0.07",
+          "entry_delay_hours": 1,
+          "exit_coefficient": "0.07",
+          "name": "costed",
+          "slippage": "0.01"
+        },
+        {
+          "entry_coefficient": "0.07",
+          "entry_delay_hours": 2,
+          "exit_coefficient": "0.07",
+          "name": "stress",
+          "slippage": "0.02"
+        }
+      ],
+      "training_scenario": "costed",
+      "training_start": "2026-01-01"
+    },
+    "coverage": {
+      "complete_features": 5150,
+      "events": 1575,
+      "excluded": 966,
+      "input_contracts": 10416,
+      "opportunities": 9450
+    },
+    "experiment": "E032-statistical-strategy-lab-v1",
+    "feature_record": {
+      "body_sha256": "8461857c507d1a50c8c6acdce67d25af1464d33455a13cd2afa601671b5b35b0",
+      "record_id": 169702,
+      "record_sha256": "7e04507c1f5d0d790377b51e50bab857dda919553c34fdc6e3e1ced137b84cb7"
+    },
+    "profitability_proven": false,
+    "promotion_eligible": false,
+    "registration_record_id": 169699,
+    "resource_acceptance": "Pending separate parent supervisor receipt; a worker report alone is not an accepted campaign.",
+    "trials": [
+      {
+        "account_records": {
+          "costed": {
+            "body_sha256": "fe69437cc3d3ed9c9ef547ce6ef1ea9d69fbdd77c695f6068bbe4e6cc3a9cd85",
+            "record_id": 169718,
+            "record_sha256": "0ee0bbd485e66710e4a2511d758f9ba71ded63a96dcaa686391dfbbf16fb5b4e"
+          },
+          "stress": {
+            "body_sha256": "17266639d320d860a1502cca89079a2d90d1661cebec603ea368e5a5716bc103",
+            "record_id": 169720,
+            "record_sha256": "a1a1ac6ca3d834fc79e95f7c801757623e72a046618c6b859bc351469d37c7b6"
+          }
+        },
+        "candidate_id": "cash",
+        "elapsed_seconds": 5.031644500006223,
+        "evaluation_end": "2026-09-06T00:00:00+00:00",
+        "forecast_metrics": {
+          "brier": null,
+          "days": 0,
+          "known_return_targets": 0,
+          "log_loss": null,
+          "net_return_days": 0,
+          "net_return_mse": null,
+          "probability_scope": "Individual binary marginals; no claim that fitted probabilities sum to one across a ladder",
+          "return_prediction_note": "Raw ridge estimates are not calibrated profit guarantees; no post-score clipping. Unknown targets are excluded from error metrics and retained in coverage.",
+          "return_prediction_range": null,
+          "return_predictions_outside_unit_payoff_range": 0,
+          "unknown_return_targets": 0,
+          "weighting": "equal days, equal events within day, equal eligible contracts within event"
+        },
+        "label_artifact_sha256": "41e0a3f1cbcc40edb74f89bff09228b143fef9e33cec41dd1eb98f5469e92521",
+        "label_record": {
+          "body_sha256": "c342cbf9f13190daf701c4300fe8dbb86d3db2adbae3184791543752a016790f",
+          "record_id": 169716,
+          "record_sha256": "707181e195caff98cb58e32ad472608afc3b2c9120616d4b516dfc7758bd988b"
+        },
+        "metrics": {
+          "costed": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 200.0,
+              "entries": 0,
+              "historical_fills_verified": false,
+              "journal_rows": 0,
+              "releases": 0
+            },
+            "annual_log_cash_growth": 0.0,
+            "by_series": {},
+            "cash": 200.0,
+            "closed_trades": 0,
+            "cost_basis_equity": 200.0,
+            "drawdown_killed": false,
+            "endpoint_statuses": {},
+            "entered_trades": 0,
+            "gross_gains": 0,
+            "gross_losses": 0,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.0,
+            "max_zero_mark_drawdown": 0.0,
+            "no_trade_reasons": {},
+            "pending_orders": 0,
+            "profit_factor": null,
+            "realized_pnl": 0.0,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 0,
+            "total_fees": 0.0,
+            "unresolved_holdings": 0,
+            "win_fraction": null,
+            "zero_mark_equity": 200.0
+          },
+          "stress": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 200.0,
+              "entries": 0,
+              "historical_fills_verified": false,
+              "journal_rows": 0,
+              "releases": 0
+            },
+            "annual_log_cash_growth": 0.0,
+            "by_series": {},
+            "cash": 200.0,
+            "closed_trades": 0,
+            "cost_basis_equity": 200.0,
+            "drawdown_killed": false,
+            "endpoint_statuses": {},
+            "entered_trades": 0,
+            "gross_gains": 0,
+            "gross_losses": 0,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.0,
+            "max_zero_mark_drawdown": 0.0,
+            "no_trade_reasons": {},
+            "pending_orders": 0,
+            "profit_factor": null,
+            "realized_pnl": 0.0,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 0,
+            "total_fees": 0.0,
+            "unresolved_holdings": 0,
+            "win_fraction": null,
+            "zero_mark_equity": 200.0
+          }
+        },
+        "prediction_record": {
+          "body_sha256": "924e3e4de3259510e7ca3e3250cde5f1f9a79ec838e85078cab15d55f9fbcd38",
+          "record_id": 169715,
+          "record_sha256": "5eeb57d6e8a60e226e1181e20d96f34b346f3d0c419f1501d8e920b1eefa2559"
+        },
+        "prediction_sha256": "55763f6a7fb11eaeb694f6f91c0826421e6f1954f662b09246c65ea87bbb77e1",
+        "promotion_eligible": false,
+        "status": "completed"
+      },
+      {
+        "account_records": {
+          "costed": {
+            "body_sha256": "2925fafc0e9ee1972252c562cfc61c7bf70bd33aef58cda420c681ea4c97ebdc",
+            "record_id": 169737,
+            "record_sha256": "3808b06c8f15b076ba7c6d7c42ca083db6d7d520cb806d9f273cba24b5f78d08"
+          },
+          "stress": {
+            "body_sha256": "1aa42ef964549f098709b4d77c7674c42f8d7909a4488432fbaaa81a56790057",
+            "record_id": 169739,
+            "record_sha256": "1cb9f5e08a908eadf1a5b6632940ee2875e65d5f7ab58d8abcf3a5bb496ea516"
+          }
+        },
+        "candidate_id": "midpoint",
+        "elapsed_seconds": 5.291506249981467,
+        "evaluation_end": "2026-09-06T00:00:00+00:00",
+        "forecast_metrics": {
+          "brier": 0.12802393858170777,
+          "days": 166,
+          "known_return_targets": 0,
+          "log_loss": 0.39192323702514215,
+          "net_return_days": 0,
+          "net_return_mse": null,
+          "probability_scope": "Individual binary marginals; no claim that fitted probabilities sum to one across a ladder",
+          "return_prediction_note": "Raw ridge estimates are not calibrated profit guarantees; no post-score clipping. Unknown targets are excluded from error metrics and retained in coverage.",
+          "return_prediction_range": null,
+          "return_predictions_outside_unit_payoff_range": 0,
+          "unknown_return_targets": 0,
+          "weighting": "equal days, equal events within day, equal eligible contracts within event"
+        },
+        "label_artifact_sha256": "41e0a3f1cbcc40edb74f89bff09228b143fef9e33cec41dd1eb98f5469e92521",
+        "label_record": {
+          "body_sha256": "c342cbf9f13190daf701c4300fe8dbb86d3db2adbae3184791543752a016790f",
+          "record_id": 169735,
+          "record_sha256": "f9ec23969e75c27b1d26ae07b184e4d8da390ba6ee380bec042f532e07bf581b"
+        },
+        "metrics": {
+          "costed": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 200.0,
+              "entries": 0,
+              "historical_fills_verified": false,
+              "journal_rows": 0,
+              "releases": 0
+            },
+            "annual_log_cash_growth": 0.0,
+            "by_series": {},
+            "cash": 200.0,
+            "closed_trades": 0,
+            "cost_basis_equity": 200.0,
+            "drawdown_killed": false,
+            "endpoint_statuses": {},
+            "entered_trades": 0,
+            "gross_gains": 0,
+            "gross_losses": 0,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.0,
+            "max_zero_mark_drawdown": 0.0,
+            "no_trade_reasons": {},
+            "pending_orders": 0,
+            "profit_factor": null,
+            "realized_pnl": 0.0,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 0,
+            "total_fees": 0.0,
+            "unresolved_holdings": 0,
+            "win_fraction": null,
+            "zero_mark_equity": 200.0
+          },
+          "stress": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 200.0,
+              "entries": 0,
+              "historical_fills_verified": false,
+              "journal_rows": 0,
+              "releases": 0
+            },
+            "annual_log_cash_growth": 0.0,
+            "by_series": {},
+            "cash": 200.0,
+            "closed_trades": 0,
+            "cost_basis_equity": 200.0,
+            "drawdown_killed": false,
+            "endpoint_statuses": {},
+            "entered_trades": 0,
+            "gross_gains": 0,
+            "gross_losses": 0,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.0,
+            "max_zero_mark_drawdown": 0.0,
+            "no_trade_reasons": {},
+            "pending_orders": 0,
+            "profit_factor": null,
+            "realized_pnl": 0.0,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 0,
+            "total_fees": 0.0,
+            "unresolved_holdings": 0,
+            "win_fraction": null,
+            "zero_mark_equity": 200.0
+          }
+        },
+        "prediction_record": {
+          "body_sha256": "1a1e011990ff9807c12ce483618fcc5fe195bcc7ab7da67e82a717a4ab931765",
+          "record_id": 169734,
+          "record_sha256": "6962b3e6532f4df3d2c38ab98b2f44e070e32d15cb5c86775b82ec33ba51b5b3"
+        },
+        "prediction_sha256": "be000402f281d51e7038eede189284ac50561c2b3383bcdbcafa68dbe9fecb20",
+        "promotion_eligible": false,
+        "status": "completed"
+      },
+      {
+        "account_records": {
+          "costed": {
+            "body_sha256": "416e88dd477322659427ba7dbfdd8e498dff2cfe9f8e8326264a4c92fe89a9e6",
+            "record_id": 169764,
+            "record_sha256": "bb3899e57275c03a9f5b24402b73c98a504a4003665182542ba6272f401cde5a"
+          },
+          "stress": {
+            "body_sha256": "b1d3b1d73703d6713c505a51bc279e7f6d58413d2417a891a7561babe545001e",
+            "record_id": 169766,
+            "record_sha256": "1b38540530e305186b6d42010cb34ed9b579ee690eaaf3232c9d5ae19ab2ac41"
+          }
+        },
+        "candidate_id": "logistic_offset",
+        "elapsed_seconds": 8.935054416011553,
+        "evaluation_end": "2026-09-06T00:00:00+00:00",
+        "forecast_metrics": {
+          "brier": 0.12921909008637122,
+          "days": 166,
+          "known_return_targets": 0,
+          "log_loss": 0.3925772428683677,
+          "net_return_days": 0,
+          "net_return_mse": null,
+          "probability_scope": "Individual binary marginals; no claim that fitted probabilities sum to one across a ladder",
+          "return_prediction_note": "Raw ridge estimates are not calibrated profit guarantees; no post-score clipping. Unknown targets are excluded from error metrics and retained in coverage.",
+          "return_prediction_range": null,
+          "return_predictions_outside_unit_payoff_range": 0,
+          "unknown_return_targets": 0,
+          "weighting": "equal days, equal events within day, equal eligible contracts within event"
+        },
+        "label_artifact_sha256": "41e0a3f1cbcc40edb74f89bff09228b143fef9e33cec41dd1eb98f5469e92521",
+        "label_record": {
+          "body_sha256": "c342cbf9f13190daf701c4300fe8dbb86d3db2adbae3184791543752a016790f",
+          "record_id": 169762,
+          "record_sha256": "70c662252e79cf0de0d3b07def05056bec9db4e149fc12c453cb78470c38d7b5"
+        },
+        "metrics": {
+          "costed": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 194.26,
+              "entries": 20,
+              "historical_fills_verified": false,
+              "journal_rows": 164,
+              "releases": 20
+            },
+            "annual_log_cash_growth": -0.029119898573852238,
+            "by_series": {
+              "KXHIGHAUS": {
+                "pnl": -0.0900000000000003,
+                "trades": 3
+              },
+              "KXHIGHCHI": {
+                "pnl": -1.84,
+                "trades": 3
+              },
+              "KXHIGHDEN": {
+                "pnl": -0.06000000000000005,
+                "trades": 2
+              },
+              "KXHIGHLAX": {
+                "pnl": -1.29,
+                "trades": 2
+              },
+              "KXHIGHMIA": {
+                "pnl": -1.5100000000000002,
+                "trades": 6
+              },
+              "KXHIGHNY": {
+                "pnl": 0.45999999999999996,
+                "trades": 3
+              },
+              "KXHIGHPHIL": {
+                "pnl": -1.41,
+                "trades": 1
+              }
+            },
+            "cash": 194.26,
+            "closed_trades": 20,
+            "cost_basis_equity": 194.26,
+            "drawdown_killed": false,
+            "endpoint_statuses": {
+              "known_limit_rejection": 46,
+              "settled_conditional_fill": 20,
+              "unknown_missing_entry_endpoint": 6
+            },
+            "entered_trades": 20,
+            "gross_gains": 7.93,
+            "gross_losses": 13.67,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.029039836057379916,
+            "max_zero_mark_drawdown": 0.0349877542859999,
+            "no_trade_reasons": {
+              "entry_limit_not_met": 46,
+              "missing_entry_quote": 6
+            },
+            "pending_orders": 0,
+            "profit_factor": 0.5801024140453548,
+            "realized_pnl": -5.74,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 18,
+            "total_fees": 0.84,
+            "unresolved_holdings": 0,
+            "win_fraction": 0.25,
+            "zero_mark_equity": 194.26
+          },
+          "stress": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 196.17,
+              "entries": 20,
+              "historical_fills_verified": false,
+              "journal_rows": 164,
+              "releases": 20
+            },
+            "annual_log_cash_growth": -0.019335736306742526,
+            "by_series": {
+              "KXHIGHAUS": {
+                "pnl": -1.83,
+                "trades": 4
+              },
+              "KXHIGHCHI": {
+                "pnl": -1.52,
+                "trades": 2
+              },
+              "KXHIGHDEN": {
+                "pnl": 1.16,
+                "trades": 4
+              },
+              "KXHIGHLAX": {
+                "pnl": -0.7,
+                "trades": 1
+              },
+              "KXHIGHMIA": {
+                "pnl": -0.13999999999999996,
+                "trades": 4
+              },
+              "KXHIGHNY": {
+                "pnl": -1.7199999999999998,
+                "trades": 3
+              },
+              "KXHIGHPHIL": {
+                "pnl": 0.9199999999999999,
+                "trades": 2
+              }
+            },
+            "cash": 196.17,
+            "closed_trades": 20,
+            "cost_basis_equity": 196.17,
+            "drawdown_killed": false,
+            "endpoint_statuses": {
+              "known_limit_rejection": 38,
+              "settled_conditional_fill": 20,
+              "unknown_missing_entry_endpoint": 14
+            },
+            "entered_trades": 20,
+            "gross_gains": 7.83,
+            "gross_losses": 11.66,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.03852374650786649,
+            "max_zero_mark_drawdown": 0.045532519727491054,
+            "no_trade_reasons": {
+              "entry_limit_not_met": 38,
+              "missing_entry_quote": 14
+            },
+            "pending_orders": 0,
+            "profit_factor": 0.6715265866209262,
+            "realized_pnl": -3.83,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 19,
+            "total_fees": 0.85,
+            "unresolved_holdings": 0,
+            "win_fraction": 0.35,
+            "zero_mark_equity": 196.17
+          }
+        },
+        "prediction_record": {
+          "body_sha256": "0d8de3186ca9b2fc9be6b4d1378c657b283ef4333d389f6e6ee975c3207cb864",
+          "record_id": 169759,
+          "record_sha256": "dcfe854f2b4e6d8262bd991aec921ca51a1bc8894d85f765cd96bff7e8060a89"
+        },
+        "prediction_sha256": "8b3c60d10812304205b32fa3c19f8f3d852e180d8a60cc09bd726c7a585ecb06",
+        "promotion_eligible": false,
+        "status": "completed"
+      },
+      {
+        "account_records": {
+          "costed": {
+            "body_sha256": "efef2474e7de96ff758bd37a4cc968f308ba5dc0dd806e72b8bc0c6e037d1a9d",
+            "record_id": 169812,
+            "record_sha256": "250eb6453b49a22898e46c9a83aceb1028587a24c812a46015130c0a0de876b0"
+          },
+          "stress": {
+            "body_sha256": "d5aad05fa4f746f8184d2505cb98eb19b8d606896d8cdece3b335c2bc56f90da",
+            "record_id": 169814,
+            "record_sha256": "fe5b19f00852c69e378918a1446377dfd1ecbbb11f666528d3aede7793935a7a"
+          }
+        },
+        "candidate_id": "ridge_net_return",
+        "elapsed_seconds": 9.96244599999045,
+        "evaluation_end": "2026-09-06T00:00:00+00:00",
+        "forecast_metrics": {
+          "brier": null,
+          "days": 0,
+          "known_return_targets": 6113,
+          "log_loss": null,
+          "net_return_days": 166,
+          "net_return_mse": 0.060413552541191844,
+          "probability_scope": "Individual binary marginals; no claim that fitted probabilities sum to one across a ladder",
+          "return_prediction_note": "Raw ridge estimates are not calibrated profit guarantees; no post-score clipping. Unknown targets are excluded from error metrics and retained in coverage.",
+          "return_prediction_range": [
+            -0.11105762007866701,
+            0.099996694941508
+          ],
+          "return_predictions_outside_unit_payoff_range": 0,
+          "unknown_return_targets": 1163,
+          "weighting": "equal days, equal events within day, equal eligible contracts within event"
+        },
+        "label_artifact_sha256": "41e0a3f1cbcc40edb74f89bff09228b143fef9e33cec41dd1eb98f5469e92521",
+        "label_record": {
+          "body_sha256": "c342cbf9f13190daf701c4300fe8dbb86d3db2adbae3184791543752a016790f",
+          "record_id": 169810,
+          "record_sha256": "011ca77fc272205c852a6a8d83fc7c7a18ae5e899c4e776311ba41f7419ee024"
+        },
+        "metrics": {
+          "costed": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 188.7,
+              "entries": 101,
+              "historical_fills_verified": false,
+              "journal_rows": 737,
+              "releases": 101
+            },
+            "annual_log_cash_growth": -0.05815891417353226,
+            "by_series": {
+              "KXHIGHAUS": {
+                "pnl": -0.2799999999999999,
+                "trades": 25
+              },
+              "KXHIGHCHI": {
+                "pnl": -2.1199999999999997,
+                "trades": 19
+              },
+              "KXHIGHDEN": {
+                "pnl": -0.5,
+                "trades": 7
+              },
+              "KXHIGHLAX": {
+                "pnl": -4.0600000000000005,
+                "trades": 6
+              },
+              "KXHIGHMIA": {
+                "pnl": -0.2600000000000001,
+                "trades": 23
+              },
+              "KXHIGHNY": {
+                "pnl": -4.240000000000001,
+                "trades": 19
+              },
+              "KXHIGHPHIL": {
+                "pnl": 0.16,
+                "trades": 2
+              }
+            },
+            "cash": 188.7,
+            "closed_trades": 101,
+            "cost_basis_equity": 188.7,
+            "drawdown_killed": false,
+            "endpoint_statuses": {
+              "known_limit_rejection": 138,
+              "settled_conditional_fill": 101,
+              "unknown_missing_entry_endpoint": 79
+            },
+            "entered_trades": 101,
+            "gross_gains": 13.45,
+            "gross_losses": 24.75,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.06431298656220559,
+            "max_zero_mark_drawdown": 0.06412736199970243,
+            "no_trade_reasons": {
+              "entry_limit_not_met": 138,
+              "missing_entry_quote": 79
+            },
+            "pending_orders": 0,
+            "profit_factor": 0.5434343434343434,
+            "realized_pnl": -11.3,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 65,
+            "total_fees": 2.18,
+            "unresolved_holdings": 0,
+            "win_fraction": 0.6732673267326733,
+            "zero_mark_equity": 188.7
+          },
+          "stress": {
+            "accounting_audit": {
+              "accounting_reproduced": true,
+              "daily_rows": 365,
+              "ending_cash": 190.82,
+              "entries": 54,
+              "historical_fills_verified": false,
+              "journal_rows": 690,
+              "releases": 54
+            },
+            "annual_log_cash_growth": -0.04698679122433687,
+            "by_series": {
+              "KXHIGHAUS": {
+                "pnl": -0.029999999999999832,
+                "trades": 15
+              },
+              "KXHIGHCHI": {
+                "pnl": -7.230000000000001,
+                "trades": 10
+              },
+              "KXHIGHDEN": {
+                "pnl": -0.03,
+                "trades": 4
+              },
+              "KXHIGHLAX": {
+                "pnl": -0.24,
+                "trades": 3
+              },
+              "KXHIGHMIA": {
+                "pnl": -0.16999999999999998,
+                "trades": 9
+              },
+              "KXHIGHNY": {
+                "pnl": -1.4799999999999998,
+                "trades": 13
+              }
+            },
+            "cash": 190.82,
+            "closed_trades": 54,
+            "cost_basis_equity": 190.82,
+            "drawdown_killed": false,
+            "endpoint_statuses": {
+              "known_limit_rejection": 125,
+              "settled_conditional_fill": 54,
+              "unknown_missing_entry_endpoint": 139
+            },
+            "entered_trades": 54,
+            "gross_gains": 8.78,
+            "gross_losses": 17.96,
+            "liquidation_mark_available": false,
+            "max_cost_basis_drawdown": 0.05918035212309513,
+            "max_zero_mark_drawdown": 0.0640134142131479,
+            "no_trade_reasons": {
+              "entry_limit_not_met": 125,
+              "missing_entry_quote": 139
+            },
+            "pending_orders": 0,
+            "profit_factor": 0.4888641425389754,
+            "realized_pnl": -9.18,
+            "receipt_verified_ending_cash": 200.0,
+            "release_days": 40,
+            "total_fees": 1.28,
+            "unresolved_holdings": 0,
+            "win_fraction": 0.6481481481481481,
+            "zero_mark_equity": 190.82
+          }
+        },
+        "prediction_record": {
+          "body_sha256": "8e9b53a6ad82d9fe5ac8180a153a562fdabbcde4ab44340f47d95466382ef984",
+          "record_id": 169809,
+          "record_sha256": "69e136042bd49646785174063ec793fa5db1e436b75c73905abe7bfdca954c31"
+        },
+        "prediction_sha256": "3325f535a9d23c6bc6c425ee6169cd6efb99591e7b1c6eb1f17bec389b548bd1",
+        "promotion_eligible": false,
+        "status": "completed"
+      }
+    ]
+  },
+  "resource_acceptance": {
+    "complete_candidate_family": true,
+    "promotion_eligible": false,
+    "resource_limits_accepted": true,
+    "resource_record": {
+      "body_sha256": "921e4b3a4d6a3ce5c44b026059c5a0ecf22530dc922d2268e057201d3e9f55ca",
+      "record_id": 169817,
+      "record_sha256": "3d90819ef0401aab8ebb12806e2ee2c1bfa650aab65f51ed3b2edd1ea3d2cf66"
+    },
+    "worker_report_body_sha256": "1f14d9feb4f5ad0304376308d15a9742f2c867ebe517abef45a6f0817679bbc1",
+    "worker_report_record_id": 169816
+  },
+  "resources": {
+    "automatic_retry": false,
+    "elapsed_seconds": 49.95936583401635,
+    "logs": {
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 1083,
+        "sha256": "bddcda41b16e337613a7fe447298477a4cb6671147470d512b44de8c3b008a8d"
+      }
+    },
+    "maximum_sampled_rss_bytes": 2262941696,
+    "process_group_termination_sent": true,
+    "reason": null,
+    "returncode": 0,
+    "rss_bytes_limit": 4294967296,
+    "rss_monitor": "process-group sum sampled at approximately 0.2s; child also reports its peak",
+    "status": "completed",
+    "wall_seconds_limit": 1800
+  }
+}

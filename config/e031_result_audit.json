@@ -1,0 +1,16 @@
+{
+  "experiment": "E031-independent-result-or-failure-audit-v1",
+  "model_registration_id": 166868,
+  "wall_seconds": 600,
+  "cpu_threads": 2,
+  "attempts": 1,
+  "model_inferences": 0,
+  "model_fits": 0,
+  "network_requests": 0,
+  "expected_cases": 9870,
+  "expected_calibration_cases": 3271,
+  "expected_development_cases": 6599,
+  "stop_file": "data/STOP_E031_AUDIT",
+  "shared_helpers": "E031 load_sources/validate_config checks frozen design, extraction and original source lineage; it does not generate forecasts. E022 observations/prepared_summary/reconstruct_scores independently rebuild contexts, calibration and metrics. E026 read_record/pin/exact_tree provide archive and comparison utilities. Batch census, output step extraction, integrity differences, gains and bootstrap are implemented separately here. Parameter equality is checked against retained hashes, with checkpoint file hashes verified; no model is loaded to regenerate a parameter hash. No independent proof of actual historical publication or unobserved process behavior is claimed.",
+  "result_bodies_read_before_registration": false
+}

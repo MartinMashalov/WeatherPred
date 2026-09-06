@@ -108,7 +108,10 @@ the required 5% improvement are changed after this result.
 | 75% transformer blend | −0.001290 | [−0.027280, +0.024700] |
 
 All six candidates' scores are also reconstructed by the original independent
-E022 scorer inside the run. A separately registered result audit is being
-prepared. This is reused development evidence, with no untouched validation,
+E022 scorer inside the run. Separate audit registration **167998**, report **168000**, reconstructs all six
+scores and five block-bootstrap comparisons, checks 464 main batches and eight
+integrity calls, and reproduces the failed advancement decision. Maximum score
+arithmetic difference is 3.56×10⁻¹⁵. It makes no new model calls.
+[Audit evidence](../evidence/E031_result_audit.json). This is reused development evidence, with no untouched validation,
 settlement-probability result or trading return.
 [All registered results](../evidence/E031_guided_forecasts.json).

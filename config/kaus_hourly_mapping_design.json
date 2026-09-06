@@ -1,0 +1,390 @@
+{
+  "$schema": "./kaus_hourly_mapping.schema.json",
+  "cases": [
+    {
+      "case_id": "KAUS:20260908T000000Z",
+      "decision_utc": "2026-09-07T23:00:00Z",
+      "display_eastern": "2026-09-07T20:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0720",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-07T19:00:00-05:00",
+      "station_local_date": "2026-09-07",
+      "station_local_fold": 0,
+      "station_local_hour": 19,
+      "target_utc": "2026-09-08T00:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260908T060000Z",
+      "decision_utc": "2026-09-08T05:00:00Z",
+      "display_eastern": "2026-09-08T02:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0802",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-08T01:00:00-05:00",
+      "station_local_date": "2026-09-08",
+      "station_local_fold": 0,
+      "station_local_hour": 1,
+      "target_utc": "2026-09-08T06:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260908T120000Z",
+      "decision_utc": "2026-09-08T11:00:00Z",
+      "display_eastern": "2026-09-08T08:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0808",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-08T07:00:00-05:00",
+      "station_local_date": "2026-09-08",
+      "station_local_fold": 0,
+      "station_local_hour": 7,
+      "target_utc": "2026-09-08T12:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260908T180000Z",
+      "decision_utc": "2026-09-08T17:00:00Z",
+      "display_eastern": "2026-09-08T14:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0814",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-08T13:00:00-05:00",
+      "station_local_date": "2026-09-08",
+      "station_local_fold": 0,
+      "station_local_hour": 13,
+      "target_utc": "2026-09-08T18:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260909T000000Z",
+      "decision_utc": "2026-09-08T23:00:00Z",
+      "display_eastern": "2026-09-08T20:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0820",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-08T19:00:00-05:00",
+      "station_local_date": "2026-09-08",
+      "station_local_fold": 0,
+      "station_local_hour": 19,
+      "target_utc": "2026-09-09T00:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260909T060000Z",
+      "decision_utc": "2026-09-09T05:00:00Z",
+      "display_eastern": "2026-09-09T02:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0902",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-09T01:00:00-05:00",
+      "station_local_date": "2026-09-09",
+      "station_local_fold": 0,
+      "station_local_hour": 1,
+      "target_utc": "2026-09-09T06:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260909T120000Z",
+      "decision_utc": "2026-09-09T11:00:00Z",
+      "display_eastern": "2026-09-09T08:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0908",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-09T07:00:00-05:00",
+      "station_local_date": "2026-09-09",
+      "station_local_fold": 0,
+      "station_local_hour": 7,
+      "target_utc": "2026-09-09T12:00:00Z"
+    },
+    {
+      "case_id": "KAUS:20260909T180000Z",
+      "decision_utc": "2026-09-09T17:00:00Z",
+      "display_eastern": "2026-09-09T14:00:00-04:00",
+      "expected_event_ticker": "KXTEMPAUSH-26SEP0914",
+      "requested_week_start": "2026-09-07",
+      "station_local": "2026-09-09T13:00:00-05:00",
+      "station_local_date": "2026-09-09",
+      "station_local_fold": 0,
+      "station_local_hour": 13,
+      "target_utc": "2026-09-09T18:00:00Z"
+    }
+  ],
+  "contract_census": {
+    "all_contracts_retained": true,
+    "allowed_contract_count_max": 64,
+    "allowed_contract_count_min": 1,
+    "freeze_rule": "Freeze sorted unique contract tickers and metadata hashes from the first complete successful response to the fixed listing slot. No substitute later listing if that slot is missing.",
+    "freeze_slot_seconds_from_target": -3570,
+    "missing_snapshot": "One failed polling slot remains failed even if a later slot supplies evidence. A missing listing census blocks operational success.",
+    "required_complete_response": "Nested market collection present, no cursor/truncation, every contract belongs to expected event/series, each has unique ticker and supported greater predicate. A missing field is not an empty collection.",
+    "subsequent_census": "Every later complete event receipt must have the same ticker set and unchanged station/source/time/strike/predicate/rule fields. Preserve additions, removals and changes; classify census_changed and block admission, rather than dropping contracts."
+  },
+  "created_date": "2026-09-06",
+  "identity_rules": {
+    "close_time_equals_target_tolerance_ms": 0,
+    "duplicate_rule": "Identical relevant observation rows collapse with all source indexes; conflicting rows within one response are quarantined, not chosen by value/status.",
+    "event_strike_date_if_present_equals_target_tolerance_ms": 0,
+    "expected_open_time": "target-1hour; any difference retained as listing-window mismatch, not repaired",
+    "non_target_values": "No earlier/later minute, hourly average, station alias, daily max or METAR substitution.",
+    "report_time_local": "Retain display string verbatim; if it includes an offset or explicit zone and is parseable without guessing, require agreement. An ambiguous display string does not override reportTimeUTC/localDate/localHour/timezone.",
+    "row_unique_key": [
+      "station_id",
+      "target_utc"
+    ],
+    "source_clock": "Retain provider fetchedAt separately from request-start/actual-received times. Use local receipt for availability. Impossible/future provider clocks are clock_anomaly; never repair receipt time to provider time.",
+    "source_metadata": "Require expected requested weekStart/weekEnd/dates, one KAUS station object, row ICAO match and source label live; any changed source label/product schema is source_changed, not a renamed equivalent.",
+    "ticker_clock": "Expected ticker derives from America/New_York; actual metadata must confirm. Never parse ticker as Austin local time.",
+    "twc_clock": "reportTimeUTC exactly target; icaoId KAUS at station and row; timezone America/Chicago; localDate/localHour/fold must agree with UTC conversion. reportTimeLocal retained verbatim."
+  },
+  "missed_deadline": "Abort this calendar; no rolling dates, neighboring hours or station substitution. A later calendar requires a new declaration before its measurements/outcomes are read.",
+  "numeric_comparator": {
+    "decimal_policy": "Parse numeric token/string as exact finite Decimal; retain original lexeme and JSON pointer/byte span. Compare tempF directly to numeric expiration_value with equality tolerance0. No rounding, Celsius substitution or temperature conversion.",
+    "first_determination_cutoff": "Earliest local receipt with status determined or finalized in any frozen-census contract. This is a local evidence cutoff only, not the legal expiration time. A TWC row first captured after this cutoff cannot establish the primary comparison.",
+    "known_lifecycle": "Use exact observed strings determined/finalized; only finalized with result yes/no supports ordinary-binary numeric comparison. Unknown, disputed/review, scalar or fair-price resolutions remain explicit unsupported cases.",
+    "market_version": "First finalized ordinary-binary version for every contract in the frozen event census; retain later revisions and any inconsistency.",
+    "numeric_missing": "Absent/non-numeric expiration_value is not zero; return predicate_only_consistent or predicate_conflict when ordinary binary constraints exist, otherwise missing.",
+    "partial_numeric": "If any contract lacks numeric expiration_value, report predicate-only evidence plus the available numeric comparisons; never mark event exact_match. A numeric or predicate contradiction always overrides a missing-only status.",
+    "predicate": "For every contract, strict Decimal(expiration_value)>Decimal(floor_strike) must equal result==yes. Only strike_type=greater supported in this audit.",
+    "predicate_interval": "Intersect (K,+infinity) for YES and (-infinity,K] for NO. Preserve open/closed endpoints; never use midpoint as an observed label.",
+    "primary_twc_version": "First locally received unique exact-hour row with status=settled, captured no later than first locally observed exchange determination/finalization. Pending/future-valid rows cannot supply the primary numeric comparator.",
+    "require_all_contract_expiration_values_equal": true,
+    "twc_predicate": "Also compare the primary tempF candidate against every ordinary binary predicate; retain numeric equality and predicate agreement separately. Any contradiction prevents exact_match."
+  },
+  "polling_proposal": {
+    "before_target": "Archive bytes append-only, but do not normalize target numerical measurement or outcome fields before target UTC. Prior-target request checks source metadata/status only. Never expose a future-valid value as an observed label.",
+    "book_requests": 0,
+    "hard_stop_utc": "2026-09-10T18:10:00Z",
+    "kalshi_listing_seconds_from_target": [
+      -3570
+    ],
+    "kalshi_response_bytes_max": 1048576,
+    "maximum_attempts_per_request": 3,
+    "maximum_attempts_total": 792,
+    "minimum_request_interval_seconds": 1,
+    "missed_slots": "Retain not_attempted; never replay missed observation times. A response later than its slot is late evidence, never backdated.",
+    "nominal_requests": 264,
+    "paired_twc_and_event_seconds_from_target": [
+      -60,
+      0,
+      30,
+      60,
+      120,
+      180,
+      300,
+      600,
+      900,
+      1800,
+      3600,
+      7200,
+      14400,
+      21600,
+      43200,
+      86400
+    ],
+    "registration_required_before_first_request": true,
+    "request_timeout_seconds": 10,
+    "retry_policy": "GET only; at most two retries for specified transient statuses or transport timeouts; archive each failed attempt. Honor Retry-After with minimum1second. If a retry cannot start within the original slot start deadline, record exhausted/missed rather than shift the schedule. A global hard stop or byte cap never gets extended.",
+    "retry_statuses": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "revision_window": "Complete every fixed slot through target+24h even after a preliminary match. Admission remains blocked until the last target revision window ends and all gates are checked.",
+    "shared_collector": "One separately registered acquisition collector with source-readiness capture; union coincident URL/query slots and retain all logical purposes against the same actual receipt. Do not duplicate GETs. Budgets here are mapping-only upper bounds, not the shared collector total.",
+    "shared_receipt_eligibility": "The shared collector registration must pin its full union cadence before access. All its already-received matching TWC snapshots belong to the first-seen/version ledger, including readiness purposes; never select a favorable subset of shared receipts.",
+    "slot_start_deadline_seconds": 30,
+    "stop_on": [
+      401,
+      403
+    ],
+    "total_payload_bytes_max": 1073741824,
+    "twc_response_bytes_max": 4194304
+  },
+  "quantile_information": {
+    "cdf_bounds": "L_F(x)=max({alpha:Q_alpha<=x} union{0}); U_F(x)=min({alpha:Q_alpha>x} union{1})",
+    "inclusive_interval": "P(a<=Y<=b) lies in[max(0,L_F(b)-U_G(a)),min(1,U_F(b)-L_G(a))] under the forecast quantile constraints",
+    "left_cdf_bounds": "L_G(x)=max({alpha:Q_alpha<x} union{0}); U_G(x)=min({alpha:Q_alpha>=x} union{1})",
+    "meaning": "Model-resolution bounds, not statistical confidence bounds or identified source precision; empty/inconsistent constraints fail rather than selecting favorable interpolation",
+    "role": "Prospective probability representation only; no scores/fits in this audit",
+    "unknown_atoms": "Keep equality mass uncertain; do not assert no atom at a strike or invent reporting grid from8samples"
+  },
+  "registration_deadline_utc": "2026-09-07T22:00:00Z",
+  "result_schema": {
+    "expected_final_status": "All eight cases initially unobserved; status enums below apply only once an audit has actual evidence. No outcomes are expected or filled by this design.",
+    "identity_status": [
+      "confirmed",
+      "mismatch",
+      "missing",
+      "source_changed",
+      "clock_anomaly"
+    ],
+    "maturity_status": [
+      "finalized_complete",
+      "pending_at_cutoff",
+      "review_or_nonbinary",
+      "incomplete_contract_census",
+      "census_changed"
+    ],
+    "missing_rules": "Missing row/station, null/nonfinite numeric, pending status at cutoff, missing listing, unknown operator/source, conflicting duplicate, incomplete/reviewed event, or absent publication/cutoff evidence each retains its own reason. No case is removed from denominator8.",
+    "numeric_status": [
+      "exact_match",
+      "numeric_mismatch",
+      "predicate_only_consistent",
+      "predicate_conflict",
+      "missing",
+      "version_conflict"
+    ],
+    "required_provenance": [
+      "request_started_at",
+      "actual_received_at",
+      "http_status",
+      "record_id",
+      "body_sha256",
+      "record_sha256",
+      "json_pointer",
+      "raw_lexeme",
+      "first_seen_receipt_id",
+      "all_receipt_ids"
+    ],
+    "revision_status": [
+      "no_captured_numeric_change",
+      "revision_sensitive",
+      "unresolved"
+    ],
+    "semantics_status": [
+      "unresolved",
+      "authoritatively_verified"
+    ],
+    "slot_status": [
+      "scheduled",
+      "received",
+      "http_error",
+      "transport_error",
+      "missing",
+      "late",
+      "size_limit",
+      "quarantined",
+      "not_attempted"
+    ]
+  },
+  "revision_rules": {
+    "as_of_expiration": "Record expiration_time, expected_expiration_time, settlement_ts and first determination/finalization receipts separately. Until authoritative effective cutoff and source version-publication timing are known, as-of-expiration semantics remain unresolved.",
+    "numeric_change": "Any captured changed settled tempF or changed finalized expiration/result is revision_sensitive and blocks paper use pending separate review; do not select a matching version retrospectively.",
+    "pending_to_settled": "Retain transition even with same number; not an independent match",
+    "post_cutoff": "Clearly proven post-effective-expiration changes excluded from legal resolution only with authoritative cutoff evidence; still retained. Changes after24h are unobserved, not proved absent.",
+    "retain_all_receipts": true,
+    "version_key": "station,target,status,tempF numeric value; preserve representation-only changes separately; fetchedAt/request time changes alone do not add independent observations"
+  },
+  "schema_version": 1,
+  "scope": {
+    "listing_display_timezone": "America/New_York",
+    "model_fits": 0,
+    "model_forecasts": 0,
+    "price_fields_to_parse": 0,
+    "prospective_cases": 8,
+    "series_ticker": "KXTEMPAUSH",
+    "source_organization": "The Weather Company",
+    "station_id": "KAUS",
+    "station_timezone": "America/Chicago",
+    "trading_orders": 0
+  },
+  "sources": {
+    "kalshi": {
+      "base": "https://external-api.kalshi.com/trade-api/v2",
+      "event_path": "/events/{expected_event_ticker}",
+      "metadata_fields": [
+        "event_ticker",
+        "series_ticker",
+        "strike_date",
+        "title",
+        "settlement_sources",
+        "markets[].ticker",
+        "markets[].event_ticker",
+        "markets[].title",
+        "markets[].rules_primary",
+        "markets[].rules_secondary",
+        "markets[].strike_type",
+        "markets[].floor_strike",
+        "markets[].cap_strike",
+        "markets[].open_time",
+        "markets[].close_time",
+        "markets[].expected_expiration_time",
+        "markets[].expiration_time",
+        "markets[].settlement_timer_seconds",
+        "markets[].status"
+      ],
+      "never_normalize": [
+        "yes_bid",
+        "yes_ask",
+        "no_bid",
+        "no_ask",
+        "last_price",
+        "volume",
+        "open_interest"
+      ],
+      "outcome_fields_after_target": [
+        "markets[].result",
+        "markets[].expiration_value",
+        "markets[].settlement_ts",
+        "markets[].updated_time"
+      ],
+      "query": {
+        "with_nested_markets": "true"
+      }
+    },
+    "known_metadata_records": [
+      155283,
+      156595
+    ],
+    "rule_pdf_record_id": 1743,
+    "rule_pdf_sha256": "2b515c2cf521ffffa895f306bad589b026a7f916fa375c7d097448c660e02590",
+    "source_file_sha256": {
+      "evidence/forecast_to_trade_metadata.json": "15641b3f3e8997c9ed34a7a1889fcc37a71ce11e7789c584ce111b959d9a115a",
+      "reports/rules/NHIGHD.pdf.txt": "f0700f0fcccd5f9ec9428d79cada81048188d867d4f67dbbee948439ee81c069",
+      "research/FORECAST_TO_TRADE_BRIDGE.md": "4378076fe2a02a8d45a4eaf647a9142bfbc278659be4d98665c7ca04390dcf0c",
+      "research/probes/hourly_alignment_audit.py": "821db6b0b93ffa7eae1608fb333a672cc8eb3b8af7210bf8e0b8a410ee4f517d",
+      "research/probes/station_history.py": "49d802cae9cbf87f76a9c3db8162d56f10ed42f6a2e9a28254fb52b3f07c9f05"
+    },
+    "twc": {
+      "parse_only_station": "KAUS",
+      "parse_only_utc_hours": "the exact eight target_utc values; other station-hour measurement fields remain unnormalized",
+      "query": {
+        "primary": "true",
+        "weekStart": "2026-09-07"
+      },
+      "row_fields": [
+        "icaoId",
+        "reportTimeUTC",
+        "reportTimeLocal",
+        "localDate",
+        "localHour",
+        "tempF",
+        "tempC",
+        "status"
+      ],
+      "station_metadata": [
+        "icaoId",
+        "stationName",
+        "timezone"
+      ],
+      "top_metadata": [
+        "weekStart",
+        "weekEnd",
+        "dates",
+        "source",
+        "fetchedAt",
+        "totalObservations"
+      ],
+      "url": "https://weather.com/kalshi/api/metar"
+    }
+  },
+  "status": "DRAFT_NOT_REGISTERED_NO_COLLECTION_AUTHORIZED",
+  "study": "KAUS-eight-target-hourly-settlement-mapping-v1",
+  "success_gates": {
+    "authoritative_semantic_evidence_needed": [
+      "exact designated hourly product/endpoint",
+      "measurement window/aggregation and UTC label convention",
+      "full-precision Fahrenheit resolution/rounding convention",
+      "meaning of provider pending/settled",
+      "effective expiration cutoff and allowed correction source/version rules"
+    ],
+    "earlier_paper_cases": "Any paper decision before audit completion and affirmative gates remains blocked on its original schedule. No preliminary-eight-match shortcut, calendar rolling or post-outcome reissued forecast.",
+    "later_mismatch_stop": "Persist global no-new-entry flag before evaluating another signal; cancel any resting-paper intents, retain reservations until terminal state, keep held positions and all losses under previously frozen maturity rules; no automatic resume or alternative source/rounding switch.",
+    "latest_completion_utc": "2026-09-10T18:10:00Z",
+    "operational_consistency": "All8 identity_confirmed + exact_match + finalized_complete; zero revision_sensitive, conflicts or missing cases. This is8observed matches only.",
+    "paper_admission": "Requires separate affirmative authoritative semantic verification AND operational8/8 AND no unresolved revision/census/maturity gap. Eight matches alone cannot authorize paper trades.",
+    "semantics_verified": false,
+    "success_dimensions": "Report identity, numeric/predicate, revision, maturity and semantic axes independently. A numeric mismatch is a comparison failure, not a proven exchange error; label choice, publication versions or rule interpretation may be wrong."
+  }
+}

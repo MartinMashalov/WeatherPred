@@ -1527,4 +1527,26 @@ MAE is **1.6974°F** versus matched **1.9072°F**. Calibrated pinball loss impro
 50/50 blend**. The fixed advancement rule fails. All six candidates and five
 comparisons remain; no criteria or references change. All four frozen reference
 scores reproduce and the internal independent scorer checks all six. A separate
-result audit is in preparation. [Results](evidence/E031_guided_forecasts.json).
+result audit registration167998/report168000 reconstructs all six scores and five bootstrap comparisons. [Results](evidence/E031_guided_forecasts.json), [audit](evidence/E031_result_audit.json).
+
+## E032 — Shared statistical trading laboratory
+
+Registration169699, report169816, resource acceptance169818. Four candidates
+share six March–August monthly fits, fixed15quote/calendar features, a five-day
+training decision buffer, strict label-release gates and continuous200dollar
+accounts. Every fold is archived before later training. All4trials complete
+in49.96seconds; no retries or model/threshold selection from evaluation.
+
+Cash and rawmidpoint retain200. Probability calibration ends194.26/196.17,
+return regression188.70/190.82(costed/stress). Costed fills20/101; fees.84/2.18.
+All learned-account day-block lower bounds are negative. Neither model passes
+the research gate. No verifiedhistoricalfills or future-profit claim follows.
+Fullpreflight680tests,169679archiverecords,48rawevents149baskets. A future-contract
+rank/provenance leak was found and fixed BEFOREregistration, with regressiontests.
+SourcewindowscoverJan1–Aug13;966latercontracts remainexcluded. Missingentries
+remainunknown evidence, with conditionalreservationrefunds.
+
+[Results and diagnosis](research/STATISTICAL_LAB_RESULTS.md),
+[full report](evidence/E032_statistical_lab.json),
+[daily curves](evidence/E032_account_curves.csv),
+[verification](evidence/verification-2026-09-06-statistical-lab.txt).

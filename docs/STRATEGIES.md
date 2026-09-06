@@ -576,6 +576,45 @@ Code and design: [physical baseline](../research/PHYSICAL_STATION_BASELINE.md),
 [all twelve forecasts](../evidence/E029_fixed_combinations.json),
 [receipt capture](../evidence/E027_v2_capture_checkpoint.json).
 
+## 22. A shared laboratory for statistical trading strategies
+
+E032 adds four candidates to the same historical referee: cash, raw market
+probability, learned probability calibration and learned net return from an
+order attempt. The learned models share fifteen market/calendar features;
+one asks which contracts settle YES, while the other asks whether submitting
+a fixed order is worth money after costs and rejected limits.
+
+Six monthly fits use earlier data and released labels only. Every month's
+predictions are archived before later training, and the final saved decisions
+are evaluated under both fixed execution scenarios. All accounts start with
+200 dollars, preserve cash and positions between months, and face identical
+integer sizing, fees and exposure caps. Missing fills are explicit, failed
+experiments remain recorded, and an incomplete candidate family cannot pass
+the research gate.
+
+This new campaign does not replace E024's three cash selections. It changes
+the model family and starts exploratory evaluation in March rather than July.
+The historical weather-aligned source windows cover January 1–August 13;
+the following 23 days remain unsupported. All 2026 observations are reused
+development data, and historical execution remains conditional on the stated
+bar-close assumptions. The archive also records real receipts separately;
+receipt-verified historical accounts must refuse these entries.
+
+The next statistical families include filtered market regimes, nonlinear
+return prediction, distributional weather models, cross-fitted ensembles and
+cross-market factors. Each needs its own finite registered batch and the
+same account evaluation before advancement.
+
+[Runnable first campaign](../research/experiments/e032_statistical_lab.py),
+[configuration](../config/e032_statistical_lab.json),
+[full model roadmap](../research/STATISTICAL_STRATEGY_LAB.md),
+[math](MATHEMATICS.md).
+
+The first completed batch leaves cash/midpoint at $200. Probability calibration
+ends at $194.26 and $196.17 and direct return prediction at $188.70 and $190.82 under
+the costed/stress assumptions. Both fail the research gate.
+[Results and diagnosis](../research/STATISTICAL_LAB_RESULTS.md).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,

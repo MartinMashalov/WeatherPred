@@ -22,6 +22,7 @@ No real-money orders were submitted.
 
 | New work | Measured result |
 |---|---|
+| Shared statistical trading loop | Four candidates, six monthly fits and identical continuous $200 accounts. Cash/midpoint retain $200; learned probability ends at $194.26/$196.17 and learned return at $188.70/$190.82 under costed/stress assumptions. Both learned strategies fail the research gate. |
 | Restricted $200 annual replay | 13,824 training accounts across three scheduled selection dates; no policy-and-size pair qualifies at any date. All four annual account variants retain $200 with zero trades. This policy requires 298 cash days and permits at most 67 active days; it does not establish an optimal full-year trading return. A separate audit reproduces all account arithmetic and monthly choices. |
 | Execution and capital | 300 quantity/cost screens; the NYC rain pair supports only six pairs under the strongest tested depth/slippage stress. Early exit of existing holdings would lose $2.10–$2.37 per alternative account at the observed bids. |
 | Additional markets | 446 fresh books and 541 contract implications; zero positive quoted floors after fees. Weekly streak candidates also fail 1¢ slippage. |
@@ -59,13 +60,21 @@ reproduces all 13,824 accounts and three cash selections; fixed random draws
 reproduce through the original bootstrap routine. The sealed 2025 quarter
 remains untouched. The $341.87 maximum in E023 is a selected **training** balance,
 not a full-year return or independently supported trading result.
-The [current engineering verification](evidence/verification-2026-09-06-hybrids.txt)
-records 543 passing tests and verifies 153,375 archived records;
+The [current engineering verification](evidence/verification-2026-09-06-statistical-lab.txt)
+records 680 passing tests and verifies 169,679 archived records;
 [audit corrections](evidence/E016_audit_corrections.json)
 retain the numerical discrepancies found and corrected in independent replay.
 An independent [hourly timing audit](research/HOURLY_ALIGNMENT_AUDIT.md)
 rejects a one-hour label shift: the exchange settlement timer explains the late
 cash release. A one-minute live input-age mismatch remains documented.
+
+The [statistical laboratory](research/STATISTICAL_LAB_RESULTS.md) now runs
+learned probability and return models through the same historical executor.
+It records predictions before later training/evaluation, preserves failures
+and tests future-data mutations. Its first campaign finishes in about 50
+seconds. [Complete results](evidence/E032_statistical_lab.json) include failed
+research gates and missing endpoints. Supported weather source windows end
+August 13, despite the raw market census continuing through September 5.
 
 The [new physical comparison](research/PHYSICAL_FORECAST_COMPARISON.md) retains
 all nine models, all eight uncertainty comparisons and original source lineage.

@@ -1,0 +1,880 @@
+{
+  "$defs": {
+    "case": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "pattern": "^KAUS:2026090[89]T(00|06|12|18)0000Z$",
+          "type": "string"
+        },
+        "decision_utc": {
+          "enum": [
+            "2026-09-07T23:00:00Z",
+            "2026-09-08T05:00:00Z",
+            "2026-09-08T11:00:00Z",
+            "2026-09-08T17:00:00Z",
+            "2026-09-08T23:00:00Z",
+            "2026-09-09T05:00:00Z",
+            "2026-09-09T11:00:00Z",
+            "2026-09-09T17:00:00Z"
+          ],
+          "format": "date-time",
+          "type": "string"
+        },
+        "display_eastern": {
+          "enum": [
+            "2026-09-07T20:00:00-04:00",
+            "2026-09-08T02:00:00-04:00",
+            "2026-09-08T08:00:00-04:00",
+            "2026-09-08T14:00:00-04:00",
+            "2026-09-08T20:00:00-04:00",
+            "2026-09-09T02:00:00-04:00",
+            "2026-09-09T08:00:00-04:00",
+            "2026-09-09T14:00:00-04:00"
+          ],
+          "format": "date-time",
+          "type": "string"
+        },
+        "expected_event_ticker": {
+          "pattern": "^KXTEMPAUSH-26SEP0[789](00|02|06|08|12|14|18|20)$",
+          "type": "string"
+        },
+        "requested_week_start": {
+          "const": "2026-09-07"
+        },
+        "station_local": {
+          "enum": [
+            "2026-09-07T19:00:00-05:00",
+            "2026-09-08T01:00:00-05:00",
+            "2026-09-08T07:00:00-05:00",
+            "2026-09-08T13:00:00-05:00",
+            "2026-09-08T19:00:00-05:00",
+            "2026-09-09T01:00:00-05:00",
+            "2026-09-09T07:00:00-05:00",
+            "2026-09-09T13:00:00-05:00"
+          ],
+          "format": "date-time",
+          "type": "string"
+        },
+        "station_local_date": {
+          "format": "date",
+          "type": "string"
+        },
+        "station_local_fold": {
+          "const": 0
+        },
+        "station_local_hour": {
+          "maximum": 23,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "target_utc": {
+          "enum": [
+            "2026-09-08T00:00:00Z",
+            "2026-09-08T06:00:00Z",
+            "2026-09-08T12:00:00Z",
+            "2026-09-08T18:00:00Z",
+            "2026-09-09T00:00:00Z",
+            "2026-09-09T06:00:00Z",
+            "2026-09-09T12:00:00Z",
+            "2026-09-09T18:00:00Z"
+          ],
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_id",
+        "decision_utc",
+        "display_eastern",
+        "expected_event_ticker",
+        "requested_week_start",
+        "station_local",
+        "station_local_date",
+        "station_local_fold",
+        "station_local_hour",
+        "target_utc"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Closed structural/safety schema. A declaration must also validate cross-field UTC/local-time/ticker relationships, source file hashes and exact request-budget arithmetic. This schema does not authorize acquisition or establish source semantics.",
+  "properties": {
+    "$schema": {
+      "const": "./kaus_hourly_mapping.schema.json"
+    },
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/case"
+      },
+      "maxItems": 8,
+      "minItems": 8,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "contract_census": {
+      "additionalProperties": false,
+      "properties": {
+        "all_contracts_retained": {
+          "const": true
+        },
+        "allowed_contract_count_max": {
+          "const": 64
+        },
+        "allowed_contract_count_min": {
+          "const": 1
+        },
+        "freeze_rule": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "freeze_slot_seconds_from_target": {
+          "const": -3570
+        },
+        "missing_snapshot": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "required_complete_response": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "subsequent_census": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "all_contracts_retained",
+        "allowed_contract_count_max",
+        "allowed_contract_count_min",
+        "freeze_rule",
+        "freeze_slot_seconds_from_target",
+        "missing_snapshot",
+        "required_complete_response",
+        "subsequent_census"
+      ],
+      "type": "object"
+    },
+    "created_date": {
+      "const": "2026-09-06"
+    },
+    "identity_rules": {
+      "additionalProperties": false,
+      "properties": {
+        "close_time_equals_target_tolerance_ms": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "duplicate_rule": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "event_strike_date_if_present_equals_target_tolerance_ms": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "expected_open_time": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "non_target_values": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "report_time_local": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "row_unique_key": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "source_clock": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_metadata": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "ticker_clock": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "twc_clock": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "close_time_equals_target_tolerance_ms",
+        "duplicate_rule",
+        "event_strike_date_if_present_equals_target_tolerance_ms",
+        "expected_open_time",
+        "non_target_values",
+        "report_time_local",
+        "row_unique_key",
+        "source_clock",
+        "source_metadata",
+        "ticker_clock",
+        "twc_clock"
+      ],
+      "type": "object"
+    },
+    "missed_deadline": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "numeric_comparator": {
+      "additionalProperties": false,
+      "properties": {
+        "decimal_policy": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "first_determination_cutoff": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "known_lifecycle": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "market_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "numeric_missing": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "partial_numeric": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "predicate": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "predicate_interval": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "primary_twc_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "require_all_contract_expiration_values_equal": {
+          "type": "boolean"
+        },
+        "twc_predicate": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "decimal_policy",
+        "first_determination_cutoff",
+        "known_lifecycle",
+        "market_version",
+        "numeric_missing",
+        "partial_numeric",
+        "predicate",
+        "predicate_interval",
+        "primary_twc_version",
+        "require_all_contract_expiration_values_equal",
+        "twc_predicate"
+      ],
+      "type": "object"
+    },
+    "polling_proposal": {
+      "additionalProperties": false,
+      "properties": {
+        "before_target": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "book_requests": {
+          "const": 0
+        },
+        "hard_stop_utc": {
+          "const": "2026-09-10T18:10:00Z"
+        },
+        "kalshi_listing_seconds_from_target": {
+          "const": [
+            -3570
+          ]
+        },
+        "kalshi_response_bytes_max": {
+          "const": 1048576
+        },
+        "maximum_attempts_per_request": {
+          "const": 3
+        },
+        "maximum_attempts_total": {
+          "const": 792
+        },
+        "minimum_request_interval_seconds": {
+          "const": 1
+        },
+        "missed_slots": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "nominal_requests": {
+          "const": 264
+        },
+        "paired_twc_and_event_seconds_from_target": {
+          "const": [
+            -60,
+            0,
+            30,
+            60,
+            120,
+            180,
+            300,
+            600,
+            900,
+            1800,
+            3600,
+            7200,
+            14400,
+            21600,
+            43200,
+            86400
+          ]
+        },
+        "registration_required_before_first_request": {
+          "const": true
+        },
+        "request_timeout_seconds": {
+          "const": 10
+        },
+        "retry_policy": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "retry_statuses": {
+          "const": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ]
+        },
+        "revision_window": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "shared_collector": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "shared_receipt_eligibility": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "slot_start_deadline_seconds": {
+          "const": 30
+        },
+        "stop_on": {
+          "const": [
+            401,
+            403
+          ]
+        },
+        "total_payload_bytes_max": {
+          "const": 1073741824
+        },
+        "twc_response_bytes_max": {
+          "const": 4194304
+        }
+      },
+      "required": [
+        "before_target",
+        "book_requests",
+        "hard_stop_utc",
+        "kalshi_listing_seconds_from_target",
+        "kalshi_response_bytes_max",
+        "maximum_attempts_per_request",
+        "maximum_attempts_total",
+        "minimum_request_interval_seconds",
+        "missed_slots",
+        "nominal_requests",
+        "paired_twc_and_event_seconds_from_target",
+        "registration_required_before_first_request",
+        "request_timeout_seconds",
+        "retry_policy",
+        "retry_statuses",
+        "revision_window",
+        "shared_collector",
+        "slot_start_deadline_seconds",
+        "stop_on",
+        "total_payload_bytes_max",
+        "twc_response_bytes_max",
+        "shared_receipt_eligibility"
+      ],
+      "type": "object"
+    },
+    "quantile_information": {
+      "additionalProperties": false,
+      "properties": {
+        "cdf_bounds": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "inclusive_interval": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "left_cdf_bounds": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "meaning": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "role": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "unknown_atoms": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "cdf_bounds",
+        "inclusive_interval",
+        "left_cdf_bounds",
+        "meaning",
+        "role",
+        "unknown_atoms"
+      ],
+      "type": "object"
+    },
+    "registration_deadline_utc": {
+      "const": "2026-09-07T22:00:00Z"
+    },
+    "result_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_final_status": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "identity_status": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 5,
+          "type": "array"
+        },
+        "maturity_status": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 5,
+          "type": "array"
+        },
+        "missing_rules": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "numeric_status": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array"
+        },
+        "required_provenance": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 10,
+          "type": "array"
+        },
+        "revision_status": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "semantics_status": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "slot_status": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 9,
+          "minItems": 9,
+          "type": "array"
+        }
+      },
+      "required": [
+        "expected_final_status",
+        "identity_status",
+        "maturity_status",
+        "missing_rules",
+        "numeric_status",
+        "required_provenance",
+        "revision_status",
+        "semantics_status",
+        "slot_status"
+      ],
+      "type": "object"
+    },
+    "revision_rules": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of_expiration": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "numeric_change": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "pending_to_settled": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "post_cutoff": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "retain_all_receipts": {
+          "type": "boolean"
+        },
+        "version_key": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "as_of_expiration",
+        "numeric_change",
+        "pending_to_settled",
+        "post_cutoff",
+        "retain_all_receipts",
+        "version_key"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "scope": {
+      "const": {
+        "listing_display_timezone": "America/New_York",
+        "model_fits": 0,
+        "model_forecasts": 0,
+        "price_fields_to_parse": 0,
+        "prospective_cases": 8,
+        "series_ticker": "KXTEMPAUSH",
+        "source_organization": "The Weather Company",
+        "station_id": "KAUS",
+        "station_timezone": "America/Chicago",
+        "trading_orders": 0
+      }
+    },
+    "sources": {
+      "additionalProperties": false,
+      "properties": {
+        "kalshi": {
+          "additionalProperties": false,
+          "properties": {
+            "base": {
+              "const": "https://external-api.kalshi.com/trade-api/v2"
+            },
+            "event_path": {
+              "const": "/events/{expected_event_ticker}"
+            },
+            "metadata_fields": {
+              "const": [
+                "event_ticker",
+                "series_ticker",
+                "strike_date",
+                "title",
+                "settlement_sources",
+                "markets[].ticker",
+                "markets[].event_ticker",
+                "markets[].title",
+                "markets[].rules_primary",
+                "markets[].rules_secondary",
+                "markets[].strike_type",
+                "markets[].floor_strike",
+                "markets[].cap_strike",
+                "markets[].open_time",
+                "markets[].close_time",
+                "markets[].expected_expiration_time",
+                "markets[].expiration_time",
+                "markets[].settlement_timer_seconds",
+                "markets[].status"
+              ]
+            },
+            "never_normalize": {
+              "const": [
+                "yes_bid",
+                "yes_ask",
+                "no_bid",
+                "no_ask",
+                "last_price",
+                "volume",
+                "open_interest"
+              ]
+            },
+            "outcome_fields_after_target": {
+              "const": [
+                "markets[].result",
+                "markets[].expiration_value",
+                "markets[].settlement_ts",
+                "markets[].updated_time"
+              ]
+            },
+            "query": {
+              "const": {
+                "with_nested_markets": "true"
+              }
+            }
+          },
+          "required": [
+            "base",
+            "event_path",
+            "metadata_fields",
+            "never_normalize",
+            "outcome_fields_after_target",
+            "query"
+          ],
+          "type": "object"
+        },
+        "known_metadata_records": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "rule_pdf_record_id": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "rule_pdf_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_file_sha256": {
+          "additionalProperties": false,
+          "properties": {
+            "evidence/forecast_to_trade_metadata.json": {
+              "$ref": "#/$defs/sha256"
+            },
+            "reports/rules/NHIGHD.pdf.txt": {
+              "$ref": "#/$defs/sha256"
+            },
+            "research/FORECAST_TO_TRADE_BRIDGE.md": {
+              "$ref": "#/$defs/sha256"
+            },
+            "research/probes/hourly_alignment_audit.py": {
+              "$ref": "#/$defs/sha256"
+            },
+            "research/probes/station_history.py": {
+              "$ref": "#/$defs/sha256"
+            }
+          },
+          "required": [
+            "evidence/forecast_to_trade_metadata.json",
+            "reports/rules/NHIGHD.pdf.txt",
+            "research/FORECAST_TO_TRADE_BRIDGE.md",
+            "research/probes/hourly_alignment_audit.py",
+            "research/probes/station_history.py"
+          ],
+          "type": "object"
+        },
+        "twc": {
+          "additionalProperties": false,
+          "properties": {
+            "parse_only_station": {
+              "const": "KAUS"
+            },
+            "parse_only_utc_hours": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "query": {
+              "const": {
+                "primary": "true",
+                "weekStart": "2026-09-07"
+              }
+            },
+            "row_fields": {
+              "const": [
+                "icaoId",
+                "reportTimeUTC",
+                "reportTimeLocal",
+                "localDate",
+                "localHour",
+                "tempF",
+                "tempC",
+                "status"
+              ]
+            },
+            "station_metadata": {
+              "const": [
+                "icaoId",
+                "stationName",
+                "timezone"
+              ]
+            },
+            "top_metadata": {
+              "const": [
+                "weekStart",
+                "weekEnd",
+                "dates",
+                "source",
+                "fetchedAt",
+                "totalObservations"
+              ]
+            },
+            "url": {
+              "const": "https://weather.com/kalshi/api/metar"
+            }
+          },
+          "required": [
+            "parse_only_station",
+            "parse_only_utc_hours",
+            "query",
+            "row_fields",
+            "station_metadata",
+            "top_metadata",
+            "url"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "kalshi",
+        "known_metadata_records",
+        "rule_pdf_record_id",
+        "rule_pdf_sha256",
+        "source_file_sha256",
+        "twc"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "const": "DRAFT_NOT_REGISTERED_NO_COLLECTION_AUTHORIZED"
+    },
+    "study": {
+      "const": "KAUS-eight-target-hourly-settlement-mapping-v1"
+    },
+    "success_gates": {
+      "additionalProperties": false,
+      "properties": {
+        "authoritative_semantic_evidence_needed": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 5,
+          "type": "array"
+        },
+        "earlier_paper_cases": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "later_mismatch_stop": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "latest_completion_utc": {
+          "const": "2026-09-10T18:10:00Z"
+        },
+        "operational_consistency": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "paper_admission": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "semantics_verified": {
+          "const": false
+        },
+        "success_dimensions": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "authoritative_semantic_evidence_needed",
+        "earlier_paper_cases",
+        "later_mismatch_stop",
+        "latest_completion_utc",
+        "operational_consistency",
+        "paper_admission",
+        "semantics_verified",
+        "success_dimensions"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "$schema",
+    "cases",
+    "contract_census",
+    "created_date",
+    "identity_rules",
+    "missed_deadline",
+    "numeric_comparator",
+    "polling_proposal",
+    "quantile_information",
+    "registration_deadline_utc",
+    "result_schema",
+    "revision_rules",
+    "schema_version",
+    "scope",
+    "sources",
+    "status",
+    "study",
+    "success_gates"
+  ],
+  "title": "Fixed eight-case KAUS prospective mapping design",
+  "type": "object"
+}

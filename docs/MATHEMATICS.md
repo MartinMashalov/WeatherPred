@@ -964,6 +964,88 @@ not settlement probabilities or validated trading returns.
 [Design](../evidence/E029_design.json),
 [all results](../evidence/E029_fixed_combinations.json).
 
+## 28. Learning trading returns through a common historical simulator
+
+E032 compares two statistical targets using the same fifteen quote/calendar
+features, monthly training cutoffs and execution rules. Its feature vector
+contains market log-odds, spread, one-hour and three-hour price changes,
+the sum and fraction of currently observable panel quotes, bracket rank,
+seasonal sine/cosine and six city indicators. Only contracts open at the
+decision can affect another contract's panel features. Missing quotes are
+recorded; their prices are never invented.
+
+For an individual binary contract, the probability model starts from market
+log-odds and learns a correction:
+
+$$
+p_i=\sigma\!\left(\operatorname{logit}(m_i)+\beta_0+z_i^\top\beta\right),
+\qquad \sigma(a)=\frac{1}{1+e^{-a}}.
+$$
+
+Here $m_i$ is the decision-time midpoint and $z_i$ contains features centered
+and scaled using training data only. The midpoint is a feature, not a fill
+price. Minimize weighted binary log loss plus $\frac12\|\beta\|_2^2$;
+the intercept is not penalized. Weights give each day equal total weight,
+then divide it equally across events and eligible contracts. The two outcomes
+of one contract are complements; fitted probabilities across different
+brackets are not forced to sum to one.
+
+The second model learns net dollars from attempting one contract, separately
+for YES and NO. Under the fixed execution scenario its target is:
+
+$$
+R_{i,s}=
+\begin{cases}
+0,&\text{a later observed quote rejects the original limit},\\
+Y_{i,s}-C(P^{\mathrm{entry}}_{i,s},1),
+&\text{the modeled entry fills and settlement is released}.
+\end{cases}
+$$
+
+$C(p,q)$ is the exact aggregate purchase debit, including the assumed
+quadratic fee and account rounding from earlier sections. A missing entry
+quote or unreleased settlement is an **unknown target**, not zero. Each
+side's ridge regression minimizes weighted squared error plus a fixed
+coefficient penalty of one. Unknown labels have zero weight and an explicit
+mask. Return estimates are raw linear predictions, not calibrated profit
+guarantees. The account sizes whole contracts and recalculates aggregate
+fees; it does not multiply rounded single-contract fees by quantity.
+
+The probability model's order score is predicted payout minus the maximum
+single-contract debit at the original limit. The return model's score
+already includes its modeled costs. For example, a YES probability of .70
+and a decision ask of .60 imply a .61 limit and a .63 one-contract debit
+under the assumed .07 fee coefficient. The predicted edge is .07. If the
+later ask plus slippage exceeds .61, the order does not fill.
+
+Both models require a score above .03, select at most one side/contract per
+event, and reserve at most 1% of current cost-basis equity per order, subject
+to cash and correlated-exposure caps. This score threshold is fixed, not a
+confidence bound or an optimized parameter.
+
+Models refit on March 1 through August 1, 2026. Training decisions stop five
+days before each fit, and every training label must independently be released
+strictly before that fit. Each head needs at least 45 distinct training days.
+A failed fit remains a failed candidate. Each month's predictions enter the
+archive before the next month's training accesses newly released outcomes.
+
+All candidates share one continuous account per scenario, starting with
+200 dollars; monthly refits never reset money or release pending positions.
+The costed scenario enters at the exact next hourly endpoint plus .01;
+the stress scenario uses two hours plus .02. Both retain the original .01
+limit allowance. Missing endpoints never trigger a search for a better fill.
+
+Shared one-, seven- and fourteen-day block resamples compare the entire
+candidate/cost family. Incomplete campaigns cannot pass the research gate.
+These are reused-development diagnostics on conditional historical execution.
+Actual September receipts remain recorded separately from assumed historical
+times. An account requiring contemporaneous verified receipts must stay in
+cash. No annual-optimality or future-profit claim follows.
+
+[Executable campaign](../research/experiments/e032_statistical_lab.py),
+[fixed first batch](../config/e032_statistical_lab.json),
+[statistical families](../research/STATISTICAL_STRATEGY_LAB.md).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.

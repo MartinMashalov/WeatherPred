@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "experiment": "E032-entry-endpoint-diagnostic-v1",
+  "parent_registration_id": 169699,
+  "inputs": {
+    "parent_protocol": {
+      "id": 169699,
+      "kind": "experiment_protocol",
+      "key": "E032-statistical-strategy-lab-v1",
+      "body_sha256": "b250e1f2250312a449ff5afc9e25a88b9f985646e0cab959745dda80fe89b53d"
+    },
+    "parent_report": {
+      "id": 169816,
+      "kind": "e032_report_gzip",
+      "key": "169699",
+      "body_sha256": "1f14d9feb4f5ad0304376308d15a9742f2c867ebe517abef45a6f0817679bbc1"
+    },
+    "dataset": {
+      "id": 128360,
+      "kind": "e024_dataset_gzip",
+      "key": "128266",
+      "body_sha256": "c66da448a05a72893cde1b1bc19f87074ca929e7eb3eac16a07f60f3c9d3eddc"
+    },
+    "prediction:cash": {
+      "id": 169715,
+      "kind": "e032_predictions_gzip",
+      "key": "169699:cash",
+      "body_sha256": "924e3e4de3259510e7ca3e3250cde5f1f9a79ec838e85078cab15d55f9fbcd38"
+    },
+    "prediction:midpoint": {
+      "id": 169734,
+      "kind": "e032_predictions_gzip",
+      "key": "169699:midpoint",
+      "body_sha256": "1a1e011990ff9807c12ce483618fcc5fe195bcc7ab7da67e82a717a4ab931765"
+    },
+    "prediction:logistic_offset": {
+      "id": 169759,
+      "kind": "e032_predictions_gzip",
+      "key": "169699:logistic_offset",
+      "body_sha256": "0d8de3186ca9b2fc9be6b4d1378c657b283ef4333d389f6e6ee975c3207cb864"
+    },
+    "prediction:ridge_net_return": {
+      "id": 169809,
+      "kind": "e032_predictions_gzip",
+      "key": "169699:ridge_net_return",
+      "body_sha256": "8e9b53a6ad82d9fe5ac8180a153a562fdabbcde4ab44340f47d95466382ef984"
+    },
+    "intent:cash:costed": {
+      "id": 169717,
+      "kind": "e032_intents_gzip",
+      "key": "169699:cash:costed",
+      "body_sha256": "95fd1f8dd5db3bfec3690efebd404a1e4c94e4f5dc10cfe377226fd753742a16"
+    },
+    "intent:cash:stress": {
+      "id": 169719,
+      "kind": "e032_intents_gzip",
+      "key": "169699:cash:stress",
+      "body_sha256": "95fd1f8dd5db3bfec3690efebd404a1e4c94e4f5dc10cfe377226fd753742a16"
+    },
+    "intent:midpoint:costed": {
+      "id": 169736,
+      "kind": "e032_intents_gzip",
+      "key": "169699:midpoint:costed",
+      "body_sha256": "95fd1f8dd5db3bfec3690efebd404a1e4c94e4f5dc10cfe377226fd753742a16"
+    },
+    "intent:midpoint:stress": {
+      "id": 169738,
+      "kind": "e032_intents_gzip",
+      "key": "169699:midpoint:stress",
+      "body_sha256": "95fd1f8dd5db3bfec3690efebd404a1e4c94e4f5dc10cfe377226fd753742a16"
+    },
+    "intent:logistic_offset:costed": {
+      "id": 169763,
+      "kind": "e032_intents_gzip",
+      "key": "169699:logistic_offset:costed",
+      "body_sha256": "e0cd81e7c8220057611cd3139687b6c6f881fce7e8bde1b36d82aba32419c748"
+    },
+    "intent:logistic_offset:stress": {
+      "id": 169765,
+      "kind": "e032_intents_gzip",
+      "key": "169699:logistic_offset:stress",
+      "body_sha256": "2aa76e386506a799b74a54432f25939eb3d5a98b6e58769b5e9708f7488a405f"
+    },
+    "intent:ridge_net_return:costed": {
+      "id": 169811,
+      "kind": "e032_intents_gzip",
+      "key": "169699:ridge_net_return:costed",
+      "body_sha256": "976481d1a94e62fb5f5d1f4a6cb3a99f790540c26bb97cfaf7d92c44cf15a258"
+    },
+    "intent:ridge_net_return:stress": {
+      "id": 169813,
+      "kind": "e032_intents_gzip",
+      "key": "169699:ridge_net_return:stress",
+      "body_sha256": "d37a7cfa6216a77c99b9ace3efb2bbf833d9e8ba4e625214f50a99c59e142ed3"
+    }
+  },
+  "candidates": [
+    "cash",
+    "midpoint",
+    "logistic_offset",
+    "ridge_net_return"
+  ],
+  "scenarios": [
+    {
+      "name": "costed",
+      "entry_delay_hours": 1,
+      "slippage": "0.01"
+    },
+    {
+      "name": "stress",
+      "entry_delay_hours": 2,
+      "slippage": "0.02"
+    }
+  ],
+  "known_prior_results": {
+    "published_report_id": 169816,
+    "logistic_intents": 72,
+    "ridge_intents": 318,
+    "logistic_original_unknown_costed": 6,
+    "logistic_original_unknown_stress": 14,
+    "ridge_original_unknown_costed": 79,
+    "ridge_original_unknown_stress": 139,
+    "prior_aggregate_performance_known": true,
+    "new_endpoint_categories_not_inspected_before_registration": true
+  },
+  "classification": "Full original decision census, same side and original limit; independent entry endpoint structure decomposition only.",
+  "no_new_models": true,
+  "no_resimulation": true,
+  "no_outcome_calculations": true,
+  "network_requests": 0,
+  "attempts": 1,
+  "execution_seconds": 300,
+  "maximum_peak_memory_bytes": 4294967296,
+  "maximum_cpu_threads": 2,
+  "lock_file": "data/e032_endpoint_diagnostic.lock",
+  "stop_file": "data/STOP_E032_ENDPOINT_DIAGNOSTIC",
+  "report_path": "reports/E032_endpoint_diagnostic.json",
+  "interpretation": "No altered E032 labels or scores. Interior chosen-side prices are identifiable conditional recorded quotes; crossed and boundary cases remain flagged, no fill inference."
+}

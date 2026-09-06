@@ -1,0 +1,138 @@
+{
+  "audit_registration_id": 167998,
+  "model_registration_id": 166868,
+  "result": {
+    "status": "published_scores_reproduced",
+    "execution_failed": false,
+    "published_score_audit": {
+      "models_reconstructed": 6,
+      "comparisons_reconstructed": 5,
+      "frozen_references_reproduced": 4,
+      "maximum_arithmetic_error": 3.552713678800501e-15,
+      "advance_gate_reproduced": false,
+      "bootstrap_indices_sha256": "2826733b46e71a8de7694842773ff6e06f24aae709fa4cc4d75e998c99d42a2a",
+      "bootstrap_resampled_means_sha256": "9c7e6eef081f075d91a4c7631cfad16689bb8a3bae75d44018bb83164fa2cbfa"
+    },
+    "main_batches": 464,
+    "expected_main_batches": 464,
+    "main_tasks": 19740,
+    "integrity_calls": 8,
+    "integrity_tasks": 48,
+    "complete": true,
+    "integrity_comparisons": [
+      {
+        "variant": "chronos_pretrained_univariate_matched",
+        "check": "exact_repeat",
+        "maximum_difference_f": 0.0,
+        "tolerance_f": 0,
+        "passed": true
+      },
+      {
+        "variant": "chronos_pretrained_univariate_matched",
+        "check": "main_batch",
+        "maximum_difference_f": 0.0,
+        "tolerance_f": 1e-05,
+        "passed": true
+      },
+      {
+        "variant": "chronos_pretrained_univariate_matched",
+        "check": "append_later_origin",
+        "maximum_difference_f": 0.0,
+        "tolerance_f": 1e-05,
+        "passed": true
+      },
+      {
+        "variant": "chronos_pretrained_univariate_matched",
+        "check": "permutation",
+        "maximum_difference_f": 0.0,
+        "tolerance_f": 1e-05,
+        "passed": true
+      },
+      {
+        "variant": "chronos_observed_then_guided",
+        "check": "exact_repeat",
+        "maximum_difference_f": 0.0,
+        "tolerance_f": 0,
+        "passed": true
+      },
+      {
+        "variant": "chronos_observed_then_guided",
+        "check": "main_batch",
+        "maximum_difference_f": 7.62939453125e-06,
+        "tolerance_f": 1e-05,
+        "passed": true
+      },
+      {
+        "variant": "chronos_observed_then_guided",
+        "check": "append_later_origin",
+        "maximum_difference_f": 7.62939453125e-06,
+        "tolerance_f": 1e-05,
+        "passed": true
+      },
+      {
+        "variant": "chronos_observed_then_guided",
+        "check": "permutation",
+        "maximum_difference_f": 0.0,
+        "tolerance_f": 1e-05,
+        "passed": true
+      }
+    ],
+    "failed_integrity_comparisons": [],
+    "failure_message_mentions_invariance": false,
+    "failure_records": [],
+    "resource_evidence": {
+      "automatic_retry": false,
+      "command": [
+        "/Users/martinmashalov/Downloads/WeatherPred/tmp/forecast-model-env/bin/python",
+        "-m",
+        "research.experiments.e031_guided_forecasts",
+        "--worker-record-id",
+        "166868"
+      ],
+      "cwd": "/Users/martinmashalov/Downloads/WeatherPred",
+      "elapsed_seconds": 70.56080491599278,
+      "logs": {
+        "stderr.log": {
+          "bytes": 145,
+          "sha256": "a879c557781dae147a87d4cc39fe59cdf75bcb6b9877a9ae1e6bed4c9527b4ba"
+        },
+        "stdout.log": {
+          "bytes": 95,
+          "sha256": "d227a39b01b5a76d1040ecee95e0a8232efcf6e3e580b05a725b9780f1eafd87"
+        }
+      },
+      "maximum_sampled_rss_bytes": 1518567424,
+      "pid": 91694,
+      "process_group_termination_sent": true,
+      "reason": null,
+      "returncode": 0,
+      "rss_bytes_limit": 4294967296,
+      "rss_monitor": "process-group sum sampled at approximately 0.2s; child also reports its peak",
+      "status": "completed",
+      "wall_seconds_limit": 1200
+    },
+    "complete_parameter_hash_consistency": "b5960e69d1f79ab7c3395ddaff240a301b9e3400742f6dfd3bc91e1260ff6fd3",
+    "case_counts": {
+      "calibration": 3271,
+      "development": 6599
+    },
+    "no_model_replay": true,
+    "no_claim_unfinished_calls_passed": true
+  },
+  "shared_helpers": "E031 load_sources/validate_config checks frozen design, extraction and original source lineage; it does not generate forecasts. E022 observations/prepared_summary/reconstruct_scores independently rebuild contexts, calibration and metrics. E026 read_record/pin/exact_tree provide archive and comparison utilities. Batch census, output step extraction, integrity differences, gains and bootstrap are implemented separately here. Parameter equality is checked against retained hashes, with checkpoint file hashes verified; no model is loaded to regenerate a parameter hash. No independent proof of actual historical publication or unobserved process behavior is claimed.",
+  "model_inferences": 0,
+  "model_fits": 0,
+  "network_requests": 0,
+  "historical_public_availability_verified": false,
+  "promotion_eligible": false,
+  "report_record_id": 168000,
+  "records_checked_count": 478,
+  "records_checked_sha256": "1a808b7ff23b61af2820ca01251dc7991bba4eb9f89d446c02fe0c988417c0b8",
+  "archive_record": {
+    "id": 168000,
+    "kind": "e031_result_audit_report_gzip",
+    "body_sha256": "fafa07794c68cd1b15083155005883c0fc6eb7fb550df096dc90bfb9fa64d99a",
+    "record_sha256": "199c952f1b7fbb2b10eb6b6ef5806be2fbc52b92a71e652689496169ae2c43fc"
+  },
+  "projection_note": "Public summary omits the 478-row source census; immutable full report preserves it."
+}

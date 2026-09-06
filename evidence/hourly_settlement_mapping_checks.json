@@ -1,0 +1,28 @@
+{
+  "artifact_sha256": {
+    "config/kaus_hourly_mapping.schema.json": "87a119f5795eb315f3c0021f40542d6d0ac589ce2b34be09f9e8a5bac21772a5",
+    "config/kaus_hourly_mapping_design.json": "4cd78303595826aeb2ec115dbe9b6333e463db4bc6dbd6dbcdb3b2f15020de9b",
+    "research/HOURLY_SETTLEMENT_MAPPING.md": "a7307b7ad9d512c66bfa4098324b4447a16123e8152b0b9a73c08d7243d8696c",
+    "research/probes/hourly_mapping_design_check.py": "812c674f03a876801681763de452c678e28451afc2b36de8df4ef42443c8ad76"
+  },
+  "checked_at": "2026-09-06T20:48:43.424590+00:00",
+  "checks": [
+    "Draft 2020-12 schema valid; draft configuration validates with date-time formats.",
+    "8 exact UTC targets, decisions, Austin clocks, Eastern tickers and weekly keys verified.",
+    "264 nominal mapping requests; 792 maximum attempts; final revision window and hard stop verified.",
+    "5 archived schema/document source hashes verified.",
+    "9 negative configuration cases rejected without weakening gates.",
+    "55 synthetic discrete distributions: 715 threshold and 5005 inclusive-interval bounds verified exactly, including point masses/ties.",
+    "Published synthetic examples verified; crossing quantiles rejected.",
+    "6 local documentation links resolve.",
+    "No trailing whitespace in the four new design/check files."
+  ],
+  "command": "python3 research/probes/hourly_mapping_design_check.py",
+  "forecasts": 0,
+  "kind": "offline_design_checks_not_a_settlement_audit",
+  "new_network_requests": 0,
+  "new_weather_or_outcome_values_read": 0,
+  "orders": 0,
+  "registrations": 0,
+  "validator": "jsonschema Draft202012Validator with FormatChecker; pre-existing system Python package"
+}
