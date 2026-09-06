@@ -1,0 +1,88 @@
+{
+  "experiment": "E031B-observed-then-guided-station-forecasts-v1",
+  "design_path": "config/c1_nbh_covariate_design.json",
+  "design_sha256": "8779e79dc26362c0678002101068641ce780702d79cf886b76c9611aaf3f97ca",
+  "trajectory_path": "reports/E031_trajectories.json",
+  "trajectory_registration_id": 166222,
+  "trajectory_record_id": 166248,
+  "e022_registration_id": 105314,
+  "e029_registration_id": 129863,
+  "e029_report_record_id": 131549,
+  "e029_predictions_record_id": 131498,
+  "parent_config_path": "config/e022_station_forecasts.json",
+  "manifest_path": "reports/E022_manifest.json",
+  "observations_path": "reports/station_history_rows.jsonl",
+  "expected_cases": 9870,
+  "expected_calibration_cases": 3271,
+  "expected_development_cases": 6599,
+  "variants": [
+    "chronos_pretrained_univariate_matched",
+    "chronos_observed_then_guided"
+  ],
+  "references": [
+    "nbh_original",
+    "nbh_chronos_w025",
+    "nbh_chronos_w050",
+    "nbh_chronos_w075"
+  ],
+  "context_hours": 168,
+  "prediction_length": 7,
+  "batch_size_series": 64,
+  "cross_learning": false,
+  "checkpoint_directory": "tmp/chronos2-small-pinned",
+  "checkpoint_files": {
+    "config.json": "f2780468adc8b16322aa0b6e28b26476c9401ecf64ab53292b6d2b0d3f423722",
+    "model.safetensors": "492290ae82bb89f9769e3479ce90b3179de1f33e600c34daa0352531538b23cd"
+  },
+  "quantile_levels": [
+    0.01,
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95,
+    0.99
+  ],
+  "bootstrap": {
+    "block_days": 7,
+    "resamples": 10000,
+    "seed": 6203101,
+    "confidence": 0.95,
+    "comparison_count": 5,
+    "metric": "pinball_loss_f"
+  },
+  "advance_gate": {
+    "minimum_guidance_fraction": 0.9,
+    "minimum_pinball_relative_improvement_every_reference": 0.05,
+    "promotion_eligible": false
+  },
+  "budgets": {
+    "wall_seconds": 1200,
+    "cpu_threads": 2,
+    "rss_bytes": 4294967296,
+    "main_tasks": 19740,
+    "integrity_tasks": 48,
+    "maximum_integrity_tasks": 64,
+    "attempts": 1,
+    "model_fits": 0,
+    "network_requests": 0,
+    "weight_downloads": 0
+  },
+  "integrity": {
+    "first_cases": 4,
+    "later_cases": 4,
+    "exact_repeat_atol_f": 0,
+    "changed_batch_atol_f": 1e-05,
+    "relative_tolerance": 0,
+    "selection": "First four guided/variant-eligible cases in decision_ms,case_id order; last four with origins strictly later than every first origin. Per variant 4+4+8+8 forecast tasks; repeat exact, append/permutation tolerances fixed."
+  },
+  "stop_file": "data/STOP_E031_MODEL",
+  "lock_file": "e031_model.lock",
+  "interpretation": "Retrospective development after E022/E026/E029 results were known. Two fixed pretrained variants; duplicate eligible observed past target as named covariate, then issued NBH trajectory, never future observed temperatures. Missing guidance copies exact matched-univariate output. All four frozen physical/blend references remain. Research-only advance requires all fixed gains, no financial promotion, no untouched-validation claim."
+}

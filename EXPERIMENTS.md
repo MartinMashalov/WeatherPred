@@ -1506,3 +1506,16 @@ independently implemented uncertainty estimator or raw quote-to-signal replay.
 [Result summary](evidence/E024_annual_replay.json).
 
 [Annual account audit](evidence/E024_annual_audit.json) retains these limits.
+
+## E031 — Operational guidance as a transformer input
+
+Extraction **166222**, artifact **166248**, retains all 9,870 original cases
+and 42,762 required raw TMP cells with provenance. All guidance is available.
+Model registration **166868** fixes a matched univariate transformer and an
+observed-then-guided covariate variant, with all four frozen physical/blend
+references and five pinball-loss comparisons. It permits one supervised
+1,200-second attempt, 19,740 main case predictions and 48 integrity predictions,
+with no fits or network requests. Integrity predictions are archived before
+comparisons, and completed forecasts before scoring labels. The run is in
+progress; no model result or trading improvement is claimed.
+[Design and explanation](research/GUIDED_TRANSFORMER.md).

@@ -78,8 +78,9 @@ failed coverage gate; successful HTTP responses are not complete weather data.
 The [next model preflight](research/CHRONOS_COVARIATE_PREFLIGHT.md) separately
 runs twelve checks against the installed forecasting package. It catches a
 normalization problem before model evaluation and records a distinct proposed
-input design. A separate trajectory extraction is registered; model registration
-and evaluation are still required. The [forecast-to-trade study design](research/FORECAST_TO_TRADE_BRIDGE.md)
+input design. The [guided-transformer experiment](research/GUIDED_TRANSFORMER.md)
+is registered and running after complete trajectory extraction; its results
+are not yet available. The [forecast-to-trade study design](research/FORECAST_TO_TRADE_BRIDGE.md)
 identifies five matching hourly station markets and the remaining settlement
 identity checks before a new paper strategy can run.
 

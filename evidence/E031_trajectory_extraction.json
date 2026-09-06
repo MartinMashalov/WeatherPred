@@ -1,0 +1,36 @@
+{
+  "record_id": 166248,
+  "actual_available_at": "2026-09-06T20:32:52.370251+00:00",
+  "body_sha256": "b7568167c9a54faf42b6baa665420f6ee95801c350b89313d6543a4cf801bb12",
+  "record_sha256": "41fa910867d94729dd9921e85502db66c7be5bb20651979e079f25846ec10bf4",
+  "summary_of_archived_record": true,
+  "payload": {
+    "case_ids_sha256": "3d29b095f56b339c3c061db610e98dff1850eee0112abdfdc6413c82d239dab2",
+    "design_sha256": "8779e79dc26362c0678002101068641ce780702d79cf886b76c9611aaf3f97ca",
+    "experiment": "E031-current-cycle-NBH-trajectory-extraction-v1",
+    "extraction_registration_id": 166222,
+    "historical_public_availability_verified": false,
+    "manifest_sha256": "ccbcbb142cbb7d6954d3ea0d89000427003b27834f9b9f8bb28477d46339b741",
+    "model_fits": 0,
+    "model_inferences": 0,
+    "network_requests": 0,
+    "registration_id": 166222,
+    "schema_version": 1,
+    "source_binding_record_id": 166223,
+    "summary": {
+      "available": 9870,
+      "cases": 9870,
+      "objects": 498,
+      "peak_memory_bytes_before_serialization": 340869120,
+      "reasons": {},
+      "required_cells": 42762,
+      "split_counts": {
+        "calibration": 3271,
+        "development": 6599
+      },
+      "unavailable": 0
+    },
+    "trading_actions": 0,
+    "weather_scores_computed": 0
+  }
+}
