@@ -793,6 +793,63 @@ relationships do not guarantee a discounted purchase.
 Implementation and precise source gates:
 [expanded market study](../research/MARKET_EXPANSION.md).
 
+## 25. Integer bankroll sizing and selection before trading
+
+Let $C_t$ be available cash, $R_t$ cancellable order reservations and $P_t$ the
+purchase principal of held positions. The simulation's bookkeeping equity is
+
+$$E_t=C_t+R_t+P_t.$$
+
+Entry fees are expensed immediately. This cost-based value is not a liquidation
+price. A deliberately conservative alternative assigns zero to every held
+contract, giving $E_t^{0}=C_t+R_t$. Neither convention estimates the missing
+historical bid prices.
+
+For an order limit $a$ and a predeclared risk fraction $f$, the integer quantity is
+
+$$q_t=\max\left\{q\in\mathbb Z_{\ge0}:
+qa+F(q,a)\le
+\min(C_t,fE_t,L_{\rm event},L_{\rm cluster},L_{\rm total})\right\}.$$
+
+Here each $L$ is its remaining permitted exposure after held positions and
+pending orders. The full limit-price debit is reserved before observing the
+later entry price or depth. Actual fills can reduce quantity, never increase the
+previously decided quantity. The conditional candle study additionally assumes
+a fixed 100-contract capacity ceiling; that ceiling is not observed liquidity.
+
+For cent prices and cent account precision, its historical fee assumption is
+
+$$F(q,a)=\frac{\lceil100\,cqa(1-a)\rceil}{100},\qquad c=0.07.$$
+
+The implementation also handles subcent prices by rounding the aggregate debit
+against the account, after the model fee is rounded to six decimals. Fees for
+one $q$-contract order generally differ from $q$ separately rounded one-contract
+orders. Sale fees are charged again; settlement payouts have no assumed fee.
+Historical applicability of this fee schedule remains unverified.
+
+Strategy choice uses earlier daily log returns
+$g_{dj}=\log(E_{d,j}/E_{d-1,j})$. Every candidate uses the same dates. A circular
+seven-day bootstrap resamples all cities and candidates together, preserving
+their shared weather days. If $s_j$ is the bootstrap standard error, compute
+
+$$M_b=\max_j\frac{\bar g_{bj}^{*}-\bar g_j}{s_j},\qquad
+L_j=\bar g_j-Q_{0.95}(M)\,s_j.$$
+
+The selector ranks positive $L_j$ values from the earlier period, subject to
+stressed profit, release-day and unresolved-cash gates. Zero-variance candidates
+cannot establish a positive bound. A 20% decline from the running peak of
+cost-based equity stops new orders and cancels pending reservations; already
+held positions continue to their release events. This stop cannot guarantee a
+20% liquidation-loss bound when positions overlap or market bids are missing.
+
+This is a within-batch development calculation. It does not erase prior searches,
+replace the untouched holdout or establish forward profitability. The maximizer
+within a finite earlier-data search is not an omniscient optimal trading strategy.
+
+Implementation: [bankroll account](../weatherpred/bankroll_replay.py),
+[shared bootstrap](../weatherpred/bankroll_selection.py),
+[E023 specification](../config/e023_bankroll_replay.json).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.

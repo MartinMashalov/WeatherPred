@@ -18,27 +18,42 @@ paper-execution ledger.
 reproducible system that can reject attractive but unsupported trading claims.
 No real-money orders were submitted.
 
-**Latest research checkpoint, September 6 after 17:27 UTC:**
+**Latest research checkpoint, September 6 after 18:12 UTC:**
 
 | New work | Measured result |
 |---|---|
+| $200 bankroll study | 4,608 accounts; none of 2,304 policy-and-size pairs passes the fixed selection rule. Cash is selected. The complete annual trading balance remains uncomputed because the comparable daily panel covers only 25 of 365 requested days. |
 | Execution and capital | 300 quantity/cost screens; the NYC rain pair supports only six pairs under the strongest tested depth/slippage stress. Early exit of existing holdings would lose $2.10–$2.37 per alternative account at the observed bids. |
 | Additional markets | 446 fresh books and 541 contract implications; zero positive quoted floors after fees. Weekly streak candidates also fail 1¢ slippage. |
 | Small transformer | Chronos-2-small completed 100 supervised training steps in 22.55 seconds. Overall RMSE is worse than persistence; the five-minute subgroup improves about 16% on eight reused development days. |
 | Automated research | A bounded candidate/evaluator process runner retains crashes, timeouts, logs and trial counts; it never promotes a development winner as proven profitable. |
-| Original hourly paper cohort | All 32 alternatives are negative after three settled hourly events, from −$11.4723 to −$0.7276, with further positions unsettled. |
+| Original hourly paper cohort | After four settled hourly events, three of 32 alternatives are positive; cumulative realized results range from −$12.1283 to $3.7856. These events share one underlying day. |
+| Selected hourly model | Its first settled forward event loses $2.5186 in the one-second case and $1.6989 in the five-second case; the other two cases did not fill. |
 
 The rain pair's initial simulated fills remain the strongest execution lead,
 with conditional gains of $0.17–$0.41 per alternative account pending settlement.
 It is one weekend, with source risk and limited capacity. See the
+[new $200 study](research/BANKROLL_REPLAY.md),
+[all 4,608 training results](evidence/E023_training_results.csv),
+[full-account independent audit](evidence/E023_audit.json),
+[profit-concentration diagnostic](research/BANKROLL_DIAGNOSTICS.md),
 [execution study](research/EXECUTION_FINANCE.md),
 [expanded market search](research/MARKET_EXPANSION.md),
 [model experiments](research/model_candidates.md),
 [autoresearch implementation](research/AUTORESEARCH_ADAPTATION.md), and
 [third-settlement evidence](evidence/E009_three_settlements.json).
-The [current engineering verification](evidence/verification-2026-09-06-research-expansion.txt)
-records 135 passing tests; [audit corrections](evidence/E016_audit_corrections.json)
+The [fourth-settlement checkpoint](evidence/E009_four_settlements.json) and
+[selected model's first settlement](evidence/E018_first_settlement.json)
+retain the later results. A separate download is collecting all 1,736 daily
+events across seven cities for January–September 2026; the sealed 2025 quarter
+remains untouched. The $341.87 maximum in E023 is a selected **training** balance,
+not a full-year return or independently supported trading result.
+The [current engineering verification](evidence/verification-2026-09-06-bankroll.txt)
+records 187 passing tests; [audit corrections](evidence/E016_audit_corrections.json)
 retain the numerical discrepancies found and corrected in independent replay.
+An independent [hourly timing audit](research/HOURLY_ALIGNMENT_AUDIT.md)
+rejects a one-hour label shift: the exchange settlement timer explains the late
+cash release. A one-minute live input-age mismatch remains documented.
 
 ## Evidence at a glance
 

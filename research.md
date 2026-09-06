@@ -338,3 +338,44 @@ Detailed findings, exact versions, sources and retained results:
 [market expansion](research/MARKET_EXPANSION.md),
 [execution/capital](research/EXECUTION_FINANCE.md),
 [autoresearch design](research/AUTORESEARCH_ADAPTATION.md).
+
+### $200 replay: execution accounting changes the question
+
+The E023 account study evaluates 576 policies × four risk fractions × two cost
+scenarios. It uses earlier released returns for selection, reserves cash for
+unfilled orders and recalculates aggregate integer-order fees. A simultaneous
+seven-day bootstrap leaves all 2,304 costed lower bounds nonpositive; the frozen
+selector holds cash. The largest earlier training cash balance, $341.87, does not
+supply an annual return. The independent account audit reproduces every one of
+4,608 ledgers. [Full study](research/BANKROLL_REPLAY.md),
+[all results](evidence/E023_training_results.csv).
+
+The historical-data audit reveals the binding coverage constraint: the existing
+seven-city daily panel supplies 25 of 365 requested dates and no historical
+depth. Official Kalshi documentation separates older single-market candles from
+recent batch candles. A safe January 2026 canary finds an empty event-level
+response despite 29 existing individual-contract candles. New protocol 99015
+therefore downloads the complete 1,736-event 2026 universe through the correct
+tier, retaining errors and avoiding the sealed 2025 quarter. This will improve
+conditional quote coverage; it cannot reconstruct unavailable queue/depth data.
+[Acquisition and sources](research/BANKROLL_DATA_AUDIT.md).
+
+The new station archive adds 50,771 hourly observations, with missing May weeks
+and actual September receipts retained. Observation-reaction diagnostics find
+no one-minute gross spread-crossing advantage in eight station-matched reports.
+Later price movement needs a direction selected before the move and a separate
+fill test. [History](research/STATION_HISTORY.md),
+[reaction study](research/OBSERVATION_REACTION.md).
+
+E023's apparent training winner is concentrated in Miami and May/June, with
+asymmetric rare losses. Its profit changes nonlinearly with integer sizing,
+shared capital caps and entry timing. The fixed16-account
+[diagnostic](research/BANKROLL_DIAGNOSTICS.md) retains all cells and cannot
+justify selecting the profitable city after observing it.
+
+A separate [clock audit](research/HOURLY_ALIGNMENT_AUDIT.md) verifies the precise
+Synoptic/Kalshi index minute against formal TEMPH terms, actual canonical
+receipts and final payouts. The one-hour delay is settlement processing, not
+an hour-later weather target. All3,456 original residuals reproduce. Live input
+age is one minute larger than its common training assumption; test that in a
+new prospective cohort rather than relabeling the losing one.

@@ -474,6 +474,42 @@ its test count is not a count of market experiments.
 Design, commands and limitations:
 [autoresearch adaptation](../research/AUTORESEARCH_ADAPTATION.md).
 
+## 18. Starting with $200: capital and strategy selection
+
+**Question.** How much would a small account retain after integer contracts,
+transaction costs, failed orders, delayed settlements and correlated weather risk?
+E023 is a new account simulation; it does not multiply the older $100 study's
+one-contract profit by two.
+
+The same 576 price-based policies are paired with four maximum order budgets:
+0.5%, 1%, 2.5% and 5% of current account equity. Each pair is simulated under
+the existing costed and stressed execution assumptions. The account reserves
+cash when an order is decided, releases unused cash when an order fails or fills
+partially, and retains invested cash until sale or settlement. Entry and sale
+fees are recalculated for the actual integer order quantity. All weather cities
+share a 10% exposure cap; each event has a 5% cap.
+
+The selector uses only orders decided before September 1, 2025 and money
+released before September 6. A five-day buffer allows ordinary settlements to
+finish. It ranks earlier log growth after a simultaneous uncertainty penalty
+across all 4,608 policy, size and cost combinations. A qualifying choice must
+also survive stressed costs and have sufficient earlier release days. If none
+qualifies, the policy holds cash. The requested year's results cannot select
+its winner.
+
+**Accuracy limit.** The requested interval is September 6, 2025 through
+September 5, 2026. The existing main daily-market panel covers only 25 of those
+365 days. Historical candle prices do not establish order depth or actual
+availability, and historical fees remain explicit assumptions. Missing months
+cannot become zero-profit observations or be filled by extrapolating a short
+period. The annual cash-only benchmark is $200 with no interest or external cash
+flows; an annual trading balance requires a complete valid replay.
+
+Code and independently reviewed assumptions:
+[account simulator](../weatherpred/bankroll_replay.py),
+[registered study specification](../config/e023_bankroll_replay.json),
+[replay review](../research/BANKROLL_REPLAY_PROTOCOL_REVIEW.md).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,

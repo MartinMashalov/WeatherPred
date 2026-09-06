@@ -1233,3 +1233,94 @@ incomplete repair remain in [diagnostic evidence](evidence/E016_audit_correction
 The [full local verification](evidence/verification-2026-09-06-research-expansion.txt)
 records 135 passing tests and 85,523 verified archive records. These engineering
 checks do not change the profitability conclusion.
+
+## E023 — $200 integer bankroll replay and earlier-data selection
+
+Requested interval: September 6, 2025 through September 5, 2026 (UTC account
+boundaries). Registration 93872 freezes 576 prior price-based policies, four
+risk budgets and two cost scenarios before 4,608 new account simulations.
+Orders decided before September 1 and released before September 6 form the
+248-day training accounting panel. A shared 10,000-resample seven-day bootstrap
+adjusts the selection bound for the full family; the choice is recorded before
+the selected September account is evaluated.
+
+All 2,304 costed policy-size lower bounds are nonpositive. There are 218 positive
+costed training accounts and 196 positive stressed accounts; the largest training
+cash balances are $341.87 and $280.13 under different policies. Neither is an
+annual return or proof of an edge. The fixed selector chooses cash, leaving $200
+over the available 25-day panel. A separate actual 365-day cash-only replay also
+ends at $200 without interest or external flows. Annual trading balance remains
+null: 92 days are sealed and 248 daily-market days require new acquisition.
+
+The new kernel freezes integer order quantities and reserves cash before later
+entry quotes; failed orders release reservations, partial fills reduce size,
+aggregate fees are recalculated and settled proceeds arrive only at cash release.
+It enforces 5% event/10% weather caps and a 20% cost-equity drawdown stop, which
+does not guarantee a 20% final loss when held positions remain. Verified mode
+rejects unverified availability and missing entry/exit depth. Candle-based
+capacity, receipt times and historical fees remain explicit sensitivity assumptions.
+
+The independent implementation audits all 4,608 accounts, 2,145,475 journal
+records, 198,778 entries and releases, and 1,142,784 daily accounting rows. It
+matches integer quantities, source hashes, fees, reservations and cash exactly.
+Audit evidence is archived as 101096; report 98830 retains the full run.
+See [study](research/BANKROLL_REPLAY.md), [results](evidence/E023_bankroll.json),
+[every training comparison](evidence/E023_training_results.csv),
+[independent audit](evidence/E023_audit.json), and
+[coverage review](research/BANKROLL_DATA_AUDIT.md). No global promotion gate changed.
+
+## New weather history and observation-reaction evidence
+
+Seventeen weekly source requests retained 50,771 hourly observations at 31
+stations. Four May weeks were empty; actual data starts in June and is acquired
+on September 6. Current historical versions do not establish past publication
+or original revisions. All 37 directory stations remain in the coverage report.
+See [history acquisition](research/STATION_HISTORY.md).
+
+A separately declared receipt diagnostic reduces 53 source versions to 20 new
+raw weather reports, retaining 17 backfills and 16 metadata copies. Eight reports
+match the three daily-market stations, giving all 24 fixed 1/5/15-minute windows.
+None has a positive gross ask-to-later-bid difference on either side at one minute.
+Some later differences exceed the spread, but direction was not selected before
+the move and no fees or fills establish a trading edge. Quote arrival is roughly
+59.5 seconds after the weather receipt, limiting any speed claim.
+See [observation-reaction diagnostic](research/OBSERVATION_REACTION.md).
+
+## Fourth hourly settlement and selected-model first settlement
+
+The original E009 cohort now has four finalized hourly events on one day. Three
+of 32 alternatives are cumulatively positive; realized outcomes range from
+−$12.1283 to $3.7856. Independent replay checks 20,141 journal records, 347
+orders, 318 fills and 188 settled positions against 83 raw sources.
+
+The separately frozen E018 model loses $2.5186 in the one-second full-depth case
+and $1.6989 in the five-second half-depth case. Its other two scenarios have no
+fills. Seven of 20 model/baseline alternatives are positive, but choosing them
+after this settlement would be hindsight selection. Independent replay checks
+45 orders, 31 fills, one offset and 21 settled positions. See
+[four-event evidence](evidence/E009_four_settlements.json) and
+[E018 first-settlement evidence](evidence/E018_first_settlement.json).
+
+### E023 concentration diagnostic and hourly-clock audit
+
+Post-selection declaration 100153 fixes exactly two E023 policy IDs, four sizes
+and two scenarios before a 16-account drilldown. Report 101221 finds that Miami
+supplies 75.4% of the $141.87 costed training profit and May/June supply 64.5%
+(overlapping groups). Average winning trades earn $1.73; average losing trades
+lose $7.09. The largest stress account ends at $164.77 under ordinary costs.
+Different entry delays, limit fills, size/city allocations and kill timing explain
+why these are different paths, not a monotone fee adjustment. All 16 accounts,
+all cities and months are retained; no new policy or city is selected.
+[Diagnostic](research/BANKROLL_DIAGNOSTICS.md),
+[full breakdown](evidence/E023_diagnostics.json).
+
+The independent hourly alignment audit rejects the proposed one-hour target
+shift. Four canonical close-time index values equal final settlements. The
+3,600-second exchange timer starts after determination; weather target time and
+cash release are different clocks. It reproduces 864 August rows, all 3,456
+E004 residuals, 2,770 historical contracts and 27 forward snapshots, verifying
+1,541 raw source hashes. No captured numeric canonical revision occurs. Fresh
+live inputs are six minutes old versus mostly five in training; this smaller
+mismatch is not established as the cause of losses. No labels or models change.
+[Audit and official rules](research/HOURLY_ALIGNMENT_AUDIT.md),
+[evidence](evidence/HOURLY_ALIGNMENT_AUDIT.json).

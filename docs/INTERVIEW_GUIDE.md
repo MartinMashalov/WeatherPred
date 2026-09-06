@@ -29,6 +29,9 @@ Read the [strategy guide](STRATEGIES.md) for every implemented approach and the
 - Built a forward paper-execution ledger for latency, depth, partial maker/taker
   fills, fees, cash reservations and same-contract netting; independently replayed
   253,227 historical hypothetical trade calculations from raw market records.
+- Implemented integer bankroll allocation and an earlier-data selection rule;
+  evaluated 4,608 alternative $200 accounts and independently reconciled 198,778
+  hypothetical entries/releases, preserving missing annual data and failed candidates.
 
 These counts describe the dated evidence snapshot. They do not imply production
 trading, that many unique trades, a profitable fund, or independent observations.
@@ -48,6 +51,7 @@ many lines were written manually.
 | Conditional rain pairs and capacity | Can compatible daily/weekend contracts produce a discounted combined payout? | Initial later-book simulated fills leave conditional gains, but capacity is small and early sale is expensive; settlement and further validation remain pending. |
 | Small transformer adaptation | Does pretrained sequence modeling improve the local weather target? | One 100-step fit completes locally; a five-minute development subgroup improves, but aggregate error is worse and no model promotion is justified. |
 | Wider weather state | Can completed days constrain weekly streaks or monthly rain? | Rules narrow outcomes, but no new tested opportunity survives usable asks, fees and the slippage screen. |
+| Integer bankroll allocation | Can position size increase growth without inventing fills or reusing locked cash? | The best training account reaches $341.87, but every candidate fails the simultaneous selection bound; the rule holds cash. Full-year trading performance remains uncomputed. |
 
 ## What to emphasize for a role
 
@@ -86,6 +90,18 @@ for evaluation; once inspected to guide changes, it becomes development data.
 Other orders can be ahead, a public print can be late or duplicated, and fills
 can be adversely selected. The simulator requires fresh qualifying trade-through
 volume after the displayed queue ahead and limits participation.
+
+**Why not double a $100 backtest to simulate \$200?** Integer quantities,
+aggregate fee rounding, pending reservations and shared exposure limits change
+which trades fit. In E023, changing a policy's risk budget also changes its city
+allocation and drawdown-stop path. The account must be replayed from the new
+starting cash. Its largest training gain is concentrated in Miami and does not
+justify choosing that city after seeing the results.
+
+**Can a known winning outcome be spent immediately?** Only when its cash is
+released under the account's rules. The hourly audit separates the target minute,
+publication, exchange determination and final settlement. A 60-minute settlement
+timer explains the delayed cash; it is not an hour-later weather target.
 
 **Why not treat an observed daily high as a hard bound?** Preliminary reports can
 be corrected or disagree with final settlement. E014 finds a 79°F preliminary

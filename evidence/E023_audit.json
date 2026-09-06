@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-06T18:12:14.759264+00:00",
+  "run_record_id": 93872,
+  "registration_sha256": "d1b5d798a4377e9adb2f093e70965517fe1185b22f5d406765a3366654cb08c3",
+  "expected_training_accounts": 4608,
+  "training_accounts_audited": 4608,
+  "all_registered_accounts_present": true,
+  "first_account_record_id": 93987,
+  "last_account_record_id": 98787,
+  "totals": {
+    "journal_rows": 2145475,
+    "entered_trades": 198778,
+    "closed_trades": 198778,
+    "daily_rows": 1142784
+  },
+  "independent_money_and_quantity_reproduction": true,
+  "network_requests": 0,
+  "archive_writes": 0,
+  "profitability_proven": false,
+  "limits": "Checks hypothetical account arithmetic and its pinned parent decision endpoints. It does not establish historical quote availability, depth, actual fills, independent validation, or annual coverage."
+}
