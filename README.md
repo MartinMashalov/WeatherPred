@@ -41,6 +41,14 @@ Sources: [machine-readable summary](evidence/summary.json),
 [raw-price audit](evidence/E013_audit.json),
 [paper audit](evidence/E009_audit.json), [verification output](evidence/verification.txt).
 
+**Later forward update, September 6 at 15:12 UTC:** the first paper event has
+settled. All 32 alternative accounts lost between $0.48 and $4.16 on that one
+event; 57 positions were independently replayed against its finalized result.
+E015 separately registered nine paired-maker alternatives before its first
+15:20 decisions. It tests spread capture with unmatched inventory and locked
+capital. The original evidence snapshot above remains dated and unchanged.
+See the [experiment ledger](EXPERIMENTS.md) for the source records and limits.
+
 ## What is implemented
 
 - **Data and provenance:** public GET ingestion; original forecast/report versions;
@@ -51,7 +59,8 @@ Sources: [machine-readable summary](evidence/summary.json),
   market calibration and constrained logarithmic forecast pooling.
 - **Trading research:** complete-bracket consistency, momentum and reversal,
   buying/fading favorites and longshots, timed exits, settlement holds and
-  preliminary observed-high constraints.
+  preliminary observed-high constraints; a registered forward test of paired
+  passive quotes and inventory-sensitive prices.
 - **Execution:** future-book taker fills, conservative maker queues and
   trade-through rules, partial fills, exact fee accounting, cancellations,
   cash reservations, correlated exposure limits and finalized settlement.

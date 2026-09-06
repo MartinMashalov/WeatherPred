@@ -812,3 +812,83 @@ Disposition: no evidence of an executable observation-bound edge at hourly
 sampling and the registered conservative gates. The failures motivate explicit
 correction risk and faster prospective receipts; they do not rule out all
 intraday strategies. Both final holdout and real-money trading remain untouched.
+
+## E015 — Paired passive quotes with inventory risk
+
+Hypothesis: buying both outcomes passively can earn a spread even if an independent
+weather forecast does not beat the market. The constraint is adverse selection:
+only the losing side may fill, while cash remains locked. This tests a different
+mechanism from E009's one-sided forecast-selected orders.
+
+Config `config/e015_market_making.json` freezes three quoting policies (join,
+improve one cent, and inventory skew) crossed with three execution cases. The
+latter require minimum delays of 1/5/15 seconds, displayed queue multipliers
+1/1/2, and excess printed-volume participation 100%/25%/10%. Actual network receipt
+adds latency; these are minimum delays, not promises of exact arrival times.
+
+Before the first scheduled decision at15:20UTC, the registration selects a fixed
+panel from Miami hourly temperature, Miami/NYC/Chicago/LA daily highs and NYC/Boston
+daily lows. For each series it freezes the earliest eligible event and its
+highest-volume eligible contract, preserving the entire raw census and all
+exclusions. No outcome-based substitution or historical final holdout access.
+Two-minute rounds run through18:20UTC, with expiry60seconds after scheduled order
+arrival, and a bounded service stop18:30UTC. Missed slots do not invent orders.
+
+Each of nine alternative accounts starts with$100. Quotes are one whole contract
+per side. The unchanged E009 ledger reserves cash and fees, limits event cost to
+5% of cost-based equity, and caps the whole panel at10% as one weather cluster.
+Matched contracts do not create spendable cash before finalized settlement.
+The panel priority rotates deterministically between rounds. Both legs pass the
+budget together but their post-only arrivals and future fills are independent.
+
+Execution requires fresh post-delay books, non-block opposite-taker prints
+strictly through the quote, conservative queue depletion, and original receipt
+before expiry. Touches and cancellations never advance the queue. Pagination
+windows are processed only after all pages arrive. Unknown direction, stale
+arrival evidence, changed predicates/fees and missing tape cancel the affected
+orders. Restart cancels open orders and does not reconstruct unseen gap fills.
+
+No model fitting or parameter selection occurs in this experiment. This is an
+initial forward feasibility panel, not training, validation, or final proof.
+Report every account, actual arrival latency, fill/cancellation counts, paired
+and unmatched inventory, tied capital, terminal payout bounds and realized
+settlements. The count of accounts/orders is not the number of independent
+weather events. A positive paired component alone cannot pass promotion.
+A separate preregistered multi-day extension and the existing profitability
+criteria are required before any claim of edge or ruin/target-return projections.
+
+Verification before registration:92tests passed; three new tests cover actual
+fee thresholds, inventory skew, complementary fill direction, duplicate/touch/
+late print rejection, unmatched losses, locked cash, replay, and changed rules.
+Initial results are pending. Do not infer success or failure from zero fills
+before the first scheduled observation.
+
+Registration42731 at15:08UTC froze four eligible contracts: Miami hourly12EDT
+T89.99, Miami daily-high B92.5, Chicago B77.5, and LA B78.5. NYC high and NYC/Boston
+low series had no contract satisfying the fixed metadata price/spread gate;
+these exclusions remain in the registration and are not replaced after inspection.
+Service started15:08:37, awaiting first15:20decisions. Frozen source hashes include
+the new runner/core/config and all reused ledger/fee/book/archive dependencies.
+
+### E009 first realized settlement — 2026-09-06 15:11 UTC
+
+Raw source43062 finalizes KXTEMPMIAH-26SEP0610 at84.56°F, received15:11:11.719685UTC.
+The original paper audit at15:12 independently reconstructs8,301journal events,
+170orders,127taker and34maker fills, and57settled positions using36raw sources.
+All32alternative accounts lose on this first underlying event, ranging from
+$0.4800 to$4.1605 per initial$100. Other event positions remain open, so available
+cash is not total realized return. No cash-based claim of additional losses is made.
+
+All86fill records belonging to the first event lose:39buy-NO fills at82.99,
+44buy-NO at83.99 and3buy-YES at84.99. Across alternative accounts, their combined
+cost is$77.6517, including$3.5013fees. These sums are a decomposition of alternatives,
+not a combined fund or independent samples. Since payout is zero, directional
+losses dominate; eliminating fees would not rescue any of these filled positions.
+
+At13:30 the fresher persistence feature was82.04°F and its linear trend extrapolation
+83.36°F. By13:55 these were83.84°F and84.45°F, versus final84.56°F. The models became
+closer as the event approached, yet their probability/price disagreements still
+selected losing tail bets. This one-event diagnostic motivates conditional
+morning-heating and horizon uncertainty research; it is not evidence that simply
+reversing every model trade would have a repeatable edge. Original paper models
+and settings remain unchanged; E015 was already registered before this settlement.

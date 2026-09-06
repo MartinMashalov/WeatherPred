@@ -168,3 +168,19 @@ Next mechanisms: prospective observation reaction at minute resolution, maker
 spread capture with queue and adverse-selection evidence, and transient bracket
 consistency. Historical hourly candles cannot establish these faster executions.
 No result justifies a real-money trade or a$100-to-$10,000 return projection.
+
+## Paired maker research — 2026-09-06
+
+| Primary source | Finding and implemented experiment | Disposition |
+|---|---|---|
+| [Avellaneda and Stoikov (2008)](https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf), archived record42627 | Inventory changes a dealer's preferred bid and ask. The stock diffusion/Poisson assumptions do not automatically describe binary weather markets. E015 implements a transparent one-cent-per-net-contract inventory skew, capped at three cents, alongside join/improve baselines; it does not claim to fit the paper's optimal-control model | Nine forward alternatives preregistered before decisions; results pending, not promoted |
+| [Kalshi trade direction](https://docs.kalshi.com/getting_started/order_direction), record42624, and [public trades](https://docs.kalshi.com/api-reference/market/get-trades), record42626 | Canonical taker direction identifies which passive leg could have filled; block prints are excluded. E015 requires opposite direction, strict trade-through, depleted displayed queue, expiry-safe receipt, full pagination and deduplicated trade IDs | Implemented through the frozen paper execution primitives; opposite legs cannot both use one print |
+| [Kalshi fee accumulation](https://docs.kalshi.com/getting_started/fee_rounding), record42625 | Per-order rounding persists through partial fills. A maker fee depends on the actual series/event schedule | E015 reads current schedules and overrides, rejects known changes during the resting window, and retains matched capital until finalized settlement |
+
+E015's core economic test is portfolio return after unmatched inventory, not the
+spread earned on completed pairs. A deterministic fixture earns $0.0914 on its
+paired component but loses $0.7170 overall when the two additional YES contracts
+lose. This is a test example, not empirical trading performance. The prior E009
+maker quote diagnostics remain negative at 0/30/60/300 seconds wherever observed
+at the 14:58 checkpoint; occasional positive taker quote differences are not
+booked exits or statistically independent strategy returns.

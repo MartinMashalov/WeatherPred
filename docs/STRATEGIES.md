@@ -224,12 +224,37 @@ Code: [intraday_bounds.py](../weatherpred/intraday_bounds.py),
 [experiment](../research/experiments/e014_intraday_bounds.py),
 [source diagnostics](../research/experiments/e014_source_diagnostics.py).
 
+## 9. Paired passive quotes with inventory control — E015
+
+**Idea.** Offer to buy YES and NO below their combined dollar payout. A matched
+pair can earn the spread, but the two orders fill independently. If only the
+losing outcome fills, inventory losses can exceed the spread on successful pairs.
+
+The new forward experiment compares joining the best bids, improving them by one
+cent, and adjusting prices by one cent per net contract of inventory. Each policy
+has three queue/delay assumptions, giving nine alternative $100 accounts. Quotes
+are one contract per side. Both legs require subsequent opposite-direction trades
+strictly through the quote after the displayed queue ahead has been consumed.
+Their cash stays committed until settlement; a matched pair is not free spending
+power. Total committed cost is capped at 10%, with 5% per event.
+
+**Status.** Registered on September 6 at 15:08 UTC, before its 15:20 first decisions.
+The fixed panel contains Miami hourly temperature and Miami, Chicago and LA daily
+highs. NYC high and NYC/Boston low contracts failed the preset eligibility filter.
+This is a forward feasibility experiment; no profitability or calibrated optimal
+inventory policy is claimed. Its outcome does not change the earlier dated
+1,836-comparison evidence snapshot.
+
+Code: [quote and inventory logic](../weatherpred/market_making.py),
+[registered runner](../research/experiments/e015_market_making.py),
+[independent execution audit](../research/experiments/e015_audit.py).
+
 ## What is still a research idea
 
-Two-sided maker spread capture, faster observation-reaction strategies, broader
-cross-market relative value, precipitation and snowfall strategies have not been
-validated by these experiments. The present maker simulator tests execution of
-one-sided forecast-driven orders, not a proven inventory-aware market maker.
+Faster observation-reaction strategies, broader cross-market relative value,
+precipitation and snowfall strategies have not been validated by these experiments.
+E015 now tests two-sided maker spread capture; its nine simulated accounts do not
+establish a profitable market maker.
 No neural model, HRRR ensemble strategy, live brokerage integration or production
 fund management is claimed.
 

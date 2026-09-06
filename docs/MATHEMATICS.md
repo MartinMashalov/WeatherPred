@@ -415,6 +415,41 @@ in the Git repository.
 Implementation: [archive.py](../weatherpred/archive.py),
 [raw-quote audit](../research/experiments/e013_audit.py).
 
+## 17. Paired maker inventory and payout bounds
+
+The later E015 experiment adds an explicit inventory calculation. If a contract
+has YES quantity $q_Y$, NO quantity $q_N$ and total acquisition cost $C$, its
+terminal profit under normal binary settlement is
+
+$$\Pi(Y)=q_Y Y+q_N(1-Y)-C.$$
+
+Thus the minimum and maximum payouts on already filled positions are
+$\min(q_Y,q_N)$ and $\max(q_Y,q_N)$. Across accounts, cash $K$ already includes
+acquisition costs. Bounds relative to initial capital $W_0$ are
+
+$$\Pi_{\min}=K+\sum_j\min(q_{Y,j},q_{N,j})-W_0,\qquad
+\Pi_{\max}=K+\sum_j\max(q_{Y,j},q_{N,j})-W_0.$$
+
+These bounds exclude future fills from outstanding orders and assume normal
+binary settlement. They are not an expected return or immediately available
+cash. Averaging each leg's cost allows a decomposition into matched-pair profit
+and unmatched cost at risk, but only their combined result is portfolio profit.
+
+For the inventory-skew benchmark, let $I=q_Y-q_N$ and
+$d=\operatorname{clip}(0.01I,-0.03,0.03)$. If current own-side bids are $b_Y,b_N$,
+candidate buy quotes before valid-tick rounding are
+
+$$p_Y=\min(b_Y+0.01-d,1-b_N-0.01),\qquad
+p_N=\min(b_N+0.01+d,1-b_Y-0.01).$$
+
+The quotes must leave at least one cent per matched pair after current maker
+fees. A larger YES inventory lowers the YES bid and raises the NO bid, encouraging
+rebalancing. The shift is a fixed benchmark inspired by inventory-sensitive
+market-making literature, not a fitted optimal-control solution or a fair-value
+estimate. E015 keeps one-contract quotes under the same cash/exposure checks.
+
+Implementation: [market_making.py](../weatherpred/market_making.py).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.
@@ -423,3 +458,4 @@ Implementation: [archive.py](../weatherpred/archive.py),
 - [Bailey et al., backtest overfitting](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2308659): why trying more configurations demands stronger validation.
 - [Kalshi historical candle schema](https://docs.kalshi.com/api-reference/historical/get-historical-market-candlesticks): units and endpoint semantics.
 - [NWS observation and climate-product FAQ](https://www.weather.gov/lot/weather_observations_faq): why preliminary and final temperature values can differ.
+- [Avellaneda and Stoikov, market making](https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf): inventory-sensitive quotes and the distinction between subjective valuation and execution prices.

@@ -79,6 +79,14 @@ queries at registration, writes every candidate and abstention, and stops when
 independent statistical evidence. E009 similarly pins its source files and
 protects the active paper run with an operating-system lock.
 
+E015 is a separate forward experiment, registered as42731. With its original
+archive, `uv run python research/experiments/e015_audit.py` checks recorded quote,
+queue, fill and cash evidence without networking. Its runner resumes with
+`--run-record-id 42731` only if source hashes still match. The process lock is
+`data/market_making.lock`; `data/STOP_MARKET_MAKING` cancels pending orders and
+stops it. A new run needs new future dates and registration before decisions.
+Its initial panel and short observation window cannot establish profitability.
+
 ## Evidence and limitations
 
 The [validation protocol](../config/validation.json) requires independent

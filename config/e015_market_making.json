@@ -1,0 +1,28 @@
+{
+  "experiment": "E015-paired-maker-v1",
+  "first_decision_at": "2026-09-06T15:20:00Z",
+  "last_decision_at": "2026-09-06T18:20:00Z",
+  "stop_at": "2026-09-06T18:30:00Z",
+  "round_interval_seconds": 120,
+  "maximum_slot_lateness_seconds": 45,
+  "order_ttl_seconds": 60,
+  "poll_seconds": 5,
+  "initial_cash": "100",
+  "quantity_per_side": "1",
+  "series": ["KXTEMPMIAH", "KXHIGHMIA", "KXHIGHNY", "KXHIGHCHI", "KXHIGHLAX", "KXLOWTNYC", "KXLOWTBOS"],
+  "policies": ["join", "improve_one_cent", "inventory_skew"],
+  "scenarios": [
+    {"name":"optimistic", "latency_seconds":1, "queue_multiplier":"1", "trade_participation":"1"},
+    {"name":"realistic", "latency_seconds":5, "queue_multiplier":"1", "trade_participation":"0.25"},
+    {"name":"pessimistic", "latency_seconds":15, "queue_multiplier":"2", "trade_participation":"0.10"}
+  ],
+  "hypothesis": "Passive YES and NO purchases may capture the spread; both actual future queue evidence and losses on unmatched inventory determine whether this has economic value.",
+  "selection": "Before the first decision, query every listed series. Within each choose the earliest active event closing at least 30 minutes after first decision and within 36 hours. Within that event choose the highest-volume binary $1 contract with metadata bid and ask both between 10c and 90c, spread 2c to 20c and explicit tick ranges; ties by ticker. Preserve all candidates and exclusions. Freeze the panel; no ex-post substitutions.",
+  "quotes": "One contract on each side. Join best own-side bids; improve both by one cent; or improve and skew by one cent per signed net YES contract, capped at three cents. Stay at least one cent inside opposite ask; whole-cent valid prices; require at least one cent per matched pair after current maker fees. Both legs pass budget together, but arrive/fill independently. No signal is a claim of calibrated fair value.",
+  "execution": "Each immutable paper order precedes the scenario delay. Request a new fresh orderbook after due; actual receipt is arrival. Post-only crossing cancels that leg. Full displayed own-side volume at or above quote, multiplied by scenario queue stress, starts ahead. Only opposite taker, non-block prints strictly through our price advance queue; never touches or book cancellations. Retain registered excess participation after queue depletion. Deduplicate prints per order; opposite legs cannot use the same print. Only data received before expiry can fill. Stop or restart cancels open orders without invented gap fills.",
+  "risk": "Reuse unchanged E009 ledger: 5% of cost-based equity per event; 10% total portfolio, a conservative single-weather-cluster cap across this panel; no overdraft. Full matched-pair cost remains committed until actual finalized settlement. No payout recycling/early netting assumption. Liquidation quote marks trigger 20% drawdown halt; missing bids value unmatched inventory at zero. Normal-binary payout bounds are reported separately from cash and realized returns.",
+  "fees": "Current public series schedule and complete event overrides read at each decision and checked again at delayed arrival. Unknown/changed fee or contract predicates cancel. Frozen venue fee accumulator charges partial fills; no assumed maker rebate.",
+  "validation": "New forward feasibility experiment, no historical tuning and no final holdout access. All 9 policy/scenario accounts are alternatives, not independent samples or one combined bankroll. Report all accounts, paired/unmatched inventory, fee burden, capital utilization, fills, cancellations, settlement and event/day counts. A positive pair component does not prove portfolio profitability. No promotion from this short first panel; require a separately registered multi-day extension and existing profitability gates.",
+  "real_money_orders": 0,
+  "promotion_eligible": false
+}
