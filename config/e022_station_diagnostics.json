@@ -1,0 +1,37 @@
+{
+  "experiment": "E022-station-subgroup-diagnostic-v1",
+  "parent_registration_record_id": 105314,
+  "parent_report_record_id": 105811,
+  "parent_report_path": "reports/E022-run-105314/report.json",
+  "prior_audit_path": "reports/E022_audit.json",
+  "model_ids": ["persistence", "seasonal_24h", "blend_50_50", "ridge_1", "ridge_10", "ridge_100", "chronos_pretrained", "chronos_fixed_fit"],
+  "focal_model": "chronos_fixed_fit",
+  "comparison_models": ["ridge_1", "ridge_10", "ridge_100", "chronos_pretrained"],
+  "known_day_weighted_mae_f": {
+    "persistence": 5.11825708186178,
+    "seasonal_24h": 3.1516945422794223,
+    "blend_50_50": 3.2853298513406237,
+    "ridge_1": 2.151784062984231,
+    "ridge_10": 2.1503412551455185,
+    "ridge_100": 2.1500931022048166,
+    "chronos_pretrained": 1.9072271351341537,
+    "chronos_fixed_fit": 1.8872075518292886
+  },
+  "prior_access": "All aggregate scores were already known. A prior independent arithmetic audit read raw forecasts, calibration labels and daily scores to reproduce the registered E022 report. Station/horizon error summaries and these four-comparison bootstrap intervals were not examined before this diagnostic declaration. This is post-result development diagnosis, not untouched validation.",
+  "panel": "Use every one of the 6599 shared development case IDs, all 20 eligible stations, all horizons 1/3/6 and all 28 UTC target days. Original 37-station calendar exclusions remain unchanged. Do not add, remove, rank-select or retune cases/models based on errors.",
+  "slice_summaries": "Report all 8 models by all 20 stations by all 3 horizons (480 rows), plus all model/station and model/horizon margins. Each slice reports case/day counts, mean absolute error, root mean squared error and signed mean error using equal UTC target-day weights and equal cases within each day. Every negative comparison slice is retained.",
+  "aggregate_comparison": "For each of four fixed reference models, compute fixed-fit minus reference absolute error on identical cases, average within UTC target day, then equally across all 28 days. Negative favors fixed-fit. Preserve all daily differences.",
+  "concentration": "For each reference, retain station and horizon contributions to aggregate MAE reduction: mean over28days of that group's sum(reference absolute error minus fixed-fit absolute error) divided by the total panel case count for that day. Contributions sum exactly to the aggregate gain. Retain negative contributions. Report win/tie/loss counts over20station means,3horizon means,60station-horizon means and28daily means.",
+  "bootstrap": {
+    "seed": 6202202,
+    "resamples": 10000,
+    "block_days": 7,
+    "days": 28,
+    "confidence": 0.95,
+    "generator": "numpy.random.default_rng; four independently sampled circular block starts per draw, each followed by7consecutive UTCday indexes modulo28; identical sampled days across all4comparisons",
+    "statistic": "For comparison j estimate SE_j as sample standard deviation(ddof1) of its10000resampled means. Per draw take max_j(abs(resampled_mean_j-observed_mean_j)/SE_j). Critical value is the95th percentile using method=higher. Report simultaneous descriptive intervals observed_mean_j plus/minus critical*SE_j. Exactly zero-variance comparisons get their point interval and do not enter the maximum; retain their status.",
+    "retention": "Archive all resampled means and the shared sampled-day index SHA256. No pvalues, subgroup confidence intervals, or significance labels. The fixed block length, candidate family and seed are not retried. Intervals are exploratory development uncertainty, not proof after a search."
+  },
+  "limits": "No new model fitting, inference, policy choice, market-price evaluation, network requests or real trades. No claim of untouched validation, statistical discovery, profitability, or promotion. TWC station temperatures are not KXTEMPMIAH index settlement labels.",
+  "promotion_eligible": false
+}

@@ -32,6 +32,10 @@ Read the [strategy guide](STRATEGIES.md) for every implemented approach and the
 - Implemented integer bankroll allocation and an earlier-data selection rule;
   evaluated 4,608 alternative $200 accounts and independently reconciled 198,778
   hypothetical entries/releases, preserving missing annual data and failed candidates.
+- Compared eight station-forecast models on 6,599 shared development cases over
+  28 days; a fixed 200-step adaptation of a 27.9M-parameter transformer reduced
+  day-weighted absolute error by 12.23% versus the strongest tested regression,
+  with independent score reconstruction and explicit data-availability limits.
 
 These counts describe the dated evidence snapshot. They do not imply production
 trading, that many unique trades, a profitable fund, or independent observations.
@@ -49,7 +53,7 @@ many lines were written manually.
 | Paired passive quotes | Can spread capture pay for inventory risk and waiting behind other orders? | Separate forward experiments model independent fills, unmatched inventory and same-contract offsets; validation is ongoing. |
 | Observation receipt recording | Does a newly received station report arrive before a useful market reaction? | Exact station versions and adjacent books are being recorded; an information-speed advantage is not established. |
 | Conditional rain pairs and capacity | Can compatible daily/weekend contracts produce a discounted combined payout? | Initial later-book simulated fills leave conditional gains, but capacity is small and early sale is expensive; settlement and further validation remain pending. |
-| Small transformer adaptation | Does pretrained sequence modeling improve the local weather target? | One 100-step fit completes locally; a five-minute development subgroup improves, but aggregate error is worse and no model promotion is justified. |
+| Small transformer adaptation | Does pretrained sequence modeling improve the local weather target? | The first hourly-index fit has worse aggregate error. A separate station study improves absolute error by 12.23% versus regression on 28 development days; trading benefit is unproven. |
 | Wider weather state | Can completed days constrain weekly streaks or monthly rain? | Rules narrow outcomes, but no new tested opportunity survives usable asks, fees and the slippage screen. |
 | Integer bankroll allocation | Can position size increase growth without inventing fills or reusing locked cash? | The best training account reaches $341.87, but every candidate fails the simultaneous selection bound; the rule holds cash. Full-year trading performance remains uncomputed. |
 
@@ -67,6 +71,11 @@ caught stochastic training-mode evaluation. The same weights were rescored in
 evaluation mode, both score versions were retained, and no training retry was
 used to improve the result. Its approximately 16% five-minute error reduction
 is explicitly a selected development subgroup, not a general forecasting claim.
+The later station study offers a stronger aggregate comparison: eight models
+share the same cases, and all day-weighted scores are independently reconstructed.
+Most of its improvement comes from pretraining; the one local adaptation adds
+only 1.05% relative improvement. Explain the target and timing assumptions before
+quoting the 12.23% comparison with the best regression.
 
 **Software or data engineering:** follow one decision through original source
 versions, receipt-time checks, reserved cash, a later partial fill and an audit.

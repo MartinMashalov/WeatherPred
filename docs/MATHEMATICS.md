@@ -850,6 +850,82 @@ Implementation: [bankroll account](../weatherpred/bankroll_replay.py),
 [shared bootstrap](../weatherpred/bankroll_selection.py),
 [E023 specification](../config/e023_bankroll_replay.json).
 
+## 26. Station residual regression and forecast calibration
+
+E022 predicts an individual station's temperature one, three or six hours after
+the decision. A 15-minute assumed publication lag limits the final context hour:
+
+$$
+t_{\mathrm{end}}=
+\left\lfloor\frac{t_{\mathrm{decision}}-15\text{ minutes}}{1\text{ hour}}\right\rfloor
+\times1\text{ hour}.
+$$
+
+At an exact hourly decision this makes the required neural forecast steps two,
+four and seven. It does not backdate the actual September receipt. A case needs
+at least 120 finite observations in 168 context hours and a last input no more
+than two hours old; missing observations remain missing.
+
+The simple regression predicts the residual from the last eligible temperature
+$y_{\mathrm{last},i}$. Its feature vector includes temperature changes over one,
+three and 24 hours, the previous day's target-hour value, local-clock harmonics,
+input age, missing-data indicators and station indicators. Weighted training
+means and scales produce standardized features $z_i$. The fit solves
+
+$$
+\min_{b,\beta}\sum_iw_i
+\left[(y_i-y_{\mathrm{last},i})-b-z_i^\top\beta\right]^2
++\lambda\|\beta\|_2^2,
+\qquad\lambda\in\{1,10,100\}.
+$$
+
+The intercept is unpenalized. Weights are proportional to $1/n_d$, where $n_d$
+is the number of training cases on day $d$, and normalized to sum to the number
+of cases. Thus each training day has the same total weight. The three penalties
+are separate registered candidates, all retained in the result table.
+
+For each model, forecast horizon $h$ and quantile level $\tau$, the separate
+earlier calibration panel provides an additive correction:
+
+$$
+\delta_{h,\tau}=Q_\tau\left(
+\{y_i-\widehat q_{i,\tau}:i\in\mathcal C_h\}\right),
+\qquad
+\widetilde{\boldsymbol q}_i=
+\operatorname{sort}_{\tau}\left(
+\widehat{\boldsymbol q}_i+\boldsymbol\delta_h\right).
+$$
+
+Here $Q_\tau$ is the linearly interpolated empirical quantile. Sorting makes
+the corrected quantiles nondecreasing. Baselines begin with their point forecast
+repeated at each quantile level; neural candidates supply their own quantiles.
+Calibration uses July 6–19 only. This empirical correction does not guarantee
+future or trade-conditional coverage under changing weather conditions.
+
+The primary development score uses raw point forecasts or neural medians,
+before that quantile correction:
+
+$$
+\operatorname{MAE}=\frac1D\sum_{d=1}^D
+\frac1{n_d}\sum_{i\in d}|y_i-\widehat y_i|,
+\qquad
+\operatorname{RMSE}=\sqrt{\frac1D\sum_{d=1}^D
+\frac1{n_d}\sum_{i\in d}(y_i-\widehat y_i)^2}.
+$$
+
+The same day weighting applies to calibrated quantile loss, coverage and width.
+There are 6,599 cases but only 28 development UTC days. The fitted transformer
+has MAE 1.8872°F versus 2.1501°F for the strongest ridge candidate:
+
+$$
+1-\frac{1.8872075518}{2.1500931022}=12.23\%.
+$$
+
+Its gain over the pretrained checkpoint is only 1.05%. Neither percentage is a
+trading return or an independent validation result. See the
+[complete study](../research/STATION_FORECASTS.md) and
+[all eight candidates](../evidence/E022_station_forecasts.json).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.

@@ -510,6 +510,38 @@ Code and independently reviewed assumptions:
 [registered study specification](../config/e023_bankroll_replay.json),
 [replay review](../research/BANKROLL_REPLAY_PROTOCOL_REVIEW.md).
 
+## 19. Station forecasts against strong simple models — E022
+
+**Idea.** A pretrained time-series model may recognize temperature patterns
+better than a small regression, while a fixed local adaptation may reduce
+remaining bias. This is a forecast component; it has no attached trading rule.
+
+The experiment freezes eight models before execution: latest-temperature
+persistence, the previous day's temperature, their equal blend, three penalized
+regressions and two versions of Chronos-2-small. All use the same 6,599
+development cases across 20 stations and 28 days. Each receives only the eligible
+past context. Separate earlier periods provide fitting and quantile calibration.
+
+**Result.** Mean absolute error, with equal weight per UTC day, is 2.1501°F for
+the strongest regression, 1.9072°F for pretrained Chronos, and 1.8872°F after one
+200-step supervised fit. The adapted model improves 12.23% over regression and
+only 1.05% over its pretrained checkpoint. Its distribution loss also improves,
+and the independent auditor reproduces all eight models' score arithmetic.
+The complete station/horizon diagnostic finds gains versus regression at 19
+of 20 stations. The additional gain from adaptation is less broad and its
+exploratory uncertainty interval includes no improvement over pretraining.
+
+**Limit.** Historical receipt times and revisions are unverified; the 15-minute
+publication lag is an explicit assumption. The target is an individual station
+temperature, not the Miami settlement index or a daily high. Twenty stations
+share only 28 days, and physical weather forecasts are not yet included in this
+same-target comparison. The result supports further research, not a profitable
+trading or world-leading forecasting claim. No reinforcement learning was used.
+
+Code and evidence: [full study](../research/STATION_FORECASTS.md),
+[all candidate scores](../evidence/E022_station_forecasts.json),
+[independent audit](../evidence/E022_audit.json).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,

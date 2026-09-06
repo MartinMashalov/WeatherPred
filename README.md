@@ -18,14 +18,15 @@ paper-execution ledger.
 reproducible system that can reject attractive but unsupported trading claims.
 No real-money orders were submitted.
 
-**Latest research checkpoint, September 6 after 18:12 UTC:**
+**Latest research checkpoint, September 6 after 18:35 UTC:**
 
 | New work | Measured result |
 |---|---|
 | $200 bankroll study | 4,608 accounts; none of 2,304 policy-and-size pairs passes the fixed selection rule. Cash is selected. The complete annual trading balance remains uncomputed because the comparable daily panel covers only 25 of 365 requested days. |
 | Execution and capital | 300 quantity/cost screens; the NYC rain pair supports only six pairs under the strongest tested depth/slippage stress. Early exit of existing holdings would lose $2.10–$2.37 per alternative account at the observed bids. |
 | Additional markets | 446 fresh books and 541 contract implications; zero positive quoted floors after fees. Weekly streak candidates also fail 1¢ slippage. |
-| Small transformer | Chronos-2-small completed 100 supervised training steps in 22.55 seconds. Overall RMSE is worse than persistence; the five-minute subgroup improves about 16% on eight reused development days. |
+| Station transformer | A separate 200-step fit reaches 1.8872°F average absolute error versus 2.1501°F for the strongest ridge baseline, a 12.23% reduction on 28 development days. The pretrained checkpoint reaches 1.9072°F. All eight models and score audits are retained; trading benefit is unproven. |
+| Earlier hourly-index transformer | Its overall error remains worse than persistence; a five-minute subgroup improves about 16% on eight reused development days. This is a different target from the new station study. |
 | Automated research | A bounded candidate/evaluator process runner retains crashes, timeouts, logs and trial counts; it never promotes a development winner as proven profitable. |
 | Original hourly paper cohort | After four settled hourly events, three of 32 alternatives are positive; cumulative realized results range from −$12.1283 to $3.7856. These events share one underlying day. |
 | Selected hourly model | Its first settled forward event loses $2.5186 in the one-second case and $1.6989 in the five-second case; the other two cases did not fill. |
@@ -40,6 +41,8 @@ It is one weekend, with source risk and limited capacity. See the
 [execution study](research/EXECUTION_FINANCE.md),
 [expanded market search](research/MARKET_EXPANSION.md),
 [model experiments](research/model_candidates.md),
+[station forecast comparison](research/STATION_FORECASTS.md),
+[all eight model results](evidence/E022_station_forecasts.json),
 [autoresearch implementation](research/AUTORESEARCH_ADAPTATION.md), and
 [third-settlement evidence](evidence/E009_three_settlements.json).
 The [fourth-settlement checkpoint](evidence/E009_four_settlements.json) and
@@ -48,8 +51,8 @@ retain the later results. A separate download is collecting all 1,736 daily
 events across seven cities for January–September 2026; the sealed 2025 quarter
 remains untouched. The $341.87 maximum in E023 is a selected **training** balance,
 not a full-year return or independently supported trading result.
-The [current engineering verification](evidence/verification-2026-09-06-bankroll.txt)
-records 187 passing tests; [audit corrections](evidence/E016_audit_corrections.json)
+The [current engineering verification](evidence/verification-2026-09-06-station-models.txt)
+records 192 passing tests; [audit corrections](evidence/E016_audit_corrections.json)
 retain the numerical discrepancies found and corrected in independent replay.
 An independent [hourly timing audit](research/HOURLY_ALIGNMENT_AUDIT.md)
 rejects a one-hour label shift: the exchange settlement timer explains the late
@@ -124,7 +127,8 @@ inconsistency could invalidate the expected combined payout.
 - **Forecasting:** persistence and trend baselines, Gaussian and empirical error
   distributions, station bias correction, positive-variance regression, logistic
   market calibration and constrained logarithmic forecast pooling; an optional
-  pretrained transformer pilot and one supervised adaptation experiment.
+  pretrained transformer pilot, two fixed supervised adaptation studies and
+  a common-panel comparison against station regression baselines.
 - **Trading research:** complete-bracket consistency, momentum and reversal,
   buying/fading favorites and longshots, timed exits, settlement holds and
   preliminary observed-high constraints; a registered forward test of paired

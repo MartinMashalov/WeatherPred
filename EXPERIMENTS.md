@@ -1324,3 +1324,40 @@ live inputs are six minutes old versus mostly five in training; this smaller
 mismatch is not established as the cause of losses. No labels or models change.
 [Audit and official rules](research/HOURLY_ALIGNMENT_AUDIT.md),
 [evidence](evidence/HOURLY_ALIGNMENT_AUDIT.json).
+
+## E022 — Completed common-panel station forecast comparison
+
+Registration 105314 at 18:29:56 UTC precedes every candidate execution and score.
+All eight registered candidates complete on the identical 6,599 development
+cases across 20 eligible stations and 28 UTC days, with 3,271 earlier calibration
+cases. Report 105811 retains all models and independent audit 106588 reproduces
+score/calibration arithmetic within 1.42e−14 and verifies prediction/checkpoint
+lineage. No independent neural execution is claimed by that audit.
+
+Day-weighted absolute errors in Fahrenheit: persistence 5.1183; previous day
+3.1517; equal blend 3.2853; ridge penalties 1/10/100 give
+2.1518/2.1503/2.1501; pretrained Chronos 1.9072; fixed-fit Chronos 1.8872.
+The one 200-step fit and checkpoint save takes 34.52 seconds. Its relative
+improvement is 12.23% over the best ridge MAE and only 1.05% over pretraining.
+Calibrated quantile loss is 0.5723 versus the best ridge value 0.6507.
+
+Retain as a forecasting lead only. Actual receipts occurred in September;
+historical 15-minute lag and revisions remain unverified. This station target
+is not the Miami index, no physical-forecast baseline is in the common panel,
+and no trading or untouched validation follows. Earlier E021 negative aggregate
+results remain separate and unchanged. Next diagnose all stations/horizons under
+a new declaration and compare with physical forecasts before a market join.
+
+[Study](research/STATION_FORECASTS.md),
+[all results](evidence/E022_station_forecasts.json),
+[independent audit](evidence/E022_audit.json).
+
+E022 diagnostic declaration 107159 follows the known aggregate results and
+precedes subgroup calculation. Report 107195/bootstrap 107194 retain all 480
+model/station/horizon rows, 240 paired slices and 112 paired day rows. Fixed fit
+beats ridge-100 at 19/20 stations and all three horizons. Its four-comparison,
+shared seven-day bootstrap interval for adapted-minus-ridge error is
+[−0.3403, −0.1855]°F; against pretrained it is [−0.0427, +0.0027]°F. The latter
+does not establish an adaptation benefit. One-hour adaptation error worsens;
+all negative slices remain. Root replay reproduces the report and bootstrap
+exactly without model execution. [Diagnostic](research/STATION_FORECAST_DIAGNOSTICS.md).

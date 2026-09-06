@@ -379,3 +379,20 @@ receipts and final payouts. The one-hour delay is settlement processing, not
 an hour-later weather target. All3,456 original residuals reproduce. Live input
 age is one minute larger than its common training assumption; test that in a
 new prospective cohort rather than relabeling the losing one.
+
+### E022 station forecast execution, September 6 after 18:35 UTC
+
+The pinned Chronos-2-small checkpoint now has a completed comparison against
+six simple baselines on a common 6,599-case, 28-day development panel. One
+200-step fit completes within the fixed budget. Day-weighted absolute error
+falls from 2.1501°F for the strongest ridge baseline to 1.9072°F pretrained and
+1.8872°F adapted. Quantile loss also improves, with separate earlier calibration.
+All eight models are retained and independently scored from saved predictions.
+See [full study](research/STATION_FORECASTS.md) and
+[audit evidence](evidence/E022_audit.json).
+
+This suggests testing pretrained station distributions against same-target
+physical forecasts before further neural complexity. The local adaptation adds
+only 1.05% beyond pretraining. Unverified historical publication, 28 dependent
+weather days, settlement-target differences and missing executable-price joins
+prevent an inference about trading profits. No RL or model promotion occurs.

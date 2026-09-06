@@ -114,6 +114,15 @@ the exploratory five-minute result and the deterministic checkpoint replay.
 The original stochastic evaluation and its correction are disclosed. Rerunning
 a probe is a new calculation, not additional independent evidence.
 
+The later [station comparison](../research/STATION_FORECASTS.md) freezes eight
+models, the full case manifest and one 200-step fit as registration 105314.
+Its optional model command is `python -m research.experiments.e022_run`; a fresh
+execution needs its own registration and artifacts. Completed attempts must not
+be silently retrained. The core environment can run
+`uv run python -m research.experiments.e022_audit --self-check` without PyTorch.
+The full `--run-record-id 105314` audit needs the saved raw archive and prediction
+artifacts; it reconstructs scores without loading or executing neural models.
+
 The [autoresearch adaptation](../research/AUTORESEARCH_ADAPTATION.md) describes
 registration of a finite candidate list and a fixed evaluator. The subprocess
 runner enforces a shared deadline, retains logs and failures, and does not retry.

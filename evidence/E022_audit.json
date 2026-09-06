@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-09-06T18:35:40.546433+00:00",
+  "run_record_id": 105314,
+  "audit_source_sha256": "9919131d1e1a5ed633ad476b53d88e8645c8909badf1087af3bbad34d78b2270",
+  "registration_record_sha256": "16c6682ffce215206c31b7981db088fc5186b120a3508cf7bd1b5e200ced05fb",
+  "final_report_audited": true,
+  "report_record_id": 105811,
+  "registered_candidates": 8,
+  "candidate_records_audited": 8,
+  "completed_scores_reproduced": 8,
+  "failed_candidates_retained": 0,
+  "maximum_score_or_calibration_difference": 1.4210854715202004e-14,
+  "numerical_tolerance": 1e-10,
+  "common_prediction_cases": 9870,
+  "candidates": [
+    {
+      "candidate": "persistence",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 1.4851702605368722,
+        "coverage_80": 0.7916648925913956,
+        "width_80_f": 15.938673042438738,
+        "coverage_90": 0.8920540572257009,
+        "width_90_f": 19.451867901972495,
+        "mae_f": 5.11825708186178,
+        "rmse_f": 6.890282930352321
+      },
+      "neural_evidence": null
+    },
+    {
+      "candidate": "seasonal_24h",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 1.005619665228604,
+        "coverage_80": 0.8190696566879493,
+        "width_80_f": 10.199999999999989,
+        "coverage_90": 0.9051942127900716,
+        "width_90_f": 15.01999402271369,
+        "mae_f": 3.1516945422794223,
+        "rmse_f": 4.54354110389884
+      },
+      "neural_evidence": null
+    },
+    {
+      "candidate": "blend_50_50",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 0.9825926116783005,
+        "coverage_80": 0.8008630054897277,
+        "width_80_f": 10.552764494919314,
+        "coverage_90": 0.8981438188590409,
+        "width_90_f": 13.667696503287507,
+        "mae_f": 3.2853298513406237,
+        "rmse_f": 4.415348159858157
+      },
+      "neural_evidence": null
+    },
+    {
+      "candidate": "ridge_1",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 0.6506883210359408,
+        "coverage_80": 0.8213371535713014,
+        "width_80_f": 6.8328980821170076,
+        "coverage_90": 0.9125279798729865,
+        "width_90_f": 9.74084494541762,
+        "mae_f": 2.151784062984231,
+        "rmse_f": 3.0285713800202303
+      },
+      "neural_evidence": null
+    },
+    {
+      "candidate": "ridge_10",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 0.6509686404861762,
+        "coverage_80": 0.8202427547971916,
+        "width_80_f": 6.836236133019324,
+        "coverage_90": 0.911783932253939,
+        "width_90_f": 9.701383444973436,
+        "mae_f": 2.1503412551455185,
+        "rmse_f": 3.0277160568218977
+      },
+      "neural_evidence": null
+    },
+    {
+      "candidate": "ridge_100",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 0.6557825933348888,
+        "coverage_80": 0.8207676096055003,
+        "width_80_f": 6.8806101903042824,
+        "coverage_90": 0.9138396578935348,
+        "width_90_f": 9.764289659926007,
+        "mae_f": 2.1500931022048166,
+        "rmse_f": 3.0350397119078836
+      },
+      "neural_evidence": null
+    },
+    {
+      "candidate": "chronos_pretrained",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 0.5854587866666564,
+        "coverage_80": 0.816923601956127,
+        "width_80_f": 6.251702704952288,
+        "coverage_90": 0.9108753059701244,
+        "width_90_f": 8.654662152952366,
+        "mae_f": 1.9072271351341537,
+        "rmse_f": 2.8108263513148346
+      },
+      "neural_evidence": {
+        "batches": 155,
+        "replay_metadata_cases": 9870,
+        "input_and_adapter_prediction_hashes_reproduced": 9870,
+        "model_reexecuted_by_audit": false
+      }
+    },
+    {
+      "candidate": "chronos_fixed_fit",
+      "status": "scores_reproduced",
+      "prediction_cases": 9870,
+      "development_cases": 6599,
+      "development_days": 28,
+      "independent_metrics": {
+        "pinball_loss_f": 0.5723037340546366,
+        "coverage_80": 0.818206982594131,
+        "width_80_f": 6.09298272906075,
+        "coverage_90": 0.9166198417632446,
+        "width_90_f": 8.281369548836748,
+        "mae_f": 1.8872075518292886,
+        "rmse_f": 2.8088594352109886
+      },
+      "neural_evidence": {
+        "batches": 155,
+        "replay_metadata_cases": 9870,
+        "input_and_adapter_prediction_hashes_reproduced": 9870,
+        "model_reexecuted_by_audit": false
+      }
+    }
+  ],
+  "archive_source_ids": [
+    105314,
+    105392,
+    105393,
+    105395,
+    105397,
+    105399,
+    105401,
+    105562,
+    105649,
+    105810,
+    105811
+  ],
+  "original_checkpoints_reloaded": 0,
+  "models_fitted": 0,
+  "model_predictions_reexecuted": 0,
+  "archive_writes": 0,
+  "network_requests": 0,
+  "profitability_proven": false,
+  "limits": "Independent score arithmetic, exact input/prediction hashes and retained neural replay metadata. No model execution replay, historical publication proof, untouched validation, or profitability inference."
+}
