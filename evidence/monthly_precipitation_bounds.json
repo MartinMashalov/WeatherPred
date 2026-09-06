@@ -1,0 +1,114 @@
+{
+  "record_id": 80450,
+  "generated_at": "2026-09-06T17:15:38.174962+00:00",
+  "raw_source_ids": [
+    79581,
+    79582,
+    79583,
+    79617,
+    79618,
+    79619,
+    78957,
+    80449
+  ],
+  "rows": [
+    {
+      "series": "KXRAINAUSM",
+      "station_cli": "AUS",
+      "official_past_days": 5,
+      "precipitation_in": "0",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINCHIM",
+      "station_cli": "ORD",
+      "official_past_days": 5,
+      "precipitation_in": "0",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINDALM",
+      "station_cli": "DFW",
+      "official_past_days": 5,
+      "precipitation_in": "0",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINDENM",
+      "station_cli": "DEN",
+      "official_past_days": 5,
+      "precipitation_in": "0",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINHOUM",
+      "station_cli": "HOU",
+      "official_past_days": 5,
+      "precipitation_in": "2.43",
+      "crossed_thresholds": [
+        {
+          "ticker": "KXRAINHOUM-26SEP-2",
+          "threshold": 2,
+          "yes_ask": null,
+          "yes_ask_depth": "0"
+        },
+        {
+          "ticker": "KXRAINHOUM-26SEP-1",
+          "threshold": 1,
+          "yes_ask": null,
+          "yes_ask_depth": "0"
+        }
+      ]
+    },
+    {
+      "series": "KXRAINLAXM",
+      "station_cli": "LAX",
+      "official_past_days": 5,
+      "precipitation_in": "0",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINMIAM",
+      "station_cli": "MIA",
+      "official_past_days": 5,
+      "precipitation_in": "3.00",
+      "crossed_thresholds": [
+        {
+          "ticker": "KXRAINMIAM-26SEP-2",
+          "threshold": 2,
+          "yes_ask": null,
+          "yes_ask_depth": "0"
+        },
+        {
+          "ticker": "KXRAINMIAM-26SEP-1",
+          "threshold": 1,
+          "yes_ask": null,
+          "yes_ask_depth": "0"
+        }
+      ]
+    },
+    {
+      "series": "KXRAINNYCM",
+      "station_cli": "NYC",
+      "official_past_days": 5,
+      "precipitation_in": "0.89",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINSEAM",
+      "station_cli": "SEA",
+      "official_past_days": 5,
+      "precipitation_in": "0.36",
+      "crossed_thresholds": []
+    },
+    {
+      "series": "KXRAINSFOM",
+      "station_cli": "SFO",
+      "official_past_days": 5,
+      "precipitation_in": "0.01",
+      "crossed_thresholds": []
+    }
+  ],
+  "limit": "Conditional accumulation lower bound, subject to cross-report corrections and missing-value/source conventions. Current-day source unavailable; it is not treated as zero. Books received after source observations; no orders or fills simulated.",
+  "profitability_proven": false
+}

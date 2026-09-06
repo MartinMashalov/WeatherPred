@@ -45,6 +45,9 @@ many lines were written manually.
 | Bracket baskets and observed-high constraints | Can settlement logic rule out expensive or impossible combinations? | No positive costed basket; preliminary observations can disagree with final settlement. |
 | Paired passive quotes | Can spread capture pay for inventory risk and waiting behind other orders? | Separate forward experiments model independent fills, unmatched inventory and same-contract offsets; validation is ongoing. |
 | Observation receipt recording | Does a newly received station report arrive before a useful market reaction? | Exact station versions and adjacent books are being recorded; an information-speed advantage is not established. |
+| Conditional rain pairs and capacity | Can compatible daily/weekend contracts produce a discounted combined payout? | Initial later-book simulated fills leave conditional gains, but capacity is small and early sale is expensive; settlement and further validation remain pending. |
+| Small transformer adaptation | Does pretrained sequence modeling improve the local weather target? | One 100-step fit completes locally; a five-minute development subgroup improves, but aggregate error is worse and no model promotion is justified. |
+| Wider weather state | Can completed days constrain weekly streaks or monthly rain? | Rules narrow outcomes, but no new tested opportunity survives usable asks, fees and the slippage screen. |
 
 ## What to emphasize for a role
 
@@ -55,6 +58,11 @@ example is the small forecast-score gain that becomes a trading loss after costs
 **Machine learning:** explain probability distributions, station bias correction,
 regularization and the weather/market combination. Show how an earlier model fit
 produces the training inputs for the next stage without using its own future labels.
+The transformer pilot adds a concrete deployment lesson: saved-checkpoint replay
+caught stochastic training-mode evaluation. The same weights were rescored in
+evaluation mode, both score versions were retained, and no training retry was
+used to improve the result. Its approximately 16% five-minute error reduction
+is explicitly a selected development subgroup, not a general forecasting claim.
 
 **Software or data engineering:** follow one decision through original source
 versions, receipt-time checks, reserved cash, a later partial fill and an audit.
@@ -91,8 +99,16 @@ new execution evidence.
 
 **What does “autoresearch” mean here?** A reproducible runner evaluates a
 registered grid, records failures and abstentions, checks chronological results
-and resumes safely. It does not invent a profitable strategy, repeatedly tune
+and resumes safely. The new process supervisor also pins the evaluator and input
+manifest, enforces a shared candidate/evaluation deadline, and retains logs on
+crash or timeout. It does not invent a profitable strategy, repeatedly tune
 against the final holdout, or place real-money orders.
+
+**Would RL make the forecast better?** It could be researched, but it adds no
+weather information by itself. Supervised quantile learning already rewards
+useful forecast distributions. Sequential order placement, cancellation and
+inventory reduction are a more natural next RL question, after sufficient
+realistic fill data and simple execution baselines exist.
 
 **What can someone reproduce from GitHub alone?** Unit tests and the compact
 evidence reports. Full empirical replay requires the separately stored raw

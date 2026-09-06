@@ -21,6 +21,41 @@ def require(value, reason):
         raise ValueError(reason)
 
 
+def realize_return(previous, cash_returned, cost_removed):
+    """Reproduce the ledger's two recorded arithmetic operations independently.
+
+    Decimal addition/subtraction is not associative after proportional cost
+    allocation introduces repeating digits. The accounting operation credits
+    the returned cash before subtracting the removed cost. Grouping the latter
+    two operands into an increment can differ by 1e-28 dollars at precision 28.
+    No tolerance is introduced: the final account comparison remains exact.
+    """
+    credited = D(previous) + D(cash_returned)
+    return credited - D(cost_removed)
+
+
+def remove_offset_basis(quantities, costs, keys, offset):
+    """Remove closed lots completely; a zero quantity must not retain basis.
+
+    Proportional Decimal allocation can leave a representational residue when
+    an entire lot closes. Keeping that residue would charge a later reopening
+    for a position which no longer exists. Partial lots retain their basis.
+    """
+    allocated = D(0)
+    for key in keys:
+        quantity, cost = quantities[key], costs[key]
+        require(D(0) < offset <= quantity, "Invalid basis removal quantity")
+        part = cost * offset / quantity
+        allocated += part
+        if quantity == offset:
+            del costs[key]
+            del quantities[key]
+        else:
+            costs[key] = cost - part
+            quantities[key] = quantity - offset
+    return allocated
+
+
 def main(run_id):
     archive = Archive()
     try:
@@ -280,14 +315,11 @@ def main(run_id):
                     keys = [(order["account"], order["ticker"], s) for s in ("yes", "no")]
                     offset = min(quantities[k] for k in keys)
                     if offset > 0:
-                        allocated = D(0)
-                        for k in keys:
-                            part = costs[k] * offset / quantities[k]
-                            allocated += part
-                            costs[k] -= part
-                            quantities[k] -= offset
+                        allocated = remove_offset_basis(quantities, costs, keys, offset)
                         cash[order["account"]] += offset
-                        realized[order["account"]] += offset - allocated
+                        realized[order["account"]] = realize_return(
+                            realized[order["account"]], offset, allocated
+                        )
                         counts["nettings_reproduced"] += 1
             elif kind == "settlement":
                 source, body = raw(data["source_record_id"])
@@ -313,7 +345,7 @@ def main(run_id):
                     if ticker == market["ticker"]:
                         payout = quantities.pop(key) * (label if side == "yes" else 1 - label)
                         cash[account] += payout
-                        realized[account] += payout - costs.pop(key, D(0))
+                        realized[account] = realize_return(realized[account], payout, costs.pop(key, D(0)))
             state = (reduce_netted if netted else reduce_event)(state, event)
         for account, a in state["accounts"].items():
             require(

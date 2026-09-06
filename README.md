@@ -18,6 +18,28 @@ paper-execution ledger.
 reproducible system that can reject attractive but unsupported trading claims.
 No real-money orders were submitted.
 
+**Latest research checkpoint, September 6 after 17:27 UTC:**
+
+| New work | Measured result |
+|---|---|
+| Execution and capital | 300 quantity/cost screens; the NYC rain pair supports only six pairs under the strongest tested depth/slippage stress. Early exit of existing holdings would lose $2.10–$2.37 per alternative account at the observed bids. |
+| Additional markets | 446 fresh books and 541 contract implications; zero positive quoted floors after fees. Weekly streak candidates also fail 1¢ slippage. |
+| Small transformer | Chronos-2-small completed 100 supervised training steps in 22.55 seconds. Overall RMSE is worse than persistence; the five-minute subgroup improves about 16% on eight reused development days. |
+| Automated research | A bounded candidate/evaluator process runner retains crashes, timeouts, logs and trial counts; it never promotes a development winner as proven profitable. |
+| Original hourly paper cohort | All 32 alternatives are negative after three settled hourly events, from −$11.4723 to −$0.7276, with further positions unsettled. |
+
+The rain pair's initial simulated fills remain the strongest execution lead,
+with conditional gains of $0.17–$0.41 per alternative account pending settlement.
+It is one weekend, with source risk and limited capacity. See the
+[execution study](research/EXECUTION_FINANCE.md),
+[expanded market search](research/MARKET_EXPANSION.md),
+[model experiments](research/model_candidates.md),
+[autoresearch implementation](research/AUTORESEARCH_ADAPTATION.md), and
+[third-settlement evidence](evidence/E009_three_settlements.json).
+The [current engineering verification](evidence/verification-2026-09-06-research-expansion.txt)
+records 135 passing tests; [audit corrections](evidence/E016_audit_corrections.json)
+retain the numerical discrepancies found and corrected in independent replay.
+
 ## Evidence at a glance
 
 The September 6, 2026 research snapshot contains:
@@ -86,7 +108,8 @@ inconsistency could invalidate the expected combined payout.
   archive with content hashes and raw-data replay.
 - **Forecasting:** persistence and trend baselines, Gaussian and empirical error
   distributions, station bias correction, positive-variance regression, logistic
-  market calibration and constrained logarithmic forecast pooling.
+  market calibration and constrained logarithmic forecast pooling; an optional
+  pretrained transformer pilot and one supervised adaptation experiment.
 - **Trading research:** complete-bracket consistency, momentum and reversal,
   buying/fading favorites and longshots, timed exits, settlement holds and
   preliminary observed-high constraints; a registered forward test of paired
@@ -117,8 +140,8 @@ git clone https://github.com/MartinMashalov/WeatherPred.git
 cd WeatherPred
 uv sync --frozen
 uv run pytest -q
-uv run ruff check weatherpred tests research/experiments
-uv run ruff format --check weatherpred tests research/experiments
+uv run ruff check weatherpred tests research/experiments research/probes
+uv run ruff format --check weatherpred tests research/experiments research/probes
 ```
 
 No credentials or market downloads are needed for these tests. The public

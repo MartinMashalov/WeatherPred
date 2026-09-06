@@ -1,0 +1,322 @@
+{
+  "generated_at": "2026-09-06T17:27:57.948395+00:00",
+  "run_record_id": 21756,
+  "settled_hourly_events": 3,
+  "underlying_utc_days": 1,
+  "third_event_final_temperature_f": "89.60",
+  "third_settlement_source_record_id": 78720,
+  "third_source_received_at": "2026-09-06T17:10:56.369787+00:00",
+  "audit": {
+    "generated_at": "2026-09-06T17:15:12.397794+00:00",
+    "run_record_id": 21756,
+    "last_journal_record_id": 79674,
+    "paper_events_replayed": 16524,
+    "accounts_reproduced": 32,
+    "orders_reproduced": 347,
+    "taker_fills_reproduced_from_future_books": 258,
+    "maker_fills_reproduced_from_trade_through": 60,
+    "settled_positions_reproduced": 146,
+    "source_records_checked": 82,
+    "cash_and_fees_reproduced": true,
+    "fees_recomputed_without_production_accumulator": true,
+    "net_positions_and_realized_pnl_reproduced": true,
+    "nettings_reproduced": 0,
+    "network_requests": 0,
+    "real_money_orders": 0,
+    "profitability_proven": false,
+    "scope_limit": "Raw execution arithmetic and recorded-order lineage; not actual fills, independent days, omitted-signal detection or forecast calibration."
+  },
+  "accounts": [
+    {
+      "account": "original_10m_persistence_gaussian:taker_1s_full",
+      "realized_pnl": "-7.5107",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.1218",
+        "KXTEMPMIAH-26SEP0611": "-1.8188",
+        "KXTEMPMIAH-26SEP0612": "-3.5701"
+      }
+    },
+    {
+      "account": "original_10m_persistence_gaussian:taker_5s_half",
+      "realized_pnl": "-7.7636",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.2900",
+        "KXTEMPMIAH-26SEP0611": "-1.9696",
+        "KXTEMPMIAH-26SEP0612": "-3.5040"
+      }
+    },
+    {
+      "account": "original_10m_persistence_gaussian:taker_30s_quarter",
+      "realized_pnl": "-7.9162",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.2267",
+        "KXTEMPMIAH-26SEP0611": "-2.0725",
+        "KXTEMPMIAH-26SEP0612": "-3.6170"
+      }
+    },
+    {
+      "account": "original_10m_persistence_gaussian:maker_5s_queue",
+      "realized_pnl": "-2.3028",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-1.0100",
+        "KXTEMPMIAH-26SEP0612": "-1.2928"
+      }
+    },
+    {
+      "account": "original_10m_trend_gaussian:taker_1s_full",
+      "realized_pnl": "-11.0563",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.7130",
+        "KXTEMPMIAH-26SEP0611": "-3.3760",
+        "KXTEMPMIAH-26SEP0612": "-3.9673"
+      }
+    },
+    {
+      "account": "original_10m_trend_gaussian:taker_5s_half",
+      "realized_pnl": "-11.4723",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.7948",
+        "KXTEMPMIAH-26SEP0611": "-3.5638",
+        "KXTEMPMIAH-26SEP0612": "-4.1137"
+      }
+    },
+    {
+      "account": "original_10m_trend_gaussian:taker_30s_quarter",
+      "realized_pnl": "-11.2408",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.6985",
+        "KXTEMPMIAH-26SEP0611": "-3.6584",
+        "KXTEMPMIAH-26SEP0612": "-3.8839"
+      }
+    },
+    {
+      "account": "original_10m_trend_gaussian:maker_5s_queue",
+      "realized_pnl": "-5.6076",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-1.0100",
+        "KXTEMPMIAH-26SEP0611": "-4.3200",
+        "KXTEMPMIAH-26SEP0612": "-0.2776"
+      }
+    },
+    {
+      "account": "original_10m_persistence_empirical:taker_1s_full",
+      "realized_pnl": "-3.2185",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.1218",
+        "KXTEMPMIAH-26SEP0611": "2.7589",
+        "KXTEMPMIAH-26SEP0612": "-3.8556"
+      }
+    },
+    {
+      "account": "original_10m_persistence_empirical:taker_5s_half",
+      "realized_pnl": "-4.0529",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.2900",
+        "KXTEMPMIAH-26SEP0611": "2.1838",
+        "KXTEMPMIAH-26SEP0612": "-3.9467"
+      }
+    },
+    {
+      "account": "original_10m_persistence_empirical:taker_30s_quarter",
+      "realized_pnl": "-6.8668",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.2267",
+        "KXTEMPMIAH-26SEP0611": "-0.5843",
+        "KXTEMPMIAH-26SEP0612": "-4.0558"
+      }
+    },
+    {
+      "account": "original_10m_persistence_empirical:maker_5s_queue",
+      "realized_pnl": "-2.3028",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-1.0100",
+        "KXTEMPMIAH-26SEP0612": "-1.2928"
+      }
+    },
+    {
+      "account": "original_10m_trend_empirical:taker_1s_full",
+      "realized_pnl": "-6.2339",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-4.1605",
+        "KXTEMPMIAH-26SEP0611": "1.9370",
+        "KXTEMPMIAH-26SEP0612": "-4.0104"
+      }
+    },
+    {
+      "account": "original_10m_trend_empirical:taker_5s_half",
+      "realized_pnl": "-6.3387",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-4.1133",
+        "KXTEMPMIAH-26SEP0611": "1.8463",
+        "KXTEMPMIAH-26SEP0612": "-4.0717"
+      }
+    },
+    {
+      "account": "original_10m_trend_empirical:taker_30s_quarter",
+      "realized_pnl": "-5.5616",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.9197",
+        "KXTEMPMIAH-26SEP0611": "2.0608",
+        "KXTEMPMIAH-26SEP0612": "-3.7027"
+      }
+    },
+    {
+      "account": "original_10m_trend_empirical:maker_5s_queue",
+      "realized_pnl": "-5.1652",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-0.5676",
+        "KXTEMPMIAH-26SEP0611": "-4.3200",
+        "KXTEMPMIAH-26SEP0612": "-0.2776"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_gaussian:taker_1s_full",
+      "realized_pnl": "-7.9819",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.5574",
+        "KXTEMPMIAH-26SEP0611": "-2.0152",
+        "KXTEMPMIAH-26SEP0612": "-3.4093"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_gaussian:taker_5s_half",
+      "realized_pnl": "-8.0015",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.6089",
+        "KXTEMPMIAH-26SEP0611": "-1.9117",
+        "KXTEMPMIAH-26SEP0612": "-3.4809"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_gaussian:taker_30s_quarter",
+      "realized_pnl": "-8.5726",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.5456",
+        "KXTEMPMIAH-26SEP0611": "-2.4231",
+        "KXTEMPMIAH-26SEP0612": "-3.6039"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_gaussian:maker_5s_queue",
+      "realized_pnl": "-2.0836",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-0.5676",
+        "KXTEMPMIAH-26SEP0612": "-1.5160"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_gaussian:taker_1s_full",
+      "realized_pnl": "-10.6444",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.7467",
+        "KXTEMPMIAH-26SEP0611": "-4.2083",
+        "KXTEMPMIAH-26SEP0612": "-3.6894"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_gaussian:taker_5s_half",
+      "realized_pnl": "-10.5509",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.5007",
+        "KXTEMPMIAH-26SEP0611": "-4.2775",
+        "KXTEMPMIAH-26SEP0612": "-3.7727"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_gaussian:taker_30s_quarter",
+      "realized_pnl": "-10.4014",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.4131",
+        "KXTEMPMIAH-26SEP0611": "-4.3723",
+        "KXTEMPMIAH-26SEP0612": "-3.6160"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_gaussian:maker_5s_queue",
+      "realized_pnl": "-5.3884",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-0.5676",
+        "KXTEMPMIAH-26SEP0611": "-4.3200",
+        "KXTEMPMIAH-26SEP0612": "-0.5008"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_empirical:taker_1s_full",
+      "realized_pnl": "-6.0629",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.4801",
+        "KXTEMPMIAH-26SEP0611": "1.5467",
+        "KXTEMPMIAH-26SEP0612": "-4.1295"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_empirical:taker_5s_half",
+      "realized_pnl": "-6.4638",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.6037",
+        "KXTEMPMIAH-26SEP0611": "1.4124",
+        "KXTEMPMIAH-26SEP0612": "-4.2725"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_empirical:taker_30s_quarter",
+      "realized_pnl": "-7.3860",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.6034",
+        "KXTEMPMIAH-26SEP0611": "0.3461",
+        "KXTEMPMIAH-26SEP0612": "-4.1287"
+      }
+    },
+    {
+      "account": "fresh_5m_persistence_empirical:maker_5s_queue",
+      "realized_pnl": "-0.7276",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-0.5676",
+        "KXTEMPMIAH-26SEP0612": "-0.1600"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_empirical:taker_1s_full",
+      "realized_pnl": "-5.4662",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.0450",
+        "KXTEMPMIAH-26SEP0611": "-4.2083",
+        "KXTEMPMIAH-26SEP0612": "1.7871"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_empirical:taker_5s_half",
+      "realized_pnl": "-5.7180",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-3.1050",
+        "KXTEMPMIAH-26SEP0611": "-4.2775",
+        "KXTEMPMIAH-26SEP0612": "1.6645"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_empirical:taker_30s_quarter",
+      "realized_pnl": "-5.5532",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-2.9849",
+        "KXTEMPMIAH-26SEP0611": "-4.3723",
+        "KXTEMPMIAH-26SEP0612": "1.8040"
+      }
+    },
+    {
+      "account": "fresh_5m_trend_empirical:maker_5s_queue",
+      "realized_pnl": "-5.3008",
+      "settled_event_pnl": {
+        "KXTEMPMIAH-26SEP0610": "-0.4800",
+        "KXTEMPMIAH-26SEP0611": "-4.3200",
+        "KXTEMPMIAH-26SEP0612": "-0.5008"
+      }
+    }
+  ],
+  "negative_cumulative_accounts": 32,
+  "realized_pnl_min": "-11.4723",
+  "realized_pnl_max": "-0.7276",
+  "further_unsettled_positions": true,
+  "profitability_proven": false,
+  "real_money_orders": 0,
+  "limits": "Alternative accounts reuse one dependent weather day. Realized results exclude still-open fourth-event positions."
+}

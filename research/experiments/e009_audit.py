@@ -10,6 +10,7 @@ from collections import defaultdict
 from decimal import ROUND_CEILING, ROUND_FLOOR, Decimal
 from pathlib import Path
 
+from research.experiments.e015_audit import realize_return, remove_offset_basis
 from weatherpred.archive import Archive, canonical
 from weatherpred.books import parse_book
 from weatherpred.netted_paper import reduce_netted
@@ -194,14 +195,11 @@ def main(run_id):
                     keys = [(order["account"], order["ticker"], side) for side in ("yes", "no")]
                     offset = min(quantities[k] for k in keys)
                     if offset > 0:
-                        allocated = D(0)
-                        for k in keys:
-                            part = costs[k] * offset / quantities[k]
-                            allocated += part
-                            costs[k] -= part
-                            quantities[k] -= offset
+                        allocated = remove_offset_basis(quantities, costs, keys, offset)
                         cash[order["account"]] += offset
-                        realized[order["account"]] += offset - allocated
+                        realized[order["account"]] = realize_return(
+                            realized[order["account"]], offset, allocated
+                        )
                         nettings += 1
             elif kind == "settlement":
                 source, body = raw(data["source_record_id"])
@@ -221,7 +219,9 @@ def main(run_id):
                         key = (position["account"], position["ticker"], position["side"])
                         payout = D(y if position["side"] == "yes" else 1 - y) * quantities.pop(key)
                         cash[position["account"]] += payout
-                        realized[position["account"]] += payout - costs.pop(key)
+                        realized[position["account"]] = realize_return(
+                            realized[position["account"]], payout, costs.pop(key)
+                        )
                         settlements += 1
             state = (reduce_netted if netted else reduce_event)(state, event)
         for account, actual in state["accounts"].items():

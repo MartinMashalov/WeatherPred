@@ -1,0 +1,379 @@
+{
+  "generated_at": "2026-09-06T17:21:25.819936+00:00",
+  "experiment": "E021",
+  "status": "Not promoted: aggregate temperature error remains worse than persistence; five-minute subgroup is an exploratory lead.",
+  "model_id": "autogluon/chronos-2-small",
+  "checkpoint_revision": "ddec01313e50b6bc58ebaa92ede81bc24a3d9f9a",
+  "parameter_count": 27934624,
+  "model_card_last_modified": "2025-12-03T11:57:35+00:00",
+  "hardware": {
+    "cpu": "Apple M1 Max",
+    "physical_memory_bytes": 34359738368,
+    "device": "cpu",
+    "threads": 2,
+    "dtype": "float32"
+  },
+  "package_versions": {
+    "chronos-forecasting": "2.3.1",
+    "torch": "2.14.0",
+    "transformers": "5.16.1",
+    "numpy": "2.4.6",
+    "huggingface-hub": "1.30.0"
+  },
+  "zero_shot": {
+    "cases_per_variant": 144,
+    "hourly_events": 48,
+    "days": 12,
+    "data": "August 20-31, 2026: four fixed UTC hours daily, three horizons",
+    "summary": [
+      {
+        "variant": "index_only",
+        "horizon_minutes": null,
+        "cases": 144,
+        "days": 12,
+        "rmse_f": 0.8068370773563986,
+        "mae_f": 0.6103530714246969,
+        "persistence_rmse_f": 0.7440444095168888,
+        "persistence_mae_f": 0.5497916666666679,
+        "mean_pinball_loss_f": 0.19154948527996385,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_only",
+        "horizon_minutes": 30,
+        "cases": 48,
+        "days": 12,
+        "rmse_f": 1.0681076421136353,
+        "mae_f": 0.8352544720967611,
+        "persistence_rmse_f": 0.9357628349818866,
+        "persistence_mae_f": 0.7297916666666682,
+        "mean_pinball_loss_f": 0.2564706856165178,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_only",
+        "horizon_minutes": 15,
+        "cases": 48,
+        "days": 12,
+        "rmse_f": 0.7332765181450749,
+        "mae_f": 0.5767395782470711,
+        "persistence_rmse_f": 0.7213196817870248,
+        "persistence_mae_f": 0.5422916666666676,
+        "mean_pinball_loss_f": 0.18676233658423816,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_only",
+        "horizon_minutes": 5,
+        "cases": 48,
+        "days": 12,
+        "rmse_f": 0.5238414082396798,
+        "mae_f": 0.4190651639302585,
+        "persistence_rmse_f": 0.5146378176284122,
+        "persistence_mae_f": 0.37729166666666786,
+        "mean_pinball_loss_f": 0.13141543363913558,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_stations_clock",
+        "horizon_minutes": null,
+        "cases": 144,
+        "days": 12,
+        "rmse_f": 0.8431309330121637,
+        "mae_f": 0.6137726550632057,
+        "persistence_rmse_f": 0.7440444095168888,
+        "persistence_mae_f": 0.5497916666666679,
+        "mean_pinball_loss_f": 0.19271235889858696,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_stations_clock",
+        "horizon_minutes": 30,
+        "cases": 48,
+        "days": 12,
+        "rmse_f": 1.1277750337492185,
+        "mae_f": 0.8489895820617676,
+        "persistence_rmse_f": 0.9357628349818866,
+        "persistence_mae_f": 0.7297916666666682,
+        "mean_pinball_loss_f": 0.2624616918808377,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_stations_clock",
+        "horizon_minutes": 15,
+        "cases": 48,
+        "days": 12,
+        "rmse_f": 0.7754954111972118,
+        "mae_f": 0.5962704086303713,
+        "persistence_rmse_f": 0.7213196817870248,
+        "persistence_mae_f": 0.5422916666666676,
+        "mean_pinball_loss_f": 0.19105062827085859,
+        "quantile_crossing_cases": 0
+      },
+      {
+        "variant": "index_stations_clock",
+        "horizon_minutes": 5,
+        "cases": 48,
+        "days": 12,
+        "rmse_f": 0.5092540142894328,
+        "mae_f": 0.39605797449747815,
+        "persistence_rmse_f": 0.5146378176284122,
+        "persistence_mae_f": 0.37729166666666786,
+        "mean_pinball_loss_f": 0.12462475654406463,
+        "quantile_crossing_cases": 0
+      }
+    ],
+    "batch_seconds": {
+      "index_only": 0.5218544999952428,
+      "index_stations_clock": 3.9942929160024505
+    },
+    "warmed_single_series_seconds": [
+      0.018358792003709823,
+      0.019864707996021025,
+      0.020330291998106986
+    ],
+    "peak_rss_bytes": 774356992,
+    "replay": {
+      "generated_at": "2026-09-06T17:22:28.929628+00:00",
+      "inference_training_mode": false,
+      "predictions_replayed": 288,
+      "max_absolute_quantile_difference_f": 0,
+      "network_requests": 0,
+      "september_or_final_holdout_accessed": false,
+      "original_smoke_source_preserved": true,
+      "current_source_sha256": "997e8f06d99cdb7f24cecd268b91c5513e71d25d4537642fd97f0c9f8bed4a1c"
+    }
+  },
+  "supervised": {
+    "training": "August 20-23; last training value predates simulated August 24 fit cutoff by more than five minutes",
+    "training_points": 5755,
+    "training_finite_points": 5703,
+    "steps": 100,
+    "batch_size": 8,
+    "context_minutes": 512,
+    "forecast_minutes": 40,
+    "learning_rate": 1e-05,
+    "optimizer": "adamw_torch",
+    "seed": 62026,
+    "fit_seconds": 22.547998833004385,
+    "peak_rss_bytes": 1587675136,
+    "evaluation_forecasts": 93,
+    "evaluation_hourly_events": 31,
+    "evaluation_days": 8,
+    "evaluation_status": "Already-used August development data, not untouched validation",
+    "excluded_pre_fit_midnight_forecasts": 3,
+    "original_parameter_sha256": "b5960e69d1f79ab7c3395ddaff240a301b9e3400742f6dfd3bc91e1260ff6fd3",
+    "trained_parameter_sha256": "c9640ccc68c24dbeca68c72c8b8601409af49e7b31b40d38c09c9c2701d280ee",
+    "inference_training_mode": false,
+    "summaries": [
+      {
+        "horizon_minutes": null,
+        "cases": 93,
+        "finetuned_rmse_f": 0.8009644153813676,
+        "finetuned_mae_f": 0.5659597220472111,
+        "zero_shot_rmse_f": 0.7841917687986922,
+        "zero_shot_mae_f": 0.592898756457914,
+        "persistence_rmse_f": 0.7504342828677458,
+        "persistence_mae_f": 0.5532258064516143,
+        "finetuned_mean_pinball_loss_f": 0.17220633438148228,
+        "zero_shot_mean_pinball_loss_f": 0.18215207928956512
+      },
+      {
+        "horizon_minutes": 30,
+        "cases": 31,
+        "finetuned_rmse_f": 1.0701698299878923,
+        "finetuned_mae_f": 0.8017351999590476,
+        "zero_shot_rmse_f": 1.055931100821551,
+        "zero_shot_mae_f": 0.8373033683530745,
+        "persistence_rmse_f": 0.9487666017077818,
+        "persistence_mae_f": 0.7467741935483887,
+        "finetuned_mean_pinball_loss_f": 0.23453679863335783,
+        "zero_shot_mean_pinball_loss_f": 0.2500207837580452
+      },
+      {
+        "horizon_minutes": 15,
+        "cases": 31,
+        "finetuned_rmse_f": 0.7588050262956286,
+        "finetuned_mae_f": 0.5359357870778733,
+        "zero_shot_rmse_f": 0.6800572994374801,
+        "zero_shot_mae_f": 0.5272141782699101,
+        "persistence_rmse_f": 0.7074192077430975,
+        "persistence_mae_f": 0.5029032258064526,
+        "finetuned_mean_pinball_loss_f": 0.1752536525678992,
+        "zero_shot_mean_pinball_loss_f": 0.17084718955066028
+      },
+      {
+        "horizon_minutes": 5,
+        "cases": 31,
+        "finetuned_rmse_f": 0.451202228688893,
+        "finetuned_mae_f": 0.3602081791047123,
+        "zero_shot_rmse_f": 0.5171090509307041,
+        "zero_shot_mae_f": 0.41417872275075746,
+        "persistence_rmse_f": 0.5374521734160903,
+        "persistence_mae_f": 0.41000000000000164,
+        "finetuned_mean_pinball_loss_f": 0.10682855194318983,
+        "zero_shot_mean_pinball_loss_f": 0.1255882645599898
+      }
+    ],
+    "replay": {
+      "generated_at": "2026-09-06T17:21:25.819936+00:00",
+      "checkpoint_parameter_hash_reproduced": true,
+      "saved_checkpoint_predictions_replayed": 93,
+      "max_absolute_quantile_difference_f": 0.0,
+      "corrected_source_hash_reproduced": true,
+      "source_hash_at_original_fit": "edf3d7faad6998e338aa215a55c9306688da305e9f1d396e500213ba5115a3ea",
+      "corrected_evaluation_source_hash": "997e8f06d99cdb7f24cecd268b91c5513e71d25d4537642fd97f0c9f8bed4a1c",
+      "cpu_threads": 2,
+      "network_requests": 0,
+      "training_repeated": false,
+      "september_or_final_holdout_accessed": false,
+      "quantile_crossing_cases": 0,
+      "uncertainty": [
+        {
+          "horizon_minutes": null,
+          "comparator": "persistence_f",
+          "days": 8,
+          "mean_day_mse_difference_f_squared": 0.09910333055396653,
+          "circular_two_day_block_bootstrap_95_percent_interval": [
+            -0.03269450434243088,
+            0.23341226418636468
+          ],
+          "interpretation": "Exploratory, eight development days, unadjusted for comparing methods/horizons"
+        },
+        {
+          "horizon_minutes": null,
+          "comparator": "zero_shot_median_f",
+          "days": 8,
+          "mean_day_mse_difference_f_squared": 0.041497097593690094,
+          "circular_two_day_block_bootstrap_95_percent_interval": [
+            -0.08460367339124861,
+            0.17411574548952036
+          ],
+          "interpretation": "Exploratory, eight development days, unadjusted for comparing methods/horizons"
+        },
+        {
+          "horizon_minutes": 5,
+          "comparator": "persistence_f",
+          "days": 8,
+          "mean_day_mse_difference_f_squared": -0.08596982518546249,
+          "circular_two_day_block_bootstrap_95_percent_interval": [
+            -0.16608785130125073,
+            -0.01968708614286855
+          ],
+          "interpretation": "Exploratory, eight development days, unadjusted for comparing methods/horizons"
+        },
+        {
+          "horizon_minutes": 5,
+          "comparator": "zero_shot_median_f",
+          "days": 8,
+          "mean_day_mse_difference_f_squared": -0.06773958044206722,
+          "circular_two_day_block_bootstrap_95_percent_interval": [
+            -0.14081686011784844,
+            -0.017627963028208942
+          ],
+          "interpretation": "Exploratory, eight development days, unadjusted for comparing methods/horizons"
+        }
+      ],
+      "profitability_proven": false
+    }
+  },
+  "evaluation_correction": {
+    "reason": "The first post-fit score retained training-mode dropout; rejected by saved-checkpoint replay. Set evaluation mode and rescore identical weights.",
+    "registered_at": "2026-09-06T17:21:24.718185+00:00",
+    "training_repeated": false,
+    "hyperparameters_changed": false,
+    "original_score_retained": true,
+    "original_stochastic_summaries": [
+      {
+        "horizon_minutes": null,
+        "cases": 93,
+        "finetuned_rmse_f": 0.7910112919525919,
+        "finetuned_mae_f": 0.5564023220923642,
+        "zero_shot_rmse_f": 0.7841917687986922,
+        "zero_shot_mae_f": 0.592898756457914,
+        "persistence_rmse_f": 0.7504342828677458,
+        "persistence_mae_f": 0.5532258064516143,
+        "finetuned_mean_pinball_loss_f": 0.16810095573280162,
+        "zero_shot_mean_pinball_loss_f": 0.18215207928956512
+      },
+      {
+        "horizon_minutes": 30,
+        "cases": 31,
+        "finetuned_rmse_f": 1.0858012225227298,
+        "finetuned_mae_f": 0.7886743656281506,
+        "zero_shot_rmse_f": 1.055931100821551,
+        "zero_shot_mae_f": 0.8373033683530745,
+        "persistence_rmse_f": 0.9487666017077818,
+        "persistence_mae_f": 0.7467741935483887,
+        "finetuned_mean_pinball_loss_f": 0.23755718164940923,
+        "zero_shot_mean_pinball_loss_f": 0.2500207837580452
+      },
+      {
+        "horizon_minutes": 15,
+        "cases": 31,
+        "finetuned_rmse_f": 0.7103997776977483,
+        "finetuned_mae_f": 0.5323525508757565,
+        "zero_shot_rmse_f": 0.6800572994374801,
+        "zero_shot_mae_f": 0.5272141782699101,
+        "persistence_rmse_f": 0.7074192077430975,
+        "persistence_mae_f": 0.5029032258064526,
+        "finetuned_mean_pinball_loss_f": 0.16343672096877196,
+        "zero_shot_mean_pinball_loss_f": 0.17084718955066028
+      },
+      {
+        "horizon_minutes": 5,
+        "cases": 31,
+        "finetuned_rmse_f": 0.43984594235329844,
+        "finetuned_mae_f": 0.34818004977318556,
+        "zero_shot_rmse_f": 0.5171090509307041,
+        "zero_shot_mae_f": 0.41417872275075746,
+        "persistence_rmse_f": 0.5374521734160903,
+        "persistence_mae_f": 0.41000000000000164,
+        "finetuned_mean_pinball_loss_f": 0.10330896458022358,
+        "zero_shot_mean_pinball_loss_f": 0.1255882645599898
+      }
+    ],
+    "training_source_sha256": "edf3d7faad6998e338aa215a55c9306688da305e9f1d396e500213ba5115a3ea",
+    "corrected_evaluation_source_sha256": "997e8f06d99cdb7f24cecd268b91c5513e71d25d4537642fd97f0c9f8bed4a1c"
+  },
+  "limits": [
+    "No real or simulated trading P&L in this model pilot.",
+    "Historical five-minute source availability is assumed, not verified.",
+    "All evaluated August data were already research/development data.",
+    "Eight evaluation days cannot establish robust skill across regimes.",
+    "Multiple model/horizon comparisons make subgroup results exploratory.",
+    "No reinforcement-learning fit was performed; this is supervised quantile training."
+  ],
+  "september_or_final_holdout_accessed": false,
+  "profitability_proven": false,
+  "sources": [
+    {
+      "title": "Chronos-2-small official model card",
+      "url": "https://huggingface.co/autogluon/chronos-2-small"
+    },
+    {
+      "title": "Chronos official implementation",
+      "url": "https://github.com/amazon-science/chronos-forecasting"
+    },
+    {
+      "title": "TimesFM current source and model license notice",
+      "url": "https://github.com/google-research/timesfm"
+    },
+    {
+      "title": "IBM TinyTimeMixer R2 model card",
+      "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2"
+    },
+    {
+      "title": "Aurora available models",
+      "url": "https://microsoft.github.io/aurora/models.html"
+    },
+    {
+      "title": "PostTime forecast refinement research",
+      "url": "https://arxiv.org/abs/2605.29401"
+    },
+    {
+      "title": "Verifiable Rewards for Calibrated Probabilistic Forecasting",
+      "url": "https://arxiv.org/abs/2607.00164"
+    }
+  ]
+}

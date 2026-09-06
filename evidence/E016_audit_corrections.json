@@ -1,0 +1,407 @@
+{
+  "record_id": 54934,
+  "account": "improve_one_cent:realistic",
+  "previous_realized": "0.0910442477876106194690265487",
+  "offset": "1",
+  "matched_cost": "1.0300",
+  "legs": {
+    "yes": {
+      "quantity_before": "1",
+      "cost_before": "0.1600",
+      "allocated_cost": "0.1600"
+    },
+    "no": {
+      "quantity_before": "1",
+      "cost_before": "0.8700",
+      "allocated_cost": "0.8700"
+    }
+  },
+  "sum_then_subtract": "0.061044247787610619469026549",
+  "grouped_increment": "0.0610442477876106194690265487",
+  "difference": "3E-28",
+  "cash": "98.7624",
+  "original_failure": "ValueError: Realized return failed independent replay",
+  "cause": "Independent auditor regrouped a Decimal subtraction. At finite precision (28 digits), addition and subtraction are not associative after proportional cost allocation.",
+  "production_files_modified": false,
+  "final_exact_assertion_unchanged": true,
+  "repair": "Independently reconstruct returned cash and removed basis from raw fills, credit cash first, then subtract basis, matching the journal arithmetic order. Apply the same order at final settlement.",
+  "regression_tests": "4 passed in 0.02s",
+  "full_replay_status": "PASSED exact equality with both independent-auditor corrections",
+  "original_full_diagnostic": {
+    "last_journal_record_id": 82006,
+    "journal_events": 8348,
+    "fills": 575,
+    "nettings": 278,
+    "settlement_events": 1,
+    "cash_fees_positions_exactly_reproduced": true,
+    "realized_equality_failed_accounts": {
+      "join:realistic": "7E-28",
+      "improve_one_cent:optimistic": "9E-28",
+      "improve_one_cent:realistic": "-1.5E-27",
+      "improve_one_cent:pessimistic": "1E-28",
+      "inventory_skew:realistic": "-1E-28"
+    },
+    "is_passing_audit": false,
+    "method": "Read-only diagnostic printed failing equality operands and continued to inspect other accounts; the production auditor equality assertion was not weakened."
+  },
+  "first_fix_only_status": "Failed exact E016 replay; E015 passed. A second independent-auditor defect was found and retained below.",
+  "second_defect": [
+    {
+      "record_id": 72403,
+      "account": "inventory_skew:realistic",
+      "ticker": "KXHIGHLAX-26SEP06-B78.5",
+      "side": "no",
+      "quantity_before": "0.48",
+      "cost_before": "0.3086270270270270270270270270",
+      "allocated_cost": "0.3086270270270270270270270271",
+      "improperly_retained_zero_quantity_basis": "-1E-28"
+    }
+  ],
+  "second_first_divergence": {
+    "first_divergence_record": 72998,
+    "event_type": "fill",
+    "event_at": "2026-09-06T16:52:50.054252+00:00",
+    "account": "inventory_skew:realistic",
+    "reducer_realized": "-0.0572000000000000000000000010",
+    "independent_realized": "-0.0572000000000000000000000009",
+    "difference": "-1E-28",
+    "cash_reducer": "99.2122",
+    "cash_independent": "99.2122",
+    "event_data": {
+      "evidence_at": "2026-09-06T16:52:44.742571Z",
+      "fill_id": "trade:0721a929-6979-8eb5-38b0-9909ec85761b",
+      "order_id": "2026-09-06T16:52:00.000000+00:00:inventory_skew:realistic:KXHIGHLAX-26SEP06-B78.5:no",
+      "price": "0.68",
+      "quantity": "0.22",
+      "source_record_id": 72994,
+      "window_record_ids": [
+        72994
+      ]
+    },
+    "recent_netting": [
+      {
+        "at": "2026-09-06T16:52:50.054252+00:00",
+        "account": "inventory_skew:realistic",
+        "ticker": "KXHIGHLAX-26SEP06-B78.5",
+        "order_id": "2026-09-06T16:52:00.000000+00:00:inventory_skew:realistic:KXHIGHLAX-26SEP06-B78.5:no",
+        "fill_id": "trade:0721a929-6979-8eb5-38b0-9909ec85761b",
+        "source_record_id": 72994,
+        "quantity": "0.22",
+        "cash_returned": "0.22",
+        "matched_cost": "0.2222",
+        "realized_pnl": "-0.0022",
+        "legs": {
+          "yes": {
+            "quantity_before": "0.52",
+            "cost_before": "0.1716",
+            "allocated_cost": "0.0726"
+          },
+          "no": {
+            "quantity_before": "0.22",
+            "cost_before": "0.1496",
+            "allocated_cost": "0.1496"
+          }
+        }
+      }
+    ]
+  },
+  "second_repair": "Delete fully removed lots from independent quantity and basis dictionaries, so a later opening starts with zero basis. Keep proportional basis on unmatched lots. Exact final equality remains unchanged.",
+  "economic_replay": {
+    "source_report_generated_at": "2026-09-06T17:28:41.005136+00:00",
+    "nettings_exactly_matched": 293,
+    "account_checks": [
+      {
+        "account": "join:optimistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "join:realistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "join:pessimistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "improve_one_cent:optimistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "improve_one_cent:realistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "improve_one_cent:pessimistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "inventory_skew:optimistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "inventory_skew:realistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      },
+      {
+        "account": "inventory_skew:pessimistic",
+        "cash_exactly_matches": true,
+        "realized_exactly_matches": true
+      }
+    ],
+    "settlement_arithmetic": [
+      {
+        "record": 78959,
+        "account": "join:pessimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0.00",
+        "basis": "0.0750",
+        "previous_realized": "0.202915198618049182113980839",
+        "realized_after": "0.127915198618049182113980839"
+      },
+      {
+        "record": 78959,
+        "account": "join:pessimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "0.127915198618049182113980839",
+        "realized_after": "0.127915198618049182113980839"
+      },
+      {
+        "record": 78959,
+        "account": "improve_one_cent:pessimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0.00",
+        "basis": "0.4650",
+        "previous_realized": "-0.2243909074148383318499361750",
+        "realized_after": "-0.6893909074148383318499361750"
+      },
+      {
+        "record": 78959,
+        "account": "improve_one_cent:pessimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "-0.6893909074148383318499361750",
+        "realized_after": "-0.6893909074148383318499361750"
+      },
+      {
+        "record": 78959,
+        "account": "inventory_skew:pessimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0.00",
+        "basis": "0.0800",
+        "previous_realized": "-0.2454000000000000000000000005",
+        "realized_after": "-0.3254000000000000000000000005"
+      },
+      {
+        "record": 78959,
+        "account": "improve_one_cent:optimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0",
+        "basis": "0.28",
+        "previous_realized": "0.4548823239828598921360707604",
+        "realized_after": "0.1748823239828598921360707604"
+      },
+      {
+        "record": 78959,
+        "account": "improve_one_cent:optimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "0.1748823239828598921360707604",
+        "realized_after": "0.1748823239828598921360707604"
+      },
+      {
+        "record": 78959,
+        "account": "improve_one_cent:realistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0",
+        "basis": "0.28",
+        "previous_realized": "-0.2075875304354772388807034101",
+        "realized_after": "-0.4875875304354772388807034101"
+      },
+      {
+        "record": 78959,
+        "account": "improve_one_cent:realistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "-0.4875875304354772388807034101",
+        "realized_after": "-0.4875875304354772388807034101"
+      },
+      {
+        "record": 78959,
+        "account": "inventory_skew:optimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0",
+        "basis": "0.15",
+        "previous_realized": "-0.6275999999999999999999999998",
+        "realized_after": "-0.7775999999999999999999999998"
+      },
+      {
+        "record": 78959,
+        "account": "inventory_skew:optimistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "-0.7775999999999999999999999998",
+        "realized_after": "-0.7775999999999999999999999998"
+      },
+      {
+        "record": 78959,
+        "account": "inventory_skew:realistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0",
+        "basis": "0.27",
+        "previous_realized": "-0.0024000000000000000000000010",
+        "realized_after": "-0.2724000000000000000000000010"
+      },
+      {
+        "record": 78959,
+        "account": "inventory_skew:realistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "-0.2724000000000000000000000010",
+        "realized_after": "-0.2724000000000000000000000010"
+      },
+      {
+        "record": 78959,
+        "account": "join:realistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "yes",
+        "payout": "0",
+        "basis": "0.12",
+        "previous_realized": "0.136263736263736263736263738",
+        "realized_after": "0.016263736263736263736263738"
+      },
+      {
+        "record": 78959,
+        "account": "join:realistic",
+        "ticker": "KXTEMPMIAH-26SEP0612-T89.99",
+        "side": "no",
+        "payout": "0",
+        "basis": "0",
+        "previous_realized": "0.016263736263736263736263738",
+        "realized_after": "0.016263736263736263736263738"
+      }
+    ],
+    "network_requests": 0,
+    "scope": "Independent fast economic replay using raw fills and explicit zero maker-fee/4decimal cash assertions, checked against live serialized report; full source/queue auditor runs separately."
+  },
+  "corrected_full_replay": {
+    "generated_at": "2026-09-06T17:31:52.099457+00:00",
+    "run_record_id": 45913,
+    "last_journal_record_id": 84352,
+    "journal_events": 8880,
+    "event_counts": {
+      "account": 9,
+      "order": 2090,
+      "abstain": 530,
+      "slot": 55,
+      "arrival": 2017,
+      "queue": 951,
+      "fill": 594,
+      "mark": 909,
+      "cancel": 1724,
+      "nettings_reproduced": 284,
+      "settlement": 1
+    },
+    "raw_records_checked": 2224,
+    "actual_arrival_seconds": {
+      "optimistic": {
+        "n": 617,
+        "min": 1.595816,
+        "max": 11.039553,
+        "mean": 5.023808711507293
+      },
+      "realistic": {
+        "n": 709,
+        "min": 5.959798,
+        "max": 14.929972,
+        "mean": 9.825100170662905
+      },
+      "pessimistic": {
+        "n": 691,
+        "min": 15.85308,
+        "max": 24.315246,
+        "mean": 19.138051639652677
+      }
+    },
+    "cash_fees_positions_reproduced": true,
+    "quotes_reproduced_from_prior_books_and_inventory": true,
+    "future_queue_and_tape_fills_reproduced": true,
+    "network_requests": 0,
+    "real_money_orders": 0,
+    "profitability_proven": false,
+    "scope_limit": "Independent arithmetic and source-lineage audit. Not actual exchange fills or independent trading days; absence of omitted eligible signals is not proven by this replay."
+  },
+  "non_netted_regression_replay": {
+    "generated_at": "2026-09-06T17:25:12.910418+00:00",
+    "run_record_id": 42731,
+    "last_journal_record_id": 82782,
+    "journal_events": 6790,
+    "event_counts": {
+      "account": 9,
+      "order": 1292,
+      "abstain": 1208,
+      "slot": 62,
+      "arrival": 1253,
+      "queue": 517,
+      "fill": 261,
+      "mark": 1053,
+      "cancel": 1134,
+      "settlement": 1
+    },
+    "raw_records_checked": 2020,
+    "actual_arrival_seconds": {
+      "optimistic": {
+        "n": 350,
+        "min": 1.712622,
+        "max": 10.630196,
+        "mean": 4.4999771228571435
+      },
+      "realistic": {
+        "n": 365,
+        "min": 6.282265,
+        "max": 13.617968,
+        "mean": 9.665510394520547
+      },
+      "pessimistic": {
+        "n": 538,
+        "min": 15.93104,
+        "max": 23.482376,
+        "mean": 19.04861765055762
+      }
+    },
+    "cash_fees_positions_reproduced": true,
+    "quotes_reproduced_from_prior_books_and_inventory": true,
+    "future_queue_and_tape_fills_reproduced": true,
+    "network_requests": 0,
+    "real_money_orders": 0,
+    "profitability_proven": false,
+    "scope_limit": "Independent arithmetic and source-lineage audit. Not actual exchange fills or independent trading days; absence of omitted eligible signals is not proven by this replay."
+  }
+}

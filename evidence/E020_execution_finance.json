@@ -1,0 +1,4567 @@
+{
+  "record_id": 78171,
+  "run_record_id": 78157,
+  "generated_at": "2026-09-06T17:09:39.164766+00:00",
+  "book_received_at": "2026-09-06T17:09:39.137390+00:00",
+  "raw_source_ids": [
+    78170,
+    78159,
+    78160,
+    78162,
+    78164,
+    78166,
+    78168
+  ],
+  "capacity_curves": [
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 1,
+      "full_displayed_size_available": true,
+      "total_cost": "0.927100",
+      "conditional_surplus": "0.072900",
+      "conditional_surplus_per_pair": "0.072900",
+      "fees": "0.017100",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 2,
+      "full_displayed_size_available": true,
+      "total_cost": "1.854200",
+      "conditional_surplus": "0.145800",
+      "conditional_surplus_per_pair": "0.072900",
+      "fees": "0.034200",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 3,
+      "full_displayed_size_available": true,
+      "total_cost": "2.781300",
+      "conditional_surplus": "0.218700",
+      "conditional_surplus_per_pair": "0.072900",
+      "fees": "0.051300",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 4,
+      "full_displayed_size_available": true,
+      "total_cost": "3.708300",
+      "conditional_surplus": "0.291700",
+      "conditional_surplus_per_pair": "0.072925",
+      "fees": "0.068300",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 5,
+      "full_displayed_size_available": true,
+      "total_cost": "4.635400",
+      "conditional_surplus": "0.364600",
+      "conditional_surplus_per_pair": "0.072920",
+      "fees": "0.085400",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 6,
+      "full_displayed_size_available": true,
+      "total_cost": "5.562500",
+      "conditional_surplus": "0.437500",
+      "conditional_surplus_per_pair": "0.07291666666666666666666666667",
+      "fees": "0.102500",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 7,
+      "full_displayed_size_available": true,
+      "total_cost": "6.489600",
+      "conditional_surplus": "0.510400",
+      "conditional_surplus_per_pair": "0.07291428571428571428571428571",
+      "fees": "0.119600",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 8,
+      "full_displayed_size_available": true,
+      "total_cost": "7.416600",
+      "conditional_surplus": "0.583400",
+      "conditional_surplus_per_pair": "0.072925",
+      "fees": "0.136600",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 9,
+      "full_displayed_size_available": true,
+      "total_cost": "8.343700",
+      "conditional_surplus": "0.656300",
+      "conditional_surplus_per_pair": "0.07292222222222222222222222222",
+      "fees": "0.153700",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 10,
+      "full_displayed_size_available": true,
+      "total_cost": "9.270800",
+      "conditional_surplus": "0.729200",
+      "conditional_surplus_per_pair": "0.072920",
+      "fees": "0.170800",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 11,
+      "full_displayed_size_available": true,
+      "total_cost": "10.197900",
+      "conditional_surplus": "0.802100",
+      "conditional_surplus_per_pair": "0.07291818181818181818181818182",
+      "fees": "0.187900",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 12,
+      "full_displayed_size_available": true,
+      "total_cost": "11.124900",
+      "conditional_surplus": "0.875100",
+      "conditional_surplus_per_pair": "0.072925",
+      "fees": "0.204900",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 13,
+      "full_displayed_size_available": true,
+      "total_cost": "12.052000",
+      "conditional_surplus": "0.948000",
+      "conditional_surplus_per_pair": "0.07292307692307692307692307692",
+      "fees": "0.222000",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 14,
+      "full_displayed_size_available": true,
+      "total_cost": "12.979100",
+      "conditional_surplus": "1.020900",
+      "conditional_surplus_per_pair": "0.07292142857142857142857142857",
+      "fees": "0.239100",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 15,
+      "full_displayed_size_available": true,
+      "total_cost": "13.906100",
+      "conditional_surplus": "1.093900",
+      "conditional_surplus_per_pair": "0.07292666666666666666666666667",
+      "fees": "0.256100",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 16,
+      "full_displayed_size_available": true,
+      "total_cost": "14.833200",
+      "conditional_surplus": "1.166800",
+      "conditional_surplus_per_pair": "0.072925",
+      "fees": "0.273200",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 17,
+      "full_displayed_size_available": true,
+      "total_cost": "15.760300",
+      "conditional_surplus": "1.239700",
+      "conditional_surplus_per_pair": "0.07292352941176470588235294118",
+      "fees": "0.290300",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 18,
+      "full_displayed_size_available": true,
+      "total_cost": "16.687400",
+      "conditional_surplus": "1.312600",
+      "conditional_surplus_per_pair": "0.07292222222222222222222222222",
+      "fees": "0.307400",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 19,
+      "full_displayed_size_available": true,
+      "total_cost": "17.614400",
+      "conditional_surplus": "1.385600",
+      "conditional_surplus_per_pair": "0.07292631578947368421052631579",
+      "fees": "0.324400",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 20,
+      "full_displayed_size_available": true,
+      "total_cost": "18.541500",
+      "conditional_surplus": "1.458500",
+      "conditional_surplus_per_pair": "0.072925",
+      "fees": "0.341500",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 21,
+      "full_displayed_size_available": true,
+      "total_cost": "19.468600",
+      "conditional_surplus": "1.531400",
+      "conditional_surplus_per_pair": "0.07292380952380952380952380952",
+      "fees": "0.358600",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 22,
+      "full_displayed_size_available": true,
+      "total_cost": "20.395700",
+      "conditional_surplus": "1.604300",
+      "conditional_surplus_per_pair": "0.07292272727272727272727272727",
+      "fees": "0.375700",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 23,
+      "full_displayed_size_available": true,
+      "total_cost": "21.322700",
+      "conditional_surplus": "1.677300",
+      "conditional_surplus_per_pair": "0.07292608695652173913043478261",
+      "fees": "0.392700",
+      "worst_prices": [
+        "0.1000",
+        "0.8100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 24,
+      "full_displayed_size_available": true,
+      "total_cost": "22.278400",
+      "conditional_surplus": "1.721600",
+      "conditional_surplus_per_pair": "0.07173333333333333333333333333",
+      "fees": "0.408400",
+      "worst_prices": [
+        "0.1000",
+        "0.8400"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 25,
+      "full_displayed_size_available": true,
+      "total_cost": "23.234100",
+      "conditional_surplus": "1.765900",
+      "conditional_surplus_per_pair": "0.070636",
+      "fees": "0.424100",
+      "worst_prices": [
+        "0.1000",
+        "0.8400"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 26,
+      "full_displayed_size_available": true,
+      "total_cost": "24.189900",
+      "conditional_surplus": "1.810100",
+      "conditional_surplus_per_pair": "0.06961923076923076923076923077",
+      "fees": "0.439900",
+      "worst_prices": [
+        "0.1000",
+        "0.8400"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 27,
+      "full_displayed_size_available": true,
+      "total_cost": "25.163200",
+      "conditional_surplus": "1.836800",
+      "conditional_surplus_per_pair": "0.06802962962962962962962962963",
+      "fees": "0.454600",
+      "worst_prices": [
+        "0.1000",
+        "0.9000"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 28,
+      "full_displayed_size_available": true,
+      "total_cost": "26.181900",
+      "conditional_surplus": "1.818100",
+      "conditional_surplus_per_pair": "0.06493214285714285714285714286",
+      "fees": "0.467600",
+      "worst_prices": [
+        "0.1100",
+        "0.9000"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 29,
+      "full_displayed_size_available": true,
+      "total_cost": "27.207900",
+      "conditional_surplus": "1.792100",
+      "conditional_surplus_per_pair": "0.06179655172413793103448275862",
+      "fees": "0.480500",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 30,
+      "full_displayed_size_available": true,
+      "total_cost": "28.240600",
+      "conditional_surplus": "1.759400",
+      "conditional_surplus_per_pair": "0.05864666666666666666666666667",
+      "fees": "0.493200",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 31,
+      "full_displayed_size_available": true,
+      "total_cost": "29.273100",
+      "conditional_surplus": "1.726900",
+      "conditional_surplus_per_pair": "0.05570645161290322580645161290",
+      "fees": "0.505700",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 32,
+      "full_displayed_size_available": true,
+      "total_cost": "30.305700",
+      "conditional_surplus": "1.694300",
+      "conditional_surplus_per_pair": "0.052946875",
+      "fees": "0.518300",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 33,
+      "full_displayed_size_available": true,
+      "total_cost": "31.338300",
+      "conditional_surplus": "1.661700",
+      "conditional_surplus_per_pair": "0.05035454545454545454545454545",
+      "fees": "0.530900",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 34,
+      "full_displayed_size_available": true,
+      "total_cost": "32.370900",
+      "conditional_surplus": "1.629100",
+      "conditional_surplus_per_pair": "0.04791470588235294117647058824",
+      "fees": "0.543500",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 35,
+      "full_displayed_size_available": true,
+      "total_cost": "33.403400",
+      "conditional_surplus": "1.596600",
+      "conditional_surplus_per_pair": "0.04561714285714285714285714286",
+      "fees": "0.556000",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 36,
+      "full_displayed_size_available": true,
+      "total_cost": "34.436100",
+      "conditional_surplus": "1.563900",
+      "conditional_surplus_per_pair": "0.04344166666666666666666666667",
+      "fees": "0.568700",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 37,
+      "full_displayed_size_available": true,
+      "total_cost": "35.468600",
+      "conditional_surplus": "1.531400",
+      "conditional_surplus_per_pair": "0.04138918918918918918918918919",
+      "fees": "0.581200",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 38,
+      "full_displayed_size_available": true,
+      "total_cost": "36.501200",
+      "conditional_surplus": "1.498800",
+      "conditional_surplus_per_pair": "0.03944210526315789473684210526",
+      "fees": "0.593800",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 39,
+      "full_displayed_size_available": true,
+      "total_cost": "37.533800",
+      "conditional_surplus": "1.466200",
+      "conditional_surplus_per_pair": "0.03759487179487179487179487179",
+      "fees": "0.606400",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 40,
+      "full_displayed_size_available": true,
+      "total_cost": "38.566400",
+      "conditional_surplus": "1.433600",
+      "conditional_surplus_per_pair": "0.035840",
+      "fees": "0.619000",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 41,
+      "full_displayed_size_available": true,
+      "total_cost": "39.599000",
+      "conditional_surplus": "1.401000",
+      "conditional_surplus_per_pair": "0.03417073170731707317073170732",
+      "fees": "0.631600",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 42,
+      "full_displayed_size_available": true,
+      "total_cost": "40.631600",
+      "conditional_surplus": "1.368400",
+      "conditional_surplus_per_pair": "0.03258095238095238095238095238",
+      "fees": "0.644200",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 43,
+      "full_displayed_size_available": true,
+      "total_cost": "41.664200",
+      "conditional_surplus": "1.335800",
+      "conditional_surplus_per_pair": "0.03106511627906976744186046512",
+      "fees": "0.656800",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 44,
+      "full_displayed_size_available": true,
+      "total_cost": "42.696700",
+      "conditional_surplus": "1.303300",
+      "conditional_surplus_per_pair": "0.02962045454545454545454545455",
+      "fees": "0.669300",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 45,
+      "full_displayed_size_available": true,
+      "total_cost": "43.729400",
+      "conditional_surplus": "1.270600",
+      "conditional_surplus_per_pair": "0.02823555555555555555555555556",
+      "fees": "0.682000",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 46,
+      "full_displayed_size_available": true,
+      "total_cost": "44.761900",
+      "conditional_surplus": "1.238100",
+      "conditional_surplus_per_pair": "0.02691521739130434782608695652",
+      "fees": "0.694500",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 47,
+      "full_displayed_size_available": true,
+      "total_cost": "45.794500",
+      "conditional_surplus": "1.205500",
+      "conditional_surplus_per_pair": "0.02564893617021276595744680851",
+      "fees": "0.707100",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 48,
+      "full_displayed_size_available": true,
+      "total_cost": "46.827000",
+      "conditional_surplus": "1.173000",
+      "conditional_surplus_per_pair": "0.0244375",
+      "fees": "0.719600",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 49,
+      "full_displayed_size_available": true,
+      "total_cost": "47.859700",
+      "conditional_surplus": "1.140300",
+      "conditional_surplus_per_pair": "0.02327142857142857142857142857",
+      "fees": "0.732300",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 50,
+      "full_displayed_size_available": true,
+      "total_cost": "48.892200",
+      "conditional_surplus": "1.107800",
+      "conditional_surplus_per_pair": "0.022156",
+      "fees": "0.744800",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 51,
+      "full_displayed_size_available": true,
+      "total_cost": "49.924800",
+      "conditional_surplus": "1.075200",
+      "conditional_surplus_per_pair": "0.02108235294117647058823529412",
+      "fees": "0.757400",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 52,
+      "full_displayed_size_available": true,
+      "total_cost": "50.957400",
+      "conditional_surplus": "1.042600",
+      "conditional_surplus_per_pair": "0.020050",
+      "fees": "0.770000",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 53,
+      "full_displayed_size_available": true,
+      "total_cost": "51.990000",
+      "conditional_surplus": "1.010000",
+      "conditional_surplus_per_pair": "0.01905660377358490566037735849",
+      "fees": "0.782600",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 54,
+      "full_displayed_size_available": true,
+      "total_cost": "53.022500",
+      "conditional_surplus": "0.977500",
+      "conditional_surplus_per_pair": "0.01810185185185185185185185185",
+      "fees": "0.795100",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 55,
+      "full_displayed_size_available": true,
+      "total_cost": "54.055200",
+      "conditional_surplus": "0.944800",
+      "conditional_surplus_per_pair": "0.01717818181818181818181818182",
+      "fees": "0.807800",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 56,
+      "full_displayed_size_available": true,
+      "total_cost": "55.087700",
+      "conditional_surplus": "0.912300",
+      "conditional_surplus_per_pair": "0.01629107142857142857142857143",
+      "fees": "0.820300",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 57,
+      "full_displayed_size_available": true,
+      "total_cost": "56.120300",
+      "conditional_surplus": "0.879700",
+      "conditional_surplus_per_pair": "0.01543333333333333333333333333",
+      "fees": "0.832900",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 58,
+      "full_displayed_size_available": true,
+      "total_cost": "57.153000",
+      "conditional_surplus": "0.847000",
+      "conditional_surplus_per_pair": "0.01460344827586206896551724138",
+      "fees": "0.845600",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 59,
+      "full_displayed_size_available": true,
+      "total_cost": "58.185500",
+      "conditional_surplus": "0.814500",
+      "conditional_surplus_per_pair": "0.01380508474576271186440677966",
+      "fees": "0.858100",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 60,
+      "full_displayed_size_available": true,
+      "total_cost": "59.218100",
+      "conditional_surplus": "0.781900",
+      "conditional_surplus_per_pair": "0.01303166666666666666666666667",
+      "fees": "0.870700",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 61,
+      "full_displayed_size_available": true,
+      "total_cost": "60.250700",
+      "conditional_surplus": "0.749300",
+      "conditional_surplus_per_pair": "0.01228360655737704918032786885",
+      "fees": "0.883300",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 62,
+      "full_displayed_size_available": true,
+      "total_cost": "61.283300",
+      "conditional_surplus": "0.716700",
+      "conditional_surplus_per_pair": "0.01155967741935483870967741935",
+      "fees": "0.895900",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 63,
+      "full_displayed_size_available": true,
+      "total_cost": "62.315800",
+      "conditional_surplus": "0.684200",
+      "conditional_surplus_per_pair": "0.01086031746031746031746031746",
+      "fees": "0.908400",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 64,
+      "full_displayed_size_available": true,
+      "total_cost": "63.348500",
+      "conditional_surplus": "0.651500",
+      "conditional_surplus_per_pair": "0.0101796875",
+      "fees": "0.921100",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 65,
+      "full_displayed_size_available": true,
+      "total_cost": "64.381000",
+      "conditional_surplus": "0.619000",
+      "conditional_surplus_per_pair": "0.009523076923076923076923076923",
+      "fees": "0.933600",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 66,
+      "full_displayed_size_available": true,
+      "total_cost": "65.413600",
+      "conditional_surplus": "0.586400",
+      "conditional_surplus_per_pair": "0.008884848484848484848484848485",
+      "fees": "0.946200",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 67,
+      "full_displayed_size_available": true,
+      "total_cost": "66.446200",
+      "conditional_surplus": "0.553800",
+      "conditional_surplus_per_pair": "0.008265671641791044776119402985",
+      "fees": "0.958800",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 68,
+      "full_displayed_size_available": true,
+      "total_cost": "67.478800",
+      "conditional_surplus": "0.521200",
+      "conditional_surplus_per_pair": "0.007664705882352941176470588235",
+      "fees": "0.971400",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 69,
+      "full_displayed_size_available": true,
+      "total_cost": "68.511300",
+      "conditional_surplus": "0.488700",
+      "conditional_surplus_per_pair": "0.007082608695652173913043478261",
+      "fees": "0.983900",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 70,
+      "full_displayed_size_available": true,
+      "total_cost": "69.544000",
+      "conditional_surplus": "0.456000",
+      "conditional_surplus_per_pair": "0.006514285714285714285714285714",
+      "fees": "0.996600",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 71,
+      "full_displayed_size_available": true,
+      "total_cost": "70.576500",
+      "conditional_surplus": "0.423500",
+      "conditional_surplus_per_pair": "0.005964788732394366197183098592",
+      "fees": "1.009100",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 72,
+      "full_displayed_size_available": true,
+      "total_cost": "71.609100",
+      "conditional_surplus": "0.390900",
+      "conditional_surplus_per_pair": "0.005429166666666666666666666667",
+      "fees": "1.021700",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 73,
+      "full_displayed_size_available": true,
+      "total_cost": "72.641800",
+      "conditional_surplus": "0.358200",
+      "conditional_surplus_per_pair": "0.004906849315068493150684931507",
+      "fees": "1.034400",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 74,
+      "full_displayed_size_available": true,
+      "total_cost": "73.674300",
+      "conditional_surplus": "0.325700",
+      "conditional_surplus_per_pair": "0.004401351351351351351351351351",
+      "fees": "1.046900",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 75,
+      "full_displayed_size_available": true,
+      "total_cost": "74.706900",
+      "conditional_surplus": "0.293100",
+      "conditional_surplus_per_pair": "0.003908",
+      "fees": "1.059500",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 76,
+      "full_displayed_size_available": true,
+      "total_cost": "75.739500",
+      "conditional_surplus": "0.260500",
+      "conditional_surplus_per_pair": "0.003427631578947368421052631579",
+      "fees": "1.072100",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 77,
+      "full_displayed_size_available": true,
+      "total_cost": "76.772100",
+      "conditional_surplus": "0.227900",
+      "conditional_surplus_per_pair": "0.002959740259740259740259740260",
+      "fees": "1.084700",
+      "worst_prices": [
+        "0.1100",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 78,
+      "full_displayed_size_available": true,
+      "total_cost": "77.810600",
+      "conditional_surplus": "0.189400",
+      "conditional_surplus_per_pair": "0.002428205128205128205128205128",
+      "fees": "1.097500",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 79,
+      "full_displayed_size_available": true,
+      "total_cost": "78.853800",
+      "conditional_surplus": "0.146200",
+      "conditional_surplus_per_pair": "0.001850632911392405063291139241",
+      "fees": "1.110700",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 80,
+      "full_displayed_size_available": true,
+      "total_cost": "79.896900",
+      "conditional_surplus": "0.103100",
+      "conditional_surplus_per_pair": "0.00128875",
+      "fees": "1.123800",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 81,
+      "full_displayed_size_available": true,
+      "total_cost": "80.940000",
+      "conditional_surplus": "0.060000",
+      "conditional_surplus_per_pair": "0.0007407407407407407407407407407",
+      "fees": "1.136900",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 82,
+      "full_displayed_size_available": true,
+      "total_cost": "81.983200",
+      "conditional_surplus": "0.016800",
+      "conditional_surplus_per_pair": "0.0002048780487804878048780487805",
+      "fees": "1.150100",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 83,
+      "full_displayed_size_available": true,
+      "total_cost": "83.026300",
+      "conditional_surplus": "-0.026300",
+      "conditional_surplus_per_pair": "-0.0003168674698795180722891566265",
+      "fees": "1.163200",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 84,
+      "full_displayed_size_available": true,
+      "total_cost": "84.069400",
+      "conditional_surplus": "-0.069400",
+      "conditional_surplus_per_pair": "-0.0008261904761904761904761904762",
+      "fees": "1.176300",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 85,
+      "full_displayed_size_available": true,
+      "total_cost": "85.112600",
+      "conditional_surplus": "-0.112600",
+      "conditional_surplus_per_pair": "-0.001324705882352941176470588235",
+      "fees": "1.189500",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 86,
+      "full_displayed_size_available": true,
+      "total_cost": "86.155700",
+      "conditional_surplus": "-0.155700",
+      "conditional_surplus_per_pair": "-0.001810465116279069767441860465",
+      "fees": "1.202600",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 87,
+      "full_displayed_size_available": true,
+      "total_cost": "87.198800",
+      "conditional_surplus": "-0.198800",
+      "conditional_surplus_per_pair": "-0.002285057471264367816091954023",
+      "fees": "1.215700",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 88,
+      "full_displayed_size_available": true,
+      "total_cost": "88.241900",
+      "conditional_surplus": "-0.241900",
+      "conditional_surplus_per_pair": "-0.002748863636363636363636363636",
+      "fees": "1.228800",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 89,
+      "full_displayed_size_available": true,
+      "total_cost": "89.285000",
+      "conditional_surplus": "-0.285000",
+      "conditional_surplus_per_pair": "-0.003202247191011235955056179775",
+      "fees": "1.241900",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 90,
+      "full_displayed_size_available": true,
+      "total_cost": "90.328100",
+      "conditional_surplus": "-0.328100",
+      "conditional_surplus_per_pair": "-0.003645555555555555555555555556",
+      "fees": "1.255000",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 91,
+      "full_displayed_size_available": true,
+      "total_cost": "91.371300",
+      "conditional_surplus": "-0.371300",
+      "conditional_surplus_per_pair": "-0.004080219780219780219780219780",
+      "fees": "1.268200",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 92,
+      "full_displayed_size_available": true,
+      "total_cost": "92.414400",
+      "conditional_surplus": "-0.414400",
+      "conditional_surplus_per_pair": "-0.004504347826086956521739130435",
+      "fees": "1.281300",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 93,
+      "full_displayed_size_available": true,
+      "total_cost": "93.457500",
+      "conditional_surplus": "-0.457500",
+      "conditional_surplus_per_pair": "-0.004919354838709677419354838710",
+      "fees": "1.294400",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 94,
+      "full_displayed_size_available": true,
+      "total_cost": "94.500700",
+      "conditional_surplus": "-0.500700",
+      "conditional_surplus_per_pair": "-0.005326595744680851063829787234",
+      "fees": "1.307600",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 95,
+      "full_displayed_size_available": true,
+      "total_cost": "95.543800",
+      "conditional_surplus": "-0.543800",
+      "conditional_surplus_per_pair": "-0.005724210526315789473684210526",
+      "fees": "1.320700",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 96,
+      "full_displayed_size_available": true,
+      "total_cost": "96.586900",
+      "conditional_surplus": "-0.586900",
+      "conditional_surplus_per_pair": "-0.006113541666666666666666666667",
+      "fees": "1.333800",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 97,
+      "full_displayed_size_available": true,
+      "total_cost": "97.630100",
+      "conditional_surplus": "-0.630100",
+      "conditional_surplus_per_pair": "-0.006495876288659793814432989691",
+      "fees": "1.347000",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 98,
+      "full_displayed_size_available": true,
+      "total_cost": "98.673200",
+      "conditional_surplus": "-0.673200",
+      "conditional_surplus_per_pair": "-0.006869387755102040816326530612",
+      "fees": "1.360100",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 99,
+      "full_displayed_size_available": true,
+      "total_cost": "99.716300",
+      "conditional_surplus": "-0.716300",
+      "conditional_surplus_per_pair": "-0.007235353535353535353535353535",
+      "fees": "1.373200",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_1s_full",
+      "quantity": 100,
+      "full_displayed_size_available": true,
+      "total_cost": "100.759400",
+      "conditional_surplus": "-0.759400",
+      "conditional_surplus_per_pair": "-0.007594",
+      "fees": "1.386300",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 1,
+      "full_displayed_size_available": true,
+      "total_cost": "0.947300",
+      "conditional_surplus": "0.052700",
+      "conditional_surplus_per_pair": "0.052700",
+      "fees": "0.017300",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 2,
+      "full_displayed_size_available": true,
+      "total_cost": "1.894500",
+      "conditional_surplus": "0.105500",
+      "conditional_surplus_per_pair": "0.052750",
+      "fees": "0.034500",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 3,
+      "full_displayed_size_available": true,
+      "total_cost": "2.841600",
+      "conditional_surplus": "0.158400",
+      "conditional_surplus_per_pair": "0.052800",
+      "fees": "0.051600",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 4,
+      "full_displayed_size_available": true,
+      "total_cost": "3.788900",
+      "conditional_surplus": "0.211100",
+      "conditional_surplus_per_pair": "0.052775",
+      "fees": "0.068900",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 5,
+      "full_displayed_size_available": true,
+      "total_cost": "4.736000",
+      "conditional_surplus": "0.264000",
+      "conditional_surplus_per_pair": "0.052800",
+      "fees": "0.086000",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 6,
+      "full_displayed_size_available": true,
+      "total_cost": "5.683200",
+      "conditional_surplus": "0.316800",
+      "conditional_surplus_per_pair": "0.052800",
+      "fees": "0.103200",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 7,
+      "full_displayed_size_available": true,
+      "total_cost": "6.630400",
+      "conditional_surplus": "0.369600",
+      "conditional_surplus_per_pair": "0.052800",
+      "fees": "0.120400",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 8,
+      "full_displayed_size_available": true,
+      "total_cost": "7.577600",
+      "conditional_surplus": "0.422400",
+      "conditional_surplus_per_pair": "0.052800",
+      "fees": "0.137600",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 9,
+      "full_displayed_size_available": true,
+      "total_cost": "8.524700",
+      "conditional_surplus": "0.475300",
+      "conditional_surplus_per_pair": "0.05281111111111111111111111111",
+      "fees": "0.154700",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 10,
+      "full_displayed_size_available": true,
+      "total_cost": "9.472000",
+      "conditional_surplus": "0.528000",
+      "conditional_surplus_per_pair": "0.052800",
+      "fees": "0.172000",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 11,
+      "full_displayed_size_available": true,
+      "total_cost": "10.419100",
+      "conditional_surplus": "0.580900",
+      "conditional_surplus_per_pair": "0.05280909090909090909090909091",
+      "fees": "0.189100",
+      "worst_prices": [
+        "0.1100",
+        "0.8200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 12,
+      "full_displayed_size_available": true,
+      "total_cost": "11.380600",
+      "conditional_surplus": "0.619400",
+      "conditional_surplus_per_pair": "0.05161666666666666666666666667",
+      "fees": "0.205600",
+      "worst_prices": [
+        "0.1100",
+        "0.8500"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 13,
+      "full_displayed_size_available": true,
+      "total_cost": "12.356400",
+      "conditional_surplus": "0.643600",
+      "conditional_surplus_per_pair": "0.04950769230769230769230769231",
+      "fees": "0.221400",
+      "worst_prices": [
+        "0.1100",
+        "0.8500"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 14,
+      "full_displayed_size_available": true,
+      "total_cost": "13.372700",
+      "conditional_surplus": "0.627300",
+      "conditional_surplus_per_pair": "0.04480714285714285714285714286",
+      "fees": "0.235200",
+      "worst_prices": [
+        "0.1200",
+        "0.9100"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 15,
+      "full_displayed_size_available": true,
+      "total_cost": "14.422000",
+      "conditional_surplus": "0.578000",
+      "conditional_surplus_per_pair": "0.03853333333333333333333333333",
+      "fees": "0.247900",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 16,
+      "full_displayed_size_available": true,
+      "total_cost": "15.474600",
+      "conditional_surplus": "0.525400",
+      "conditional_surplus_per_pair": "0.0328375",
+      "fees": "0.260500",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 17,
+      "full_displayed_size_available": true,
+      "total_cost": "16.527100",
+      "conditional_surplus": "0.472900",
+      "conditional_surplus_per_pair": "0.02781764705882352941176470588",
+      "fees": "0.273000",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 18,
+      "full_displayed_size_available": true,
+      "total_cost": "17.579700",
+      "conditional_surplus": "0.420300",
+      "conditional_surplus_per_pair": "0.023350",
+      "fees": "0.285600",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 19,
+      "full_displayed_size_available": true,
+      "total_cost": "18.632200",
+      "conditional_surplus": "0.367800",
+      "conditional_surplus_per_pair": "0.01935789473684210526315789474",
+      "fees": "0.298100",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 20,
+      "full_displayed_size_available": true,
+      "total_cost": "19.684800",
+      "conditional_surplus": "0.315200",
+      "conditional_surplus_per_pair": "0.015760",
+      "fees": "0.310700",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 21,
+      "full_displayed_size_available": true,
+      "total_cost": "20.737300",
+      "conditional_surplus": "0.262700",
+      "conditional_surplus_per_pair": "0.01250952380952380952380952381",
+      "fees": "0.323200",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 22,
+      "full_displayed_size_available": true,
+      "total_cost": "21.789900",
+      "conditional_surplus": "0.210100",
+      "conditional_surplus_per_pair": "0.009550",
+      "fees": "0.335800",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 23,
+      "full_displayed_size_available": true,
+      "total_cost": "22.842400",
+      "conditional_surplus": "0.157600",
+      "conditional_surplus_per_pair": "0.006852173913043478260869565217",
+      "fees": "0.348300",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 24,
+      "full_displayed_size_available": true,
+      "total_cost": "23.895000",
+      "conditional_surplus": "0.105000",
+      "conditional_surplus_per_pair": "0.004375",
+      "fees": "0.360900",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 25,
+      "full_displayed_size_available": true,
+      "total_cost": "24.947500",
+      "conditional_surplus": "0.052500",
+      "conditional_surplus_per_pair": "0.002100",
+      "fees": "0.373400",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 26,
+      "full_displayed_size_available": true,
+      "total_cost": "26.000100",
+      "conditional_surplus": "-0.000100",
+      "conditional_surplus_per_pair": "-0.000003846153846153846153846153846",
+      "fees": "0.386000",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 27,
+      "full_displayed_size_available": true,
+      "total_cost": "27.052500",
+      "conditional_surplus": "-0.052500",
+      "conditional_surplus_per_pair": "-0.001944444444444444444444444444",
+      "fees": "0.398400",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 28,
+      "full_displayed_size_available": true,
+      "total_cost": "28.105100",
+      "conditional_surplus": "-0.105100",
+      "conditional_surplus_per_pair": "-0.003753571428571428571428571429",
+      "fees": "0.411000",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 29,
+      "full_displayed_size_available": true,
+      "total_cost": "29.157700",
+      "conditional_surplus": "-0.157700",
+      "conditional_surplus_per_pair": "-0.005437931034482758620689655172",
+      "fees": "0.423600",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 30,
+      "full_displayed_size_available": true,
+      "total_cost": "30.210200",
+      "conditional_surplus": "-0.210200",
+      "conditional_surplus_per_pair": "-0.007006666666666666666666666667",
+      "fees": "0.436100",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 31,
+      "full_displayed_size_available": true,
+      "total_cost": "31.262800",
+      "conditional_surplus": "-0.262800",
+      "conditional_surplus_per_pair": "-0.008477419354838709677419354839",
+      "fees": "0.448700",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 32,
+      "full_displayed_size_available": true,
+      "total_cost": "32.315300",
+      "conditional_surplus": "-0.315300",
+      "conditional_surplus_per_pair": "-0.009853125",
+      "fees": "0.461200",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 33,
+      "full_displayed_size_available": true,
+      "total_cost": "33.367900",
+      "conditional_surplus": "-0.367900",
+      "conditional_surplus_per_pair": "-0.01114848484848484848484848485",
+      "fees": "0.473800",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 34,
+      "full_displayed_size_available": true,
+      "total_cost": "34.420400",
+      "conditional_surplus": "-0.420400",
+      "conditional_surplus_per_pair": "-0.01236470588235294117647058824",
+      "fees": "0.486300",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 35,
+      "full_displayed_size_available": true,
+      "total_cost": "35.473000",
+      "conditional_surplus": "-0.473000",
+      "conditional_surplus_per_pair": "-0.01351428571428571428571428571",
+      "fees": "0.498900",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 36,
+      "full_displayed_size_available": true,
+      "total_cost": "36.525500",
+      "conditional_surplus": "-0.525500",
+      "conditional_surplus_per_pair": "-0.01459722222222222222222222222",
+      "fees": "0.511400",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 37,
+      "full_displayed_size_available": true,
+      "total_cost": "37.578100",
+      "conditional_surplus": "-0.578100",
+      "conditional_surplus_per_pair": "-0.01562432432432432432432432432",
+      "fees": "0.524000",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 38,
+      "full_displayed_size_available": true,
+      "total_cost": "38.630600",
+      "conditional_surplus": "-0.630600",
+      "conditional_surplus_per_pair": "-0.01659473684210526315789473684",
+      "fees": "0.536500",
+      "worst_prices": [
+        "0.1200",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 39,
+      "full_displayed_size_available": true,
+      "total_cost": "39.686200",
+      "conditional_surplus": "-0.686200",
+      "conditional_surplus_per_pair": "-0.01759487179487179487179487179",
+      "fees": "0.549200",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 40,
+      "full_displayed_size_available": true,
+      "total_cost": "40.749200",
+      "conditional_surplus": "-0.749200",
+      "conditional_surplus_per_pair": "-0.018730",
+      "fees": "0.562200",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 41,
+      "full_displayed_size_available": true,
+      "total_cost": "41.812300",
+      "conditional_surplus": "-0.812300",
+      "conditional_surplus_per_pair": "-0.01981219512195121951219512195",
+      "fees": "0.575300",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 42,
+      "full_displayed_size_available": true,
+      "total_cost": "42.875400",
+      "conditional_surplus": "-0.875400",
+      "conditional_surplus_per_pair": "-0.02084285714285714285714285714",
+      "fees": "0.588400",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 43,
+      "full_displayed_size_available": true,
+      "total_cost": "43.938500",
+      "conditional_surplus": "-0.938500",
+      "conditional_surplus_per_pair": "-0.02182558139534883720930232558",
+      "fees": "0.601500",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 44,
+      "full_displayed_size_available": true,
+      "total_cost": "45.001500",
+      "conditional_surplus": "-1.001500",
+      "conditional_surplus_per_pair": "-0.02276136363636363636363636364",
+      "fees": "0.614500",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 45,
+      "full_displayed_size_available": true,
+      "total_cost": "46.064600",
+      "conditional_surplus": "-1.064600",
+      "conditional_surplus_per_pair": "-0.02365777777777777777777777778",
+      "fees": "0.627600",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 46,
+      "full_displayed_size_available": true,
+      "total_cost": "47.127600",
+      "conditional_surplus": "-1.127600",
+      "conditional_surplus_per_pair": "-0.02451304347826086956521739130",
+      "fees": "0.640600",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 47,
+      "full_displayed_size_available": true,
+      "total_cost": "48.190700",
+      "conditional_surplus": "-1.190700",
+      "conditional_surplus_per_pair": "-0.02533404255319148936170212766",
+      "fees": "0.653700",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 48,
+      "full_displayed_size_available": true,
+      "total_cost": "49.253800",
+      "conditional_surplus": "-1.253800",
+      "conditional_surplus_per_pair": "-0.02612083333333333333333333333",
+      "fees": "0.666800",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 49,
+      "full_displayed_size_available": true,
+      "total_cost": "50.316900",
+      "conditional_surplus": "-1.316900",
+      "conditional_surplus_per_pair": "-0.02687551020408163265306122449",
+      "fees": "0.679900",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 50,
+      "full_displayed_size_available": true,
+      "total_cost": "51.379900",
+      "conditional_surplus": "-1.379900",
+      "conditional_surplus_per_pair": "-0.027598",
+      "fees": "0.692900",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 51,
+      "full_displayed_size_available": true,
+      "total_cost": "52.443000",
+      "conditional_surplus": "-1.443000",
+      "conditional_surplus_per_pair": "-0.02829411764705882352941176471",
+      "fees": "0.706000",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 52,
+      "full_displayed_size_available": true,
+      "total_cost": "53.506000",
+      "conditional_surplus": "-1.506000",
+      "conditional_surplus_per_pair": "-0.02896153846153846153846153846",
+      "fees": "0.719000",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 53,
+      "full_displayed_size_available": true,
+      "total_cost": "54.569100",
+      "conditional_surplus": "-1.569100",
+      "conditional_surplus_per_pair": "-0.02960566037735849056603773585",
+      "fees": "0.732100",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 54,
+      "full_displayed_size_available": true,
+      "total_cost": "55.632300",
+      "conditional_surplus": "-1.632300",
+      "conditional_surplus_per_pair": "-0.03022777777777777777777777778",
+      "fees": "0.745300",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 55,
+      "full_displayed_size_available": true,
+      "total_cost": "56.695300",
+      "conditional_surplus": "-1.695300",
+      "conditional_surplus_per_pair": "-0.03082363636363636363636363636",
+      "fees": "0.758300",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 56,
+      "full_displayed_size_available": true,
+      "total_cost": "57.758400",
+      "conditional_surplus": "-1.758400",
+      "conditional_surplus_per_pair": "-0.031400",
+      "fees": "0.771400",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 57,
+      "full_displayed_size_available": true,
+      "total_cost": "58.821400",
+      "conditional_surplus": "-1.821400",
+      "conditional_surplus_per_pair": "-0.03195438596491228070175438596",
+      "fees": "0.784400",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 58,
+      "full_displayed_size_available": true,
+      "total_cost": "59.884500",
+      "conditional_surplus": "-1.884500",
+      "conditional_surplus_per_pair": "-0.03249137931034482758620689655",
+      "fees": "0.797500",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 59,
+      "full_displayed_size_available": true,
+      "total_cost": "60.947500",
+      "conditional_surplus": "-1.947500",
+      "conditional_surplus_per_pair": "-0.03300847457627118644067796610",
+      "fees": "0.810500",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 60,
+      "full_displayed_size_available": true,
+      "total_cost": "62.010700",
+      "conditional_surplus": "-2.010700",
+      "conditional_surplus_per_pair": "-0.03351166666666666666666666667",
+      "fees": "0.823700",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 61,
+      "full_displayed_size_available": true,
+      "total_cost": "63.073700",
+      "conditional_surplus": "-2.073700",
+      "conditional_surplus_per_pair": "-0.03399508196721311475409836066",
+      "fees": "0.836700",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 62,
+      "full_displayed_size_available": true,
+      "total_cost": "64.136800",
+      "conditional_surplus": "-2.136800",
+      "conditional_surplus_per_pair": "-0.03446451612903225806451612903",
+      "fees": "0.849800",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 63,
+      "full_displayed_size_available": true,
+      "total_cost": "65.199800",
+      "conditional_surplus": "-2.199800",
+      "conditional_surplus_per_pair": "-0.03491746031746031746031746032",
+      "fees": "0.862800",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 64,
+      "full_displayed_size_available": true,
+      "total_cost": "66.262900",
+      "conditional_surplus": "-2.262900",
+      "conditional_surplus_per_pair": "-0.0353578125",
+      "fees": "0.875900",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 65,
+      "full_displayed_size_available": true,
+      "total_cost": "67.332100",
+      "conditional_surplus": "-2.332100",
+      "conditional_surplus_per_pair": "-0.03587846153846153846153846154",
+      "fees": "0.888500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 66,
+      "full_displayed_size_available": true,
+      "total_cost": "68.404700",
+      "conditional_surplus": "-2.404700",
+      "conditional_surplus_per_pair": "-0.03643484848484848484848484848",
+      "fees": "0.901100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 67,
+      "full_displayed_size_available": true,
+      "total_cost": "69.477100",
+      "conditional_surplus": "-2.477100",
+      "conditional_surplus_per_pair": "-0.03697164179104477611940298507",
+      "fees": "0.913500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 68,
+      "full_displayed_size_available": true,
+      "total_cost": "70.549600",
+      "conditional_surplus": "-2.549600",
+      "conditional_surplus_per_pair": "-0.03749411764705882352941176471",
+      "fees": "0.926000",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 69,
+      "full_displayed_size_available": true,
+      "total_cost": "71.622100",
+      "conditional_surplus": "-2.622100",
+      "conditional_surplus_per_pair": "-0.03800144927536231884057971014",
+      "fees": "0.938500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 70,
+      "full_displayed_size_available": true,
+      "total_cost": "72.694500",
+      "conditional_surplus": "-2.694500",
+      "conditional_surplus_per_pair": "-0.03849285714285714285714285714",
+      "fees": "0.950900",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 71,
+      "full_displayed_size_available": true,
+      "total_cost": "73.767000",
+      "conditional_surplus": "-2.767000",
+      "conditional_surplus_per_pair": "-0.03897183098591549295774647887",
+      "fees": "0.963400",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 72,
+      "full_displayed_size_available": true,
+      "total_cost": "74.839500",
+      "conditional_surplus": "-2.839500",
+      "conditional_surplus_per_pair": "-0.0394375",
+      "fees": "0.975900",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 73,
+      "full_displayed_size_available": true,
+      "total_cost": "75.912000",
+      "conditional_surplus": "-2.912000",
+      "conditional_surplus_per_pair": "-0.03989041095890410958904109589",
+      "fees": "0.988400",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 74,
+      "full_displayed_size_available": true,
+      "total_cost": "76.984400",
+      "conditional_surplus": "-2.984400",
+      "conditional_surplus_per_pair": "-0.04032972972972972972972972973",
+      "fees": "1.000800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 75,
+      "full_displayed_size_available": true,
+      "total_cost": "78.056900",
+      "conditional_surplus": "-3.056900",
+      "conditional_surplus_per_pair": "-0.04075866666666666666666666667",
+      "fees": "1.013300",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 76,
+      "full_displayed_size_available": true,
+      "total_cost": "79.129400",
+      "conditional_surplus": "-3.129400",
+      "conditional_surplus_per_pair": "-0.04117631578947368421052631579",
+      "fees": "1.025800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 77,
+      "full_displayed_size_available": true,
+      "total_cost": "80.201800",
+      "conditional_surplus": "-3.201800",
+      "conditional_surplus_per_pair": "-0.04158181818181818181818181818",
+      "fees": "1.038200",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 78,
+      "full_displayed_size_available": true,
+      "total_cost": "81.274400",
+      "conditional_surplus": "-3.274400",
+      "conditional_surplus_per_pair": "-0.04197948717948717948717948718",
+      "fees": "1.050800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 79,
+      "full_displayed_size_available": true,
+      "total_cost": "82.346800",
+      "conditional_surplus": "-3.346800",
+      "conditional_surplus_per_pair": "-0.04236455696202531645569620253",
+      "fees": "1.063200",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 80,
+      "full_displayed_size_available": true,
+      "total_cost": "83.419300",
+      "conditional_surplus": "-3.419300",
+      "conditional_surplus_per_pair": "-0.04274125",
+      "fees": "1.075700",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 81,
+      "full_displayed_size_available": true,
+      "total_cost": "84.491700",
+      "conditional_surplus": "-3.491700",
+      "conditional_surplus_per_pair": "-0.04310740740740740740740740741",
+      "fees": "1.088100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 82,
+      "full_displayed_size_available": true,
+      "total_cost": "85.564200",
+      "conditional_surplus": "-3.564200",
+      "conditional_surplus_per_pair": "-0.04346585365853658536585365854",
+      "fees": "1.100600",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 83,
+      "full_displayed_size_available": true,
+      "total_cost": "86.636700",
+      "conditional_surplus": "-3.636700",
+      "conditional_surplus_per_pair": "-0.04381566265060240963855421687",
+      "fees": "1.113100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 84,
+      "full_displayed_size_available": true,
+      "total_cost": "87.709200",
+      "conditional_surplus": "-3.709200",
+      "conditional_surplus_per_pair": "-0.04415714285714285714285714286",
+      "fees": "1.125600",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 85,
+      "full_displayed_size_available": true,
+      "total_cost": "88.781700",
+      "conditional_surplus": "-3.781700",
+      "conditional_surplus_per_pair": "-0.04449058823529411764705882353",
+      "fees": "1.138100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 86,
+      "full_displayed_size_available": true,
+      "total_cost": "89.854100",
+      "conditional_surplus": "-3.854100",
+      "conditional_surplus_per_pair": "-0.04481511627906976744186046512",
+      "fees": "1.150500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 87,
+      "full_displayed_size_available": true,
+      "total_cost": "90.926600",
+      "conditional_surplus": "-3.926600",
+      "conditional_surplus_per_pair": "-0.04513333333333333333333333333",
+      "fees": "1.163000",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 88,
+      "full_displayed_size_available": true,
+      "total_cost": "91.999000",
+      "conditional_surplus": "-3.999000",
+      "conditional_surplus_per_pair": "-0.04544318181818181818181818182",
+      "fees": "1.175400",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 89,
+      "full_displayed_size_available": true,
+      "total_cost": "93.071600",
+      "conditional_surplus": "-4.071600",
+      "conditional_surplus_per_pair": "-0.04574831460674157303370786517",
+      "fees": "1.188000",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 90,
+      "full_displayed_size_available": true,
+      "total_cost": "94.144100",
+      "conditional_surplus": "-4.144100",
+      "conditional_surplus_per_pair": "-0.04604555555555555555555555556",
+      "fees": "1.200500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 91,
+      "full_displayed_size_available": true,
+      "total_cost": "95.216500",
+      "conditional_surplus": "-4.216500",
+      "conditional_surplus_per_pair": "-0.04633516483516483516483516484",
+      "fees": "1.212900",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 92,
+      "full_displayed_size_available": true,
+      "total_cost": "96.289000",
+      "conditional_surplus": "-4.289000",
+      "conditional_surplus_per_pair": "-0.04661956521739130434782608696",
+      "fees": "1.225400",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 93,
+      "full_displayed_size_available": true,
+      "total_cost": "97.361400",
+      "conditional_surplus": "-4.361400",
+      "conditional_surplus_per_pair": "-0.04689677419354838709677419355",
+      "fees": "1.237800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 94,
+      "full_displayed_size_available": true,
+      "total_cost": "98.433900",
+      "conditional_surplus": "-4.433900",
+      "conditional_surplus_per_pair": "-0.04716914893617021276595744681",
+      "fees": "1.250300",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 95,
+      "full_displayed_size_available": true,
+      "total_cost": "99.506400",
+      "conditional_surplus": "-4.506400",
+      "conditional_surplus_per_pair": "-0.04743578947368421052631578947",
+      "fees": "1.262800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 96,
+      "full_displayed_size_available": true,
+      "total_cost": "100.578900",
+      "conditional_surplus": "-4.578900",
+      "conditional_surplus_per_pair": "-0.047696875",
+      "fees": "1.275300",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 97,
+      "full_displayed_size_available": true,
+      "total_cost": "101.651400",
+      "conditional_surplus": "-4.651400",
+      "conditional_surplus_per_pair": "-0.04795257731958762886597938144",
+      "fees": "1.287800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 98,
+      "full_displayed_size_available": true,
+      "total_cost": "102.723800",
+      "conditional_surplus": "-4.723800",
+      "conditional_surplus_per_pair": "-0.04820204081632653061224489796",
+      "fees": "1.300200",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 99,
+      "full_displayed_size_available": true,
+      "total_cost": "103.796300",
+      "conditional_surplus": "-4.796300",
+      "conditional_surplus_per_pair": "-0.04844747474747474747474747475",
+      "fees": "1.312700",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_5s_half",
+      "quantity": 100,
+      "full_displayed_size_available": true,
+      "total_cost": "104.868700",
+      "conditional_surplus": "-4.868700",
+      "conditional_surplus_per_pair": "-0.048687",
+      "fees": "1.325100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 1,
+      "full_displayed_size_available": true,
+      "total_cost": "0.967300",
+      "conditional_surplus": "0.032700",
+      "conditional_surplus_per_pair": "0.032700",
+      "fees": "0.017300",
+      "worst_prices": [
+        "0.1200",
+        "0.8300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 2,
+      "full_displayed_size_available": true,
+      "total_cost": "1.934600",
+      "conditional_surplus": "0.065400",
+      "conditional_surplus_per_pair": "0.032700",
+      "fees": "0.034600",
+      "worst_prices": [
+        "0.1200",
+        "0.8300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 3,
+      "full_displayed_size_available": true,
+      "total_cost": "2.901900",
+      "conditional_surplus": "0.098100",
+      "conditional_surplus_per_pair": "0.032700",
+      "fees": "0.051900",
+      "worst_prices": [
+        "0.1200",
+        "0.8300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 4,
+      "full_displayed_size_available": true,
+      "total_cost": "3.869200",
+      "conditional_surplus": "0.130800",
+      "conditional_surplus_per_pair": "0.032700",
+      "fees": "0.069200",
+      "worst_prices": [
+        "0.1200",
+        "0.8300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 5,
+      "full_displayed_size_available": true,
+      "total_cost": "4.836400",
+      "conditional_surplus": "0.163600",
+      "conditional_surplus_per_pair": "0.032720",
+      "fees": "0.086400",
+      "worst_prices": [
+        "0.1200",
+        "0.8300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 6,
+      "full_displayed_size_available": true,
+      "total_cost": "5.810800",
+      "conditional_surplus": "0.189200",
+      "conditional_surplus_per_pair": "0.03153333333333333333333333333",
+      "fees": "0.103300",
+      "worst_prices": [
+        "0.1200",
+        "0.8600"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 7,
+      "full_displayed_size_available": true,
+      "total_cost": "6.827000",
+      "conditional_surplus": "0.173000",
+      "conditional_surplus_per_pair": "0.02471428571428571428571428571",
+      "fees": "0.118200",
+      "worst_prices": [
+        "0.1300",
+        "0.9200"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 8,
+      "full_displayed_size_available": true,
+      "total_cost": "7.897900",
+      "conditional_surplus": "0.102100",
+      "conditional_surplus_per_pair": "0.0127625",
+      "fees": "0.130800",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 9,
+      "full_displayed_size_available": true,
+      "total_cost": "8.970300",
+      "conditional_surplus": "0.029700",
+      "conditional_surplus_per_pair": "0.003300",
+      "fees": "0.143200",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 10,
+      "full_displayed_size_available": true,
+      "total_cost": "10.042800",
+      "conditional_surplus": "-0.042800",
+      "conditional_surplus_per_pair": "-0.004280",
+      "fees": "0.155700",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 11,
+      "full_displayed_size_available": true,
+      "total_cost": "11.115200",
+      "conditional_surplus": "-0.115200",
+      "conditional_surplus_per_pair": "-0.01047272727272727272727272727",
+      "fees": "0.168100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 12,
+      "full_displayed_size_available": true,
+      "total_cost": "12.187800",
+      "conditional_surplus": "-0.187800",
+      "conditional_surplus_per_pair": "-0.015650",
+      "fees": "0.180700",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 13,
+      "full_displayed_size_available": true,
+      "total_cost": "13.260200",
+      "conditional_surplus": "-0.260200",
+      "conditional_surplus_per_pair": "-0.02001538461538461538461538462",
+      "fees": "0.193100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 14,
+      "full_displayed_size_available": true,
+      "total_cost": "14.332700",
+      "conditional_surplus": "-0.332700",
+      "conditional_surplus_per_pair": "-0.02376428571428571428571428571",
+      "fees": "0.205600",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 15,
+      "full_displayed_size_available": true,
+      "total_cost": "15.405200",
+      "conditional_surplus": "-0.405200",
+      "conditional_surplus_per_pair": "-0.02701333333333333333333333333",
+      "fees": "0.218100",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 16,
+      "full_displayed_size_available": true,
+      "total_cost": "16.477600",
+      "conditional_surplus": "-0.477600",
+      "conditional_surplus_per_pair": "-0.029850",
+      "fees": "0.230500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 17,
+      "full_displayed_size_available": true,
+      "total_cost": "17.550100",
+      "conditional_surplus": "-0.550100",
+      "conditional_surplus_per_pair": "-0.03235882352941176470588235294",
+      "fees": "0.243000",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 18,
+      "full_displayed_size_available": true,
+      "total_cost": "18.622600",
+      "conditional_surplus": "-0.622600",
+      "conditional_surplus_per_pair": "-0.03458888888888888888888888889",
+      "fees": "0.255500",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 19,
+      "full_displayed_size_available": true,
+      "total_cost": "19.695100",
+      "conditional_surplus": "-0.695100",
+      "conditional_surplus_per_pair": "-0.03658421052631578947368421053",
+      "fees": "0.268000",
+      "worst_prices": [
+        "0.1300",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 20,
+      "full_displayed_size_available": true,
+      "total_cost": "20.774300",
+      "conditional_surplus": "-0.774300",
+      "conditional_surplus_per_pair": "-0.038715",
+      "fees": "0.280700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 21,
+      "full_displayed_size_available": true,
+      "total_cost": "21.857400",
+      "conditional_surplus": "-0.857400",
+      "conditional_surplus_per_pair": "-0.04082857142857142857142857143",
+      "fees": "0.293800",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 22,
+      "full_displayed_size_available": true,
+      "total_cost": "22.940400",
+      "conditional_surplus": "-0.940400",
+      "conditional_surplus_per_pair": "-0.04274545454545454545454545455",
+      "fees": "0.306800",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 23,
+      "full_displayed_size_available": true,
+      "total_cost": "24.023300",
+      "conditional_surplus": "-1.023300",
+      "conditional_surplus_per_pair": "-0.04449130434782608695652173913",
+      "fees": "0.319700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 24,
+      "full_displayed_size_available": true,
+      "total_cost": "25.106300",
+      "conditional_surplus": "-1.106300",
+      "conditional_surplus_per_pair": "-0.04609583333333333333333333333",
+      "fees": "0.332700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 25,
+      "full_displayed_size_available": true,
+      "total_cost": "26.189300",
+      "conditional_surplus": "-1.189300",
+      "conditional_surplus_per_pair": "-0.047572",
+      "fees": "0.345700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 26,
+      "full_displayed_size_available": true,
+      "total_cost": "27.272300",
+      "conditional_surplus": "-1.272300",
+      "conditional_surplus_per_pair": "-0.04893461538461538461538461538",
+      "fees": "0.358700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 27,
+      "full_displayed_size_available": true,
+      "total_cost": "28.355200",
+      "conditional_surplus": "-1.355200",
+      "conditional_surplus_per_pair": "-0.05019259259259259259259259259",
+      "fees": "0.371600",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 28,
+      "full_displayed_size_available": true,
+      "total_cost": "29.438300",
+      "conditional_surplus": "-1.438300",
+      "conditional_surplus_per_pair": "-0.05136785714285714285714285714",
+      "fees": "0.384700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 29,
+      "full_displayed_size_available": true,
+      "total_cost": "30.521300",
+      "conditional_surplus": "-1.521300",
+      "conditional_surplus_per_pair": "-0.05245862068965517241379310345",
+      "fees": "0.397700",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 30,
+      "full_displayed_size_available": true,
+      "total_cost": "31.604200",
+      "conditional_surplus": "-1.604200",
+      "conditional_surplus_per_pair": "-0.05347333333333333333333333333",
+      "fees": "0.410600",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 31,
+      "full_displayed_size_available": true,
+      "total_cost": "32.687200",
+      "conditional_surplus": "-1.687200",
+      "conditional_surplus_per_pair": "-0.05442580645161290322580645161",
+      "fees": "0.423600",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 32,
+      "full_displayed_size_available": true,
+      "total_cost": "33.770200",
+      "conditional_surplus": "-1.770200",
+      "conditional_surplus_per_pair": "-0.05531875",
+      "fees": "0.436600",
+      "worst_prices": [
+        "0.1400",
+        "0.9300"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 33,
+      "full_displayed_size_available": true,
+      "total_cost": "34.861000",
+      "conditional_surplus": "-1.861000",
+      "conditional_surplus_per_pair": "-0.05639393939393939393939393939",
+      "fees": "0.449100",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 34,
+      "full_displayed_size_available": true,
+      "total_cost": "35.953300",
+      "conditional_surplus": "-1.953300",
+      "conditional_surplus_per_pair": "-0.057450",
+      "fees": "0.461400",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 35,
+      "full_displayed_size_available": true,
+      "total_cost": "37.045700",
+      "conditional_surplus": "-2.045700",
+      "conditional_surplus_per_pair": "-0.05844857142857142857142857143",
+      "fees": "0.473800",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 36,
+      "full_displayed_size_available": true,
+      "total_cost": "38.138100",
+      "conditional_surplus": "-2.138100",
+      "conditional_surplus_per_pair": "-0.05939166666666666666666666667",
+      "fees": "0.486200",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 37,
+      "full_displayed_size_available": true,
+      "total_cost": "39.230500",
+      "conditional_surplus": "-2.230500",
+      "conditional_surplus_per_pair": "-0.06028378378378378378378378378",
+      "fees": "0.498600",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 38,
+      "full_displayed_size_available": true,
+      "total_cost": "40.322800",
+      "conditional_surplus": "-2.322800",
+      "conditional_surplus_per_pair": "-0.06112631578947368421052631579",
+      "fees": "0.510900",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 39,
+      "full_displayed_size_available": true,
+      "total_cost": "41.415300",
+      "conditional_surplus": "-2.415300",
+      "conditional_surplus_per_pair": "-0.06193076923076923076923076923",
+      "fees": "0.523400",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 40,
+      "full_displayed_size_available": true,
+      "total_cost": "42.507600",
+      "conditional_surplus": "-2.507600",
+      "conditional_surplus_per_pair": "-0.062690",
+      "fees": "0.535700",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 41,
+      "full_displayed_size_available": true,
+      "total_cost": "43.600000",
+      "conditional_surplus": "-2.600000",
+      "conditional_surplus_per_pair": "-0.06341463414634146341463414634",
+      "fees": "0.548100",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 42,
+      "full_displayed_size_available": true,
+      "total_cost": "44.692300",
+      "conditional_surplus": "-2.692300",
+      "conditional_surplus_per_pair": "-0.06410238095238095238095238095",
+      "fees": "0.560400",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 43,
+      "full_displayed_size_available": true,
+      "total_cost": "45.784800",
+      "conditional_surplus": "-2.784800",
+      "conditional_surplus_per_pair": "-0.06476279069767441860465116279",
+      "fees": "0.572900",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 44,
+      "full_displayed_size_available": true,
+      "total_cost": "46.877100",
+      "conditional_surplus": "-2.877100",
+      "conditional_surplus_per_pair": "-0.06538863636363636363636363636",
+      "fees": "0.585200",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 45,
+      "full_displayed_size_available": true,
+      "total_cost": "47.969500",
+      "conditional_surplus": "-2.969500",
+      "conditional_surplus_per_pair": "-0.06598888888888888888888888889",
+      "fees": "0.597600",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 46,
+      "full_displayed_size_available": true,
+      "total_cost": "49.061900",
+      "conditional_surplus": "-3.061900",
+      "conditional_surplus_per_pair": "-0.06656304347826086956521739130",
+      "fees": "0.610000",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 47,
+      "full_displayed_size_available": true,
+      "total_cost": "50.154200",
+      "conditional_surplus": "-3.154200",
+      "conditional_surplus_per_pair": "-0.06711063829787234042553191489",
+      "fees": "0.622300",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 48,
+      "full_displayed_size_available": true,
+      "total_cost": "51.246600",
+      "conditional_surplus": "-3.246600",
+      "conditional_surplus_per_pair": "-0.0676375",
+      "fees": "0.634700",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 49,
+      "full_displayed_size_available": true,
+      "total_cost": "52.338900",
+      "conditional_surplus": "-3.338900",
+      "conditional_surplus_per_pair": "-0.06814081632653061224489795918",
+      "fees": "0.647000",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 50,
+      "full_displayed_size_available": true,
+      "total_cost": "53.431400",
+      "conditional_surplus": "-3.431400",
+      "conditional_surplus_per_pair": "-0.068628",
+      "fees": "0.659500",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 51,
+      "full_displayed_size_available": true,
+      "total_cost": "54.523700",
+      "conditional_surplus": "-3.523700",
+      "conditional_surplus_per_pair": "-0.06909215686274509803921568627",
+      "fees": "0.671800",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 52,
+      "full_displayed_size_available": true,
+      "total_cost": "55.616100",
+      "conditional_surplus": "-3.616100",
+      "conditional_surplus_per_pair": "-0.06954038461538461538461538462",
+      "fees": "0.684200",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 53,
+      "full_displayed_size_available": true,
+      "total_cost": "56.708500",
+      "conditional_surplus": "-3.708500",
+      "conditional_surplus_per_pair": "-0.06997169811320754716981132075",
+      "fees": "0.696600",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 54,
+      "full_displayed_size_available": true,
+      "total_cost": "57.800900",
+      "conditional_surplus": "-3.800900",
+      "conditional_surplus_per_pair": "-0.07038703703703703703703703704",
+      "fees": "0.709000",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 55,
+      "full_displayed_size_available": true,
+      "total_cost": "58.893200",
+      "conditional_surplus": "-3.893200",
+      "conditional_surplus_per_pair": "-0.07078545454545454545454545455",
+      "fees": "0.721300",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 56,
+      "full_displayed_size_available": true,
+      "total_cost": "59.985600",
+      "conditional_surplus": "-3.985600",
+      "conditional_surplus_per_pair": "-0.07117142857142857142857142857",
+      "fees": "0.733700",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 57,
+      "full_displayed_size_available": true,
+      "total_cost": "61.078000",
+      "conditional_surplus": "-4.078000",
+      "conditional_surplus_per_pair": "-0.07154385964912280701754385965",
+      "fees": "0.746100",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 58,
+      "full_displayed_size_available": true,
+      "total_cost": "62.170400",
+      "conditional_surplus": "-4.170400",
+      "conditional_surplus_per_pair": "-0.07190344827586206896551724138",
+      "fees": "0.758500",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 59,
+      "full_displayed_size_available": true,
+      "total_cost": "63.262700",
+      "conditional_surplus": "-4.262700",
+      "conditional_surplus_per_pair": "-0.07224915254237288135593220339",
+      "fees": "0.770800",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 60,
+      "full_displayed_size_available": true,
+      "total_cost": "64.355100",
+      "conditional_surplus": "-4.355100",
+      "conditional_surplus_per_pair": "-0.072585",
+      "fees": "0.783200",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 61,
+      "full_displayed_size_available": true,
+      "total_cost": "65.447500",
+      "conditional_surplus": "-4.447500",
+      "conditional_surplus_per_pair": "-0.07290983606557377049180327869",
+      "fees": "0.795600",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 62,
+      "full_displayed_size_available": true,
+      "total_cost": "66.539900",
+      "conditional_surplus": "-4.539900",
+      "conditional_surplus_per_pair": "-0.07322419354838709677419354839",
+      "fees": "0.808000",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 63,
+      "full_displayed_size_available": true,
+      "total_cost": "67.632200",
+      "conditional_surplus": "-4.632200",
+      "conditional_surplus_per_pair": "-0.07352698412698412698412698413",
+      "fees": "0.820300",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 64,
+      "full_displayed_size_available": true,
+      "total_cost": "68.724700",
+      "conditional_surplus": "-4.724700",
+      "conditional_surplus_per_pair": "-0.0738234375",
+      "fees": "0.832800",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 65,
+      "full_displayed_size_available": true,
+      "total_cost": "69.817000",
+      "conditional_surplus": "-4.817000",
+      "conditional_surplus_per_pair": "-0.07410769230769230769230769231",
+      "fees": "0.845100",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 66,
+      "full_displayed_size_available": true,
+      "total_cost": "70.909400",
+      "conditional_surplus": "-4.909400",
+      "conditional_surplus_per_pair": "-0.07438484848484848484848484848",
+      "fees": "0.857500",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 67,
+      "full_displayed_size_available": true,
+      "total_cost": "72.001700",
+      "conditional_surplus": "-5.001700",
+      "conditional_surplus_per_pair": "-0.07465223880597014925373134328",
+      "fees": "0.869800",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 68,
+      "full_displayed_size_available": true,
+      "total_cost": "73.094200",
+      "conditional_surplus": "-5.094200",
+      "conditional_surplus_per_pair": "-0.07491470588235294117647058824",
+      "fees": "0.882300",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 69,
+      "full_displayed_size_available": true,
+      "total_cost": "74.186500",
+      "conditional_surplus": "-5.186500",
+      "conditional_surplus_per_pair": "-0.07516666666666666666666666667",
+      "fees": "0.894600",
+      "worst_prices": [
+        "0.1400",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 70,
+      "full_displayed_size_available": true,
+      "total_cost": "75.287300",
+      "conditional_surplus": "-5.287300",
+      "conditional_surplus_per_pair": "-0.07553285714285714285714285714",
+      "fees": "0.907400",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 71,
+      "full_displayed_size_available": true,
+      "total_cost": "76.390100",
+      "conditional_surplus": "-5.390100",
+      "conditional_surplus_per_pair": "-0.07591690140845070422535211268",
+      "fees": "0.920200",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 72,
+      "full_displayed_size_available": true,
+      "total_cost": "77.493000",
+      "conditional_surplus": "-5.493000",
+      "conditional_surplus_per_pair": "-0.07629166666666666666666666667",
+      "fees": "0.933100",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 73,
+      "full_displayed_size_available": true,
+      "total_cost": "78.595900",
+      "conditional_surplus": "-5.595900",
+      "conditional_surplus_per_pair": "-0.07665616438356164383561643836",
+      "fees": "0.946000",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 74,
+      "full_displayed_size_available": true,
+      "total_cost": "79.698700",
+      "conditional_surplus": "-5.698700",
+      "conditional_surplus_per_pair": "-0.07700945945945945945945945946",
+      "fees": "0.958800",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 75,
+      "full_displayed_size_available": true,
+      "total_cost": "80.801600",
+      "conditional_surplus": "-5.801600",
+      "conditional_surplus_per_pair": "-0.07735466666666666666666666667",
+      "fees": "0.971700",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 76,
+      "full_displayed_size_available": true,
+      "total_cost": "81.904500",
+      "conditional_surplus": "-5.904500",
+      "conditional_surplus_per_pair": "-0.07769078947368421052631578947",
+      "fees": "0.984600",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 77,
+      "full_displayed_size_available": true,
+      "total_cost": "83.007400",
+      "conditional_surplus": "-6.007400",
+      "conditional_surplus_per_pair": "-0.07801818181818181818181818182",
+      "fees": "0.997500",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 78,
+      "full_displayed_size_available": true,
+      "total_cost": "84.110200",
+      "conditional_surplus": "-6.110200",
+      "conditional_surplus_per_pair": "-0.07833589743589743589743589744",
+      "fees": "1.010300",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 79,
+      "full_displayed_size_available": true,
+      "total_cost": "85.213100",
+      "conditional_surplus": "-6.213100",
+      "conditional_surplus_per_pair": "-0.07864683544303797468354430380",
+      "fees": "1.023200",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 80,
+      "full_displayed_size_available": true,
+      "total_cost": "86.316000",
+      "conditional_surplus": "-6.316000",
+      "conditional_surplus_per_pair": "-0.078950",
+      "fees": "1.036100",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 81,
+      "full_displayed_size_available": true,
+      "total_cost": "87.418900",
+      "conditional_surplus": "-6.418900",
+      "conditional_surplus_per_pair": "-0.07924567901234567901234567901",
+      "fees": "1.049000",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 82,
+      "full_displayed_size_available": true,
+      "total_cost": "88.521700",
+      "conditional_surplus": "-6.521700",
+      "conditional_surplus_per_pair": "-0.07953292682926829268292682927",
+      "fees": "1.061800",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 83,
+      "full_displayed_size_available": true,
+      "total_cost": "89.624600",
+      "conditional_surplus": "-6.624600",
+      "conditional_surplus_per_pair": "-0.07981445783132530120481927711",
+      "fees": "1.074700",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 84,
+      "full_displayed_size_available": true,
+      "total_cost": "90.727500",
+      "conditional_surplus": "-6.727500",
+      "conditional_surplus_per_pair": "-0.08008928571428571428571428571",
+      "fees": "1.087600",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 85,
+      "full_displayed_size_available": true,
+      "total_cost": "91.830400",
+      "conditional_surplus": "-6.830400",
+      "conditional_surplus_per_pair": "-0.08035764705882352941176470588",
+      "fees": "1.100500",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 86,
+      "full_displayed_size_available": true,
+      "total_cost": "92.933200",
+      "conditional_surplus": "-6.933200",
+      "conditional_surplus_per_pair": "-0.08061860465116279069767441860",
+      "fees": "1.113300",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 87,
+      "full_displayed_size_available": true,
+      "total_cost": "94.036100",
+      "conditional_surplus": "-7.036100",
+      "conditional_surplus_per_pair": "-0.08087471264367816091954022989",
+      "fees": "1.126200",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 88,
+      "full_displayed_size_available": true,
+      "total_cost": "95.139000",
+      "conditional_surplus": "-7.139000",
+      "conditional_surplus_per_pair": "-0.081125",
+      "fees": "1.139100",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 89,
+      "full_displayed_size_available": true,
+      "total_cost": "96.241900",
+      "conditional_surplus": "-7.241900",
+      "conditional_surplus_per_pair": "-0.08136966292134831460674157303",
+      "fees": "1.152000",
+      "worst_prices": [
+        "0.1500",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 90,
+      "full_displayed_size_available": true,
+      "total_cost": "97.348000",
+      "conditional_surplus": "-7.348000",
+      "conditional_surplus_per_pair": "-0.08164444444444444444444444444",
+      "fees": "1.165000",
+      "worst_prices": [
+        "0.1600",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 91,
+      "full_displayed_size_available": true,
+      "total_cost": "98.461400",
+      "conditional_surplus": "-7.461400",
+      "conditional_surplus_per_pair": "-0.08199340659340659340659340659",
+      "fees": "1.178400",
+      "worst_prices": [
+        "0.1600",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 92,
+      "full_displayed_size_available": true,
+      "total_cost": "99.574700",
+      "conditional_surplus": "-7.574700",
+      "conditional_surplus_per_pair": "-0.08233369565217391304347826087",
+      "fees": "1.191700",
+      "worst_prices": [
+        "0.1600",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 93,
+      "full_displayed_size_available": true,
+      "total_cost": "100.688100",
+      "conditional_surplus": "-7.688100",
+      "conditional_surplus_per_pair": "-0.08266774193548387096774193548",
+      "fees": "1.205100",
+      "worst_prices": [
+        "0.1600",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 94,
+      "full_displayed_size_available": true,
+      "total_cost": "101.801400",
+      "conditional_surplus": "-7.801400",
+      "conditional_surplus_per_pair": "-0.08299361702127659574468085106",
+      "fees": "1.218400",
+      "worst_prices": [
+        "0.1600",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 95,
+      "full_displayed_size_available": true,
+      "total_cost": "102.921300",
+      "conditional_surplus": "-7.921300",
+      "conditional_surplus_per_pair": "-0.08338210526315789473684210526",
+      "fees": "1.232100",
+      "worst_prices": [
+        "0.1800",
+        "0.9400"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 96,
+      "full_displayed_size_available": true,
+      "total_cost": "104.069500",
+      "conditional_surplus": "-8.069500",
+      "conditional_surplus_per_pair": "-0.08405729166666666666666666667",
+      "fees": "1.245400",
+      "worst_prices": [
+        "0.1800",
+        "0.9700"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 97,
+      "full_displayed_size_available": true,
+      "total_cost": "105.242700",
+      "conditional_surplus": "-8.242700",
+      "conditional_surplus_per_pair": "-0.08497628865979381443298969072",
+      "fees": "1.257000",
+      "worst_prices": [
+        "0.1800",
+        "0.9900"
+      ]
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 98,
+      "full_displayed_size_available": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 99,
+      "full_displayed_size_available": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "quantity": 100,
+      "full_displayed_size_available": false
+    }
+  ],
+  "capital_caps": [
+    {
+      "scenario": "taker_1s_full",
+      "capital_cap": 5,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_1s_full",
+        "quantity": 5,
+        "full_displayed_size_available": true,
+        "total_cost": "4.635400",
+        "conditional_surplus": "0.364600",
+        "conditional_surplus_per_pair": "0.072920",
+        "fees": "0.085400",
+        "worst_prices": [
+          "0.1000",
+          "0.8100"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_1s_full",
+      "capital_cap": 10,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_1s_full",
+        "quantity": 10,
+        "full_displayed_size_available": true,
+        "total_cost": "9.270800",
+        "conditional_surplus": "0.729200",
+        "conditional_surplus_per_pair": "0.072920",
+        "fees": "0.170800",
+        "worst_prices": [
+          "0.1000",
+          "0.8100"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_1s_full",
+      "capital_cap": 25,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_1s_full",
+        "quantity": 26,
+        "full_displayed_size_available": true,
+        "total_cost": "24.189900",
+        "conditional_surplus": "1.810100",
+        "conditional_surplus_per_pair": "0.06961923076923076923076923077",
+        "fees": "0.439900",
+        "worst_prices": [
+          "0.1000",
+          "0.8400"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_1s_full",
+      "capital_cap": 50,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_1s_full",
+        "quantity": 27,
+        "full_displayed_size_available": true,
+        "total_cost": "25.163200",
+        "conditional_surplus": "1.836800",
+        "conditional_surplus_per_pair": "0.06802962962962962962962962963",
+        "fees": "0.454600",
+        "worst_prices": [
+          "0.1000",
+          "0.9000"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_1s_full",
+      "capital_cap": 100,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_1s_full",
+        "quantity": 27,
+        "full_displayed_size_available": true,
+        "total_cost": "25.163200",
+        "conditional_surplus": "1.836800",
+        "conditional_surplus_per_pair": "0.06802962962962962962962962963",
+        "fees": "0.454600",
+        "worst_prices": [
+          "0.1000",
+          "0.9000"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_5s_half",
+      "capital_cap": 5,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_5s_half",
+        "quantity": 5,
+        "full_displayed_size_available": true,
+        "total_cost": "4.736000",
+        "conditional_surplus": "0.264000",
+        "conditional_surplus_per_pair": "0.052800",
+        "fees": "0.086000",
+        "worst_prices": [
+          "0.1100",
+          "0.8200"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_5s_half",
+      "capital_cap": 10,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_5s_half",
+        "quantity": 10,
+        "full_displayed_size_available": true,
+        "total_cost": "9.472000",
+        "conditional_surplus": "0.528000",
+        "conditional_surplus_per_pair": "0.052800",
+        "fees": "0.172000",
+        "worst_prices": [
+          "0.1100",
+          "0.8200"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_5s_half",
+      "capital_cap": 25,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_5s_half",
+        "quantity": 13,
+        "full_displayed_size_available": true,
+        "total_cost": "12.356400",
+        "conditional_surplus": "0.643600",
+        "conditional_surplus_per_pair": "0.04950769230769230769230769231",
+        "fees": "0.221400",
+        "worst_prices": [
+          "0.1100",
+          "0.8500"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_5s_half",
+      "capital_cap": 50,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_5s_half",
+        "quantity": 13,
+        "full_displayed_size_available": true,
+        "total_cost": "12.356400",
+        "conditional_surplus": "0.643600",
+        "conditional_surplus_per_pair": "0.04950769230769230769230769231",
+        "fees": "0.221400",
+        "worst_prices": [
+          "0.1100",
+          "0.8500"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_5s_half",
+      "capital_cap": 100,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_5s_half",
+        "quantity": 13,
+        "full_displayed_size_available": true,
+        "total_cost": "12.356400",
+        "conditional_surplus": "0.643600",
+        "conditional_surplus_per_pair": "0.04950769230769230769230769231",
+        "fees": "0.221400",
+        "worst_prices": [
+          "0.1100",
+          "0.8500"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "capital_cap": 5,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_30s_quarter",
+        "quantity": 5,
+        "full_displayed_size_available": true,
+        "total_cost": "4.836400",
+        "conditional_surplus": "0.163600",
+        "conditional_surplus_per_pair": "0.032720",
+        "fees": "0.086400",
+        "worst_prices": [
+          "0.1200",
+          "0.8300"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "capital_cap": 10,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_30s_quarter",
+        "quantity": 6,
+        "full_displayed_size_available": true,
+        "total_cost": "5.810800",
+        "conditional_surplus": "0.189200",
+        "conditional_surplus_per_pair": "0.03153333333333333333333333333",
+        "fees": "0.103300",
+        "worst_prices": [
+          "0.1200",
+          "0.8600"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "capital_cap": 25,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_30s_quarter",
+        "quantity": 6,
+        "full_displayed_size_available": true,
+        "total_cost": "5.810800",
+        "conditional_surplus": "0.189200",
+        "conditional_surplus_per_pair": "0.03153333333333333333333333333",
+        "fees": "0.103300",
+        "worst_prices": [
+          "0.1200",
+          "0.8600"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "capital_cap": 50,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_30s_quarter",
+        "quantity": 6,
+        "full_displayed_size_available": true,
+        "total_cost": "5.810800",
+        "conditional_surplus": "0.189200",
+        "conditional_surplus_per_pair": "0.03153333333333333333333333333",
+        "fees": "0.103300",
+        "worst_prices": [
+          "0.1200",
+          "0.8600"
+        ]
+      },
+      "is_allocation_recommendation": false
+    },
+    {
+      "scenario": "taker_30s_quarter",
+      "capital_cap": 100,
+      "best_displayed_surplus_candidate": {
+        "scenario": "taker_30s_quarter",
+        "quantity": 6,
+        "full_displayed_size_available": true,
+        "total_cost": "5.810800",
+        "conditional_surplus": "0.189200",
+        "conditional_surplus_per_pair": "0.03153333333333333333333333333",
+        "fees": "0.103300",
+        "worst_prices": [
+          "0.1200",
+          "0.8600"
+        ]
+      },
+      "is_allocation_recommendation": false
+    }
+  ],
+  "current_position_exit_diagnostics": [
+    {
+      "paper_account": "taker_1s_full",
+      "exit_scenario": "taker_1s_full",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "5",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "0.3742",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "2.0642",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "2.4384",
+      "conditional_exit_pnl_if_fully_exited": "-2.1503",
+      "holding_conditional_payout": "5",
+      "forgone_normal_payout_for_early_exit": "2.5616"
+    },
+    {
+      "paper_account": "taker_1s_full",
+      "exit_scenario": "taker_5s_half",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "5",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "0.3272",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "2.0147",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "2.3419",
+      "conditional_exit_pnl_if_fully_exited": "-2.2468",
+      "holding_conditional_payout": "5",
+      "forgone_normal_payout_for_early_exit": "2.6581"
+    },
+    {
+      "paper_account": "taker_1s_full",
+      "exit_scenario": "taker_30s_quarter",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "0.2661",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "1.8424",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "2.1085",
+      "conditional_exit_pnl_if_fully_exited": "-2.4802",
+      "holding_conditional_payout": "5",
+      "forgone_normal_payout_for_early_exit": "2.8915"
+    },
+    {
+      "paper_account": "taker_5s_half",
+      "exit_scenario": "taker_1s_full",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "5",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "0.3742",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "2.0642",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "2.4384",
+      "conditional_exit_pnl_if_fully_exited": "-2.2743",
+      "holding_conditional_payout": "5",
+      "forgone_normal_payout_for_early_exit": "2.5616"
+    },
+    {
+      "paper_account": "taker_5s_half",
+      "exit_scenario": "taker_5s_half",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "5",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "0.3272",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "2.0147",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "2.3419",
+      "conditional_exit_pnl_if_fully_exited": "-2.3708",
+      "holding_conditional_payout": "5",
+      "forgone_normal_payout_for_early_exit": "2.6581"
+    },
+    {
+      "paper_account": "taker_5s_half",
+      "exit_scenario": "taker_30s_quarter",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "0.2661",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "5.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "1.8424",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "2.1085",
+      "conditional_exit_pnl_if_fully_exited": "-2.6042",
+      "holding_conditional_payout": "5",
+      "forgone_normal_payout_for_early_exit": "2.8915"
+    },
+    {
+      "paper_account": "taker_30s_quarter",
+      "exit_scenario": "taker_1s_full",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "4",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "0.2993",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "4",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "1.6513",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "1.9506",
+      "conditional_exit_pnl_if_fully_exited": "-1.8804",
+      "holding_conditional_payout": "4",
+      "forgone_normal_payout_for_early_exit": "2.0494"
+    },
+    {
+      "paper_account": "taker_30s_quarter",
+      "exit_scenario": "taker_5s_half",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "4",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "0.2617",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "4",
+          "unfilled_quantity": "0",
+          "proceeds_after_fees": "1.6117",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "1.8734",
+      "conditional_exit_pnl_if_fully_exited": "-1.9576",
+      "holding_conditional_payout": "4",
+      "forgone_normal_payout_for_early_exit": "2.1266"
+    },
+    {
+      "paper_account": "taker_30s_quarter",
+      "exit_scenario": "taker_30s_quarter",
+      "legs": [
+        {
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "filled_quantity": "4.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "0.2195",
+          "full_displayed_exit_available": true
+        },
+        {
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "filled_quantity": "4.00",
+          "unfilled_quantity": "0.00",
+          "proceeds_after_fees": "1.5083",
+          "full_displayed_exit_available": true
+        }
+      ],
+      "both_legs_have_full_displayed_exit": true,
+      "cash_proceeds_if_all_quoted_slices_execute": "1.7278",
+      "conditional_exit_pnl_if_fully_exited": "-2.1032",
+      "holding_conditional_payout": "4",
+      "forgone_normal_payout_for_early_exit": "2.2722"
+    }
+  ],
+  "source_failure_sensitivity": [
+    {
+      "paper_account": "taker_1s_full",
+      "arithmetic_break_even_failure_probability": "0.08226",
+      "geometric_break_even_failure_probability": "0.08035918364030283651221345875",
+      "rows": [
+        {
+          "assumed_source_failure_probability": "0",
+          "expected_pnl": "0.4113",
+          "expected_log_growth": "0.004104564737080635879843329182"
+        },
+        {
+          "assumed_source_failure_probability": "0.01",
+          "expected_pnl": "0.3613",
+          "expected_log_growth": "0.003593787430599630459061769843"
+        },
+        {
+          "assumed_source_failure_probability": "0.03",
+          "expected_pnl": "0.2613",
+          "expected_log_growth": "0.002572232817637619617498651165"
+        },
+        {
+          "assumed_source_failure_probability": "0.05",
+          "expected_pnl": "0.1613",
+          "expected_log_growth": "0.001550678204675608775935532487"
+        },
+        {
+          "assumed_source_failure_probability": "0.10",
+          "expected_pnl": "-0.0887",
+          "expected_log_growth": "-0.001003208327729418327972264209"
+        }
+      ],
+      "failure_probabilities_are_assumptions_not_estimates": true
+    },
+    {
+      "paper_account": "taker_5s_half",
+      "arithmetic_break_even_failure_probability": "0.05746",
+      "geometric_break_even_failure_probability": "0.05609579565942384402487953907",
+      "rows": [
+        {
+          "assumed_source_failure_probability": "0",
+          "expected_pnl": "0.2873",
+          "expected_log_growth": "0.002868880823210598652145309306"
+        },
+        {
+          "assumed_source_failure_probability": "0.01",
+          "expected_pnl": "0.2373",
+          "expected_log_growth": "0.002357455539107575248221338130"
+        },
+        {
+          "assumed_source_failure_probability": "0.03",
+          "expected_pnl": "0.1373",
+          "expected_log_growth": "0.001334604970901528440373395778"
+        },
+        {
+          "assumed_source_failure_probability": "0.05",
+          "expected_pnl": "0.0373",
+          "expected_log_growth": "0.000311754402695481632525453425"
+        },
+        {
+          "assumed_source_failure_probability": "0.10",
+          "expected_pnl": "-0.2127",
+          "expected_log_growth": "-0.002245372017819635387094402456"
+        }
+      ],
+      "failure_probabilities_are_assumptions_not_estimates": true
+    },
+    {
+      "paper_account": "taker_30s_quarter",
+      "arithmetic_break_even_failure_probability": "0.04225",
+      "geometric_break_even_failure_probability": "0.04143566018207214005410417010",
+      "rows": [
+        {
+          "assumed_source_failure_probability": "0",
+          "expected_pnl": "0.1690",
+          "expected_log_growth": "0.001688573556899759823272644430"
+        },
+        {
+          "assumed_source_failure_probability": "0.01",
+          "expected_pnl": "0.1290",
+          "expected_log_growth": "0.001281056565622195823509863669"
+        },
+        {
+          "assumed_source_failure_probability": "0.03",
+          "expected_pnl": "0.0490",
+          "expected_log_growth": "0.000466022583067067823984302147"
+        },
+        {
+          "assumed_source_failure_probability": "0.05",
+          "expected_pnl": "-0.0310",
+          "expected_log_growth": "-0.000349011399488060175541259375"
+        },
+        {
+          "assumed_source_failure_probability": "0.10",
+          "expected_pnl": "-0.2310",
+          "expected_log_growth": "-0.002386596355875880174355163179"
+        }
+      ],
+      "failure_probabilities_are_assumptions_not_estimates": true
+    }
+  ],
+  "example_order_intents": [
+    {
+      "economic_action": "buy_yes",
+      "payload": {
+        "ticker": "KXRAIN-26SEP06-NYC",
+        "client_order_id": "96bbce77-ddf1-5711-81aa-fa0f3ded1c4c",
+        "side": "bid",
+        "count": "1.00",
+        "price": "0.100000",
+        "time_in_force": "immediate_or_cancel",
+        "self_trade_prevention_type": "taker_at_cross",
+        "post_only": false,
+        "cancel_order_on_pause": true,
+        "reduce_only": false
+      },
+      "submitted": false,
+      "atomic_pair_guarantee": false
+    },
+    {
+      "economic_action": "buy_yes",
+      "payload": {
+        "ticker": "KXRAIN-26SEP06-NYC",
+        "client_order_id": "672ff5ed-5ded-52bb-b8bd-66c8815d5c8b",
+        "side": "bid",
+        "count": "1.00",
+        "price": "0.100000",
+        "time_in_force": "fill_or_kill",
+        "self_trade_prevention_type": "taker_at_cross",
+        "post_only": false,
+        "cancel_order_on_pause": true,
+        "reduce_only": false
+      },
+      "submitted": false,
+      "atomic_pair_guarantee": false
+    },
+    {
+      "economic_action": "buy_no",
+      "payload": {
+        "ticker": "KXRAINWKND-26SEP05-NYC",
+        "client_order_id": "7592d4a1-204b-5c02-99ed-f18e61f44887",
+        "side": "ask",
+        "count": "1.00",
+        "price": "0.190000",
+        "time_in_force": "immediate_or_cancel",
+        "self_trade_prevention_type": "taker_at_cross",
+        "post_only": false,
+        "cancel_order_on_pause": true,
+        "reduce_only": false
+      },
+      "submitted": false,
+      "atomic_pair_guarantee": false
+    },
+    {
+      "economic_action": "buy_no",
+      "payload": {
+        "ticker": "KXRAINWKND-26SEP05-NYC",
+        "client_order_id": "854ca80a-e085-555a-8fe3-02bf56792d54",
+        "side": "ask",
+        "count": "1.00",
+        "price": "0.190000",
+        "time_in_force": "fill_or_kill",
+        "self_trade_prevention_type": "taker_at_cross",
+        "post_only": false,
+        "cancel_order_on_pause": true,
+        "reduce_only": false
+      },
+      "submitted": false,
+      "atomic_pair_guarantee": false
+    }
+  ],
+  "real_money_orders": 0,
+  "new_simulated_fills": 0,
+  "profitability_proven": false,
+  "limits": "Measure same-snapshot capacity curves, capital sensitivity, current fee-aware exits and reviewable V2 payloads. No higher-risk recommendation, new simulated fills, reallocation, source-failure estimate or historical holdout access."
+}

@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-09-06T17:22:30.926329+00:00",
+  "scope": "Synthetic protocol and real subprocess fixtures only, no market or forecast experiments",
+  "tests_passed": 19,
+  "unique_fixture_ledgers": 7,
+  "trial_attempts_in_subprocess_fixtures": 8,
+  "runs": [
+    {
+      "fixture": "test_candidate_and_evaluator_s0",
+      "ledger": "tmp/autoresearch-runner-verification/test_candidate_and_evaluator_s0/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "invalid",
+          "elapsed_seconds": 0.6561040878295898,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": 0,
+              "timed_out": false
+            },
+            {
+              "phase": "evaluator",
+              "returncode": -15,
+              "timed_out": true
+            }
+          ],
+          "execution_failure": "TimeoutError: evaluator exceeded the shared trial deadline",
+          "validation_failure": "Trial exceeded its registered wall-clock budget"
+        }
+      ]
+    },
+    {
+      "fixture": "test_real_candidate_and_evalua0",
+      "ledger": "tmp/autoresearch-runner-verification/test_real_candidate_and_evalua0/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "failed",
+          "elapsed_seconds": 0.043792009353637695,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": 3,
+              "timed_out": false
+            }
+          ],
+          "execution_failure": "RuntimeError: candidate exited with code 3",
+          "validation_failure": "RuntimeError: candidate exited with code 3"
+        }
+      ]
+    },
+    {
+      "fixture": "test_real_candidate_and_evalua1",
+      "ledger": "tmp/autoresearch-runner-verification/test_real_candidate_and_evalua1/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "failed",
+          "elapsed_seconds": 0.08569002151489258,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": 0,
+              "timed_out": false
+            },
+            {
+              "phase": "evaluator",
+              "returncode": 4,
+              "timed_out": false
+            }
+          ],
+          "execution_failure": "RuntimeError: evaluator exited with code 4",
+          "validation_failure": "RuntimeError: evaluator exited with code 4"
+        }
+      ]
+    },
+    {
+      "fixture": "test_real_candidate_and_evalua2",
+      "ledger": "tmp/autoresearch-runner-verification/test_real_candidate_and_evalua2/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "invalid",
+          "elapsed_seconds": 0.08780407905578613,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": 0,
+              "timed_out": false
+            },
+            {
+              "phase": "evaluator",
+              "returncode": 0,
+              "timed_out": false
+            }
+          ],
+          "execution_failure": null,
+          "validation_failure": "[Errno 2] No such file or directory: 'tmp/autoresearch-runner-verification/test_real_candidate_and_evalua2/trials.artifacts/df1912786a1008385da3/result.json'"
+        }
+      ]
+    },
+    {
+      "fixture": "test_real_runner_termination_c0",
+      "ledger": "tmp/autoresearch-runner-verification/test_real_runner_termination_c0/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "failed",
+          "elapsed_seconds": 0.20455193519592285,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": -9,
+              "timed_out": false
+            }
+          ],
+          "execution_failure": "InterruptedError: Runner received signal 15",
+          "validation_failure": "InterruptedError: Runner received signal 15"
+        }
+      ]
+    },
+    {
+      "fixture": "test_real_subprocesses_use_fix0",
+      "ledger": "tmp/autoresearch-runner-verification/test_real_subprocesses_use_fix0/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "scored",
+          "elapsed_seconds": 0.08478593826293945,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": 0,
+              "timed_out": false
+            },
+            {
+              "phase": "evaluator",
+              "returncode": 0,
+              "timed_out": false
+            }
+          ],
+          "execution_failure": null,
+          "validation_failure": null
+        },
+        {
+          "candidate": "conditional",
+          "status": "scored",
+          "elapsed_seconds": 0.08091187477111816,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": 0,
+              "timed_out": false
+            },
+            {
+              "phase": "evaluator",
+              "returncode": 0,
+              "timed_out": false
+            }
+          ],
+          "execution_failure": null,
+          "validation_failure": null
+        }
+      ]
+    },
+    {
+      "fixture": "test_wall_deadline_kills_a_rea0",
+      "ledger": "tmp/autoresearch-runner-verification/test_wall_deadline_kills_a_rea0/trials.jsonl",
+      "registration_before_every_trial": true,
+      "running": [],
+      "terminals": [
+        {
+          "candidate": "baseline",
+          "status": "invalid",
+          "elapsed_seconds": 0.8593029975891113,
+          "artifacts_verified": true,
+          "phases": [
+            {
+              "phase": "candidate",
+              "returncode": -9,
+              "timed_out": true
+            }
+          ],
+          "execution_failure": "TimeoutError: candidate exceeded the shared trial deadline",
+          "validation_failure": "Trial exceeded its registered wall-clock budget"
+        }
+      ]
+    }
+  ],
+  "all_artifacts_verified": true,
+  "profitability_proven": false
+}

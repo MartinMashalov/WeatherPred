@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-09-06T17:27:09.667497+00:00",
+  "registration": 78157,
+  "report": 78171,
+  "source_ids": [
+    78157,
+    78159,
+    78160,
+    78162,
+    78164,
+    78166,
+    78168,
+    78170,
+    78171
+  ],
+  "capacity_rows_reproduced": 300,
+  "capital_cap_selections_reproduced": 15,
+  "exit_legs_reproduced": 18,
+  "fees_recomputed_without_production_accumulator": true,
+  "network_requests": 0,
+  "actual_fills": 0,
+  "profitability_proven": false
+}

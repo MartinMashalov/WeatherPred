@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-09-06T17:31:11.602269+00:00",
+  "run_record_id": 59488,
+  "last_journal_record_id": 84943,
+  "paper_events_replayed": 1795,
+  "accounts_reproduced": 20,
+  "orders_reproduced": 45,
+  "taker_fills_reproduced_from_future_books": 30,
+  "maker_fills_reproduced_from_trade_through": 1,
+  "settled_positions_reproduced": 0,
+  "source_records_checked": 14,
+  "cash_and_fees_reproduced": true,
+  "fees_recomputed_without_production_accumulator": true,
+  "net_positions_and_realized_pnl_reproduced": true,
+  "nettings_reproduced": 1,
+  "network_requests": 0,
+  "real_money_orders": 0,
+  "profitability_proven": false,
+  "scope_limit": "Raw execution arithmetic and recorded-order lineage; not actual fills, independent days, omitted-signal detection or forecast calibration."
+}

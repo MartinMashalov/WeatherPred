@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-09-06T17:31:52.099457+00:00",
+  "run_record_id": 45913,
+  "last_journal_record_id": 84352,
+  "journal_events": 8880,
+  "event_counts": {
+    "account": 9,
+    "order": 2090,
+    "abstain": 530,
+    "slot": 55,
+    "arrival": 2017,
+    "queue": 951,
+    "fill": 594,
+    "mark": 909,
+    "cancel": 1724,
+    "nettings_reproduced": 284,
+    "settlement": 1
+  },
+  "raw_records_checked": 2224,
+  "actual_arrival_seconds": {
+    "optimistic": {
+      "n": 617,
+      "min": 1.595816,
+      "max": 11.039553,
+      "mean": 5.023808711507293
+    },
+    "realistic": {
+      "n": 709,
+      "min": 5.959798,
+      "max": 14.929972,
+      "mean": 9.825100170662905
+    },
+    "pessimistic": {
+      "n": 691,
+      "min": 15.85308,
+      "max": 24.315246,
+      "mean": 19.138051639652677
+    }
+  },
+  "cash_fees_positions_reproduced": true,
+  "quotes_reproduced_from_prior_books_and_inventory": true,
+  "future_queue_and_tape_fills_reproduced": true,
+  "network_requests": 0,
+  "real_money_orders": 0,
+  "profitability_proven": false,
+  "scope_limit": "Independent arithmetic and source-lineage audit. Not actual exchange fills or independent trading days; absence of omitted eligible signals is not proven by this replay."
+}

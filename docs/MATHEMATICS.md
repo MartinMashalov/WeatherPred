@@ -648,6 +648,151 @@ two cents additional conditional surplus after that deduction, reserves at most
 Implementation: [rain_relations.py](../weatherpred/rain_relations.py),
 [prospective pair runner](../research/experiments/e019_rain_pairs.py).
 
+## 22. Position capacity, early exit and geometric growth
+
+E020 measures the cost of increasing a matched rain-pair position. Let $C(q)$
+include both legs' ask depth, slippage and accumulated entry fees for quantity
+$q$. When both legs have enough displayed size, conditional surplus is
+
+$$S(q)=q-C(q).$$
+
+The diagnostic chooses the largest surplus among quantities 1–100 subject to
+$C(q)\le K$ and $S(q)/q\ge0.03$, where $K$ is an illustrative cash-cost cap.
+Costs need not increase linearly: the next contracts may be offered at worse
+prices. This calculation is a quote screen, not a fill or a recommendation to
+increase E019's registered limits. Under quarter depth and two cents additional
+slippage per leg, the September 6 snapshot supports six pairs for $5.8108,
+leaving $0.1892 conditional surplus. A larger cap does not improve that row.
+
+Selling early requires a separate calculation. If eligible bid slices for the
+held positions have prices $b_j$ and quantities $u_j$, then
+
+$$V_{\rm exit}=\sum_j b_ju_j-F_{\rm sell},\qquad
+\Pi_{\rm exit}=V_{\rm exit}-C_{\rm entry}.$$
+
+The implementation also applies the exit slippage and depth scenario. It reports
+profit only for a fully quoted exit; quantities without bids remain unfilled.
+At the observed full-depth bids, the fastest E019 account could receive $2.4384
+after exit fees against its $4.5887 cost: a $2.1503 loss if those sales execute.
+Its conditional $5 normal settlement payout cannot be used as immediate cash.
+
+Now let $B$ be initial bankroll, with $0<C<q$ and $C<B$. Suppose the pair pays
+$q$ normally and zero on source failure. For an assumed failure probability $r$,
+
+$$E[\Pi]=(1-r)q-C,$$
+
+$$g(r)=(1-r)\log\left(\frac{B+q-C}{B}\right)
++r\log\left(\frac{B-C}{B}\right).$$
+
+The second expression is expected logarithmic growth. It penalizes losses more
+strongly as they consume the bankroll. Define $a=\log((B+q-C)/B)$ and
+$b=\log((B-C)/B)$. The break-even failure assumptions are
+
+$$r_{\rm arithmetic}=1-C/q,\qquad r_{\rm geometric}=\frac{a}{a-b}.$$
+
+They are sensitivity thresholds, not estimates of the actual failure frequency.
+For example, $B=100,q=100,C=90,r=0.08$ gives expected profit of $2$, but negative
+expected log growth. Positive average dollars alone can conceal poor compounding.
+No source-failure estimate or reliable bankroll-target probability is available
+from the single current weekend.
+
+Implementation: [capital and exit functions](../weatherpred/execution_finance.py),
+[execution study](../research/EXECUTION_FINANCE.md).
+
+## 23. Transformer quantiles and supervised adaptation
+
+E021 uses a pretrained Chronos-2-small transformer through its official library.
+The project implements data alignment, adaptation and evaluation; it does not
+claim to have invented or reimplemented the pretrained architecture. A sequence
+of 512 minute values produces forecasts for the next 40 minutes. Missing values
+remain masked. The model's median forecast is used for the temperature-error
+comparison, while its quantiles describe possible outcomes.
+
+A quantile $Q_\tau$ is a value below which the model assigns probability $\tau$.
+For error $u=y-Q_\tau$, the pinball loss is
+
+$$\rho_\tau(u)=\max(\tau u,(\tau-1)u).$$
+
+Underprediction receives weight $\tau$, and overprediction receives weight
+$1-\tau$. At $\tau=0.5$, this equals half the absolute error. For $n$ forecasts
+and $m$ quantile levels, the reported score in Fahrenheit is
+
+$$L_{\rm report}=\frac{1}{nm}\sum_{i=1}^{n}\sum_{j=1}^{m}
+\rho_{\tau_j}(y_i-Q_{i,\tau_j}).$$
+
+The library's training loss uses its internally normalized targets, twice the
+pinball loss, masks missing targets and known future covariates, averages over
+the output horizon, sums across quantile levels and averages over the batch.
+Consequently, its training-log loss is not numerically interchangeable with
+the evaluation score above. E021 trains all model parameters for 100 AdamW
+optimizer steps with batch size eight and initial learning rate $10^{-5}$,
+which follows the library's linear schedule. There is no validation-based
+checkpoint selection. The short pilot is supervised learning, not RL.
+
+The point-forecast comparisons are
+
+$$\operatorname{RMSE}=\sqrt{\frac1n\sum_i(\hat y_i-y_i)^2},\qquad
+\operatorname{MAE}=\frac1n\sum_i|\hat y_i-y_i|.$$
+
+Across the 93 reused development forecasts, fine-tuned RMSE is 0.8010°F versus
+0.7504°F for persistence. At the five-minute horizon it is 0.4512°F versus
+0.5375°F. These 31 hourly targets span eight days and overlap the earlier model
+comparison. Neither the lower subgroup error nor an unadjusted resampling
+interval establishes independent skill after selecting among models/horizons.
+
+Dropout randomly masks model activations during training. The initial evaluation
+accidentally retained that mode and failed saved-checkpoint replay. Explicit
+evaluation mode removes that randomness. The corrected scores use the same
+saved weights and reproduce exactly; no training retry occurred.
+
+For a binary event with true probability $q$, expected Brier loss satisfies
+
+$$E[(p-Y)^2]=q(1-p)^2+(1-q)p^2,\qquad
+\frac{\partial}{\partial p}E[(p-Y)^2]=2(p-q).$$
+
+This explains why direct supervised probability learning already has a useful
+optimization target. RL can instead address sequential actions such as posting,
+cancelling or reducing an order. A proposed execution objective is expected
+change in log wealth after fees, fills and final inventory outcomes. It remains
+unimplemented and would require a reliable simulator and new validation days.
+
+Implementation and sources: [model study](../research/model_candidates.md),
+[probe](../research/probes/forecast_model_smoke.py).
+
+## 24. Consecutive-day states and contract implications
+
+The weekly heat contracts depend on consecutive hot days, not the mean of the
+whole week. For day $d$, let $n_d$ be its number of eligible hourly observations
+and $T_{dh}$ their temperatures. Under the exact contract rounding rule, define
+
+$$q_d=\mathbf1\left\{n_d\ge18,\quad
+\operatorname{round}\left(\frac{1}{n_d}\sum_hT_{dh}\right)>90\right\}.$$
+
+The streak ending on a day follows $s_d=q_d(s_{d-1}+1)$ with initial $s_0=0$.
+The longest streak is $L=\max_d s_d$, so a contract for at least $k$ consecutive
+days pays $\mathbf1\{L\ge k\}$. Enumerating unresolved days as both zero and one
+bounds the possible final result. Earlier source revisions can still change
+the completed-day inputs; observed data is not an unconditional payout guarantee.
+
+Similarly, a monthly rainfall total is $R=A_t+R_{\rm remaining}$, where $A_t$
+is accumulated reported rain. When additional amounts are nonnegative and past
+reports remain valid, $A_t>k$ implies a strictly-greater-than-$k$ threshold has
+already been exceeded. Equality alone does not suffice.
+
+More generally, if event $A$ implies event $B$ under compatible source rules,
+
+$$\mathbf1_{\neg A}+\mathbf1_B\ge1.$$
+
+Examples include a higher rainfall threshold implying a lower one, or major
+hurricanes being included in a compatible hurricane count. Buying NO(A) and
+YES(B) has a conditional minimum payout of one dollar per matched pair.
+Profit still requires both fills and total cost below that payout. The new
+541-relation screen finds no positive quoted floor after fees; theoretical
+relationships do not guarantee a discounted purchase.
+
+Implementation and precise source gates:
+[expanded market study](../research/MARKET_EXPANSION.md).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.

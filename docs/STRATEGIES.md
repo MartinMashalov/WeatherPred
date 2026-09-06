@@ -381,6 +381,99 @@ Code: [calendar rules and pair costs](../weatherpred/rain_relations.py),
 [registered runner](../research/experiments/e019_rain_pairs.py),
 [independent execution audit](../research/experiments/e019_audit.py).
 
+## 14. Execution, capacity and capital reuse — E020
+
+**Idea.** Improve the money earned per unit of scarce capital by choosing useful
+order types, measuring available size and testing whether early exits release
+cash economically. This is a diagnostic of the existing rain trade, not a new
+forecast or additional paper position.
+
+One hundred quantities under three depth/slippage scenarios yield 300 retained
+screens. At the strongest stress, the new NYC snapshot supports only six pairs,
+costing $5.8108 for $0.1892 conditional surplus. A larger bankroll does not create
+more quoted size at the required margin. Selling the existing positions at the
+available bids would instead lose between $2.10 and $2.37 per alternative
+account under its matching exit scenario. Cash recycling is expensive here.
+
+The new order-intent builder maps YES/NO purchases and sales into the current
+exchange schema. It produces inspectable payloads and validates limits; it does
+not authenticate or submit them. A fill-or-kill instruction applies to one leg,
+so it cannot make a two-contract trade atomic. The study also computes expected
+logarithmic growth under explicit source-failure assumptions, retaining the
+distinction between average profit and bankroll growth.
+
+Code and full results: [execution and capital study](../research/EXECUTION_FINANCE.md).
+
+## 15. Wider contract relationships and weather state
+
+**Idea.** Use completed weather observations to narrow what remains possible,
+then buy only when the executable cost is below the conditional payout. Weekly
+heat streaks depend on consecutive qualifying days, while monthly rainfall
+depends on accumulated amount plus future rain. Exact source, station and
+rounding rules matter as much as the forecast.
+
+A fresh screen covers 82 selected series and 446 books. None of 541 nested
+threshold/count relationships has a positive quoted floor after fees. Fifty
+weekly contracts are tested under three perturbations of past daily means;
+none survives one cent of additional slippage. Four monthly rain thresholds
+already exceeded by published accumulations have no available YES asks.
+All 34 catalog snowfall series currently have no open market.
+
+A useful acquisition result is 5,443 hourly observations across 37 stations.
+The data has timestamps and pending/settled status, but its historical arrival
+times are unverified. It is a candidate input for future models, not evidence
+that earlier traders could have accessed it at our assumed time.
+
+Code, source rules, retained failures and next tests:
+[market expansion report](../research/MARKET_EXPANSION.md).
+
+## 16. A small forecasting transformer — E021
+
+**Idea.** Adapt a pretrained time-series model to the local temperature target,
+then require it to beat simple forecasts before using it to price contracts.
+The selected research candidate is Chronos-2-small, with about 28 million
+parameters. It runs locally in a separate optional environment.
+
+Two pretrained variants—index alone and index plus stations/clock—produce 288
+forecasts on 48 August hourly events. Both lose to persistence overall. One
+fixed supervised experiment then trains for 100 steps on August 20–23, taking
+22.55 seconds on CPU. No evaluation outcome enters training and no alternative
+checkpoint is selected. The evaluation uses 93 forecasts from eight already
+examined development days.
+
+Fine-tuned overall temperature error is 0.8010°F versus 0.7504°F for persistence.
+The five-minute subgroup improves from 0.5375°F to 0.4512°F, approximately 16%,
+while longer horizons worsen. This is an exploratory specialist hypothesis,
+not independent evidence of forecasting skill or profit. The saved weights
+reproduce all predictions exactly after correcting an evaluation-mode error;
+the rejected initial scores remain in the evidence.
+
+Reinforcement learning has not been trained here. Supervised learning directly
+rewards accurate distributions; a later RL policy could choose sequential
+execution actions once sufficient realistic fill data supports that experiment.
+Neither RL nor a small transformer establishes a world-leading weather model.
+
+Model comparison, licenses, exact training parameters and replay:
+[model research](../research/model_candidates.md),
+[compact evidence](../evidence/model_candidates.json).
+
+## 17. Bounded automated research
+
+**Purpose.** Make experiments repeatable and keep failed attempts visible.
+The existing policy search runs finite registered batches. A new process runner,
+inspired by Karpathy's autoresearch, additionally executes a registered candidate
+and a fixed evaluator under one wall-time deadline. It preserves logs, stops
+child processes and consumes the attempt when a run fails or times out.
+
+The evaluator requires the baseline's same event panel, earlier training labels,
+eligible input receipts and sealed-date exclusions. A lower development error
+can qualify a candidate for more research; it cannot promote it as profitable.
+The new runner's verification uses real subprocesses with synthetic inputs, so
+its test count is not a count of market experiments.
+
+Design, commands and limitations:
+[autoresearch adaptation](../research/AUTORESEARCH_ADAPTATION.md).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,
@@ -388,8 +481,9 @@ and snowfall strategies have not been validated by these experiments. E019 now
 tests one precipitation calendar relationship with prospective paper orders.
 E015 now tests two-sided maker spread capture; its nine simulated accounts do not
 establish a profitable market maker.
-No neural model, HRRR ensemble strategy, live brokerage integration or production
-fund management is claimed.
+A neural development pilot is now implemented. A combined HRRR/residual-model
+strategy, reinforcement-learning execution policy, live brokerage integration
+and production fund management remain unvalidated research or future engineering.
 
 ## What this project demonstrates
 

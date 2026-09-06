@@ -7,8 +7,8 @@ git clone https://github.com/MartinMashalov/WeatherPred.git
 cd WeatherPred
 uv sync --frozen
 uv run pytest -q
-uv run ruff check weatherpred tests research/experiments
-uv run ruff format --check weatherpred tests research/experiments
+uv run ruff check weatherpred tests research/experiments research/probes
+uv run ruff format --check weatherpred tests research/experiments research/probes
 ```
 
 The test suite checks fees, partial fills, source-time restrictions, contract
@@ -103,6 +103,22 @@ to rebuild its training rows and selection from raw sources. Run
 recorded execution audit. Resume the runner with both `--run-record-id 59488`
 and `--model-record-id 59490`; it uses `data/e018.lock` and `data/STOP_E018`.
 Missing a registered slot produces an explicit skip, never a backdated forecast.
+
+## Optional model and bounded-search research
+
+The [small-model report](../research/model_candidates.md) documents the separate
+optional PyTorch/Chronos environment, pinned checkpoint, August inputs and one
+fixed supervised fit. It is not installed by the core `uv sync`. Its public
+[model evidence](../evidence/model_candidates.json) retains the overall failures,
+the exploratory five-minute result and the deterministic checkpoint replay.
+The original stochastic evaluation and its correction are disclosed. Rerunning
+a probe is a new calculation, not additional independent evidence.
+
+The [autoresearch adaptation](../research/AUTORESEARCH_ADAPTATION.md) describes
+registration of a finite candidate list and a fixed evaluator. The subprocess
+runner enforces a shared deadline, retains logs and failures, and does not retry.
+Its engineering checks execute real tiny processes using synthetic data. They
+do not require the optional model environment or the market archive.
 
 ## Evidence and limitations
 

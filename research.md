@@ -285,3 +285,56 @@ The one-cent source allowance is an arbitrary stress deduction, not a statistica
 estimate. E019 freezes all 19 eligible cities before 17:00, then tests independent
 two-leg arrivals, unequal fills, fees, capital lock and eventual settlement.
 Retained as a new forward hypothesis; no profitable portfolio has been established.
+
+## Execution and broader state constraints — E020 / September 6
+
+- [Current Kalshi V2 orders](https://docs.kalshi.com/api-reference/orders/create-order-v2),
+  raw 78716, motivate an unsent order-intent builder with YES-book side mapping,
+  fixed limits, IOC/FOK/GTC and client IDs. A single-order FOK is not an atomic
+  cross-market pair. [Order groups](https://docs.kalshi.com/getting_started/order_groups),
+  raw 78719, provide group controls rather than a guaranteed joint fill.
+- [Collateral return](https://help.kalshi.com/en/articles/13823816-collateral-return),
+  raw 78756, describes eligible within-event collateral treatment. It does not
+  establish early cash return across the separate daily/weekend rain events.
+  E020 tests 300 quantity/cost rows, with six-pair capacity under strongest stress,
+  and rejects the idea that current bid-side exits cheaply recycle the cash.
+- [TWC weekly hourly observations](https://weather.com/kalshi/api/metar?primary=true&weekStart=2026-08-31),
+  raw 78077, adds 5,443 hourly values across 37 stations. Exact contract rules reveal
+  consecutive-day heat streaks. The state enumeration is informative but all
+  current weekly opportunities fail 1¢ slippage. Four already-crossed monthly rain
+  thresholds have no YES asks. These failures support measuring execution capacity
+  before adding a more elaborate forecast.
+
+## Small-model adaptation and bounded autoresearch — E021
+
+- The official [Chronos-2-small card](https://huggingface.co/autogluon/chronos-2-small)
+  documents a 28-million-parameter Apache-2.0 model. [Chronos implementation](https://github.com/amazon-science/chronos-forecasting)
+  supports supervised full adaptation and quantile forecasts. The local measured
+  model has 27,934,624 parameters. Two pretrained variants lose to persistence
+  overall; one 100-step fit finishes in 22.55 seconds. Overall RMSE again loses,
+  while an exploratory five-minute development subgroup improves about 16%.
+  A saved-checkpoint replay catches dropout left active; the same weights are
+  rescored in evaluation mode with exact replay and no retraining. Retain the
+  short-horizon hypothesis for new dates, not model promotion.
+- Google's [TimesFM 3.0 model card](https://huggingface.co/google/timesfm-3.0-pytorch)
+  lists a distinct non-commercial weights license. The study retains Chronos
+  as the practical local candidate and TimesFM 2.5 as a possible later comparator.
+  Neither unrelated benchmark leadership nor model size proves weather skill.
+- [PostTime](https://arxiv.org/abs/2605.29401) already studies supervised and RL
+  forecast revision. [Verifiable Rewards for Calibrated Probabilistic Forecasting](https://arxiv.org/abs/2607.00164)
+  examines noisy outcome rewards and alternative calibration rewards in football.
+  These are motivation and precedents, not demonstrations of a weather-market
+  edge. The current implementation trains supervised quantiles; execution RL
+  remains a hypothesis requiring reliable fill rewards and new forward days.
+- [Karpathy autoresearch](https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117)
+  motivates fixed short trials and a fixed evaluator. The adaptation adds
+  registered candidates, input/source hashes, chronology, counted failures,
+  shared process deadlines and preserved logs. Actual process verification uses
+  synthetic inputs. Optimizing one validation period repeatedly remains
+  development, so the runner never returns profitability promotion.
+
+Detailed findings, exact versions, sources and retained results:
+[model report](research/model_candidates.md),
+[market expansion](research/MARKET_EXPANSION.md),
+[execution/capital](research/EXECUTION_FINANCE.md),
+[autoresearch design](research/AUTORESEARCH_ADAPTATION.md).

@@ -1107,3 +1107,129 @@ from 35 raw sources. Snapshot 75819 is published as
 [execution audit](evidence/E019_audit.json). Realized P&L is still zero; cash is
 locked pending actual finalized settlement. This is one NYC weekend across
 three alternative scenarios, not three independent events or proven profitability.
+
+## E020 — Capacity, early exit and capital sensitivity
+
+Registered protocol 78157 at 17:09:35 UTC precedes fresh book 78170 at
+17:09:39.137390. Report 78171 screens quantities 1–100 under three fixed
+depth/slippage scenarios for the existing NYC rain pair. All 300 rows remain
+visible. Illustrative cash-cost caps are $5, $10, $25, $50 and $100; these do not
+alter E019's conservative order-reservation or exposure limits.
+
+The best positive-surplus size saturates at 27 pairs under full depth, 13 under
+half depth plus one cent per leg, and six under quarter depth plus two cents.
+The strongest stressed maximum costs $5.8108 for $0.1892 conditional surplus.
+Actual future fills could differ. Marking E019's existing positions against
+same-scenario bids and exit fees gives full-exit losses of $2.1503, $2.3708 and
+$2.1032. The weekend NO best bid is 43 cents against an 81-cent ask. Selling
+early does not economically recycle this trade's capital at these quotes.
+
+The new V2 order-intent builder produces reviewed payloads without transport.
+IOC and FOK are single-leg instructions, not atomic pairs. Capital sensitivity
+uses source-failure probabilities 0/1/3/5/10 percent as assumptions, not estimates.
+No new fill, higher position limit or growth-target probability is inferred.
+
+Independent replay reproduces all 300 rows, 15 cap selections and 18 exit legs
+from the raw book and fee receipts without the production fee accumulator.
+The first auditor invocation used an incorrect fee-resolver call signature and
+stopped; correcting the adapter did not change the study's source or results.
+See [complete results](evidence/E020_execution_finance.json),
+[audit](evidence/E020_audit.json) and [execution study](research/EXECUTION_FINANCE.md).
+
+## Wider-market discovery — September 6, 17:08–17:18 UTC
+
+Selected 82 series from the existing catalog before fresh quotes: minimum
+temperature, monthly rain, weekly heat streaks, annual Atlantic storm counts
+and all 34 snowfall series. The screen obtained 446 valid books across 48 active
+series and 72 events with zero acquisition errors. All 541 nested-threshold or
+count-subset comparisons fail a positive conditional payout floor after fees.
+These correlated relation screens are not 541 independent trades.
+
+TWC source 78077 adds 5,443 hourly observations across 37 stations. The weekly
+heat-streak replay checks 50 contracts under three completed-day perturbations,
+retaining 150 rows. None survives one cent of slippage. Houston's most robust
+conditional quoted margin is only $0.0093 per contract, with 12.20 displayed
+contracts. Monthly source amounts show four crossed Houston/Miami thresholds;
+none has a YES ask in subsequent book 80449. All snow series remain inactive.
+
+Reports 78957/80070/80450 retain the screens and source IDs. Historical source
+availability is unverified, and these observations do not enter the August model
+pilot. [Market report](research/MARKET_EXPANSION.md),
+[all relation results](evidence/market_expansion.json),
+[weekly rows](evidence/weekly_streak_bounds.json),
+[monthly bounds](evidence/monthly_precipitation_bounds.json).
+
+## E021 — One fixed small-transformer adaptation
+
+Primary-source model research selects the Apache-2.0 Chronos-2-small checkpoint
+`ddec01313e50b6bc58ebaa92ede81bc24a3d9f9a`, with 27,934,624 parameters. The optional
+environment is separate from production. Initial fixed index-only and
+index/station/clock variants produce 288 forecasts on 48 August events; both
+lose to persistence on aggregate RMSE. No September or sealed holdout labels
+are used. Historical publication lag remains assumed, not proven.
+
+One pre-fit protocol trains on August 20–23 only, with 100 AdamW steps, batch size 8,
+512-minute context, 40-minute horizon, learning rate 1e-5 and seed 62026. It completes
+in 22.55 seconds using 1.59 GB peak process memory. No evaluation set is given to
+training, no checkpoint selection occurs and no fit is retried. The 93 evaluation
+forecasts cover 31 hourly targets on eight already examined August 24–31 days;
+three midnight decisions are excluded in the protocol because they precede
+the simulated fitting cutoff.
+
+Saved-checkpoint replay rejects the initial score because training-mode dropout
+remained active. Original scores and source are preserved. An amendment precedes
+rescoring the same weights in evaluation mode, without retraining. All 288
+pretrained and 93 corrected trained predictions reproduce exactly. Corrected
+aggregate RMSE is 0.8010°F versus 0.7504 persistence and 0.7842 pretrained. Five-minute
+RMSE is 0.4512 versus 0.5375 persistence; MAE is 0.3602 versus 0.4100. Quantile loss
+improves 0.18215→0.17221 against pretrained. Overall promotion is rejected.
+The subgroup is exploratory, uses reused days and does not establish tradable
+probability calibration. The unadjusted two-day bootstrap remains development.
+
+[Model report and sources](research/model_candidates.md),
+[compact evidence including rejected scores](evidence/model_candidates.json).
+
+## Bounded process-runner verification
+
+The autoresearch adaptation adds finite source-pinned plans, a fixed evaluator,
+input manifest, exact baseline panel, earlier-label gates, sealed-date exclusions
+and counted attempts. Candidate and evaluator subprocesses share a deadline;
+crashes, timeouts and interruptions retain logs and consume an attempt. Ranking
+can retain a development improvement for research but never claims promotion.
+
+Nineteen engineering checks include real tiny subprocesses and stubborn children.
+They do not count as market or model experiments. Synthetic evidence retains
+eight attempts across seven distinct fixture ledgers. See
+[design](research/AUTORESEARCH_ADAPTATION.md) and
+[process evidence](evidence/autoresearch_runner_verification.json).
+
+## E009 — Third forward settlement
+
+Raw source 78720 first arrives 17:10:56.369787 with final 16:00 UTC target 89.60°F.
+After three hourly events, all 32 alternative accounts have cumulative realized
+losses, between −$11.4723 and −$0.7276. Fourth-event positions remain unsettled.
+All three hours share one underlying day. The 17:15 audit reconstructs 16,524 journal
+records, 347 orders, 258 taker and 60 maker fills, 146 settled positions and 82 raw sources,
+including independent fee/cash accounting. See
+[third-settlement results](evidence/E009_three_settlements.json).
+
+## Exact accounting replay correction — E016 / E018
+
+The E016 audit initially failed after the new settlement checkpoint. Raw replay
+identified two auditor defects: a different Decimal addition/subtraction order
+first differed by 3E−28 dollars at fill 54934, and a fully closed lot retained
+−1E−28 of cost before a later reopening. The production ledger deletes closed
+lots. The independent auditor now reproduces the recorded arithmetic order and
+removes closed quantity/basis keys, while preserving partial positions and all
+exact equality assertions. No frozen production source changed.
+
+Four regression tests retain the original operands and closed/reopened example.
+The final E016 source/queue audit reproduces 594 fills, 284 offsets, one settlement
+and 2,224 raw sources through journal 84352. E015 regression replay also passes.
+The same corrections are applied to E018's independent auditor; its 45 orders,
+31 fills and one offset reproduce, with settlement still pending. Original E009
+also replays after the shared auditor change. Original failures and the first
+incomplete repair remain in [diagnostic evidence](evidence/E016_audit_corrections.json).
+The [full local verification](evidence/verification-2026-09-06-research-expansion.txt)
+records 135 passing tests and 85,523 verified archive records. These engineering
+checks do not change the profitability conclusion.
