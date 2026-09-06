@@ -259,3 +259,29 @@ trading signal or profitability result has been inferred from acquisition.
   production accumulator and checks net costs/realized profit. Second E009
   settlement leaves 31/32 alternatives negative overall, with further open risk.
   No positive edge or bankroll-target probability is validated.
+
+## Rain-calendar relative value — E019, September 6
+
+The official [daily-rain terms](https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf)
+and [weekend-rain terms](https://assets.kalshi.com/contract_terms/RAINRANGE.pdf),
+archived as 68872 and 68873, have identical extracted general text. They describe
+reported precipitation, treatment of trace/missing values and settlement
+contingencies. The current daily series additionally discloses material-error
+review. Exact contract predicates name the same CLI station and date range;
+different trading close times do not alone imply different weather periods.
+These sources motivate a conditional identity, not a risk-free guarantee.
+
+If Saturday's rain indicator is A and Sunday's is B, the weekend indicator is
+A OR B under matching normal settlement. Known A=0 makes weekend and Sunday
+equivalent. NYC's displayed pair cost survives the three explicit fee/depth/
+slippage screens at the 16:30 snapshot; Houston's initial headline gap disappears
+in the actual book. No historical midpoint is treated as an execution.
+
+The complete recent settled census yields 40 matching binary outcomes over two
+weekends; exact secondary-text checks exclude the 20 older cases from strict
+comparability. Current source confirmation uses the official TWC table's CLI
+station identifier, explicit numeric zero and finalized Saturday exchange result.
+The one-cent source allowance is an arbitrary stress deduction, not a statistical
+estimate. E019 freezes all 19 eligible cities before 17:00, then tests independent
+two-leg arrivals, unequal fills, fees, capital lock and eventual settlement.
+Retained as a new forward hypothesis; no profitable portfolio has been established.

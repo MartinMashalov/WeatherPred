@@ -337,10 +337,47 @@ Code: [conditional distributions](../weatherpred/conditional_forecasts.py),
 [registered runner](../research/experiments/e018_conditional_hourly.py),
 [raw-source model replay](../research/experiments/e018_diagnostics.py).
 
+## 13. Daily-versus-weekend rain pairs — E019
+
+**Idea.** If Saturday had no rain, rain on either day of the weekend means rain
+on Sunday. Under matching settlement rules, Sunday's contract and the weekend
+contract then have the same outcome. Buying YES in one and NO in the other can
+cost less than their combined conditional $1 payout.
+
+The system first checks the exact station, dates, reporting conventions,
+finalized Saturday result and an official source report showing numeric zero.
+It then checks both pair directions, actual asks, available depth and fees.
+All 19 eligible cities are included in the registered September 6 panel.
+
+**Execution matters.** These are separate contracts and separate orders. The
+second leg arrives later and may fail or fill only partly. The simulator keeps
+that unmatched exposure, cancels unfilled quantities and retains the actual cash
+cost. Cross-contract positions do not automatically return cash through netting.
+
+**Current evidence.** One exploratory NYC snapshot costs 92.71 cents per matched
+pair including fees, rising to 96.73 cents after the strongest registered depth
+and slippage stress. Those are displayed costs, not earned returns. Houston's
+apparent gap disappears when using its book. Forty historical binary outcomes
+match the calendar relationship, but only twenty pass strict identical-rule
+checks, and they cover one weekend. There is too little evidence to estimate
+rare source or settlement failures.
+
+The prospective test begins at 17:00 UTC on September 6 with three alternative
+$100 accounts. It uses a 5% pair reservation cap, fixed limits, up to five
+contracts per leg and at most one attempt per city/account. A fixed one-cent
+deduction for source uncertainty is a stress assumption, not an estimated
+probability. Reports show losses possible if one leg fails or the settlement
+relationship breaks. **No guaranteed arbitrage or validated profit is claimed.**
+
+Code: [calendar rules and pair costs](../weatherpred/rain_relations.py),
+[registered runner](../research/experiments/e019_rain_pairs.py),
+[independent execution audit](../research/experiments/e019_audit.py).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,
-precipitation and snowfall strategies have not been validated by these experiments.
+and snowfall strategies have not been validated by these experiments. E019 now
+tests one precipitation calendar relationship with prospective paper orders.
 E015 now tests two-sided maker spread capture; its nine simulated accounts do not
 establish a profitable market maker.
 No neural model, HRRR ensemble strategy, live brokerage integration or production

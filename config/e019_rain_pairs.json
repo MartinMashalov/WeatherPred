@@ -1,0 +1,29 @@
+{
+  "experiment": "E019-rain-calendar-pairs-v1",
+  "first_decision_at": "2026-09-06T17:00:00Z",
+  "last_decision_at": "2026-09-06T18:20:00Z",
+  "stop_at": "2026-09-06T18:30:00Z",
+  "interval_seconds": 300,
+  "maximum_slot_lateness_seconds": 20,
+  "saturday_event": "KXRAIN-26SEP05",
+  "daily_event": "KXRAIN-26SEP06",
+  "weekend_event": "KXRAINWKND-26SEP05",
+  "source_day": "2026-09-05",
+  "initial_cash": "100",
+  "maximum_quantity": 5,
+  "pair_cap_fraction": "0.05",
+  "minimum_surplus_per_pair": "0.02",
+  "source_allowance_per_pair": "0.01",
+  "scenarios": [
+    {"name": "taker_1s_full", "latency_seconds": 1, "leg_stagger_seconds": 2, "depth_retained": "1", "slippage": "0"},
+    {"name": "taker_5s_half", "latency_seconds": 5, "leg_stagger_seconds": 2, "depth_retained": "0.5", "slippage": "0.01"},
+    {"name": "taker_30s_quarter", "latency_seconds": 30, "leg_stagger_seconds": 5, "depth_retained": "0.25", "slippage": "0.02"}
+  ],
+  "selection": "Freeze all cities whose Saturday daily contract is finalized NO with explicit 0.00 and whose exact TWC CLI station reports official numeric zero. Require matching daily/weekend station, source conventions and Saturday/Sunday dates. At each future round check both opposite-side pair directions, largest quantity 1 through 5 under a 5% pair reservation and current paper account caps, then rank by conditional surplus and ticker. At most one attempt per city per account in the whole run. Log every rejection. No calibrated probability or Kelly claim.",
+  "execution": "Publish both immutable whole-quantity limit intents before requesting arrival books. Daily leg arrives first, weekend leg later by the registered stagger. Each leg gets its own fresh future event/fee/book evidence. Partial immediate-or-cancel execution independently walks retained depth with one slippage charge under the original limit. The other leg is not retroactively removed when one fails. No retry, rescue hedge, midpoint or same-snapshot fill. No cross-contract cash offset; positions remain until actual finalized settlement.",
+  "source_risk": "Current identical general contract terms do not guarantee cross-series settlement equivalence under material-error review, missing data, direct totals or discretionary fair-price resolution. The one-cent allowance is a stress parameter, not an estimated probability. Report both normal conditional payout bounds and complete source-break loss; never call the surplus guaranteed or realized before settlement.",
+  "monitoring": "Refresh Saturday/source confirmation before each decision. At arrival recheck exact rules, active status, close and fees. Cancel arrivals more than 15 seconds late, and cancel all unobserved orders on restart. Poll actual finalized held-contract results; bounded stop can leave positions pending. A separate settle-only invocation can later reconcile without new orders.",
+  "real_money_orders": 0,
+  "promotion_eligible": false,
+  "holdout_accessed": false
+}

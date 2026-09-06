@@ -65,6 +65,15 @@ It was selected using August data only and registered before new 16:30–16:55
 paper decisions. Its development improvement is not independent validation.
 The [latest verification](evidence/E018_verification.txt) records 100 passing tests.
 
+**16:54 UTC structural research update:** E019 registers a separate daily/weekend
+rain-pair experiment across 19 cities. An apparent NYC price gap survives the
+initial cost screen, while Houston's disappears in the book. Both orders must
+fill independently at later prices; source-consistent payout equivalence remains
+conditional. The [registered protocol](evidence/E019_registration.json) precedes
+17:00–18:20 paper decisions. See the [source check](evidence/E019_source_consistency.json)
+and [rain-pair mathematics](docs/MATHEMATICS.md#21-conditional-rain-calendar-pairs-and-unequal-fills).
+The [E019 verification log](evidence/E019_verification.txt) records the expanded checks.
+
 ## What is implemented
 
 - **Data and provenance:** public GET ingestion; original forecast/report versions;

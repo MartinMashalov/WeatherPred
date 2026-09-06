@@ -1,0 +1,443 @@
+{
+  "record_id": 72006,
+  "generated_at": "2026-09-06T16:49:18.670152+00:00",
+  "raw_source_ids": [
+    68879,
+    68880,
+    68872,
+    68873
+  ],
+  "current_terms_bytes_identical": false,
+  "current_terms_extracted_text_identical": true,
+  "historical_city_weekends": 40,
+  "calendar_weekends": 2,
+  "matching_binary_identities": 20,
+  "observed_binary_identity_matches_before_strict_rule_screen": 40,
+  "dry_saturday_pairs": 17,
+  "errors": [
+    {
+      "weekend": "KXRAINWKND-26AUG22-SFO",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-SEA",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-SATX",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-PHX",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-PHIL",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-OKC",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-NYC",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-NOLA",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-MIN",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-MIA",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-LV",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-LAX",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-HOU",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-DEN",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-DC",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-DAL",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-CHI",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-BOS",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-AUS",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-ATL",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    }
+  ],
+  "rows": [
+    {
+      "weekend": "KXRAINWKND-26AUG29-SFO",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-SFO",
+      "sunday": "KXRAIN-26AUG30-SFO",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-SEA",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-SEA",
+      "sunday": "KXRAIN-26AUG30-SEA",
+      "saturday_result": "yes",
+      "sunday_result": "no",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": false
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-SATX",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-SATX",
+      "sunday": "KXRAIN-26AUG30-SATX",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-PHX",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-PHX",
+      "sunday": "KXRAIN-26AUG30-PHX",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-PHIL",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-PHIL",
+      "sunday": "KXRAIN-26AUG30-PHIL",
+      "saturday_result": "no",
+      "sunday_result": "yes",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-OKC",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-OKC",
+      "sunday": "KXRAIN-26AUG30-OKC",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-NYC",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-NYC",
+      "sunday": "KXRAIN-26AUG30-NYC",
+      "saturday_result": "no",
+      "sunday_result": "yes",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-NOLA",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-NOLA",
+      "sunday": "KXRAIN-26AUG30-NOLA",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-MIN",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-MIN",
+      "sunday": "KXRAIN-26AUG30-MIN",
+      "saturday_result": "yes",
+      "sunday_result": "no",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": false
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-MIA",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-MIA",
+      "sunday": "KXRAIN-26AUG30-MIA",
+      "saturday_result": "yes",
+      "sunday_result": "no",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": false
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-LV",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-LV",
+      "sunday": "KXRAIN-26AUG30-LV",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-LAX",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-LAX",
+      "sunday": "KXRAIN-26AUG30-LAX",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-HOU",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-HOU",
+      "sunday": "KXRAIN-26AUG30-HOU",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-DEN",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-DEN",
+      "sunday": "KXRAIN-26AUG30-DEN",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-DC",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-DC",
+      "sunday": "KXRAIN-26AUG30-DC",
+      "saturday_result": "no",
+      "sunday_result": "yes",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-DAL",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-DAL",
+      "sunday": "KXRAIN-26AUG30-DAL",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-CHI",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-CHI",
+      "sunday": "KXRAIN-26AUG30-CHI",
+      "saturday_result": "no",
+      "sunday_result": "yes",
+      "weekend_result": "yes",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-BOS",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-BOS",
+      "sunday": "KXRAIN-26AUG30-BOS",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-AUS",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-AUS",
+      "sunday": "KXRAIN-26AUG30-AUS",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG29-ATL",
+      "observed_binary_identity_matches": true,
+      "saturday": "KXRAIN-26AUG29-ATL",
+      "sunday": "KXRAIN-26AUG30-ATL",
+      "saturday_result": "no",
+      "sunday_result": "no",
+      "weekend_result": "no",
+      "identity_matches": true,
+      "eligible_after_dry_saturday": true
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-SFO",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-SEA",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-SATX",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-PHX",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-PHIL",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-OKC",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-NYC",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-NOLA",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-MIN",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-MIA",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-LV",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-LAX",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-HOU",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-DEN",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-DC",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-DAL",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-CHI",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-BOS",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-AUS",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    },
+    {
+      "weekend": "KXRAINWKND-26AUG22-ATL",
+      "observed_binary_identity_matches": true,
+      "error": "Rain contracts differ in station, date, city or source conventions"
+    }
+  ],
+  "limits": "Finalized labels checked after the fact, not historical availability or trading returns. Two weekends cannot bound future source-review failures. Current general terms and future trade rules remain subject to exchange exceptions.",
+  "profitability_proven": false
+}

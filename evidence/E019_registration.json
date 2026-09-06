@@ -1,0 +1,3945 @@
+{
+  "run_record_id": 72680,
+  "config": {
+    "experiment": "E019-rain-calendar-pairs-v1",
+    "first_decision_at": "2026-09-06T17:00:00Z",
+    "last_decision_at": "2026-09-06T18:20:00Z",
+    "stop_at": "2026-09-06T18:30:00Z",
+    "interval_seconds": 300,
+    "maximum_slot_lateness_seconds": 20,
+    "saturday_event": "KXRAIN-26SEP05",
+    "daily_event": "KXRAIN-26SEP06",
+    "weekend_event": "KXRAINWKND-26SEP05",
+    "source_day": "2026-09-05",
+    "initial_cash": "100",
+    "maximum_quantity": 5,
+    "pair_cap_fraction": "0.05",
+    "minimum_surplus_per_pair": "0.02",
+    "source_allowance_per_pair": "0.01",
+    "scenarios": [
+      {
+        "name": "taker_1s_full",
+        "latency_seconds": 1,
+        "leg_stagger_seconds": 2,
+        "depth_retained": "1",
+        "slippage": "0"
+      },
+      {
+        "name": "taker_5s_half",
+        "latency_seconds": 5,
+        "leg_stagger_seconds": 2,
+        "depth_retained": "0.5",
+        "slippage": "0.01"
+      },
+      {
+        "name": "taker_30s_quarter",
+        "latency_seconds": 30,
+        "leg_stagger_seconds": 5,
+        "depth_retained": "0.25",
+        "slippage": "0.02"
+      }
+    ],
+    "selection": "Freeze all cities whose Saturday daily contract is finalized NO with explicit 0.00 and whose exact TWC CLI station reports official numeric zero. Require matching daily/weekend station, source conventions and Saturday/Sunday dates. At each future round check both opposite-side pair directions, largest quantity 1 through 5 under a 5% pair reservation and current paper account caps, then rank by conditional surplus and ticker. At most one attempt per city per account in the whole run. Log every rejection. No calibrated probability or Kelly claim.",
+    "execution": "Publish both immutable whole-quantity limit intents before requesting arrival books. Daily leg arrives first, weekend leg later by the registered stagger. Each leg gets its own fresh future event/fee/book evidence. Partial immediate-or-cancel execution independently walks retained depth with one slippage charge under the original limit. The other leg is not retroactively removed when one fails. No retry, rescue hedge, midpoint or same-snapshot fill. No cross-contract cash offset; positions remain until actual finalized settlement.",
+    "source_risk": "Current identical general contract terms do not guarantee cross-series settlement equivalence under material-error review, missing data, direct totals or discretionary fair-price resolution. The one-cent allowance is a stress parameter, not an estimated probability. Report both normal conditional payout bounds and complete source-break loss; never call the surplus guaranteed or realized before settlement.",
+    "monitoring": "Refresh Saturday/source confirmation before each decision. At arrival recheck exact rules, active status, close and fees. Cancel arrivals more than 15 seconds late, and cancel all unobserved orders on restart. Poll actual finalized held-contract results; bounded stop can leave positions pending. A separate settle-only invocation can later reconcile without new orders.",
+    "real_money_orders": 0,
+    "promotion_eligible": false,
+    "holdout_accessed": false
+  },
+  "panel": [
+    {
+      "city": "AUS",
+      "relation": {
+        "station": "CLIAUS",
+        "city": "Austin",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-AUS",
+        "daily": "KXRAIN-26SEP06-AUS",
+        "weekend": "KXRAINWKND-26SEP05-AUS"
+      },
+      "station": "KAUS",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Austin",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "10106.79",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.1000",
+        "previous_yes_ask_dollars": "0.1000",
+        "previous_yes_bid_dollars": "0.0800",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIAUS in Austin in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIAUS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.479341Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-AUS",
+        "title": "Will it rain in Austin on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "21413.03",
+        "volume_fp": "25336.42",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Austin"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.3500",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.6800",
+          "no_bid_dollars": "0.6500",
+          "no_sub_title": "Austin",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "3057.10",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.3800",
+          "previous_yes_ask_dollars": "0.4100",
+          "previous_yes_bid_dollars": "0.3700",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIAUS in Austin in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIAUS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-AUS",
+          "title": "Will it rain in Austin on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "6299.92",
+          "volume_fp": "6490.17",
+          "yes_ask_dollars": "0.3500",
+          "yes_ask_size_fp": "36.54",
+          "yes_bid_dollars": "0.3200",
+          "yes_bid_size_fp": "15.00",
+          "yes_sub_title": "Austin"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.5900",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.8700",
+          "no_bid_dollars": "0.4100",
+          "no_sub_title": "Austin",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "146.11",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.7800",
+          "previous_yes_ask_dollars": "0.8200",
+          "previous_yes_bid_dollars": "0.4300",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIAUS in Austin on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIAUS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-AUS",
+          "title": "Will it rain in Austin between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "176.33",
+          "volume_fp": "264.17",
+          "yes_ask_dollars": "0.5900",
+          "yes_ask_size_fp": "1.77",
+          "yes_bid_dollars": "0.1300",
+          "yes_bid_size_fp": "8.23",
+          "yes_sub_title": "Austin"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "BOS",
+      "relation": {
+        "station": "CLIBOS",
+        "city": "Boston",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-BOS",
+        "daily": "KXRAIN-26SEP06-BOS",
+        "weekend": "KXRAINWKND-26SEP05-BOS"
+      },
+      "station": "KBOS",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T05:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T05:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T05:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Boston",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T05:00:00Z",
+        "open_interest_fp": "14957.92",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.2400",
+        "previous_yes_ask_dollars": "0.2800",
+        "previous_yes_bid_dollars": "0.2500",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIBOS in Boston in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIBOS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T11:30:55.480827Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-BOS",
+        "title": "Will it rain in Boston on Sep 5, 2026?",
+        "updated_time": "2026-09-06T11:30:55.503449Z",
+        "volume_24h_fp": "29748.14",
+        "volume_fp": "34796.81",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Boston"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-09-08T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Boston",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "25825.95",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.1700",
+          "previous_yes_ask_dollars": "0.1900",
+          "previous_yes_bid_dollars": "0.1700",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIBOS in Boston in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIBOS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-BOS",
+          "title": "Will it rain in Boston on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "34923.55",
+          "volume_fp": "35334.48",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "139776.19",
+          "yes_sub_title": "Boston"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T04:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T04:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-09-09T04:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Boston",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T04:00:00Z",
+          "open_interest_fp": "1680.69",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.3900",
+          "previous_yes_ask_dollars": "0.3900",
+          "previous_yes_bid_dollars": "0.0900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIBOS in Boston on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIBOS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-BOS",
+          "title": "Will it rain in Boston between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "1833.81",
+          "volume_fp": "1964.49",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "1148.59",
+          "yes_sub_title": "Boston"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "CHI",
+      "relation": {
+        "station": "CLIORD",
+        "city": "Chicago",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-CHI",
+        "daily": "KXRAIN-26SEP06-CHI",
+        "weekend": "KXRAINWKND-26SEP05-CHI"
+      },
+      "station": "KORD",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Chicago",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "11599.14",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0800",
+        "previous_yes_ask_dollars": "0.0800",
+        "previous_yes_bid_dollars": "0.0500",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIORD in Chicago in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIORD can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.484309Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-CHI",
+        "title": "Will it rain in Chicago on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "14438.65",
+        "volume_fp": "33110.24",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Chicago"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9800",
+          "no_sub_title": "Chicago",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "2853.67",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0600",
+          "previous_yes_ask_dollars": "0.0600",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIORD in Chicago in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIORD can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-CHI",
+          "title": "Will it rain in Chicago on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "3407.45",
+          "volume_fp": "3520.72",
+          "yes_ask_dollars": "0.0200",
+          "yes_ask_size_fp": "852.74",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1962.56",
+          "yes_sub_title": "Chicago"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0800",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.9100",
+          "no_sub_title": "Chicago",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "136.93",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.0300",
+          "previous_yes_ask_dollars": "0.3400",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIORD in Chicago on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIORD can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-CHI",
+          "title": "Will it rain in Chicago between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "61.56",
+          "volume_fp": "199.88",
+          "yes_ask_dollars": "0.0900",
+          "yes_ask_size_fp": "550.01",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "11.74",
+          "yes_sub_title": "Chicago"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "DAL",
+      "relation": {
+        "station": "CLIDFW",
+        "city": "Dallas",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-DAL",
+        "daily": "KXRAIN-26SEP06-DAL",
+        "weekend": "KXRAINWKND-26SEP05-DAL"
+      },
+      "station": "KDFW",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Dallas",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "3678.94",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0200",
+        "previous_yes_ask_dollars": "0.0200",
+        "previous_yes_bid_dollars": "0.0100",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIDFW in Dallas in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDFW can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.483548Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-DAL",
+        "title": "Will it rain in Dallas on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "3654.31",
+        "volume_fp": "4659.80",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Dallas"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9800",
+          "no_sub_title": "Dallas",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "1115.40",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.2100",
+          "previous_yes_ask_dollars": "0.0500",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIDFW in Dallas in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDFW can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-DAL",
+          "title": "Will it rain in Dallas on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "1682.04",
+          "volume_fp": "1684.04",
+          "yes_ask_dollars": "0.0200",
+          "yes_ask_size_fp": "1816.22",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1851.81",
+          "yes_sub_title": "Dallas"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.1200",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.8200",
+          "no_sub_title": "Dallas",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "109.94",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.1800",
+          "previous_yes_ask_dollars": "0.5400",
+          "previous_yes_bid_dollars": "0.0900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIDFW in Dallas on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDFW can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-DAL",
+          "title": "Will it rain in Dallas between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "119.08",
+          "volume_fp": "212.04",
+          "yes_ask_dollars": "0.1800",
+          "yes_ask_size_fp": "10.00",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "3.92",
+          "yes_sub_title": "Dallas"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "DC",
+      "relation": {
+        "station": "CLIDCA",
+        "city": "Washington DC",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-DC",
+        "daily": "KXRAIN-26SEP06-DC",
+        "weekend": "KXRAINWKND-26SEP05-DC"
+      },
+      "station": "KDCA",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T05:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T05:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0200",
+        "latest_expiration_time": "2026-09-07T05:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Washington DC",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T05:00:00Z",
+        "open_interest_fp": "9383.55",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.2800",
+        "previous_yes_ask_dollars": "0.2800",
+        "previous_yes_bid_dollars": "0.2400",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIDCA in Washington DC in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDCA can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T11:30:55.482077Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-DC",
+        "title": "Will it rain in Washington DC on Sep 5, 2026?",
+        "updated_time": "2026-09-06T11:30:55.503449Z",
+        "volume_24h_fp": "13533.83",
+        "volume_fp": "21797.75",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Washington DC"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-08T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9800",
+          "no_sub_title": "Washington DC",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "1969.37",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0500",
+          "previous_yes_ask_dollars": "0.0900",
+          "previous_yes_bid_dollars": "0.0500",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIDCA in Washington DC in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDCA can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-DC",
+          "title": "Will it rain in Washington DC on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "1981.32",
+          "volume_fp": "2093.88",
+          "yes_ask_dollars": "0.0200",
+          "yes_ask_size_fp": "1007.92",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "2886.18",
+          "yes_sub_title": "Washington DC"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T04:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T04:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0300",
+          "latest_expiration_time": "2026-09-09T04:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9700",
+          "no_bid_dollars": "0.8700",
+          "no_sub_title": "Washington DC",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T04:00:00Z",
+          "open_interest_fp": "121.73",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.8000",
+          "previous_yes_ask_dollars": "0.6800",
+          "previous_yes_bid_dollars": "0.2100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIDCA in Washington DC on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDCA can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-DC",
+          "title": "Will it rain in Washington DC between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "72.01",
+          "volume_fp": "195.44",
+          "yes_ask_dollars": "0.1300",
+          "yes_ask_size_fp": "4.99",
+          "yes_bid_dollars": "0.0300",
+          "yes_bid_size_fp": "0.01",
+          "yes_sub_title": "Washington DC"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "DEN",
+      "relation": {
+        "station": "CLIDEN",
+        "city": "Denver",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-DEN",
+        "daily": "KXRAIN-26SEP06-DEN",
+        "weekend": "KXRAINWKND-26SEP05-DEN"
+      },
+      "station": "KDEN",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T07:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T07:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T07:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Denver",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T07:00:00Z",
+        "open_interest_fp": "15366.62",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0500",
+        "previous_yes_ask_dollars": "0.0700",
+        "previous_yes_bid_dollars": "0.0500",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIDEN in Denver in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDEN can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T13:31:25.48144Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-DEN",
+        "title": "Will it rain in Denver on Sep 5, 2026?",
+        "updated_time": "2026-09-06T13:31:25.507013Z",
+        "volume_24h_fp": "21736.10",
+        "volume_fp": "25304.85",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Denver"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.2400",
+          "latest_expiration_time": "2026-09-08T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.7700",
+          "no_bid_dollars": "0.7600",
+          "no_sub_title": "Denver",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "1055.05",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.2200",
+          "previous_yes_ask_dollars": "0.2600",
+          "previous_yes_bid_dollars": "0.2200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIDEN in Denver in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDEN can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-DEN",
+          "title": "Will it rain in Denver on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "1864.11",
+          "volume_fp": "1936.96",
+          "yes_ask_dollars": "0.2400",
+          "yes_ask_size_fp": "244.82",
+          "yes_bid_dollars": "0.2300",
+          "yes_bid_size_fp": "17.02",
+          "yes_sub_title": "Denver"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.2300",
+          "latest_expiration_time": "2026-09-09T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.8700",
+          "no_bid_dollars": "0.7700",
+          "no_sub_title": "Denver",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "333.48",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.1600",
+          "previous_yes_ask_dollars": "0.4800",
+          "previous_yes_bid_dollars": "0.0800",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIDEN in Denver on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIDEN can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-DEN",
+          "title": "Will it rain in Denver between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "187.55",
+          "volume_fp": "619.51",
+          "yes_ask_dollars": "0.2300",
+          "yes_ask_size_fp": "4.24",
+          "yes_bid_dollars": "0.1300",
+          "yes_bid_size_fp": "22.13",
+          "yes_sub_title": "Denver"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "EWR",
+      "relation": {
+        "station": "CLIEWR",
+        "city": "Newark",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-EWR",
+        "daily": "KXRAIN-26SEP06-EWR",
+        "weekend": "KXRAINWKND-26SEP05-EWR"
+      },
+      "station": "KEWR",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T05:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T05:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T05:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Newark",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T05:00:00Z",
+        "open_interest_fp": "5449.12",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0300",
+        "previous_yes_ask_dollars": "0.0300",
+        "previous_yes_bid_dollars": "0.0200",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIEWR in Newark in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIEWR can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T11:30:55.479234Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-EWR",
+        "title": "Will it rain in Newark on Sep 5, 2026?",
+        "updated_time": "2026-09-06T11:30:55.503449Z",
+        "volume_24h_fp": "6193.60",
+        "volume_fp": "7276.51",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Newark"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.1200",
+          "latest_expiration_time": "2026-09-08T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9400",
+          "no_bid_dollars": "0.8800",
+          "no_sub_title": "Newark",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "3030.42",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0900",
+          "previous_yes_ask_dollars": "0.1100",
+          "previous_yes_bid_dollars": "0.0800",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIEWR in Newark in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIEWR can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-EWR",
+          "title": "Will it rain in Newark on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "4105.70",
+          "volume_fp": "4195.39",
+          "yes_ask_dollars": "0.1200",
+          "yes_ask_size_fp": "22.61",
+          "yes_bid_dollars": "0.0600",
+          "yes_bid_size_fp": "2.00",
+          "yes_sub_title": "Newark"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T04:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T04:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-09T04:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.6100",
+          "no_sub_title": "Newark",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T04:00:00Z",
+          "open_interest_fp": "578.70",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.1500",
+          "previous_yes_ask_dollars": "0.3900",
+          "previous_yes_bid_dollars": "0.0100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIEWR in Newark on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIEWR can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-EWR",
+          "title": "Will it rain in Newark between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "3.46",
+          "volume_fp": "768.15",
+          "yes_ask_dollars": "0.3900",
+          "yes_ask_size_fp": "8.56",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "1.44",
+          "yes_sub_title": "Newark"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "HOU",
+      "relation": {
+        "station": "CLIHOU",
+        "city": "Houston",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-HOU",
+        "daily": "KXRAIN-26SEP06-HOU",
+        "weekend": "KXRAINWKND-26SEP05-HOU"
+      },
+      "station": "KHOU",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Houston",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "24462.33",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.7100",
+        "previous_yes_ask_dollars": "0.7600",
+        "previous_yes_bid_dollars": "0.7100",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIHOU in Houston in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIHOU can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.483093Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-HOU",
+        "title": "Will it rain in Houston on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "60197.41",
+        "volume_fp": "75501.09",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Houston"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Houston",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "15063.36",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.6500",
+          "previous_yes_ask_dollars": "0.6400",
+          "previous_yes_bid_dollars": "0.5900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIHOU in Houston in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIHOU can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-HOU",
+          "title": "Will it rain in Houston on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "34231.51",
+          "volume_fp": "34560.94",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "154151.96",
+          "yes_sub_title": "Houston"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0200",
+          "no_bid_dollars": "0.0100",
+          "no_sub_title": "Houston",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "367.51",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.8800",
+          "previous_yes_ask_dollars": "0.9200",
+          "previous_yes_bid_dollars": "0.5300",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIHOU in Houston on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIHOU can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-HOU",
+          "title": "Will it rain in Houston between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "191.56",
+          "volume_fp": "511.47",
+          "yes_ask_dollars": "0.9900",
+          "yes_ask_size_fp": "994.88",
+          "yes_bid_dollars": "0.9800",
+          "yes_bid_size_fp": "205.12",
+          "yes_sub_title": "Houston"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "LAX",
+      "relation": {
+        "station": "CLILAX",
+        "city": "Los Angeles",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-LAX",
+        "daily": "KXRAIN-26SEP06-LAX",
+        "weekend": "KXRAINWKND-26SEP05-LAX"
+      },
+      "station": "KLAX",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T08:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T08:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T08:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Los Angeles",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T08:00:00Z",
+        "open_interest_fp": "23463.90",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0200",
+        "previous_yes_ask_dollars": "0.0200",
+        "previous_yes_bid_dollars": "0.0100",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLILAX in Los Angeles in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLILAX can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T14:31:05.484875Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-LAX",
+        "title": "Will it rain in Los Angeles on Sep 5, 2026?",
+        "updated_time": "2026-09-06T14:31:05.517709Z",
+        "volume_24h_fp": "37347.14",
+        "volume_fp": "40568.12",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Los Angeles"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T08:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T08:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-09-08T08:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Los Angeles",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T08:00:00Z",
+          "open_interest_fp": "8716.54",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.6900",
+          "previous_yes_ask_dollars": "0.6900",
+          "previous_yes_bid_dollars": "0.6800",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLILAX in Los Angeles in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLILAX can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-LAX",
+          "title": "Will it rain in Los Angeles on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "13469.85",
+          "volume_fp": "13610.09",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "138190.99",
+          "yes_sub_title": "Los Angeles"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-09-09T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Los Angeles",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "1293.45",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.8800",
+          "previous_yes_ask_dollars": "0.8800",
+          "previous_yes_bid_dollars": "0.6800",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLILAX in Los Angeles on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLILAX can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-LAX",
+          "title": "Will it rain in Los Angeles between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "1285.33",
+          "volume_fp": "1445.06",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "5967.00",
+          "yes_sub_title": "Los Angeles"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "LV",
+      "relation": {
+        "station": "CLILAS",
+        "city": "Las Vegas",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-LV",
+        "daily": "KXRAIN-26SEP06-LV",
+        "weekend": "KXRAINWKND-26SEP05-LV"
+      },
+      "station": "KLAS",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T08:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T08:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0300",
+        "latest_expiration_time": "2026-09-07T08:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Las Vegas",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T08:00:00Z",
+        "open_interest_fp": "10508.31",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "0.0100",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLILAS in Las Vegas in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLILAS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T14:31:05.485141Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-LV",
+        "title": "Will it rain in Las Vegas on Sep 5, 2026?",
+        "updated_time": "2026-09-06T14:31:05.517709Z",
+        "volume_24h_fp": "7052.90",
+        "volume_fp": "12243.57",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Las Vegas"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T08:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T08:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9000",
+          "latest_expiration_time": "2026-09-08T08:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.1200",
+          "no_bid_dollars": "0.0900",
+          "no_sub_title": "Las Vegas",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T08:00:00Z",
+          "open_interest_fp": "6345.56",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.7300",
+          "previous_yes_ask_dollars": "0.7300",
+          "previous_yes_bid_dollars": "0.7200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLILAS in Las Vegas in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLILAS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-LV",
+          "title": "Will it rain in Las Vegas on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "10003.46",
+          "volume_fp": "10052.82",
+          "yes_ask_dollars": "0.9100",
+          "yes_ask_size_fp": "46.00",
+          "yes_bid_dollars": "0.8800",
+          "yes_bid_size_fp": "3.00",
+          "yes_sub_title": "Las Vegas"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.9600",
+          "latest_expiration_time": "2026-09-09T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.1900",
+          "no_bid_dollars": "0.0400",
+          "no_sub_title": "Las Vegas",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "535.00",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.8400",
+          "previous_yes_ask_dollars": "0.8000",
+          "previous_yes_bid_dollars": "0.3900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLILAS in Las Vegas on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLILAS can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-LV",
+          "title": "Will it rain in Las Vegas between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "1009.68",
+          "volume_fp": "1098.39",
+          "yes_ask_dollars": "0.9600",
+          "yes_ask_size_fp": "6.89",
+          "yes_bid_dollars": "0.8100",
+          "yes_bid_size_fp": "3.11",
+          "yes_sub_title": "Las Vegas"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "MIN",
+      "relation": {
+        "station": "CLIMSP",
+        "city": "Minneapolis",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-MIN",
+        "daily": "KXRAIN-26SEP06-MIN",
+        "weekend": "KXRAINWKND-26SEP05-MIN"
+      },
+      "station": "KMSP",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Minneapolis",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "3714.98",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.1300",
+        "previous_yes_ask_dollars": "0.1200",
+        "previous_yes_bid_dollars": "0.0800",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIMSP in Minneapolis in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIMSP can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.483426Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-MIN",
+        "title": "Will it rain in Minneapolis on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "2722.04",
+        "volume_fp": "5618.11",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Minneapolis"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0700",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9200",
+          "no_bid_dollars": "0.8800",
+          "no_sub_title": "Minneapolis",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "2179.87",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.5100",
+          "previous_yes_ask_dollars": "0.5200",
+          "previous_yes_bid_dollars": "0.5100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIMSP in Minneapolis in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIMSP can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-MIN",
+          "title": "Will it rain in Minneapolis on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "2709.05",
+          "volume_fp": "2883.65",
+          "yes_ask_dollars": "0.1200",
+          "yes_ask_size_fp": "29.04",
+          "yes_bid_dollars": "0.0800",
+          "yes_bid_size_fp": "4.00",
+          "yes_sub_title": "Minneapolis"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0300",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9700",
+          "no_bid_dollars": "0.8600",
+          "no_sub_title": "Minneapolis",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "49.85",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.7800",
+          "previous_yes_ask_dollars": "0.7800",
+          "previous_yes_bid_dollars": "0.3300",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIMSP in Minneapolis on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIMSP can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-MIN",
+          "title": "Will it rain in Minneapolis between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "63.28",
+          "volume_fp": "98.92",
+          "yes_ask_dollars": "0.1400",
+          "yes_ask_size_fp": "14.96",
+          "yes_bid_dollars": "0.0300",
+          "yes_bid_size_fp": "8.89",
+          "yes_sub_title": "Minneapolis"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "NYC",
+      "relation": {
+        "station": "CLINYC",
+        "city": "New York City",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-NYC",
+        "daily": "KXRAIN-26SEP06-NYC",
+        "weekend": "KXRAINWKND-26SEP05-NYC"
+      },
+      "station": "KNYC",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T05:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T05:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0300",
+        "latest_expiration_time": "2026-09-07T05:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "New York City",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T05:00:00Z",
+        "open_interest_fp": "10343.11",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0300",
+        "previous_yes_ask_dollars": "0.0300",
+        "previous_yes_bid_dollars": "0.0200",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLINYC in New York City in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLINYC can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T11:30:55.481242Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-NYC",
+        "title": "Will it rain in New York City on Sep 5, 2026?",
+        "updated_time": "2026-09-06T11:30:55.503449Z",
+        "volume_24h_fp": "17226.12",
+        "volume_fp": "21552.46",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "New York City"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.1000",
+          "latest_expiration_time": "2026-09-08T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9300",
+          "no_bid_dollars": "0.9000",
+          "no_sub_title": "New York City",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "3708.56",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.2600",
+          "previous_yes_ask_dollars": "0.2600",
+          "previous_yes_bid_dollars": "0.2300",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLINYC in New York City in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLINYC can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-NYC",
+          "title": "Will it rain in New York City on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "5758.51",
+          "volume_fp": "5920.64",
+          "yes_ask_dollars": "0.1000",
+          "yes_ask_size_fp": "261.55",
+          "yes_bid_dollars": "0.0700",
+          "yes_bid_size_fp": "32.00",
+          "yes_sub_title": "New York City"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T04:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T04:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.5900",
+          "latest_expiration_time": "2026-09-09T04:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.8000",
+          "no_bid_dollars": "0.5900",
+          "no_sub_title": "New York City",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T04:00:00Z",
+          "open_interest_fp": "1247.34",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.1900",
+          "previous_yes_ask_dollars": "0.4700",
+          "previous_yes_bid_dollars": "0.2000",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLINYC in New York City on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLINYC can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-NYC",
+          "title": "Will it rain in New York City between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "701.45",
+          "volume_fp": "1589.17",
+          "yes_ask_dollars": "0.4100",
+          "yes_ask_size_fp": "9.03",
+          "yes_bid_dollars": "0.2000",
+          "yes_bid_size_fp": "0.97",
+          "yes_sub_title": "New York City"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "OKC",
+      "relation": {
+        "station": "CLIOKC",
+        "city": "Oklahoma City",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-OKC",
+        "daily": "KXRAIN-26SEP06-OKC",
+        "weekend": "KXRAINWKND-26SEP05-OKC"
+      },
+      "station": "KOKC",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Oklahoma City",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "8063.71",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "0.0100",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIOKC in Oklahoma City in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIOKC can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.478561Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-OKC",
+        "title": "Will it rain in Oklahoma City on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "5138.47",
+        "volume_fp": "11877.53",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Oklahoma City"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.9700",
+          "no_sub_title": "Oklahoma City",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "3214.73",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0300",
+          "previous_yes_ask_dollars": "0.0500",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIOKC in Oklahoma City in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIOKC can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-OKC",
+          "title": "Will it rain in Oklahoma City on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "3587.53",
+          "volume_fp": "3904.53",
+          "yes_ask_dollars": "0.0300",
+          "yes_ask_size_fp": "901.47",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "65.85",
+          "yes_sub_title": "Oklahoma City"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.9700",
+          "no_sub_title": "Oklahoma City",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "1059.19",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.0200",
+          "previous_yes_ask_dollars": "0.0500",
+          "previous_yes_bid_dollars": "0.0100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIOKC in Oklahoma City on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIOKC can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-OKC",
+          "title": "Will it rain in Oklahoma City between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "562.98",
+          "volume_fp": "1374.69",
+          "yes_ask_dollars": "0.0300",
+          "yes_ask_size_fp": "10.00",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "729.63",
+          "yes_sub_title": "Oklahoma City"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "PHIL",
+      "relation": {
+        "station": "CLIPHL",
+        "city": "Philadelphia",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-PHIL",
+        "daily": "KXRAIN-26SEP06-PHIL",
+        "weekend": "KXRAINWKND-26SEP05-PHIL"
+      },
+      "station": "KPHL",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T05:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T05:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T05:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Philadelphia",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T05:00:00Z",
+        "open_interest_fp": "17053.19",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0400",
+        "previous_yes_ask_dollars": "0.0400",
+        "previous_yes_bid_dollars": "0.0200",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIPHL in Philadelphia in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIPHL can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T11:30:55.485202Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-PHIL",
+        "title": "Will it rain in Philadelphia on Sep 5, 2026?",
+        "updated_time": "2026-09-06T11:30:55.503449Z",
+        "volume_24h_fp": "15940.41",
+        "volume_fp": "45672.09",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Philadelphia"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0300",
+          "latest_expiration_time": "2026-09-08T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.9700",
+          "no_sub_title": "Philadelphia",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "3511.46",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0900",
+          "previous_yes_ask_dollars": "0.1300",
+          "previous_yes_bid_dollars": "0.0900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIPHL in Philadelphia in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIPHL can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-PHIL",
+          "title": "Will it rain in Philadelphia on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "5110.48",
+          "volume_fp": "5186.41",
+          "yes_ask_dollars": "0.0300",
+          "yes_ask_size_fp": "452.30",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "1199.43",
+          "yes_sub_title": "Philadelphia"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T04:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T04:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0900",
+          "latest_expiration_time": "2026-09-09T04:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.9100",
+          "no_sub_title": "Philadelphia",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T04:00:00Z",
+          "open_interest_fp": "987.88",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.0500",
+          "previous_yes_ask_dollars": "0.0400",
+          "previous_yes_bid_dollars": "0.0100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIPHL in Philadelphia on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIPHL can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-PHIL",
+          "title": "Will it rain in Philadelphia between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "702.39",
+          "volume_fp": "1849.28",
+          "yes_ask_dollars": "0.0900",
+          "yes_ask_size_fp": "16.92",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "620.00",
+          "yes_sub_title": "Philadelphia"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "PHX",
+      "relation": {
+        "station": "CLIPHX",
+        "city": "Phoenix",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-PHX",
+        "daily": "KXRAIN-26SEP06-PHX",
+        "weekend": "KXRAINWKND-26SEP05-PHX"
+      },
+      "station": "KPHX",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T07:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T07:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T07:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Phoenix",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T07:00:00Z",
+        "open_interest_fp": "6111.95",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "0.0200",
+        "previous_yes_bid_dollars": "0.0100",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLIPHX in Phoenix in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIPHX can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T14:31:05.489169Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-PHX",
+        "title": "Will it rain in Phoenix on Sep 5, 2026?",
+        "updated_time": "2026-09-06T14:31:05.517709Z",
+        "volume_24h_fp": "6033.95",
+        "volume_fp": "9266.03",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Phoenix"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-08T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9800",
+          "no_sub_title": "Phoenix",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "4012.34",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0700",
+          "previous_yes_ask_dollars": "0.0800",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIPHX in Phoenix in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIPHX can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-PHX",
+          "title": "Will it rain in Phoenix on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "4236.64",
+          "volume_fp": "4520.71",
+          "yes_ask_dollars": "0.0200",
+          "yes_ask_size_fp": "763.25",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1953.38",
+          "yes_sub_title": "Phoenix"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0500",
+          "latest_expiration_time": "2026-09-09T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9300",
+          "no_sub_title": "Phoenix",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "252.04",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.3800",
+          "previous_yes_ask_dollars": "0.4800",
+          "previous_yes_bid_dollars": "0.0900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLIPHX in Phoenix on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLIPHX can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-PHX",
+          "title": "Will it rain in Phoenix between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "174.18",
+          "volume_fp": "322.07",
+          "yes_ask_dollars": "0.0700",
+          "yes_ask_size_fp": "19.00",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1022.00",
+          "yes_sub_title": "Phoenix"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "SATX",
+      "relation": {
+        "station": "CLISAT",
+        "city": "San Antonio",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-SATX",
+        "daily": "KXRAIN-26SEP06-SATX",
+        "weekend": "KXRAINWKND-26SEP05-SATX"
+      },
+      "station": "KSAT",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T06:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T06:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T06:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "San Antonio",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T06:00:00Z",
+        "open_interest_fp": "8640.73",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.1200",
+        "previous_yes_ask_dollars": "0.1800",
+        "previous_yes_bid_dollars": "0.1400",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLISAT in San Antonio in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISAT can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T12:30:55.483933Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-SATX",
+        "title": "Will it rain in San Antonio on Sep 5, 2026?",
+        "updated_time": "2026-09-06T12:30:55.501446Z",
+        "volume_24h_fp": "11664.17",
+        "volume_fp": "17871.43",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "San Antonio"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T06:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T06:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.2300",
+          "latest_expiration_time": "2026-09-08T06:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.8000",
+          "no_bid_dollars": "0.7600",
+          "no_sub_title": "San Antonio",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T06:00:00Z",
+          "open_interest_fp": "2193.42",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.4100",
+          "previous_yes_ask_dollars": "0.4500",
+          "previous_yes_bid_dollars": "0.4100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLISAT in San Antonio in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISAT can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-SATX",
+          "title": "Will it rain in San Antonio on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "3962.02",
+          "volume_fp": "4161.54",
+          "yes_ask_dollars": "0.2400",
+          "yes_ask_size_fp": "402.51",
+          "yes_bid_dollars": "0.2000",
+          "yes_bid_size_fp": "38.38",
+          "yes_sub_title": "San Antonio"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.4400",
+          "latest_expiration_time": "2026-09-09T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9400",
+          "no_bid_dollars": "0.5300",
+          "no_sub_title": "San Antonio",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "85.71",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.8200",
+          "previous_yes_ask_dollars": "0.8800",
+          "previous_yes_bid_dollars": "0.5000",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLISAT in San Antonio on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISAT can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-SATX",
+          "title": "Will it rain in San Antonio between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "206.50",
+          "volume_fp": "342.43",
+          "yes_ask_dollars": "0.4700",
+          "yes_ask_size_fp": "7.33",
+          "yes_bid_dollars": "0.0600",
+          "yes_bid_size_fp": "2.67",
+          "yes_sub_title": "San Antonio"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "SEA",
+      "relation": {
+        "station": "CLISEA",
+        "city": "Seattle",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-SEA",
+        "daily": "KXRAIN-26SEP06-SEA",
+        "weekend": "KXRAINWKND-26SEP05-SEA"
+      },
+      "station": "KSEA",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T08:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T08:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0500",
+        "latest_expiration_time": "2026-09-07T08:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Seattle",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T08:00:00Z",
+        "open_interest_fp": "20852.29",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.2800",
+        "previous_yes_ask_dollars": "0.2700",
+        "previous_yes_bid_dollars": "0.2200",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLISEA in Seattle in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISEA can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T14:31:05.484339Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-SEA",
+        "title": "Will it rain in Seattle on Sep 5, 2026?",
+        "updated_time": "2026-09-06T14:31:05.517709Z",
+        "volume_24h_fp": "46852.20",
+        "volume_fp": "60434.58",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Seattle"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T08:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T08:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0200",
+          "latest_expiration_time": "2026-09-08T08:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9800",
+          "no_sub_title": "Seattle",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T08:00:00Z",
+          "open_interest_fp": "3122.64",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0500",
+          "previous_yes_ask_dollars": "0.1000",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLISEA in Seattle in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISEA can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-SEA",
+          "title": "Will it rain in Seattle on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "3338.81",
+          "volume_fp": "3352.93",
+          "yes_ask_dollars": "0.0200",
+          "yes_ask_size_fp": "1170.39",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1506.90",
+          "yes_sub_title": "Seattle"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0300",
+          "latest_expiration_time": "2026-09-09T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.8700",
+          "no_sub_title": "Seattle",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "105.30",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.8700",
+          "previous_yes_ask_dollars": "0.8400",
+          "previous_yes_bid_dollars": "0.4700",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLISEA in Seattle on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISEA can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-SEA",
+          "title": "Will it rain in Seattle between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "94.31",
+          "volume_fp": "208.92",
+          "yes_ask_dollars": "0.1300",
+          "yes_ask_size_fp": "0.01",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "45.99",
+          "yes_sub_title": "Seattle"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "SFO",
+      "relation": {
+        "station": "CLISFO",
+        "city": "San Francisco",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-SFO",
+        "daily": "KXRAIN-26SEP06-SFO",
+        "weekend": "KXRAINWKND-26SEP05-SFO"
+      },
+      "station": "KSFO",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T08:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T08:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T08:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "San Francisco",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T08:00:00Z",
+        "open_interest_fp": "5324.52",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "0.0200",
+        "previous_yes_bid_dollars": "0.0100",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLISFO in San Francisco in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISFO can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T14:31:05.485036Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-SFO",
+        "title": "Will it rain in San Francisco on Sep 5, 2026?",
+        "updated_time": "2026-09-06T14:31:05.517709Z",
+        "volume_24h_fp": "4706.07",
+        "volume_fp": "6611.24",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "San Francisco"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T08:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T08:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-09-08T08:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.9800",
+          "no_sub_title": "San Francisco",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T08:00:00Z",
+          "open_interest_fp": "1847.75",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.0300",
+          "previous_yes_ask_dollars": "0.0400",
+          "previous_yes_bid_dollars": "0.0200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLISFO in San Francisco in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISFO can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-SFO",
+          "title": "Will it rain in San Francisco on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "2083.97",
+          "volume_fp": "2976.82",
+          "yes_ask_dollars": "0.0200",
+          "yes_ask_size_fp": "1261.98",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1706.24",
+          "yes_sub_title": "San Francisco"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T07:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T07:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.2000",
+          "latest_expiration_time": "2026-09-09T07:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.8800",
+          "no_sub_title": "San Francisco",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T07:00:00Z",
+          "open_interest_fp": "31.89",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.0900",
+          "previous_yes_ask_dollars": "0.1800",
+          "previous_yes_bid_dollars": "0.0700",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLISFO in San Francisco on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLISFO can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-SFO",
+          "title": "Will it rain in San Francisco between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "25.80",
+          "volume_fp": "47.98",
+          "yes_ask_dollars": "0.1200",
+          "yes_ask_size_fp": "3.99",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "998.01",
+          "yes_sub_title": "San Francisco"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    },
+    {
+      "city": "TTN",
+      "relation": {
+        "station": "CLITTN",
+        "city": "Trenton",
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "saturday": "KXRAIN-26SEP05-TTN",
+        "daily": "KXRAIN-26SEP06-TTN",
+        "weekend": "KXRAINWKND-26SEP05-TTN"
+      },
+      "station": "KTTN",
+      "saturday": {
+        "can_close_early": true,
+        "close_time": "2026-09-06T05:00:00Z",
+        "created_time": "2026-09-04T09:00:36.430968Z",
+        "early_close_condition": "This market will close and expire early if the event occurs.",
+        "event_ticker": "KXRAIN-26SEP05",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-07T03:59:59Z",
+        "expiration_time": "2026-09-07T05:00:00Z",
+        "expiration_value": "0.00",
+        "floor_strike": 0,
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T05:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Trenton",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T05:00:00Z",
+        "open_interest_fp": "4097.38",
+        "open_time": "2026-09-04T09:10:00Z",
+        "previous_price_dollars": "0.0400",
+        "previous_yes_ask_dollars": "0.0300",
+        "previous_yes_bid_dollars": "0.0200",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If the total precipitation at CLITTN in Trenton in Sep 5, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+        "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLITTN can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+        "settlement_timer_seconds": 1800,
+        "settlement_ts": "2026-09-06T11:30:55.484979Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "greater",
+        "ticker": "KXRAIN-26SEP05-TTN",
+        "title": "Will it rain in Trenton on Sep 5, 2026?",
+        "updated_time": "2026-09-06T11:30:55.503449Z",
+        "volume_24h_fp": "3128.78",
+        "volume_fp": "5011.60",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Trenton"
+      },
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T05:00:00Z",
+          "created_time": "2026-09-05T09:00:32.756727Z",
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAIN-26SEP06",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-08T05:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0400",
+          "latest_expiration_time": "2026-09-08T05:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9800",
+          "no_bid_dollars": "0.9600",
+          "no_sub_title": "Trenton",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T05:00:00Z",
+          "open_interest_fp": "2043.75",
+          "open_time": "2026-09-05T09:10:00Z",
+          "previous_price_dollars": "0.1100",
+          "previous_yes_ask_dollars": "0.1500",
+          "previous_yes_bid_dollars": "0.1000",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLITTN in Trenton in Sep 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLITTN can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAIN-26SEP06-TTN",
+          "title": "Will it rain in Trenton on Sep 6, 2026?",
+          "updated_time": "2026-09-05T09:10:00.598987Z",
+          "volume_24h_fp": "2137.93",
+          "volume_fp": "2178.67",
+          "yes_ask_dollars": "0.0400",
+          "yes_ask_size_fp": "778.99",
+          "yes_bid_dollars": "0.0200",
+          "yes_bid_size_fp": "1687.69",
+          "yes_sub_title": "Trenton"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-09-07T04:00:00Z",
+          "created_time": "2026-08-31T09:00:33.818747Z",
+          "custom_strike": {
+            "date_1": "2026-09-06T03:59:59.000Z",
+            "date_2": "2026-09-07T03:59:59.000Z"
+          },
+          "early_close_condition": "This market will close and expire early if the event occurs.",
+          "event_ticker": "KXRAINWKND-26SEP05",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-09-08T03:59:59Z",
+          "expiration_time": "2026-09-09T04:00:00Z",
+          "expiration_value": "",
+          "floor_strike": 0,
+          "last_price_dollars": "0.0500",
+          "latest_expiration_time": "2026-09-09T04:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.9900",
+          "no_bid_dollars": "0.5300",
+          "no_sub_title": "Trenton",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-09-08T04:00:00Z",
+          "open_interest_fp": "59.17",
+          "open_time": "2026-08-31T09:10:00Z",
+          "previous_price_dollars": "0.2800",
+          "previous_yes_ask_dollars": "0.4900",
+          "previous_yes_bid_dollars": "0.0800",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "",
+          "rules_primary": "If the total precipitation at CLITTN in Trenton on any day within September 5, 2026 through September 6, 2026 is strictly greater than 0 inches, then the market resolves to Yes.",
+          "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market as reported by the Weather Company.\n\nReading weather data\nData for CLITTN can be found at https://weather.com/kalshi.\n\u201cTrace\u201d amounts (T) and missing daily precipitation values are counted as 0 inches. ",
+          "settlement_timer_seconds": 1800,
+          "status": "active",
+          "strike_type": "greater",
+          "ticker": "KXRAINWKND-26SEP05-TTN",
+          "title": "Will it rain in Trenton between Sep 5 and Sep 6, 2026?",
+          "updated_time": "2026-08-31T09:10:00.876483Z",
+          "volume_24h_fp": "7.00",
+          "volume_fp": "81.34",
+          "yes_ask_dollars": "0.4700",
+          "yes_ask_size_fp": "10.00",
+          "yes_bid_dollars": "0.0100",
+          "yes_bid_size_fp": "1272.00",
+          "yes_sub_title": "Trenton"
+        }
+      ],
+      "series_terms": [
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINHOLIDAY.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINHOLIDAY.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": {
+            "important_info": {
+              "id": "KXRAIN-2026-07-14",
+              "markdown": "**Important information:** If it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+              "message": "",
+              "title": ""
+            }
+          }
+        },
+        {
+          "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINRANGE.pdf",
+          "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINRANGE.pdf",
+          "settlement_sources": [
+            {
+              "name": "The Weather Company",
+              "url": "https://weather.com/kalshi"
+            }
+          ],
+          "product_metadata": null
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "city": "ATL",
+      "reason": "Saturday is not a previously finalized zero-rain day"
+    },
+    {
+      "city": "MIA",
+      "reason": "Saturday is not a previously finalized zero-rain day"
+    },
+    {
+      "city": "NOLA",
+      "reason": "Saturday is not a previously finalized zero-rain day"
+    },
+    {
+      "city": "WPB",
+      "reason": "'KXRAIN-26SEP05-WPB'"
+    }
+  ],
+  "selection_source_ids": [
+    72627,
+    72629,
+    72658,
+    72664,
+    72665,
+    72666,
+    72667,
+    72668
+  ],
+  "code_sha256": {
+    "config/e019_rain_pairs.json": "d776261bc598d385ca0966f1a7465c0967f1021e5df5d6f12abaec8cd2ea4952",
+    "research/experiments/e019_rain_pairs.py": "0d045c183133b3056cd24862ef3fdc7b8a4d46e66f0d3d4b436b0c4fd6f96c3f",
+    "weatherpred/rain_relations.py": "e61e36231a625c2ed4936178911143a503d25067f7627af73472367835ab562e",
+    "weatherpred/paper.py": "6f20d3b047d8b5c07276c91484cfe9f35b6c843da786338cdc59fccb5f81026a",
+    "weatherpred/books.py": "34a759ecc8866fa71c1db7038fe8d790cfaedeb6f8d6bc17a97218093ea8dd0c",
+    "weatherpred/fees.py": "4f22ab4738fceeb1f0bbd3488981e265c80b339702330b6a41c936adefaf0fef",
+    "weatherpred/basket.py": "b2952af6004315f975e4338f5731f3564e66c976758a7aec99b5d00082e11f03",
+    "weatherpred/market_making.py": "b4e70ce071d42d1ee3413d326c8266d859ba25520f9fedb913b86f6dd349afd4",
+    "weatherpred/http.py": "a87e44bbc2411280934a4d64f80cd656fe5b397a530db73a959b0b886526b559",
+    "weatherpred/archive.py": "360ec3ac19292e9ccd248ff86a5de3e6f4d68800394ceb4c6deb11ef8c474306",
+    "weatherpred/timeutil.py": "c23489ed48476376dc680957bfdfd1be0e1981ec36326bc266b9e8f85151e9ca"
+  },
+  "source_record_ids": {
+    "config/e019_rain_pairs.json": 72669,
+    "research/experiments/e019_rain_pairs.py": 72670,
+    "weatherpred/rain_relations.py": 72671,
+    "weatherpred/paper.py": 72672,
+    "weatherpred/books.py": 72673,
+    "weatherpred/fees.py": 72674,
+    "weatherpred/basket.py": 72675,
+    "weatherpred/market_making.py": 72676,
+    "weatherpred/http.py": 72677,
+    "weatherpred/archive.py": 72678,
+    "weatherpred/timeutil.py": 72679
+  },
+  "registered_at": "2026-09-06T16:51:55.295055+00:00"
+}

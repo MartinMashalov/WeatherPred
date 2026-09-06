@@ -1032,3 +1032,53 @@ weather information. First provider-to-own receipt differences range 5.445 to
 52.806 seconds and do not prove first publication or a market lead. Initial
 backfill is excluded from that count. The before/after books bracket our fetch,
 not necessarily the original public release. Collector source remains frozen.
+
+## E019 — Conditional daily/weekend rain pairs
+
+- Hypothesis: after a Saturday officially resolves to zero rain, Sunday's rain
+  indicator and the weekend rain indicator should agree under unchanged normal
+  settlement conventions. Opposite positions across those two contracts can
+  have a cost below their conditional $1 combined payout.
+- Discovery scanned all 23 precipitation series; 12 had active contracts.
+  Daily KXRAIN and weekly KXRAINWKND cover 22 cities. Different cities are not
+  mutually exclusive brackets. Chicago rain uses O'Hare, unlike the Midway
+  daily-high contract. Exact station, date and source matching are required.
+- At 16:30 UTC, raw report 66285 retained every quoted case. NYC's one-pair costs
+  were $0.9271 / $0.9473 / $0.9673 for full / half / quarter displayed depth with
+  0 / 1 / 2 cents extra slippage per leg. Houston's apparent metadata gap became
+  a $1.1915 order-book cost. DC and Seattle's tiny gaps failed added slippage.
+  These are exploratory snapshots, not fills or earned profit.
+- General terms PDFs RAINHOLIDAY and RAINRANGE (sources 68872/68873) have equal
+  extracted text but different file hashes. Material-error review and other
+  exchange contingencies prevent treating cross-series equivalence as a guarantee.
+- Source consistency report 72006 checks all 40 available finalized city/weekends
+  across August 22–23 and August 29–30. All 40 binary outcomes obey the relation.
+  Twenty pass strict identical rule-text checks; twenty are excluded because the
+  Sunday secondary wording changed. Seventeen of the strict matches had dry
+  Saturdays. This uses final labels after the fact, not historical trade-time
+  availability; two weekends do not quantify future source failure risk.
+- Registration **72680** precedes first 17:00 UTC decisions on September 6.
+  Nineteen cities were frozen from all cities with finalized Saturday zero and
+  matching official numeric-zero TWC station reports. Atlanta, Miami and New
+  Orleans are excluded because Saturday had rain. No selection of NYC alone.
+- Three separate $100 accounts compare 1-second/full-depth, 5-second/half-depth
+  plus 1 cent and 30-second/quarter-depth plus 2 cents. The weekend leg is delayed
+  a further 2 / 2 / 5 seconds. Both intents are published before later books;
+  separate market/fee/book receipts support each independent partial IOC fill.
+  An IOC order cancels quantity not immediately filled. No rescue hedge, fake
+  simultaneous fill or cross-contract cash offset is assumed.
+- At each five-minute decision through 18:20, test both equivalent opposite-side
+  directions and quantities 1–5. Require at least 2 cents per pair after a fixed
+  1-cent source-risk deduction. This deduction is not a fitted failure probability.
+  A pair reserves at most 5% of equity; existing 5% per-event / 10% all-weather
+  gross limits also apply. At most one attempt per city/account in the entire run.
+- A separately replayable ledger records unmatched exposure, fees, reserved cash,
+  normal conditional payout bounds and the loss if both sides fail because the
+  settlement relation breaks. Cash stays tied up across the different contracts.
+  Stop at 18:30; later `--settle-only` reconciles actually finalized held contracts
+  without submitting new orders. Initial audit verifies three empty accounts.
+- Tests: 105 passed in 1.01s before registration, including five new tests for
+  exact source/date gates, unreleased Saturday labels, fee/depth constraints,
+  partial first-leg fill with failed second leg, and atomic intent reservations.
+  Initial independent audit is deliberately not fill evidence. Forward results
+  and sufficient independent events remain pending; profitability unproven.

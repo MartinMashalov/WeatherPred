@@ -593,6 +593,61 @@ Implementation: [conditional_forecasts.py](../weatherpred/conditional_forecasts.
 [forward runner](../research/experiments/e018_conditional_hourly.py),
 [model replay](../research/experiments/e018_diagnostics.py).
 
+## 21. Conditional rain-calendar pairs and unequal fills
+
+Let $A$ indicate Saturday rain and $B$ indicate Sunday rain, each taking value
+zero or one. Under identical normal source and reporting conventions, the
+weekend indicator is
+
+$$W=\max(A,B)=A+B-AB.$$
+
+If Saturday has officially finalized dry and the source still confirms that
+value, $A=0$ implies $W=B$. One Sunday YES plus one weekend NO then pays
+
+$$B+(1-W)=1.$$
+
+Let the executable costs including fees be $c_D$ and $c_W$. A fully matched
+one-contract pair has conditional settlement profit
+
+$$\pi=1-c_D-c_W.$$
+
+At the exploratory 16:30 UTC snapshot, NYC's asks were $0.10$ for daily YES and
+$0.81$ for weekend NO. The fee accumulator produces a total cost of $0.9271$,
+leaving $0.0729$ conditional surplus. With quarter depth and two cents extra
+slippage per leg, total cost is $0.9673$ and the surplus is $0.0327$. Neither
+calculation proves that later orders can fill at those prices.
+
+If the two actual fills are unequal, let $q_D,q_W$ be their quantities and $C$
+their combined cash cost, including fees. Then
+
+$$\Pi(B)=q_DB+q_W(1-B)-C,$$
+
+$$\min_B\Pi=\min(q_D,q_W)-C,\qquad
+\max_B\Pi=\max(q_D,q_W)-C.$$
+
+For example, if only 0.50 daily YES fills at 11 cents and the weekend leg fails,
+its actual fee-inclusive cash cost is $0.0585$. Possible profit is between
+−$0.0585 and +$0.4415, despite a positive matched-pair price screen. The missing
+leg is never inserted retrospectively. Different contracts also do not release
+matched cash through the same-contract netting mechanism.
+
+Source consistency is another condition. If the relation breaks and both held
+sides lose, the payoff is zero and profit is $-C$. For a hypothetical complete
+one-contract pair with normal payout one and failure payout zero, an assumed
+failure probability $r$ would give
+
+$$E[\Pi]=1-r-C.$$
+
+The project has not estimated $r$ reliably. Two observed weekends cannot establish
+a rare-failure rate, and exchange review can affect settlement. E019 therefore
+reports the source-break loss separately. Its fixed one-cent source allowance
+is a stress deduction, not a measured probability or confidence bound. It requires
+two cents additional conditional surplus after that deduction, reserves at most
+5% of equity per pair and retains the existing aggregate exposure caps.
+
+Implementation: [rain_relations.py](../weatherpred/rain_relations.py),
+[prospective pair runner](../research/experiments/e019_rain_pairs.py).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.
