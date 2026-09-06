@@ -432,8 +432,9 @@ $$\Pi_{\min}=K+\sum_j\min(q_{Y,j},q_{N,j})-W_0,$$
 $$\Pi_{\max}=K+\sum_j\max(q_{Y,j},q_{N,j})-W_0.$$
 
 These bounds exclude future fills from outstanding orders and assume normal
-binary settlement. They are not an expected return or immediately available
-cash. Averaging each leg's cost allows a decomposition into matched-pair profit
+binary settlement. They are not an expected return. E015 holds the matched cash
+until settlement as a capital stress assumption; E016 corrects same-contract
+cash return below. Averaging each leg's cost allows a decomposition into matched-pair profit
 and unmatched cost at risk, but only their combined result is portfolio profit.
 
 For the inventory-skew benchmark, let $I=q_Y-q_N$ and
@@ -452,6 +453,41 @@ estimate. E015 keeps one-contract quotes under the same cash/exposure checks.
 
 Implementation: [market_making.py](../weatherpred/market_making.py).
 
+## 18. Same-contract netting and realized round trips
+
+Kalshi offsets opposite positions in the same contract. If both sides have
+filled, let $m=\min(q_Y,q_N)$. The cash and quantities become
+
+$$K'=K+m,$$
+
+$$q_Y'=q_Y-m,\qquad q_N'=q_N-m.$$
+
+With each side's total acquisition cost denoted by $C_Y,C_N$, average allocated
+cost and realized profit of the matched part are
+
+$$C_m=\frac{m C_Y}{q_Y}+\frac{m C_N}{q_N},$$
+
+$$\Pi_m=m-C_m.$$
+
+This is applied only when both quantities are positive. Matched costs are removed
+from the remaining positions. A losing offset produces negative realized profit;
+it is not discarded. Unmatched positions still have outcome risk.
+
+For the same fills, netting does not improve the eventual economic result:
+
+$$K+\min(q_Y,q_N)=K'+\min(q_Y',q_N'),$$
+
+and the analogous equality holds for the maximum payout. It moves cash earlier,
+which may allow new orders. Those extra opportunities need their own future
+execution evidence; an accounting replay cannot fabricate them.
+
+E016 performs a fill and its offset in a single immutable journal update. Its
+same-contract rule does not assume optional collateral return across different
+contracts. Earlier E015 results remain an overcollateralized stress comparator.
+
+Implementation: [netted_paper.py](../weatherpred/netted_paper.py),
+[identical-fill replay and future cohort](../research/experiments/e016_netted_maker.py).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.
@@ -461,3 +497,4 @@ Implementation: [market_making.py](../weatherpred/market_making.py).
 - [Kalshi historical candle schema](https://docs.kalshi.com/api-reference/historical/get-historical-market-candlesticks): units and endpoint semantics.
 - [NWS observation and climate-product FAQ](https://www.weather.gov/lot/weather_observations_faq): why preliminary and final temperature values can differ.
 - [Avellaneda and Stoikov, market making](https://math.nyu.edu/inmemoriam/avellaneda/HighFrequencyTrading.pdf): inventory-sensitive quotes and the distinction between subjective valuation and execution prices.
+- [Kalshi netting](https://news.kalshi.com/p/collateral-return) and [current settlement documentation](https://docs.kalshi.com/getting_started/market_settlement): offsetting opposite positions and settling only remaining net positions.

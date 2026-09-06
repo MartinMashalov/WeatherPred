@@ -9,6 +9,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from weatherpred.archive import Archive
+from weatherpred.netted_paper import reduce_netted
 from weatherpred.paper import empty_state, reduce_event
 from weatherpred.timeutil import iso, parse_time, utcnow
 
@@ -38,8 +39,11 @@ def main(run_id):
         reg, protocol = raw(run_id)
         cfg = protocol["config"]
         require(
-            reg["kind"] == "experiment_protocol" and cfg["experiment"] == "E015-paired-maker-v1", "Wrong run"
+            reg["kind"] == "experiment_protocol"
+            and cfg["experiment"] in ("E015-paired-maker-v1", "E016-same-contract-netting-v1"),
+            "Wrong run",
         )
+        netted = cfg["experiment"] == "E016-same-contract-netting-v1"
         require(parse_time(reg["available_at"]) < parse_time(cfg["first_decision_at"]), "Late registration")
         for path, expected in protocol["code_sha256"].items():
             require(
@@ -53,11 +57,13 @@ def main(run_id):
         panel = {m["ticker"]: m for m in protocol["panel"]}
         records = list(
             archive.db.execute(
-                "SELECT * FROM records WHERE kind='paper_event' AND key=? ORDER BY id", (str(run_id),)
+                "SELECT * FROM records WHERE kind=? AND key=? ORDER BY id",
+                ("netted_paper_event" if netted else "paper_event", str(run_id)),
             )
         )
         state = empty_state()
         cash, fees, carried = {}, defaultdict(lambda: D(0)), defaultdict(lambda: D(0))
+        realized = defaultdict(lambda: D(0))
         quantities, costs = defaultdict(lambda: D(0)), defaultdict(lambda: D(0))
         expected_fill, counts, latencies = {}, Counter(), defaultdict(list)
         scenarios = {s["name"]: s for s in cfg["scenarios"]}
@@ -270,6 +276,19 @@ def main(run_id):
                 pkey = (order["account"], order["ticker"], order["side"])
                 quantities[pkey] += quantity
                 costs[pkey] -= aligned + rebate
+                if netted:
+                    keys = [(order["account"], order["ticker"], s) for s in ("yes", "no")]
+                    offset = min(quantities[k] for k in keys)
+                    if offset > 0:
+                        allocated = D(0)
+                        for k in keys:
+                            part = costs[k] * offset / quantities[k]
+                            allocated += part
+                            costs[k] -= part
+                            quantities[k] -= offset
+                        cash[order["account"]] += offset
+                        realized[order["account"]] += offset - allocated
+                        counts["nettings_reproduced"] += 1
             elif kind == "settlement":
                 source, body = raw(data["source_record_id"])
                 market = body["market"]
@@ -292,14 +311,18 @@ def main(run_id):
                 for key in list(quantities):
                     account, ticker, side = key
                     if ticker == market["ticker"]:
-                        cash[account] += quantities.pop(key) * (label if side == "yes" else 1 - label)
-                        costs.pop(key, None)
-            state = reduce_event(state, event)
+                        payout = quantities.pop(key) * (label if side == "yes" else 1 - label)
+                        cash[account] += payout
+                        realized[account] += payout - costs.pop(key, D(0))
+            state = (reduce_netted if netted else reduce_event)(state, event)
         for account, a in state["accounts"].items():
             require(
                 D(a["cash"]) == cash[account] and D(a["fees"]) == fees[account],
                 "Cash/fees failed independent replay",
             )
+            require(D(a["realized_pnl"]) == realized[account], "Realized return failed independent replay")
+        if netted:
+            require(len(state.get("nettings", [])) == counts["nettings_reproduced"], "Offset count differs")
         for p in state["positions"].values():
             key = (p["account"], p["ticker"], p["side"])
             require(
@@ -325,7 +348,9 @@ def main(run_id):
             "profitability_proven": False,
             "scope_limit": "Independent arithmetic and source-lineage audit. Not actual exchange fills or independent trading days; absence of omitted eligible signals is not proven by this replay.",
         }
-        Path("reports/E015_audit.json").write_text(json.dumps(result, indent=2))
+        Path("reports/E016_audit.json" if netted else "reports/E015_audit.json").write_text(
+            json.dumps(result, indent=2)
+        )
         print(json.dumps(result, indent=2))
     finally:
         archive.close()

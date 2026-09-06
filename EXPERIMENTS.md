@@ -892,3 +892,52 @@ selected losing tail bets. This one-event diagnostic motivates conditional
 morning-heating and horizon uncertainty research; it is not evidence that simply
 reversing every model trade would have a repeatable edge. Original paper models
 and settings remain unchanged; E015 was already registered before this settlement.
+
+### E015 first forward observations and capital-model correction
+
+At15:27, independent audit reproduces747journal events,180orders,175arrivals,
+70queue updates,43partial fill records, and149cancellations using177raw records.
+The first round's11fills were all unmatched Miami daily-high NO inventory.
+Subsequent fills cover Chicago/LA as well. The optimistic scenario's observed
+arrival delays range1.87–10.01seconds, realistic6.62–10.51, pessimistic15.96–23.48;
+actual serial collection latency is retained, not replaced by configured minima.
+No quote, queue, fee or cash audit failures at this checkpoint.
+
+A primary-source review at15:21 establishes that same-contract YES/NO positions
+normally offset with immediate cash return. The explicitly no-netting E015
+registration remains intact as an overcollateralized stress case. Its results
+cannot alone reject capital-efficient maker strategies. Optional collateral
+return across different event contracts is a separate setting/mechanism.
+
+## E016 — Same-contract offsetting and netted maker cohort
+
+Purpose: correct E015's cash timing without changing its already observed orders
+or declaring a trading edge. New module `weatherpred/netted_paper.py` wraps the
+unchanged paper reducer and atomically applies same-contract netting after each
+fill. The net quantity receives final settlement; matched legs return cash early.
+Average matched costs determine realized round-trip P&L, including losses.
+No double settlement or duplicate-fill cash release is permitted.
+
+Config `config/e016_netted_maker.json`, registration45913 at15:28UTC, clones the
+parent42731 four-contract panel and all9policy/scenario alternatives. First new
+decisions15:40UTC; two-minute rounds through18:20; bounded stop18:30. New fresh
+$100accounts and actual later receipt times mean this cohort is not an identical-
+fill causal comparison with E015. All outcomes and failures remain in the journal.
+
+Opening-order cash is still fully reserved. The existing gross cost risk caps
+remain5%per event and10%total. These conservative strategy limits may block a
+risk-reducing hedge near a cap; they are not venue requirements. No optional
+cross-contract netting, margin, credit, or phantom trades are assumed.
+
+A separate read-only identical-fill projection uses the E015 journal through45801:
+43fills,4partial offsets completing one contract each in2alternative LA accounts.
+Each returns$1cash and realizes$0.02, while overall terminal P&L can still lose
+because of unmatched positions. Exact lower/upper terminal payout bounds are
+unchanged by the accounting transformation. Additional orders/fills: zero.
+This diagnoses cash timing; it does not estimate the benefit of future recycling.
+
+Before registration95tests passed. New tests verify immediate cash return,
+remaining inventory/cost, positive and negative offsets, both eventual outcomes,
+no double credit, atomic failure and exact replay. An independent source audit
+now supports both journal types and reconstructs netted cash, fees, costs and
+realized P&L independently. Forward E016 results are pending; no promotion.

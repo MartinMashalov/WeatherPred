@@ -45,8 +45,9 @@ Sources: [machine-readable summary](evidence/summary.json),
 settled. All 32 alternative accounts lost between $0.48 and $4.16 on that one
 event; 57 positions were independently replayed against its finalized result.
 E015 separately registered nine paired-maker alternatives before its first
-15:20 decisions. It tests spread capture with unmatched inventory and locked
-capital. The original evidence snapshot above remains dated and unchanged.
+15:20 decisions. It tests spread capture with unmatched inventory and deliberately
+locked capital. E016 corrects same-contract offsetting in a separately registered
+15:40 cohort. The original evidence snapshot above remains dated and unchanged.
 See the [experiment ledger](EXPERIMENTS.md) for the source records and limits.
 
 ## What is implemented

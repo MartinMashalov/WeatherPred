@@ -235,8 +235,9 @@ cent, and adjusting prices by one cent per net contract of inventory. Each polic
 has three queue/delay assumptions, giving nine alternative $100 accounts. Quotes
 are one contract per side. Both legs require subsequent opposite-direction trades
 strictly through the quote after the displayed queue ahead has been consumed.
-Their cash stays committed until settlement; a matched pair is not free spending
-power. Total committed cost is capped at 10%, with 5% per event.
+E015 deliberately keeps matched cash committed until settlement as a capital
+stress case. That differs from Kalshi's automatic same-contract offsetting,
+corrected in E016 below. Total committed cost is capped at 10%, with 5% per event.
 
 **Status.** Registered on September 6 at 15:08 UTC, before its 15:20 first decisions.
 The fixed panel contains Miami hourly temperature and Miami, Chicago and LA daily
@@ -248,6 +249,31 @@ inventory policy is claimed. Its outcome does not change the earlier dated
 Code: [quote and inventory logic](../weatherpred/market_making.py),
 [registered runner](../research/experiments/e015_market_making.py),
 [independent execution audit](../research/experiments/e015_audit.py).
+
+## 10. Same-contract offsetting and capital reuse — E016
+
+**Correction.** Buying NO while already holding YES in the same contract offsets
+the position. Kalshi returns the matched dollar payout early. This is different
+from optional collateral return across several contracts in an event.
+
+E016 keeps the same four-market panel and nine quoting/scenario alternatives,
+but removes matched quantities immediately, returns cash and realizes their
+profit or loss. Only the remaining net position reaches final settlement. The
+fill and its offset form one journal event, preventing duplicate cash credits.
+Conservative opening-order cash and risk caps remain; they can still restrict
+some hedges and are strategy choices rather than venue requirements.
+
+**Status.** Registered at 15:28 UTC before new 15:40 forward decisions. A separate
+replay of the same first 43 E015 fills finds two alternative LA accounts completing
+a one-contract offset, earning 2¢ each. Each also has unmatched inventory that
+can lose more. Returning their $1 of cash changes funding timing, not the range
+of final profits on those same fills. No additional trades are assumed in this
+replay, and no positive long-run return is established.
+
+Sources: [Kalshi netting](https://news.kalshi.com/p/collateral-return),
+[current settlement behavior](https://docs.kalshi.com/getting_started/market_settlement).
+Code: [atomic netting ledger](../weatherpred/netted_paper.py),
+[forward cohort and identical-fill replay](../research/experiments/e016_netted_maker.py).
 
 ## What is still a research idea
 

@@ -87,6 +87,14 @@ queue, fill and cash evidence without networking. Its runner resumes with
 stops it. A new run needs new future dates and registration before decisions.
 Its initial panel and short observation window cannot establish profitability.
 
+E016 registration45913 adds same-contract netting with a separate journal. Use
+`uv run python research/experiments/e015_audit.py --run-record-id 45913` for its
+raw-source audit, or `uv run python research/experiments/e016_netted_maker.py
+--project-locked-run 42731` for an identical-fill cash projection of E015. The
+projection places no orders. The E016 runner resumes with `--run-record-id 45913`,
+uses `data/netted_maker.lock`, and stops on `data/STOP_NETTED_MAKER`. Do not edit
+its pinned code while the registered cohort is running.
+
 ## Evidence and limitations
 
 The [validation protocol](../config/validation.json) requires independent

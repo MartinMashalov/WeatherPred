@@ -1,0 +1,15 @@
+{
+  "experiment": "E016-same-contract-netting-v1",
+  "parent_run_record_id": 42731,
+  "first_decision_at": "2026-09-06T15:40:00Z",
+  "last_decision_at": "2026-09-06T18:20:00Z",
+  "stop_at": "2026-09-06T18:30:00Z",
+  "rationale": "Correct E015's deliberately locked-capital accounting using the documented automatic offset of YES and NO in the same contract. Preserve E015 as an overcollateralized stress comparator; do not infer weather edge rejection from its capital limits.",
+  "panel_and_policies": "Reuse the exact four tickers and all three quote rules, three execution scenarios, quantities, TTLs and risk caps from parent42731. No selection or refit after the first E015 observations. A new future cohort begins with nine fresh $100 accounts; different arrival times/inventories mean it is not a same-fill causal comparison.",
+  "cash_accounting": "After each recorded fill, immediately offset min(YES quantity,NO quantity) within the same account and ticker. Return $1 per offset quantity to available cash, remove both offset quantities and their average allocated costs, and realize returned cash minus allocated cost. A losing round trip is retained. The fill and its offset commit atomically as one immutable event. Remaining net positions alone receive finalized payouts.",
+  "risk_limitations": "Opening-order cash remains fully reserved and the unchanged gross cost caps remain: 5% per event and 10% for the entire weather cluster. This may reject a risk-reducing hedge at the cap; it is a stated strategy constraint, not a venue requirement. No credit, margin, optional cross-contract/event collateral return, or automatic unobserved extra fills are assumed.",
+  "comparison": "A separate read-only projection applies netting to the exact E015 journal to measure cash timing with identical fills and no additional orders. The new forward cohort observes its own future books and tape. Report both without treating alternative accounts as independent days.",
+  "validation": "Engineering correction and new forward feasibility cohort. Same registered global promotion gates and sealed historical holdout. No profitability or return-target claim; unmatched risk can dominate realized round-trip gains.",
+  "real_money_orders": 0,
+  "promotion_eligible": false
+}

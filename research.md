@@ -184,3 +184,32 @@ lose. This is a test example, not empirical trading performance. The prior E009
 maker quote diagnostics remain negative at 0/30/60/300 seconds wherever observed
 at the 14:58 checkpoint; occasional positive taker quote differences are not
 booked exits or statistically independent strategy returns.
+
+## Same-contract netting correction — 2026-09-06 15:29 UTC
+
+Kalshi's [own netting explanation](https://news.kalshi.com/p/collateral-return)
+(raw45064) says YES and NO holdings in the same market automatically offset.
+The current [V2 order interface](https://docs.kalshi.com/api-reference/orders/create-order-v2)
+(raw45067) represents buying NO as selling YES at the complementary price; the
+[current settlement documentation](https://docs.kalshi.com/getting_started/market_settlement)
+(raw45065) settles only net positions. This differs from the optional event-level
+[collateral-return setting](https://help.kalshi.com/en/articles/13823816-collateral-return)
+(raw45066), whose eligibility locks at the first event order. No account setting
+was changed or queried and no live order was sent.
+
+E015's no-netting ledger is therefore an overcollateralized capital stress case,
+not exact same-contract venue cash timing. E016 corrects this in a separate
+registered cohort using the identical four tickers, nine quote/scenario rules
+and conservative opening-order risk caps. Each completed opposite fill credits
+one dollar per matched quantity, removes matched costs/quantities, and realizes
+the net round-trip profit or loss atomically with the fill. No optional
+cross-contract collateral return is assumed. Gross pre-trade caps can still
+restrict risk-reducing hedges; this is an explicit strategy constraint.
+
+An identical-fill projection through source journal45801 replays43E015 fill
+records. Four partial offset records complete one contract in each of two
+alternative LA accounts, returning$1cash and realizing$0.02 each. Their terminal
+P&L bounds remain negative-to-positive because unmatched positions remain; no
+extra trades are invented. This small paired gain is not portfolio profitability.
+New E016 registration45913 precedes its first15:40UTC forward decision. Fresh
+observed executions are required to measure any capital-reuse benefit.
