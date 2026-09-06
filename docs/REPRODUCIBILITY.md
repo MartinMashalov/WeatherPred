@@ -141,3 +141,15 @@ The hash chain detects accidental changes but is not externally notarized.
 Independent quote/fee audits do not establish actual liquidity or eliminate all
 selection bias. Failed strategies and inconclusive checks remain part of the
 [experiment history](../EXPERIMENTS.md).
+
+### Frozen manifest used by the public tests
+
+The test session restores `reports/E022_manifest.json` from the compressed
+fixture in `tests/fixtures/E022_manifest.json.gz` when absent. It verifies the
+original SHA-256 `ccbcbb142cbb7d6954d3ea0d89000427003b27834f9b9f8bb28477d46339b741`
+and refuses to overwrite a differing local artifact. The manifest contains
+case identities, clocks, eligibility and source references, without numeric
+weather observations or forecasts. Frozen test assertions and experiment
+source files are unchanged. The first published checkout exposed the missing
+fixture (four failures); a fresh checkout with the fixture ran all 543 tests.
+[Actual clean-checkout output](../evidence/verification-clean-checkout-2026-09-06.txt).
