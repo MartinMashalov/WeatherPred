@@ -1,0 +1,455 @@
+{
+  "audit_declaration_id": 128661,
+  "protocol_id": 127948,
+  "report_id": 128052,
+  "canaries": [
+    {
+      "key": "availability-2026-01-01-12UTC",
+      "record_id": 128003,
+      "body_sha256": "0610ed7e8290a6f631d31390e755b1206f365a43f2385408f8e2367e0d40963b",
+      "actual_received_at": "2026-09-06T19:56:36.043167+00:00",
+      "rows": 240,
+      "stations": {
+        "MIA": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "OPF": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        },
+        "FLL": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 43,
+          "drct_numeric_syntax": 43,
+          "all_four_numeric_minutes": 43,
+          "sknt_M": 17,
+          "drct_M": 17
+        },
+        "FXE": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 18,
+          "sknt_numeric_syntax": 28,
+          "drct_numeric_syntax": 28,
+          "all_four_numeric_minutes": 13,
+          "dwpf_M": 42,
+          "sknt_M": 32,
+          "drct_M": 32
+        },
+        "PMP": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_M": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 0
+        },
+        "TMB": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        },
+        "HWO": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        }
+      }
+    },
+    {
+      "key": "availability-2026-01-15-12UTC",
+      "record_id": 128011,
+      "body_sha256": "2fe9da64ea0627eb8e1612ecd3fb46dd33f68b9a833c7966731b75bb5079be85",
+      "actual_received_at": "2026-09-06T19:56:36.888595+00:00",
+      "rows": 420,
+      "stations": {
+        "MIA": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "OPF": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 37,
+          "drct_numeric_syntax": 37,
+          "all_four_numeric_minutes": 37,
+          "sknt_M": 23,
+          "drct_M": 23
+        },
+        "FLL": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 56,
+          "drct_numeric_syntax": 56,
+          "all_four_numeric_minutes": 56,
+          "sknt_M": 4,
+          "drct_M": 4
+        },
+        "FXE": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "PMP": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_M": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 0
+        },
+        "TMB": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "HWO": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        }
+      }
+    },
+    {
+      "key": "availability-2026-06-01-12UTC",
+      "record_id": 128020,
+      "body_sha256": "74f73c27a1c19ccf2d01a7d5a0226754fc1800f4d4a6cf8abbb4d6a464b4f060",
+      "actual_received_at": "2026-09-06T19:56:37.778997+00:00",
+      "rows": 300,
+      "stations": {
+        "MIA": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "OPF": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        },
+        "FLL": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "FXE": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "PMP": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "TMB": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "HWO": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        }
+      }
+    },
+    {
+      "key": "availability-2026-07-01-12UTC",
+      "record_id": 128030,
+      "body_sha256": "0b36ad33aee5131b372c7b9a8ccf67b395578cb2c3bb08b8bda68f0d3583414f",
+      "actual_received_at": "2026-09-06T19:56:38.776118+00:00",
+      "rows": 360,
+      "stations": {
+        "MIA": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "OPF": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        },
+        "FLL": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "FXE": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "PMP": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "TMB": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "HWO": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_M": 60,
+          "dwpf_M": 60,
+          "sknt_M": 60,
+          "drct_M": 60,
+          "all_four_numeric_minutes": 0
+        }
+      }
+    },
+    {
+      "key": "availability-2026-08-01-12UTC",
+      "record_id": 128041,
+      "body_sha256": "5c81a8a6243e2d8362644477343b5daf73210830716afc827c783b904c617a2c",
+      "actual_received_at": "2026-09-06T19:56:39.793384+00:00",
+      "rows": 360,
+      "stations": {
+        "MIA": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        },
+        "OPF": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "FLL": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "FXE": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "PMP": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "TMB": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "HWO": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_M": 48,
+          "dwpf_numeric_syntax": 16,
+          "sknt_M": 60,
+          "drct_M": 60,
+          "all_four_numeric_minutes": 0,
+          "dwpf_M": 44,
+          "tmpf_numeric_syntax": 12
+        }
+      }
+    },
+    {
+      "key": "availability-2026-08-30-12UTC",
+      "record_id": 128051,
+      "body_sha256": "cda76374cb6116309a09387cadb07427b63369020d5783b4af499524c386947d",
+      "actual_received_at": "2026-09-06T19:56:40.790436+00:00",
+      "rows": 360,
+      "stations": {
+        "MIA": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        },
+        "OPF": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "FLL": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "FXE": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "PMP": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "TMB": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_M": 60,
+          "dwpf_M": 60,
+          "sknt_M": 60,
+          "drct_M": 60,
+          "all_four_numeric_minutes": 0
+        },
+        "HWO": {
+          "expected_minutes": 60,
+          "absent_minutes": 0,
+          "present_minutes": 60,
+          "tmpf_numeric_syntax": 60,
+          "dwpf_numeric_syntax": 60,
+          "sknt_numeric_syntax": 60,
+          "drct_numeric_syntax": 60,
+          "all_four_numeric_minutes": 60
+        },
+        "HST": {
+          "expected_minutes": 60,
+          "absent_minutes": 60
+        }
+      }
+    }
+  ],
+  "weather_values_normalized": 0,
+  "scores": 0,
+  "new_network_requests": 0,
+  "original_E028_failed_gate_unchanged": true,
+  "complete_month_coverage_verified": false,
+  "bulk_authorized": false,
+  "audit_report_id": 128662
+}

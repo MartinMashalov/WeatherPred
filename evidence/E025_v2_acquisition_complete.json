@@ -1,0 +1,27 @@
+{
+  "record_id": 129708,
+  "body_sha256": "3f25ad9de7d25bcf36ec3a4b9830a94d4ad064764ef7977737bac202a8e37910",
+  "record_sha256": "d43dc02dd0c79bb3a99f2d4ae825e5e462b23eaf215755707418777d606551e0",
+  "actual_available_at": "2026-09-06T19:59:14.260750+00:00",
+  "summary": {
+    "available_cases": 9870,
+    "case_count": 9870,
+    "charged_payload_bytes_including_interrupted_reservations": 1152313548,
+    "failure_reasons": {},
+    "full_panel_complete": true,
+    "full_panel_incomplete": false,
+    "historical_public_availability_verified": false,
+    "new_charged_payload_bytes": 896302162,
+    "newly_attempted": 18,
+    "objects_attempted": 498,
+    "objects_total": 498,
+    "prior_charged_payload_bytes": 256011386,
+    "prior_registration_id": 111273,
+    "prior_report_record_id": 111377,
+    "registration_id": 113137,
+    "reported_at": "2026-09-06T19:59:14.245814+00:00",
+    "scores_computed": false,
+    "scoring_authorized": false,
+    "stop_reason": "all_objects_attempted"
+  }
+}

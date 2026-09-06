@@ -1361,3 +1361,143 @@ shared seven-day bootstrap interval for adapted-minus-ridge error is
 does not establish an adaptation benefit. One-hour adaptation error worsens;
 all negative slices remain. Root replay reproduces the report and bootstrap
 exactly without model execution. [Diagnostic](research/STATION_FORECAST_DIAGNOSTICS.md).
+
+## E024 — Restricted annual continuation, implementation prepared
+
+The separate [annual protocol](research/ANNUAL_REPLAY_CONTINUATION.md) specifies
+one continuous $200 account from September 6, 2025 through September 5, 2026.
+It keeps 298 mandatory cash days and permits at most 67 active days after three
+fixed monthly choices. All 576 original policies, four sizes and two cost
+scenarios remain, for 13,824 training accounts and nine shared-block bootstrap
+evaluations. This is a restricted retrospective development policy, not an
+optimal annual return or a full-year market-opportunity study.
+
+The new runner preserves pending orders, original exit instructions, cash,
+fees, holdings and drawdown state across policy changes. An independent account
+auditor reconstructs the expected event journal rather than trusting reported
+cash totals; a separate full-run auditor checks every candidate and monthly
+choice. The complete 1,736-event acquisition must finish before normalization,
+source registration and scoring. No E024 return has been computed at this
+checkpoint. Original E023 results and the protected 2025 quarter are unchanged.
+
+## E025 — Original hourly physical forecast acquisition
+
+Registration **111273** precedes the first benchmark forecast download. The
+[physical baseline proposal](research/PHYSICAL_STATION_BASELINE.md) fixes NOAA
+NBH runs two hours before each original E022 decision, exact station and target
+times, 498 objects and all 9,870 calibration/development cases. It preserves
+actual September receipts and uses original storage timestamps only as a
+conditional historical-availability check. It does not score weather errors.
+
+The first attempt stopped at its eight-full-object recovery cap after nine
+failed objects and 256,011,386 charged payload bytes. The parser rejected the
+UTC row because the actual original file includes one trailing ASCII space;
+the temperature row has the expected width. All 180 affected cases remain
+failed and the other 9,690 remain unattempted. Report **111377** records zero
+available forecasts and zero scores. This is a retained acquisition failure,
+not evidence against the weather forecast. A separate parser/acquisition
+revision is being prepared; the original registered files remain unchanged.
+[Failure evidence](evidence/E025_v1_acquisition_failure.json).
+
+## Innovation queue — Proposed mechanisms, no new performance claims
+
+A dedicated research agent maintains the [ranked experiment queue](research/INNOVATION_QUEUE.md).
+Its first ten hypotheses include observation-age uncertainty, simultaneous-order
+allocation, physical forecasts plus learned residuals, exact component-index
+distributions and upwind station information. Each names a baseline, bounded
+candidate count, missing data, failure test and existing primary-source prior
+art. These are proposals, not ten successful strategies. Physical benchmarking
+and new prospective source receipts are the first dependencies.
+
+### September 6, 19:52 UTC implementation checkpoint
+
+E024 acquisition has reached its complete 1,736-event census after a separately
+registered amendment for seven July 6 checkpoints. The two metadata endpoints
+differed only in an unused open-interest field; the original failures remain.
+Dataset preparation **123242** then stopped on a nonnumeric `expiration_value`
+before producing a dataset or strategy score. Failure **124068** pins all source
+files. A metadata-only diagnosis precedes any new parser revision.
+[Amendment](evidence/ANNUAL_acquisition_amendment.json),
+[preparation failure](evidence/E024_v1_preparation_failure.json).
+
+E025 v2 registration **113137** accepts the observed single trailing space in
+the UTC row while retaining strict temperature widths. It pins all 19 reused
+responses and counts the prior 256,011,386 bytes within the same 2 GiB lineage
+budget. Acquisition is in progress. E026 registration **117527** fixes the
+comparison with all eight E022 models, identical cases and earlier calibration;
+no NBH forecast errors have been computed at this checkpoint.
+
+E027 v1 collected 13 cycles, then stopped explicitly with 408 requests and
+7,009,789 charged bytes. It excluded 456 decimal-strike contracts through an
+overly restrictive identifier parser. The separate v2 registration **122996**
+starts a new 24-hour receipt history with 28 stations and a 1,000-contract cap.
+Its first completed cycle covers all 706 eligible contracts in eight book
+batches, with no missing books or stations. It records weather and market
+receipt times; it computes no signals, fills or orders.
+[Preserved v1 stop](evidence/E027_v1_stop.json),
+[v2 collection evidence](evidence/E027_v2_capture_checkpoint.json).
+
+E028 registration **119562** runs only three fixed one-hour IEM minute-data
+queries. All return HTTP 200; the January seven-station query and unsupported
+Homestead query return just 52-byte headers, while August returns 18,489 bytes.
+An HTTP success therefore does not establish historical measurement coverage.
+No bulk download or model fit follows automatically.
+[Canary evidence](evidence/E028_minute_canary.json).
+
+E029 design **124922**, frozen before E026 scoring, specifies three fixed
+physical/transformer combinations with neural weights 0.25, 0.50 and 0.75.
+They use the saved pretrained model and original NBH guidance, then the same
+earlier quantile calibration. All three and twelve paired comparisons remain
+in the family; no weight is chosen from development performance. Implementation
+registration is still required before execution.
+[Fixed design](evidence/E029_design.json).
+
+### Completed physical benchmark and fixed combinations
+
+E025 v2 completes all 498 objects and 9,870 cases, report **129708**, with no
+missing forecasts. E026 report **129711** has NBH mean absolute error 1.8345°F,
+adapted Chronos 1.8872°F and pretrained Chronos 1.9072°F on the same panel.
+Both NBH-minus-neural uncertainty intervals include zero. Separate audit
+**139319** reproduces all nine models and eight bootstrap comparisons, including
+exact draw hashes. [Physical study](research/PHYSICAL_FORECAST_COMPARISON.md),
+[audit](evidence/E026_result_audit.json).
+
+E029 execution registration **129863** follows its frozen design **124922**
+without changing weights or comparisons, explicitly acknowledging the now-known
+E026 result. Report **131549** retains all twelve candidates on the same 9,870
+cases. Neural weights 0.25/0.50/0.75 yield MAE 1.6608/1.6023/1.6866°F. All
+twelve simultaneous descriptive intervals favor the blends over their four
+references. Distribution loss also improves. All raw predictions are archived
+as **131498** before label scoring; no model fit or inference occurs. Separate
+audit **151341** reconstructs all raw blends exactly, all twelve model scores
+within 1.42e−14, and all twelve bootstrap comparisons with matching draw hashes.
+This is development evidence, not a strategy selection
+or financial validation. [Study](research/HYBRID_FORECASTS.md),
+[all results](evidence/E029_fixed_combinations.json).
+
+E024 v2 dataset **128360** preserves all 10,416 contracts and the four explicitly
+pinned categorical settlement values. A registration guard caught a late test
+addition; the expanded tests were preserved separately and the exact prepared
+test file restored. All 27 prepared source hashes match. Execution registration
+**129856** precedes strategy scoring; the annual replay is now running under its
+original finite limits. [Guard evidence](evidence/E024_registration_guard.json),
+[resolution](evidence/E024_registration_guard_resolution.json).
+
+E030 registration **127948** follows E028's failed coverage gate with six fixed
+one-hour availability probes. Report **128052** and metadata-only audit
+**128662** find some January data, but changing station and field gaps across
+the six dates. This rejects an unsupported all-January-missing interpretation;
+it does not establish full-month coverage or revive the failed bulk plan.
+[Coverage audit](evidence/E030_availability_audit.json).
+
+### E024 restricted annual result
+
+Report **165655** finishes all **13,824** training accounts and nine registered
+bootstrap evaluations. At July 1, August 1 and September 1, zero policy-and-size
+pairs qualify. The selected account stays in cash: **$200 ending cash, zero
+trades**, for both cost scenarios and both hypothetical/verified availability
+modes. Each path retains all 365 days; 298 are mandatory cash days. This is a
+restricted-policy result, not an optimal full-year return or proof that no
+weather strategy can work. Separate full-ledger audit **166183**, including
+independent bootstrap replay, is in progress.
+[Result summary](evidence/E024_annual_replay.json).

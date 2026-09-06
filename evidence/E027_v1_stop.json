@@ -1,0 +1,25 @@
+{
+  "record_id": 122851,
+  "kind": "e027_stopped",
+  "actual_available_at": "2026-09-06T19:47:17.843917+00:00",
+  "body_sha256": "0ab33bab3a20c796e9968dae046af0889409ca4cf0cc4ab4573a886632e8a0a9",
+  "record_sha256": "84b0e872bf848b0f071bd30ac986ab2c91da3f944c0d0b3be14663183bf912e1",
+  "payload": {
+    "charged_payload_bytes": 7009789,
+    "completed_cycles": 13,
+    "cycles_this_invocation": 13,
+    "errors_by_phase_this_invocation": {},
+    "fills": 0,
+    "finished_at": "2026-09-06T19:47:17.843895+00:00",
+    "interrupted_started_slots": [],
+    "last_started_slot": 12,
+    "orders": 0,
+    "registration_id": 116258,
+    "requests_total": 408,
+    "scores": 0,
+    "signals": 0,
+    "stop_at": "2026-09-07T19:34:26.367107+00:00",
+    "stop_reason": "stop_file",
+    "uncaptured_elapsed_slots": []
+  }
+}

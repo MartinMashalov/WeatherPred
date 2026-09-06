@@ -542,6 +542,40 @@ Code and evidence: [full study](../research/STATION_FORECASTS.md),
 [all candidate scores](../evidence/E022_station_forecasts.json),
 [independent audit](../evidence/E022_audit.json).
 
+## 21. Physical guidance and transformer combinations
+
+**Question.** Does an operational weather forecast contain useful information
+that the station-history transformer misses, and does combining them help?
+
+E026 registers a common-case comparison of NOAA's hourly NBH guidance with
+all eight existing station candidates. The source run is fixed two hours
+before each original decision. Actual September receipts remain visible;
+original storage timestamps provide only conditional historical availability.
+Missing forecasts cannot silently disappear from the comparison.
+
+E029 separately freezes three combinations with 25%, 50% or 75% weight on the
+saved pretrained transformer. Each uses the same earlier quantile calibration.
+All twelve comparisons with four baselines remain in the result family. No
+weight is selected from development performance and no new fit is authorized.
+Acquisition completes all 498 objects and 9,870 cases. NBH has mean absolute
+error 1.8345°F versus adapted Chronos 1.8872°F; their descriptive difference
+interval includes zero. The three combinations then reach 1.6608°F, 1.6023°F
+and 1.6866°F respectively. All twelve paired intervals are below zero, and
+calibrated quantile loss also improves. The lowest observed 50/50 error is a
+development finding, not a selected trading strategy. No trading signal or
+financial validation follows from these scores.
+
+A new prospective collector records 28 stations, the exact Miami index
+components and eligible market books with actual receipt times. This supplies
+data for later observation-age and wind-transport tests; collection itself
+does not simulate a fill. A dedicated idea scout maintains the
+[ranked hypotheses](../research/INNOVATION_QUEUE.md) and their failure tests.
+
+Code and design: [physical baseline](../research/PHYSICAL_STATION_BASELINE.md),
+[fixed combinations](../evidence/E029_design.json),
+[all twelve forecasts](../evidence/E029_fixed_combinations.json),
+[receipt capture](../evidence/E027_v2_capture_checkpoint.json).
+
 ## What is still a research idea
 
 Faster observation-reaction strategies, broader cross-market relative value,

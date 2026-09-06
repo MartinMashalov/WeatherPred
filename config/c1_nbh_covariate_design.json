@@ -1,0 +1,153 @@
+{
+  "advance_gate": "Complete cases; >=90% use guidance; >=5% day-weighted calibrated quantile-loss improvement versus matched univariate AND NBH AND each of all three frozen E029 blends. Retain all five contrasts, daily MAE/bias/coverage/width losses and simultaneous descriptive intervals. No financial promotion.",
+  "calibration": "Original per-horizon additive quantile offsets using only July6-19; retain original support gates and monotonic rearrangement. No neural fits or parameter selection.",
+  "checkpoint": {
+    "repo": "autogluon/chronos-2-small",
+    "revision": "ddec01313e50b6bc58ebaa92ede81bc24a3d9f9a"
+  },
+  "context": {
+    "do_not_shift_grid_to_latest_finite": true,
+    "grid_end": "floor((D-15min)/hour)*hour = D-1h for original cases",
+    "hours": 168,
+    "maximum_latest_finite_age_minutes": 120,
+    "minimum_finite": 120
+  },
+  "created_date": "2026-09-06",
+  "current_round": {
+    "forecast_calls": 0,
+    "model_instances_created": 0,
+    "new_network_calls": 0,
+    "synthetic_preprocessing_only": true,
+    "weather_or_market_values_read": 0,
+    "weight_files_read": 0
+  },
+  "design": "C1B-observed-then-guided-temperature-draft-v1",
+  "development": "July20-Aug16 is reused development; no final-test or profit claim",
+  "extraction_registration_required": true,
+  "frozen_references": [
+    "E026 nbh_original",
+    "E029 chronos_weight_0.25",
+    "E029 chronos_weight_0.5",
+    "E029 chronos_weight_0.75"
+  ],
+  "missingness": "Before model call, missing required trajectory => exact matched univariate fallback; preserve every case and reason; batches segregated by schema with stable case_id mapping. Malformed source identity/provenance fails the run.",
+  "model_variants": [
+    "chronos_pretrained_univariate_matched",
+    "chronos_observed_then_guided"
+  ],
+  "new_extraction": {
+    "actual_received_at": "retain real September receipt separately; never treat retrospective receipt as past live access",
+    "cycle": "D-2h exactly",
+    "duplicate_station_or_field": "fail",
+    "field": "TMP",
+    "missing": [
+      "absent TMP row",
+      "blank cell",
+      "-99"
+    ],
+    "network_requests": 0,
+    "old_parsed_target_cells_are_insufficient": true,
+    "provenance_per_cell": [
+      "response_id",
+      "response_sha256",
+      "card_sha256",
+      "card_global_offset",
+      "field_line_offset",
+      "cell_offset",
+      "raw_lexeme",
+      "station_id",
+      "run_ms",
+      "valid_ms",
+      "forecast_hour",
+      "conditional_eligible_at",
+      "actual_received_at"
+    ],
+    "required_leads_per_case": "2 through horizon+2 inclusive",
+    "source_lineage": "original E025v2 census and explicit permitted v1 source receipts only; reverify body/record hashes, range offsets, card SHA, run/station, object Last-Modified and E026 conditional publication gate before TMP access",
+    "station_identity": "same original station_id, no city-index substitution",
+    "union_leads": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "utc_row_validate_every_extracted_cell": true,
+    "version": "NBM V5.0 NBH"
+  },
+  "original_current_cycle_sparse_C1_status": "BLOCKED: one finite past covariate gives InstanceNorm scale 1e-5",
+  "parent": {
+    "e022_registration_id": 105314,
+    "e025v2_registration_id": 113137,
+    "expected_calibration_cases": 3271,
+    "expected_development_cases": 6599,
+    "expected_source_objects": 498,
+    "expected_total_cases": 9870
+  },
+  "prediction": {
+    "batch_size_series": 64,
+    "cross_learning": false,
+    "device": "cpu",
+    "dtype": "float32",
+    "evaluation_mode": true,
+    "future_covariate_grid": "D through D+6h; retain only D through target inclusive; subsequent slots NaN",
+    "length": 7,
+    "target_step_by_horizon": {
+      "1": 2,
+      "3": 4,
+      "6": 7
+    }
+  },
+  "reference_lineage": "Exact E026/E029 result IDs, config/source hashes and raw forecasts must be pinned by implementation registration; no value reads in this draft.",
+  "required_integrity_checks": [
+    "synthetic dataset tests",
+    "append-future/permutation model-output check only after registration, within64extra tasks",
+    "never pass label field as feature",
+    "reject cross_learning true and deprecated predict_batches_jointly option",
+    "exact target step2/4/7 from fixed grid",
+    "source eligibility check before guidance value reads",
+    "no future-observed covariates"
+  ],
+  "resource_limits": {
+    "additional_integrity_forecast_tasks_max": 64,
+    "cpu_threads": 2,
+    "distinct_forecast_tasks_max": 19740,
+    "execution_seconds": 1200,
+    "network_calls": 0,
+    "neural_fits": 0,
+    "peak_memory_bytes": 4294967296,
+    "weight_downloads": 0
+  },
+  "selected_remedy": "B: observed_then_guided_temperature_f; past duplicates eligible observed target; future is issued NBH TMP, not future observations",
+  "source_sha256": {
+    "config/e029_fixed_combinations_design.json": "568c1dffb41fea69e06acc51d52e96ec075b16dd3cfc0f60560684074b4d7933",
+    "research/experiments/e026_nbh_comparison.py": "42ebbeea8e94ce48621bd5ef4c41d4156b5ff86cc129bbbaf57038b6e83da867",
+    "research/probes/chronos_covariate_checks.py": "ee5f9f210081f7c77aa8b604cdba6c72d6a7144ddf6c18b0916b1f5ec31dc7b7",
+    "research/probes/chronos_covariate_preflight.py": "5c84e27641d27cf47069589e41bbf9dd51c7d7bf05d81ac22976d9c9ffbba48d",
+    "research/probes/station_transformer.py": "8a4914dee77edfa80c0fc2927052fb994fe0756211aeb107949ea396552f0fb2",
+    "tests/test_chronos_covariate_preflight.py": "c50edd379a6534e87e31e0c365b150adf93996183ad465711c6589f8fc830b2c",
+    "tmp/chronos2-small-pinned/config.json": "f2780468adc8b16322aa0b6e28b26476c9401ecf64ab53292b6d2b0d3f423722",
+    "tmp/forecast-model-env/lib/python3.11/site-packages/chronos/chronos2/dataset.py": "90b34b05af99069972a33aa780019ab2fca7514e907b68921a2d5c9205584e0a",
+    "tmp/forecast-model-env/lib/python3.11/site-packages/chronos/chronos2/model.py": "13ed6b3e1010e1b60fad45cd078da5ff1cda23cdfcaf9055a996276219d9e3c1",
+    "tmp/forecast-model-env/lib/python3.11/site-packages/chronos/chronos2/pipeline.py": "482d28d81b7a50852fd081bd660f5ce39dab79534c237157efaf12bb586c07e1",
+    "tmp/forecast-model-env/lib/python3.11/site-packages/chronos/chronos2/preprocess.py": "a6da6192bc3e51a24d7adee4398c7436ce56f532fbdcf8dcef4c0c366ee02246",
+    "tmp/forecast-model-env/lib/python3.11/site-packages/chronos/chronos_bolt.py": "572a3ffd23a7887c423d234fd0086a4dfa2bac0c3e34d4b7d42eb9cda2e3d1d4"
+  },
+  "status": "DRAFT_NOT_REGISTERED_NOT_AUTHORIZED_FOR_VALUE_EXTRACTION_OR_EVALUATION",
+  "test_layout": {
+    "base": "uv run pytest -q tests/test_chronos_covariate_preflight.py",
+    "base_requires_optional_model_packages": false,
+    "base_tests": 4,
+    "isolated_assertions": 12,
+    "isolated_required": "tmp/forecast-model-env/bin/python -m research.probes.chronos_covariate_checks -v"
+  },
+  "unselected_remedy_A": "Genuine historical NBH TMP at each context valid hour using exactly lead3 and cycle=valid-3h, only already-acquired498census objects with original conditional availability gates. Require8finite past points across3UTCdates and population std>=1F; fallback otherwise. No source content read, new downloads, or activation here.",
+  "versions": {
+    "chronos-forecasting": "2.3.1",
+    "numpy": "2.4.6",
+    "torch": "2.14.0",
+    "transformers": "5.16.1"
+  }
+}

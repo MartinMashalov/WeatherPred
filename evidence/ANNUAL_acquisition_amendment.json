@@ -1,0 +1,24 @@
+{
+  "record_id": 116247,
+  "kind": "bankroll_amendment_report",
+  "actual_available_at": "2026-09-06T19:33:31.143632+00:00",
+  "body_sha256": "1aa4cab941ce7e952941fea45bc293ecf07ac7169794a70522d586e2099bb02e",
+  "record_sha256": "61ca6e81d1cd0e77fb8888dbfdfe3240a8ce3036f7be3862ca50f48f2ea84a53",
+  "payload": {
+    "amended_event_record_ids": [
+      116204,
+      116211,
+      116218,
+      116225,
+      116232,
+      116239,
+      116246
+    ],
+    "amendment_protocol_record_id": 116002,
+    "contracts": 42,
+    "events": 7,
+    "http_operations": 42,
+    "original_failures_preserved": true,
+    "strategy_scores_computed": 0
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "max_physical_gets": 3,
+  "minimum_spacing_seconds": 1,
+  "physical_gets": [
+    {
+      "request_started_at": "2026-09-06T20:22:21.252757+00:00",
+      "url": "https://docs.kalshi.com/llms.txt"
+    },
+    {
+      "request_started_at": "2026-09-06T20:22:35.432536+00:00",
+      "url": "https://docs.kalshi.com/api-reference/orders/create-order-v2"
+    },
+    {
+      "request_started_at": "2026-09-06T20:22:36.437555+00:00",
+      "url": "https://docs.kalshi.com/getting_started/fee_rounding"
+    }
+  ],
+  "prior_web_documentation_lookups": [
+    {
+      "status": 200,
+      "url": "https://docs.kalshi.com/getting_started/orderbook_responses"
+    },
+    {
+      "status": 404,
+      "url": "https://docs.kalshi.com/api-reference/orders/create-order"
+    },
+    {
+      "status": 200,
+      "url": "https://docs.kalshi.com/getting_started/market_lifecycle"
+    }
+  ],
+  "protected_data": false,
+  "protocol_record_id": 164295,
+  "results": [
+    {
+      "bytes": 50484,
+      "key": "kalshi-current-doc-index",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T20:22:21.421394+00:00",
+          "body_sha256": "8963f176cb3ee821dd4e0dff76ff4f49f1b2329d155845d43ad2c660528a107a",
+          "id": 164308,
+          "key": "kalshi-current-doc-index",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "age": "2940",
+              "cache-control": "public",
+              "cf-cache-status": "HIT",
+              "cf-ray": "a3702f6fbd7ed9d3-FRA",
+              "content-encoding": "gzip",
+              "content-security-policy": "worker-src * blob: data: 'unsafe-eval' 'unsafe-inline'; object-src data: ; base-uri 'self'; upgrade-insecure-requests; frame-ancestors 'self' https://dashboard.mintlify.com https://app.mintlify.com; form-action 'self' https://codesandbox.io;",
+              "content-type": "text/plain; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 20:22:21 GMT",
+              "etag": "W/\"PwI_pru8oLRwITEGa9r1cKEV2zDpFIa4ht2tqsKrqXM\"",
+              "server": "Vercel",
+              "strict-transport-security": "max-age=63072000",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, accept-encoding",
+              "x-frame-options": "DENY",
+              "x-matched-path": "/_sites/[subdomain]/llms.txt",
+              "x-vercel-cache": "MISS",
+              "x-vercel-id": "fra1:hkg1:iad1::iad1::zk9cp-1788726141367-9f14b488e150"
+            },
+            "received_at": "2026-09-06T20:22:21.421394+00:00",
+            "request_started_at": "2026-09-06T20:22:20.247962+00:00",
+            "status": 200,
+            "url": "https://docs.kalshi.com/llms.txt"
+          }
+        }
+      ],
+      "record_id": 164308,
+      "requested_url": "https://docs.kalshi.com/llms.txt",
+      "status": 200
+    },
+    {
+      "bytes": 507023,
+      "key": "kalshi-create-order-v2-doc",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T20:22:35.748793+00:00",
+          "body_sha256": "3285a54e153a6b021de08809c929dc2a6b3d96ffb5c0df88591571ece3e1d95a",
+          "id": 164451,
+          "key": "kalshi-create-order-v2-doc",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+              "cf-cache-status": "HIT",
+              "cf-ray": "a3702fc83df2368c-FRA",
+              "content-encoding": "gzip",
+              "content-security-policy": "worker-src * blob: data: 'unsafe-eval' 'unsafe-inline'; object-src data: ; base-uri 'self'; upgrade-insecure-requests; frame-ancestors 'self' https://dashboard.mintlify.com https://app.mintlify.com; form-action 'self' https://codesandbox.io;",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 20:22:35 GMT",
+              "expires": "0",
+              "link": "</llms.txt>; rel=\"llms-txt\", </llms-full.txt>; rel=\"llms-full-txt\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp/server-card.json>; rel=\"mcp-server-card\", </.well-known/agent-card.json>; rel=\"agent-card\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\"",
+              "pragma": "no-cache",
+              "server": "Vercel",
+              "strict-transport-security": "max-age=63072000",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, accept-encoding, Accept, User-Agent",
+              "x-frame-options": "DENY",
+              "x-llms-txt": "/llms.txt",
+              "x-matched-path": "/_sites/[subdomain]/[[...slug]]",
+              "x-mint-proxy-version": "1.0.0-prod",
+              "x-mintlify-client-version": "0.0.3566",
+              "x-nextjs-prerender": "1",
+              "x-nextjs-stale-time": "60",
+              "x-served-version": "dpl_EyJ6FG6g6yyLcPEUQjoExV96qr4A",
+              "x-vercel-cache": "MISS",
+              "x-vercel-id": "fra1:iad1::iad1::dqthf-1788726155530-12b3c9c7fc95",
+              "x-vercel-project-id": "prj_NdMUpHpUIb41Po1H8c6hrChv2bgr",
+              "x-version": "dpl_EyJ6FG6g6yyLcPEUQjoExV96qr4A"
+            },
+            "received_at": "2026-09-06T20:22:35.748793+00:00",
+            "request_started_at": "2026-09-06T20:22:34.427694+00:00",
+            "status": 200,
+            "url": "https://docs.kalshi.com/api-reference/orders/create-order-v2"
+          }
+        }
+      ],
+      "record_id": 164451,
+      "requested_url": "https://docs.kalshi.com/api-reference/orders/create-order-v2",
+      "status": 200
+    },
+    {
+      "bytes": 232778,
+      "key": "kalshi-fee-rounding-doc",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T20:22:36.535507+00:00",
+          "body_sha256": "4f66d77d7fbfe4c475abe572e302a5075da9f45e531e7866e6ba010207099fd1",
+          "id": 164460,
+          "key": "kalshi-fee-rounding-doc",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "age": "8370",
+              "cache-control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+              "cf-cache-status": "HIT",
+              "cf-ray": "a3702fce1bc39e0d-FRA",
+              "content-encoding": "gzip",
+              "content-security-policy": "worker-src * blob: data: 'unsafe-eval' 'unsafe-inline'; object-src data: ; base-uri 'self'; upgrade-insecure-requests; frame-ancestors 'self' https://dashboard.mintlify.com https://app.mintlify.com; form-action 'self' https://codesandbox.io;",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 20:22:36 GMT",
+              "expires": "0",
+              "link": "</llms.txt>; rel=\"llms-txt\", </llms-full.txt>; rel=\"llms-full-txt\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp/server-card.json>; rel=\"mcp-server-card\", </.well-known/agent-card.json>; rel=\"agent-card\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\"",
+              "pragma": "no-cache",
+              "server": "Vercel",
+              "strict-transport-security": "max-age=63072000",
+              "transfer-encoding": "chunked",
+              "vary": "rsc, accept-encoding, Accept, User-Agent",
+              "x-frame-options": "DENY",
+              "x-llms-txt": "/llms.txt",
+              "x-matched-path": "/_sites/[subdomain]/[[...slug]]",
+              "x-mint-proxy-version": "1.0.0-prod",
+              "x-mintlify-client-version": "0.0.3566",
+              "x-nextjs-prerender": "1",
+              "x-nextjs-stale-time": "60",
+              "x-served-version": "dpl_EyJ6FG6g6yyLcPEUQjoExV96qr4A",
+              "x-vercel-cache": "MISS",
+              "x-vercel-id": "fra1:iad1::iad1::jq28f-1788726156466-02f0ff0859df",
+              "x-vercel-project-id": "prj_NdMUpHpUIb41Po1H8c6hrChv2bgr",
+              "x-version": "dpl_EyJ6FG6g6yyLcPEUQjoExV96qr4A"
+            },
+            "received_at": "2026-09-06T20:22:36.535507+00:00",
+            "request_started_at": "2026-09-06T20:22:35.750951+00:00",
+            "status": 200,
+            "url": "https://docs.kalshi.com/getting_started/fee_rounding"
+          }
+        }
+      ],
+      "record_id": 164460,
+      "requested_url": "https://docs.kalshi.com/getting_started/fee_rounding",
+      "status": 200
+    }
+  ],
+  "round": "forecast-to-trade-documents-20260906",
+  "scope": "Official documentation only, no API measurements/orders; at most3 archived GETs after3 web documentation lookups",
+  "strategy_scores": 0,
+  "weather_scores": 0
+}

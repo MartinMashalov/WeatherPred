@@ -1,0 +1,111 @@
+{
+  "classification": "Metadata-only diagnosis before new normalization or strategy scoring",
+  "preparation_protocol_id": 123242,
+  "preparation_failure_id": 124068,
+  "diagnostic_protocol_id": 125267,
+  "diagnostic_report_id": 125381,
+  "source_cutoff_id": 123234,
+  "source_cutoff_at": "2026-09-06T19:48:05.160651+00:00",
+  "events": 1736,
+  "contracts": 10416,
+  "metadata_responses": 1764,
+  "classification_counts": {
+    "finite_numeric": 9941,
+    "empty_string": 471,
+    "non_numeric": 4
+  },
+  "value_type_counts": {
+    "str": 10416
+  },
+  "exceptional_nonnumeric_contracts": [
+    {
+      "ticker": "KXHIGHMIA-26APR11-T83",
+      "event": "KXHIGHMIA-26APR11",
+      "checkpoint_id": 108049,
+      "metadata_record_id": 108042,
+      "metadata_body_sha256": "ba2ae40b7157ec7e5d08ecd78a931f95f2c1cf95be979b657dd24f1c3d754021",
+      "expiration_value_type": "str",
+      "expiration_value_repr": "'No'",
+      "category": "non_numeric",
+      "reported_status": "finalized",
+      "reported_result": "no",
+      "settlement_ts_present": true
+    },
+    {
+      "ticker": "KXHIGHMIA-26APR11-T76",
+      "event": "KXHIGHMIA-26APR11",
+      "checkpoint_id": 108049,
+      "metadata_record_id": 108042,
+      "metadata_body_sha256": "ba2ae40b7157ec7e5d08ecd78a931f95f2c1cf95be979b657dd24f1c3d754021",
+      "expiration_value_type": "str",
+      "expiration_value_repr": "'No'",
+      "category": "non_numeric",
+      "reported_status": "finalized",
+      "reported_result": "no",
+      "settlement_ts_present": true
+    },
+    {
+      "ticker": "KXHIGHMIA-26APR11-B82.5",
+      "event": "KXHIGHMIA-26APR11",
+      "checkpoint_id": 108049,
+      "metadata_record_id": 108042,
+      "metadata_body_sha256": "ba2ae40b7157ec7e5d08ecd78a931f95f2c1cf95be979b657dd24f1c3d754021",
+      "expiration_value_type": "str",
+      "expiration_value_repr": "'No'",
+      "category": "non_numeric",
+      "reported_status": "finalized",
+      "reported_result": "no",
+      "settlement_ts_present": true
+    },
+    {
+      "ticker": "KXHIGHMIA-26APR11-B76.5",
+      "event": "KXHIGHMIA-26APR11",
+      "checkpoint_id": 108049,
+      "metadata_record_id": 108042,
+      "metadata_body_sha256": "ba2ae40b7157ec7e5d08ecd78a931f95f2c1cf95be979b657dd24f1c3d754021",
+      "expiration_value_type": "str",
+      "expiration_value_repr": "'No'",
+      "category": "non_numeric",
+      "reported_status": "finalized",
+      "reported_result": "no",
+      "settlement_ts_present": true
+    }
+  ],
+  "finite_numeric_predicate_mismatches": 0,
+  "finite_numeric_predicate_errors": 0,
+  "archive_records": [
+    {
+      "id": 123242,
+      "kind": "e024_dataset_preparation_protocol",
+      "available_at": "2026-09-06T19:48:05.167742+00:00",
+      "body_sha256": "56d2209566c21f6238fa5e159ad77a101564741d25f335d65641db425f2580e3",
+      "record_sha256": "453d6f9f2cb439c4738e2e4dec7cc070d321b574886367d06621a63da9dac780"
+    },
+    {
+      "id": 124068,
+      "kind": "e024_dataset_preparation_failed",
+      "available_at": "2026-09-06T19:48:47.783617+00:00",
+      "body_sha256": "6c8ab7324ee557a8b51d2cfc8740eca1431da5fa698799581f8bbe0ee885d5cf",
+      "record_sha256": "69f1f19a3ca85a2a23c3d63dabecab63b544fbca3f596b8ac4c87c8d0a8e03fd"
+    },
+    {
+      "id": 125267,
+      "kind": "e024_expiration_diagnostic_protocol",
+      "available_at": "2026-09-06T19:51:11.917956+00:00",
+      "body_sha256": "436c3a3bc29da97f5acc96cae0906116f2286f247a4eea569ae0de153d1067a1",
+      "record_sha256": "b93a77135f92c934f61d83c5a2d4cd6350df65f64da51c578550ec262a8f33d9"
+    },
+    {
+      "id": 125381,
+      "kind": "e024_expiration_diagnostic_report",
+      "available_at": "2026-09-06T19:51:25.979149+00:00",
+      "body_sha256": "d2dbc7cac119aede8ab8e3f09a11fcd71a04e24ce89786999f6a0f13d30db1d4",
+      "record_sha256": "d5f0f4e5a576e516c03fffaf5aab3c094c88a4ffa45627e51d18c5e166385446"
+    }
+  ],
+  "candle_bodies_read": 0,
+  "strategy_scores_computed": 0,
+  "network_requests": 0,
+  "full_diagnostic_json_sha256": "4820f782e1328c0ec708c94693d87c66aea15b8183d6472b00b801a33f05bad9",
+  "interpretation": "471 empty strings were already supported. Four pinned literal No strings are categorical corroboration of official no results, not numeric observed temperatures. V1failure remains archived; v2has no scores or registration at this export."
+}

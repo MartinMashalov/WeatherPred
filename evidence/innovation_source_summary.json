@@ -1,0 +1,627 @@
+{
+  "awc": {
+    "COR_reports": 0,
+    "NIL_reports": 0,
+    "duplicate_identity_groups_first": 0,
+    "fields": [
+      "altim",
+      "clouds",
+      "cover",
+      "dewp",
+      "elev",
+      "fltCat",
+      "icaoId",
+      "lat",
+      "lon",
+      "maxT",
+      "metarType",
+      "minT",
+      "name",
+      "obsTime",
+      "pcp6hr",
+      "precip",
+      "presTend",
+      "qcField",
+      "rawOb",
+      "receiptTime",
+      "reportTime",
+      "slp",
+      "temp",
+      "visib",
+      "wdir",
+      "wgst",
+      "wspd",
+      "wxString"
+    ],
+    "first_project_receipt": "2026-09-06T19:15:25.707542+00:00",
+    "first_source": 111609,
+    "latest_observation_age_at_project_receipt_seconds": 205.70754194259644,
+    "latest_observation_iso": "2026-09-06T21:12:00+02:00",
+    "metar_types": {
+      "METAR": 39,
+      "SPECI": 30
+    },
+    "missing_station_ids": [
+      "K2IS",
+      "KIMM"
+    ],
+    "negative_provider_lags": 0,
+    "null_counts": {
+      "clouds": 3,
+      "obsTime": 0,
+      "receiptTime": 0,
+      "reportTime": 0,
+      "temp": 3,
+      "wdir": 8,
+      "wspd": 8
+    },
+    "provider_receipt_lag_seconds_min_median_max": [
+      69.28999996185303,
+      221.01600003242493,
+      1026.8180000782013
+    ],
+    "qc_field_values": {
+      "0": 2,
+      "12": 22,
+      "14": 3,
+      "4": 17,
+      "6": 25
+    },
+    "repeat_changed_raw_message_groups": 0,
+    "repeat_shared_identity_groups": 68,
+    "repeat_source": 111836,
+    "rows_first": 69,
+    "rows_repeat": 70,
+    "stations_with_reports_first": 15
+  },
+  "first_started_at": "2026-09-06T19:14:10.711795+00:00",
+  "http_status_counts": {
+    "200": 17,
+    "401": 1
+  },
+  "index_samples": [
+    {
+      "available_at": "2026-09-06T19:14:11.114970+00:00",
+      "consecutive_event_gaps_seconds": [
+        60.0,
+        60.0,
+        60.0,
+        120.0,
+        60.0
+      ],
+      "event_max_ms": 1788721860000,
+      "event_min_ms": 1788721500000,
+      "point_count": 6,
+      "project_receipt_minus_latest_event_seconds": 191.11496996879578,
+      "provider_lag_min_max_seconds": [
+        146.73799991607666,
+        182.29900002479553
+      ],
+      "record_id": 111433,
+      "source_codes": {
+        "ok": 20,
+        "pending": 10
+      },
+      "station_keys": [
+        "code",
+        "received_at_ms",
+        "source",
+        "station_id",
+        "temp_f"
+      ],
+      "status_counts": {
+        "incomplete": 2,
+        "normal": 4
+      }
+    },
+    {
+      "available_at": "2026-09-06T19:17:00.717455+00:00",
+      "consecutive_event_gaps_seconds": [
+        60.0,
+        60.0,
+        60.0,
+        120.0,
+        60.0
+      ],
+      "event_max_ms": 1788722040000,
+      "event_min_ms": 1788721680000,
+      "point_count": 6,
+      "project_receipt_minus_latest_event_seconds": 180.71745491027832,
+      "provider_lag_min_max_seconds": [
+        134.76500010490417,
+        182.29900002479553
+      ],
+      "record_id": 111833,
+      "source_codes": {
+        "ok": 20,
+        "pending": 10
+      },
+      "station_keys": [
+        "code",
+        "received_at_ms",
+        "source",
+        "station_id",
+        "temp_f"
+      ],
+      "status_counts": {
+        "incomplete": 2,
+        "normal": 4
+      }
+    }
+  ],
+  "last_started_at": "2026-09-06T19:17:01.283817+00:00",
+  "minimum_actual_start_spacing_seconds": 1.0001640319824219,
+  "nws": {
+    "latest_observation": "2026-09-06T19:00:00+00:00",
+    "project_receipt": "2026-09-06T19:16:57.458618+00:00",
+    "provider_receipt_field_present": false,
+    "raw_message_empty": 9,
+    "record_id": 111823,
+    "rows": 10,
+    "temperature_quality_codes": {
+      "V": 10
+    }
+  },
+  "physical_gets": 18,
+  "protocol_record_id": 111428,
+  "receipts_verified": 18,
+  "request_manifest_sha256": "24ae954c2cc1c2640034a230018d5e32fdcfd6c378202d9f91998a859937f687",
+  "source_manifest": [
+    {
+      "available_at": "2026-09-06T19:14:11.114970+00:00",
+      "body_sha256": "bb15c55ebcc4181df35137571f19749e43e6509ab80f3304b6109ef918f03b67",
+      "key": "miami-live-schema",
+      "record_id": 111433,
+      "status": 200,
+      "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami?last_sec=600&detailed=true"
+    },
+    {
+      "available_at": "2026-09-06T19:14:11.828431+00:00",
+      "body_sha256": "148e0b48624be6820f43d4752c9f3c0299802eb6e1302413783e0d07565c4e16",
+      "key": "miami-calibration-schema",
+      "record_id": 111435,
+      "status": 200,
+      "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami/calibrations"
+    },
+    {
+      "available_at": "2026-09-06T19:14:12.975331+00:00",
+      "body_sha256": "f13e038f7a6f920f13d6781df7326d6c818044136f89646a2ccecf8dda36771a",
+      "key": "awc-api-docs",
+      "record_id": 111438,
+      "status": 200,
+      "url": "https://aviationweather.gov/data/api/"
+    },
+    {
+      "available_at": "2026-09-06T19:14:14.083924+00:00",
+      "body_sha256": "fc12b0c8b88a1192c2a8a1a5a3f845fc5ce481a7bea6d919f7e8d8471b7766f4",
+      "key": "synoptic-metadata-docs",
+      "record_id": 111443,
+      "status": 200,
+      "url": "https://docs.synopticdata.com/services/metadata"
+    },
+    {
+      "available_at": "2026-09-06T19:14:15.484827+00:00",
+      "body_sha256": "521e42c3a023041fd45480965c8b3a0b65402d689f2b6b7dfa703f12780b4e5b",
+      "key": "florida-station-directory",
+      "record_id": 111446,
+      "status": 200,
+      "url": "https://mesonet.agron.iastate.edu/geojson/network/FL_ASOS.geojson"
+    },
+    {
+      "available_at": "2026-09-06T19:15:23.968892+00:00",
+      "body_sha256": "d7a6f291187d57c5d4d8a4d59277115a4eecfe79afcec37d97548031fbf0c25c",
+      "key": "awc-openapi",
+      "record_id": 111602,
+      "status": 200,
+      "url": "https://aviationweather.gov/data/schema/openapi.yaml"
+    },
+    {
+      "available_at": "2026-09-06T19:15:24.754850+00:00",
+      "body_sha256": "913d78cf95de1272f9e15a412ca84c955d2d85447bf75079553f07bfeb81829a",
+      "key": "awc-nearby-stationinfo",
+      "record_id": 111606,
+      "status": 200,
+      "url": "https://aviationweather.gov/api/data/stationinfo?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json"
+    },
+    {
+      "available_at": "2026-09-06T19:15:25.707542+00:00",
+      "body_sha256": "44f1e9fcd62043df6da5efaf978fbf678d262bdae724335bd434d40373e3de27",
+      "key": "awc-nearby-metar-2h",
+      "record_id": 111609,
+      "status": 200,
+      "url": "https://aviationweather.gov/api/data/metar?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json&hours=2"
+    },
+    {
+      "available_at": "2026-09-06T19:15:26.768469+00:00",
+      "body_sha256": "d109d4f63ce07b1f78059b209988b1eb2b7ee515165b1489eedcafea6413c5e7",
+      "key": "synoptic-latency-docs",
+      "record_id": 111612,
+      "status": 200,
+      "url": "https://docs.synopticdata.com/services/latency"
+    },
+    {
+      "available_at": "2026-09-06T19:15:28.014564+00:00",
+      "body_sha256": "7a3578da72c9257c46acd8c1f3c5197e45e04c6f1a2e9b2a66a9f5f45157e3c1",
+      "key": "synoptic-anonymous-metadata",
+      "record_id": 111616,
+      "status": 401,
+      "url": "https://api.synopticdata.com/v2/stations/metadata?stid=KMIA1M%2CKOPF1M%2CKFLL1M%2CKFXE1M%2CKPMP1M"
+    },
+    {
+      "available_at": "2026-09-06T19:15:29.096316+00:00",
+      "body_sha256": "832f5caff6f6e2f113e51b3d2ca8cd6fdbce09d71d8e9bbea534030f1de7c222",
+      "key": "iem-asos-docs",
+      "record_id": 111620,
+      "status": 200,
+      "url": "https://mesonet.agron.iastate.edu/request/download.phtml"
+    },
+    {
+      "available_at": "2026-09-06T19:15:30.351998+00:00",
+      "body_sha256": "d9e15cf7f10482b4c7578d035d33af632092afa6353c5cb163fdd6ef43385005",
+      "key": "ncei-minute-directory",
+      "record_id": 111623,
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/"
+    },
+    {
+      "available_at": "2026-09-06T19:16:56.674994+00:00",
+      "body_sha256": "6e147aa56472c62d5dbc70832a8a488cacc8b591835d4c3b23f4f6c714f8713d",
+      "key": "nws-api-docs",
+      "record_id": 111820,
+      "status": 200,
+      "url": "https://www.weather.gov/documentation/services-web-api"
+    },
+    {
+      "available_at": "2026-09-06T19:16:57.458618+00:00",
+      "body_sha256": "bd62131c0c2168c0b52bfbe3f3c2cfd8fdfe3f10e06413e5125a8dc37ea43aa3",
+      "key": "nws-miami-observations",
+      "record_id": 111823,
+      "status": 200,
+      "url": "https://api.weather.gov/stations/KMIA/observations?limit=10"
+    },
+    {
+      "available_at": "2026-09-06T19:16:58.985134+00:00",
+      "body_sha256": "f036524c578887358a06641f560a0a720e570ddec3fb141fc8234d19c75d39ce",
+      "key": "iem-one-minute-docs",
+      "record_id": 111827,
+      "status": 200,
+      "url": "https://mesonet.agron.iastate.edu/request/asos/1min.phtml"
+    },
+    {
+      "available_at": "2026-09-06T19:16:59.658927+00:00",
+      "body_sha256": "14dc778ce76e09edcc0a1db7446b499d7d1e2679f7364d53e7923f57b1a2e9a0",
+      "key": "ncei-minute-readme",
+      "record_id": 111830,
+      "status": 200,
+      "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/readme.txt"
+    },
+    {
+      "available_at": "2026-09-06T19:17:00.717455+00:00",
+      "body_sha256": "54030649c43768c747c0b9edee17f0692e7c724bd5610afaa4ed83cd97eb1d4d",
+      "key": "miami-live-repeat",
+      "record_id": 111833,
+      "status": 200,
+      "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami?last_sec=600&detailed=true"
+    },
+    {
+      "available_at": "2026-09-06T19:17:01.699001+00:00",
+      "body_sha256": "ca7e7e584c31795066250431d89142f52ff5d614edb91c1fd1655b55f75b3e07",
+      "key": "awc-nearby-metar-repeat",
+      "record_id": 111836,
+      "status": 200,
+      "url": "https://aviationweather.gov/api/data/metar?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json&hours=2"
+    }
+  ],
+  "stations": [
+    {
+      "distance_km": 0.0,
+      "distinct_obs_times": 3,
+      "id": "KMIA",
+      "latitude": 25.78806,
+      "longitude": -80.31692,
+      "name": "Miami Intl",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        20.0,
+        40.0
+      ],
+      "reports_in_first_2h_response": 3
+    },
+    {
+      "distance_km": 14.0,
+      "distinct_obs_times": 10,
+      "id": "KOPF",
+      "latitude": 25.91017,
+      "longitude": -80.28283,
+      "name": "Miami/Opa Locka Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        7.0,
+        19.0,
+        7.0,
+        8.0,
+        10.0,
+        7.0,
+        2.0,
+        7.0,
+        5.0
+      ],
+      "reports_in_first_2h_response": 10
+    },
+    {
+      "distance_km": 20.049,
+      "distinct_obs_times": 3,
+      "id": "KTMB",
+      "latitude": 25.64227,
+      "longitude": -80.43468,
+      "name": "Miami Exec Arpt",
+      "null_clouds": 3,
+      "null_temperature": 3,
+      "null_wind_direction": 3,
+      "null_wind_speed": 3,
+      "observation_gap_minutes": [
+        10.0,
+        16.0
+      ],
+      "reports_in_first_2h_response": 3
+    },
+    {
+      "distance_km": 24.708,
+      "distinct_obs_times": 10,
+      "id": "KHWO",
+      "latitude": 25.99956,
+      "longitude": -80.24119,
+      "name": "Hollywood/North Perry Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        14.0,
+        25.0,
+        12.0,
+        2.0,
+        4.0,
+        3.0,
+        3.0,
+        4.0,
+        9.0
+      ],
+      "reports_in_first_2h_response": 10
+    },
+    {
+      "distance_km": 33.722,
+      "distinct_obs_times": 7,
+      "id": "KHST",
+      "latitude": 25.49,
+      "longitude": -80.379,
+      "name": "Homestead AFB",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        18.0,
+        1.0,
+        28.0,
+        1.0,
+        15.0,
+        16.0
+      ],
+      "reports_in_first_2h_response": 7
+    },
+    {
+      "distance_km": 35.831,
+      "distinct_obs_times": 4,
+      "id": "KFLL",
+      "latitude": 26.07872,
+      "longitude": -80.16223,
+      "name": "Ft Lauderdale-Hollywood Intl",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        43.0,
+        17.0,
+        8.0
+      ],
+      "reports_in_first_2h_response": 4
+    },
+    {
+      "distance_km": 47.772,
+      "distinct_obs_times": 3,
+      "id": "KFXE",
+      "latitude": 26.19904,
+      "longitude": -80.17763,
+      "name": "Ft Lauderdale Exec",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        44.0,
+        16.0
+      ],
+      "reports_in_first_2h_response": 3
+    },
+    {
+      "distance_km": 51.978,
+      "distinct_obs_times": 5,
+      "id": "KK70",
+      "latitude": 25.322,
+      "longitude": -80.277,
+      "name": "Key Largo/Ocean Reef Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 5,
+      "null_wind_speed": 5,
+      "observation_gap_minutes": [
+        15.0,
+        20.0,
+        25.0,
+        15.0
+      ],
+      "reports_in_first_2h_response": 5
+    },
+    {
+      "distance_km": 54.957,
+      "distinct_obs_times": 4,
+      "id": "KPMP",
+      "latitude": 26.24636,
+      "longitude": -80.11104,
+      "name": "Pompano Beach Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        60.0,
+        9.0,
+        10.0
+      ],
+      "reports_in_first_2h_response": 4
+    },
+    {
+      "distance_km": 69.003,
+      "distinct_obs_times": 2,
+      "id": "KBCT",
+      "latitude": 26.379,
+      "longitude": -80.106,
+      "name": "Boca Raton Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        60.0
+      ],
+      "reports_in_first_2h_response": 2
+    },
+    {
+      "distance_km": 92.398,
+      "distinct_obs_times": 5,
+      "id": "KLNA",
+      "latitude": 26.5925,
+      "longitude": -80.08484,
+      "name": "Lantana/Palm Beach Cnty",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "reports_in_first_2h_response": 5
+    },
+    {
+      "distance_km": 102.084,
+      "distinct_obs_times": 2,
+      "id": "KDJT",
+      "latitude": 26.68511,
+      "longitude": -80.09918,
+      "name": "Trump Intl",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        60.0
+      ],
+      "reports_in_first_2h_response": 2
+    },
+    {
+      "distance_km": 117.544,
+      "distinct_obs_times": 6,
+      "id": "KF45",
+      "latitude": 26.84187,
+      "longitude": -80.22396,
+      "name": "North Palm Beach Cnty",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        19.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "reports_in_first_2h_response": 6
+    },
+    {
+      "distance_km": 128.71,
+      "distinct_obs_times": 0,
+      "id": "K2IS",
+      "latitude": 26.73905,
+      "longitude": -81.05279,
+      "name": "Clewistown/Airglades Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [],
+      "reports_in_first_2h_response": 0
+    },
+    {
+      "distance_km": 130.308,
+      "distinct_obs_times": 0,
+      "id": "KIMM",
+      "latitude": 26.43208,
+      "longitude": -81.40726,
+      "name": "Immokalee Rgnl",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [],
+      "reports_in_first_2h_response": 0
+    },
+    {
+      "distance_km": 137.762,
+      "distinct_obs_times": 3,
+      "id": "KMKY",
+      "latitude": 25.999,
+      "longitude": -81.674,
+      "name": "Marco Island Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        34.0,
+        60.0
+      ],
+      "reports_in_first_2h_response": 3
+    },
+    {
+      "distance_km": 139.072,
+      "distinct_obs_times": 2,
+      "id": "KMTH",
+      "latitude": 24.72625,
+      "longitude": -81.04772,
+      "name": "Marathon Arpt",
+      "null_clouds": 0,
+      "null_temperature": 0,
+      "null_wind_direction": 0,
+      "null_wind_speed": 0,
+      "observation_gap_minutes": [
+        60.0
+      ],
+      "reports_in_first_2h_response": 2
+    }
+  ],
+  "total_response_bytes": 603672,
+  "trading_scores": 0,
+  "weather_scores": 0
+}

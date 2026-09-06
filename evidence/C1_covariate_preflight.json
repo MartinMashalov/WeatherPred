@@ -1,0 +1,47 @@
+{
+  "kind": "C1-synthetic-preflight-checks-v1",
+  "recorded_at": "2026-09-06T20:17:30.081Z",
+  "synthetic_only": true,
+  "forecast_calls": 0,
+  "model_instances": 0,
+  "weight_files_read": 0,
+  "weather_values_read": 0,
+  "network_calls": 0,
+  "original_current_cycle_c1": "blocked by single-observation normalization scale 1e-5",
+  "selected_remedy": "B observed_then_guided_temperature_f; unregistered draft only",
+  "commands": [
+    "uv run pytest -q tests/test_chronos_covariate_preflight.py",
+    "tmp/forecast-model-env/bin/python -m research.probes.chronos_covariate_checks -v",
+    "uv run ruff check research/probes/chronos_covariate_preflight.py research/probes/chronos_covariate_checks.py tests/test_chronos_covariate_preflight.py"
+  ],
+  "results": [
+    {
+      "chunk_id": "f2adc0",
+      "wall_time_seconds": 0.167639375,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "....                                                                     [100%]\n4 passed in 0.09s\n"
+    },
+    {
+      "chunk_id": "ecbaed",
+      "wall_time_seconds": 2.670346625,
+      "exit_code": 0,
+      "original_token_count": 452,
+      "output": "test_append_future_origin_preserves_earlier_arrays (__main__.CovariatePreflightTests.test_append_future_origin_preserves_earlier_arrays) ... ok\ntest_batch_schema_cannot_mix_fallback_and_covariate_task (__main__.CovariatePreflightTests.test_batch_schema_cannot_mix_fallback_and_covariate_task) ... ok\ntest_dataset_has_no_future_target_and_masks_target_row (__main__.CovariatePreflightTests.test_dataset_has_no_future_target_and_masks_target_row) ... ok\ntest_exact_installed_group_mask_blocks_other_origin (__main__.CovariatePreflightTests.test_exact_installed_group_mask_blocks_other_origin) ... ok\ntest_known_future_key_requires_past_key (__main__.CovariatePreflightTests.test_known_future_key_requires_past_key) ... ok\ntest_missing_last_observation_does_not_shift_grid (__main__.CovariatePreflightTests.test_missing_last_observation_does_not_shift_grid) ... ok\ntest_missing_required_guidance_retains_baseline (__main__.CovariatePreflightTests.test_missing_required_guidance_retains_baseline) ... ok\ntest_no_label_key_accepted_by_installed_preprocessor (__main__.CovariatePreflightTests.test_no_label_key_accepted_by_installed_preprocessor) ... ok\ntest_observed_then_guided_retains_target_scale (__main__.CovariatePreflightTests.test_observed_then_guided_retains_target_scale) ... ok\ntest_original_sparse_input_accepted_but_scale_degenerate (__main__.CovariatePreflightTests.test_original_sparse_input_accepted_but_scale_degenerate) ... ok\ntest_original_steps_and_leads (__main__.CovariatePreflightTests.test_original_steps_and_leads) ... ok\ntest_station_cycle_and_publication_gates_precede_value_reads (__main__.CovariatePreflightTests.test_station_cycle_and_publication_gates_precede_value_reads) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "chunk_id": "a4397c",
+      "wall_time_seconds": 0.000003375,
+      "exit_code": 0,
+      "original_token_count": 5,
+      "output": "All checks passed!\n"
+    }
+  ],
+  "source_design": "config/c1_nbh_covariate_design.json",
+  "design_sha256": "8779e79dc26362c0678002101068641ce780702d79cf886b76c9611aaf3f97ca",
+  "limitations": [
+    "Preprocessing and mask invariance, not model-output invariance",
+    "No extraction registration or real NBH trajectory read",
+    "All twelve package-specific assertions retained outside base-only test collection"
+  ]
+}

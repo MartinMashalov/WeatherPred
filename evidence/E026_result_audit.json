@@ -1,0 +1,71 @@
+{
+  "record_id": 139319,
+  "actual_available_at": "2026-09-06T20:08:33.029904+00:00",
+  "body_sha256": "0203eae39de3c6823307d992b933b898386de42872b882104c3f5dbe8958f6b4",
+  "record_sha256": "365d6a158b8f4145dc7edfebc1aae4bd477e912bfa31b0cb3d0cca99a3f3e11d",
+  "payload": {
+    "audit_protocol_id": 135057,
+    "audited_report_body_sha256": "fe50d43093eeea1288d4fa451d1c0025f0839c70adb6abce0a1175399b64e7e6",
+    "audited_report_id": 129711,
+    "audited_run_id": 117527,
+    "bootstrap_independently_replayed": true,
+    "experiment": "E026-independent-result-audit-v1",
+    "historical_public_availability_verified": false,
+    "model_fits": 0,
+    "model_inferences": 0,
+    "network_requests": 0,
+    "objects_verified": 498,
+    "profitability_proven": false,
+    "raw_sources_verified": 6375,
+    "result": {
+      "audited_comparisons": 8,
+      "audited_models": 9,
+      "bootstrap_indices_sha256": "6f29c122c185ddbc9a5fbb6f24c42cc235b3814746848f1140059619588bb991",
+      "bootstrap_resampled_means_sha256": "e2446ad2f8d411dee91ad16b17b89715cf7aac3095288428eb01661e1c1bbfba",
+      "bootstrap_status": "descriptive_development_intervals",
+      "case_ids_sha256": "3d29b095f56b339c3c061db610e98dff1850eee0112abdfdc6413c82d239dab2",
+      "classification": "full_original_panel",
+      "common_case_count": 9870,
+      "common_counts_by_horizon": {
+        "1": 3291,
+        "3": 3291,
+        "6": 3288
+      },
+      "common_counts_by_split": {
+        "calibration": 3271,
+        "development": 6599
+      },
+      "common_counts_by_station": {
+        "KATL": 495,
+        "KAUS": 488,
+        "KBOS": 478,
+        "KDCA": 495,
+        "KDEN": 485,
+        "KDFW": 495,
+        "KIAH": 495,
+        "KLAS": 494,
+        "KLAX": 495,
+        "KMIA": 495,
+        "KMSP": 498,
+        "KMSY": 495,
+        "KNYC": 498,
+        "KOKC": 495,
+        "KORD": 495,
+        "KPHL": 495,
+        "KPHX": 495,
+        "KSAT": 498,
+        "KSEA": 491,
+        "KSFO": 495
+      },
+      "full_panel_complete": true,
+      "maximum_arithmetic_error": 1.4210854715202004e-14,
+      "missing": [],
+      "original_case_count": 9870,
+      "original_e022_models_reproduced": 8,
+      "status": "all_registered_arithmetic_reproduced"
+    },
+    "shared_helpers": "E026 original_sources/read_record/validate_acquisition/validate_bindings validate raw lineage and card bytes; independent E022 reconstruct_scores/compare_scores provide score arithmetic. Bootstrap implementation is separate.",
+    "trading_actions": 0,
+    "untouched_validation": false
+  }
+}

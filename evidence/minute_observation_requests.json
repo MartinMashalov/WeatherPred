@@ -1,0 +1,286 @@
+{
+  "driver_sha256": "8ccc573eb1d2bd8d8ca025a680aed4d358ce016ff5e25a262eac6edf41c72ed8",
+  "max_physical_gets": 12,
+  "measurement_bodies_authorized": false,
+  "minimum_spacing_seconds": 1,
+  "physical_gets": [
+    {
+      "request_started_at": "2026-09-06T19:27:12.714747+00:00",
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos1min.py?help"
+    },
+    {
+      "request_started_at": "2026-09-06T19:27:13.718914+00:00",
+      "url": "https://mesonet.agron.iastate.edu/geojson/network/ASOS1MIN.geojson"
+    },
+    {
+      "request_started_at": "2026-09-06T19:27:14.768064+00:00",
+      "url": "https://mesonet.agron.iastate.edu/ASOS/"
+    },
+    {
+      "request_started_at": "2026-09-06T19:27:15.768916+00:00",
+      "url": "https://madis.ncep.noaa.gov/madis_OMO.shtml"
+    },
+    {
+      "request_started_at": "2026-09-06T19:27:21.755627+00:00",
+      "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/td6406.txt"
+    },
+    {
+      "request_started_at": "2026-09-06T19:28:15.578059+00:00",
+      "url": "https://raw.githubusercontent.com/akrherz/iem/main/htdocs/cgi-bin/request/asos1min.py"
+    }
+  ],
+  "protected_data": false,
+  "protocol_record_id": 113759,
+  "results": [
+    {
+      "bytes": 25903,
+      "key": "iem-minute-backend-help",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:27:13.281727+00:00",
+          "body_sha256": "905e74cf49b5c97b7d55394e0de53605f8360ae081286058768ff9ba433f5690",
+          "id": 113778,
+          "key": "iem-minute-backend-help",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:27:13 GMT",
+              "keep-alive": "timeout=5, max=100",
+              "server": "Apache/2.4.62 (AlmaLinux) OpenSSL/3.5.5 mod_fcgid/2.3.9 mod_wsgi/6.0.4 Python/3.14",
+              "transfer-encoding": "chunked",
+              "x-iem-serverid": "iemvs37-dc.agron.iastate.edu"
+            },
+            "received_at": "2026-09-06T19:27:13.281727+00:00",
+            "request_started_at": "2026-09-06T19:27:11.709788+00:00",
+            "status": 200,
+            "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos1min.py?help"
+          }
+        }
+      ],
+      "record_id": 113778,
+      "requested_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos1min.py?help",
+      "status": 200
+    },
+    {
+      "bytes": 518534,
+      "key": "iem-minute-station-directory",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:27:14.764889+00:00",
+          "body_sha256": "255a7c2b84edc10491005157d80d7471b0baa62b8cd911f8e7f31fbb92a48e58",
+          "id": 113795,
+          "key": "iem-minute-station-directory",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-type": "application/vnd.geo+json",
+              "date": "Sun, 06 Sep 2026 19:27:13 GMT",
+              "keep-alive": "timeout=5, max=99",
+              "server": "Apache/2.4.62 (AlmaLinux) OpenSSL/3.5.5 mod_fcgid/2.3.9 mod_wsgi/6.0.4 Python/3.14",
+              "transfer-encoding": "chunked",
+              "x-iem-serverid": "iemvs37-dc.agron.iastate.edu"
+            },
+            "received_at": "2026-09-06T19:27:14.764889+00:00",
+            "request_started_at": "2026-09-06T19:27:13.283346+00:00",
+            "status": 200,
+            "url": "https://mesonet.agron.iastate.edu/geojson/network/ASOS1MIN.geojson"
+          }
+        }
+      ],
+      "record_id": 113795,
+      "requested_url": "https://mesonet.agron.iastate.edu/geojson/network/ASOS1MIN.geojson",
+      "status": 200
+    },
+    {
+      "bytes": 34955,
+      "key": "iem-asos-overview",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:27:14.885121+00:00",
+          "body_sha256": "952d563d74394ff94e116df4a7ef2832cc5e9f954f7ed7dd917c05e1b07ceaed",
+          "id": 113797,
+          "key": "iem-asos-overview",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:27:14 GMT",
+              "keep-alive": "timeout=5, max=98",
+              "server": "Apache/2.4.62 (AlmaLinux) OpenSSL/3.5.5 mod_fcgid/2.3.9 mod_wsgi/6.0.4 Python/3.14",
+              "transfer-encoding": "chunked",
+              "x-iem-serverid": "iemvs37-dc.agron.iastate.edu",
+              "x-powered-by": "PHP/8.4.25"
+            },
+            "received_at": "2026-09-06T19:27:14.885121+00:00",
+            "request_started_at": "2026-09-06T19:27:14.768042+00:00",
+            "status": 200,
+            "url": "https://mesonet.agron.iastate.edu/ASOS/"
+          }
+        }
+      ],
+      "record_id": 113797,
+      "requested_url": "https://mesonet.agron.iastate.edu/ASOS/",
+      "status": 200
+    },
+    {
+      "bytes": 34002,
+      "key": "noaa-madis-one-minute-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:27:21.754261+00:00",
+          "body_sha256": "53a50567893b20ea93e0375e4764fc5f04424db74c63d2bfe32056e4aa98d78d",
+          "id": 113875,
+          "key": "noaa-madis-one-minute-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "cache-control": "max-age=0, no-cache, no-store",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "8609",
+              "content-security-policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' *;",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:27:21 GMT",
+              "expires": "Sun, 06 Sep 2026 19:27:21 GMT",
+              "pragma": "no-cache",
+              "referrer-policy": "no-referrer",
+              "server-timing": "cdn-cache; desc=MISS, edge; dur=188, origin; dur=5295, ak_p; desc=\"1788722836055_390659998_288701356_548345_13108_14_198_-\";dur=1",
+              "strict-transport-security": "max-age=31536000 ; includeSubDomains ; preload",
+              "vary": "Accept-Encoding",
+              "x-akamai-transformed": "9 6767 0 pmb=mRUM,1",
+              "x-content-type-options": "nosniff",
+              "x-frame-options": "SAMEORIGIN",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:27:21.754261+00:00",
+            "request_started_at": "2026-09-06T19:27:15.768874+00:00",
+            "status": 200,
+            "url": "https://madis.ncep.noaa.gov/madis_OMO.shtml"
+          }
+        }
+      ],
+      "record_id": 113875,
+      "requested_url": "https://madis.ncep.noaa.gov/madis_OMO.shtml",
+      "status": 200
+    },
+    {
+      "bytes": 7225,
+      "key": "ncei-page2-format",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:27:22.524440+00:00",
+          "body_sha256": "1612c4847acecb2f53e7cc232cfddce91ddd174f00278e4d29a694e556afd608",
+          "id": 113884,
+          "key": "ncei-page2-format",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-headers": "X-Requested-With, Content-Type",
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-length": "7225",
+              "content-type": "text/plain",
+              "date": "Sun, 06 Sep 2026 19:27:22 GMT",
+              "etag": "\"1c39-4fc87a7bfec00\"",
+              "keep-alive": "timeout=3, max=100",
+              "last-modified": "Mon, 23 Jun 2014 21:37:52 GMT",
+              "server": "Apache",
+              "strict-transport-security": "max-age=31536000"
+            },
+            "received_at": "2026-09-06T19:27:22.524440+00:00",
+            "request_started_at": "2026-09-06T19:27:21.755614+00:00",
+            "status": 200,
+            "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/td6406.txt"
+          }
+        }
+      ],
+      "record_id": 113884,
+      "requested_url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/td6406.txt",
+      "status": 200
+    },
+    {
+      "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://raw.githubusercontent.com/akrherz/iem/main/htdocs/cgi-bin/request/asos1min.py'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+      "key": "iem-backend-source",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:28:15.811262+00:00",
+          "body_sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+          "id": 114473,
+          "key": "iem-backend-source",
+          "kind": "http_error",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-origin": "*",
+              "connection": "keep-alive",
+              "content-length": "14",
+              "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-resource-policy": "cross-origin",
+              "date": "Sun, 06 Sep 2026 19:28:15 GMT",
+              "expires": "Sun, 06 Sep 2026 19:33:15 GMT",
+              "source-age": "0",
+              "strict-transport-security": "max-age=31536000",
+              "vary": "Authorization,Accept-Encoding",
+              "via": "1.1 varnish",
+              "x-cache": "MISS",
+              "x-cache-hits": "0",
+              "x-content-type-options": "nosniff",
+              "x-fastly-request-id": "f63ed621910ce8f830d10bb3fd342f86003188ac",
+              "x-frame-options": "deny",
+              "x-github-edge-region": "fra",
+              "x-github-request-id": "B896:25C0DB:3084895:352D358:6A9DBECF",
+              "x-served-by": "cache-rtm-ehrd2290050-RTM",
+              "x-timer": "S1788722896.649157,VS0,VE160",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:28:15.811262+00:00",
+            "request_started_at": "2026-09-06T19:28:14.573041+00:00",
+            "status": 404,
+            "url": "https://raw.githubusercontent.com/akrherz/iem/main/htdocs/cgi-bin/request/asos1min.py"
+          }
+        }
+      ],
+      "requested_url": "https://raw.githubusercontent.com/akrherz/iem/main/htdocs/cgi-bin/request/asos1min.py"
+    }
+  ],
+  "round": "minute-observation-metadata-20260906",
+  "routes": {
+    "iem-asos-overview": "https://mesonet.agron.iastate.edu/ASOS/",
+    "iem-backend-source": "https://raw.githubusercontent.com/akrherz/iem/main/htdocs/cgi-bin/request/asos1min.py",
+    "iem-minute-backend-help": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos1min.py?help",
+    "iem-minute-processing-source": "https://raw.githubusercontent.com/akrherz/iem/main/scripts/asos/one_minute.py",
+    "iem-minute-station-directory": "https://mesonet.agron.iastate.edu/geojson/network/ASOS1MIN.geojson",
+    "ncei-page2-format": "https://www.ncei.noaa.gov/pub/data/asos-onemin/td6406.txt",
+    "noaa-madis-one-minute-docs": "https://madis.ncep.noaa.gov/madis_OMO.shtml"
+  },
+  "strategy_scores": 0,
+  "weather_scores": 0
+}

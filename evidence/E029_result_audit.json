@@ -1,0 +1,71 @@
+{
+  "record_id": 151341,
+  "actual_available_at": "2026-09-06T20:14:52.971435+00:00",
+  "body_sha256": "e346913a9282ce3c3a9b76187d43227a43bb9ad570d3e834bd6f45eb4596d9bc",
+  "record_sha256": "97f79b760e162fe882ae9f721f2fafbeeabe16ab1be81d9c6cb3efbae69f7bca",
+  "payload": {
+    "audit_protocol_id": 148164,
+    "audited_report_body_sha256": "2b6365f23edc361e7dbc354ee2b848803541e462d67d5082eb7c9604d06f763d",
+    "audited_report_id": 131549,
+    "audited_run_id": 129863,
+    "experiment": "E029-independent-result-audit-v1",
+    "historical_public_availability_verified": false,
+    "hybrid_forecast_rows_checked": 29610,
+    "hybrid_numeric_values_checked": 414540,
+    "model_fits": 0,
+    "model_inferences": 0,
+    "network_requests": 0,
+    "objects_verified": 498,
+    "prediction_body_sha256": "211c35e0caa209e0436b8afea5636961079481f75b70ffc734c9944072629d0e",
+    "prediction_record_id": 131498,
+    "profitability_proven": false,
+    "raw_panel_sha256": "a06bbe4cf7fe9e3c9fa5910c649320965baf8085f1e3642c18e777f250f41302",
+    "raw_predictions_exact": true,
+    "raw_sources_verified": 6375,
+    "result": {
+      "audited_comparisons": 12,
+      "audited_models": 12,
+      "bootstrap_indices_sha256": "9393e3da5cdc19f5cb90604f74ba61a862d1c2b918e787ae3d3df1c9c2c10ae5",
+      "bootstrap_resampled_means_sha256": "304aac50d84620a0d703b5d92a5d83b770f291cd539eb722cf5d0e51d58c5ec6",
+      "bootstrap_status": "descriptive_development_intervals",
+      "common_counts_by_horizon": {
+        "1": 3291,
+        "3": 3291,
+        "6": 3288
+      },
+      "common_counts_by_split": {
+        "calibration": 3271,
+        "development": 6599
+      },
+      "common_counts_by_station": {
+        "KATL": 495,
+        "KAUS": 488,
+        "KBOS": 478,
+        "KDCA": 495,
+        "KDEN": 485,
+        "KDFW": 495,
+        "KIAH": 495,
+        "KLAS": 494,
+        "KLAX": 495,
+        "KMIA": 495,
+        "KMSP": 498,
+        "KMSY": 495,
+        "KNYC": 498,
+        "KOKC": 495,
+        "KORD": 495,
+        "KPHL": 495,
+        "KPHX": 495,
+        "KSAT": 498,
+        "KSEA": 491,
+        "KSFO": 495
+      },
+      "maximum_arithmetic_error": 1.4210854715202004e-14,
+      "original_models_reproduced": 9,
+      "status": "all_registered_arithmetic_reproduced"
+    },
+    "selected_weight": null,
+    "shared_helpers": "Shared E029 parents checks only design/acquisition lineage, E026 original_sources checks raw headers/times/cards, E022 reconstruct_scores performs independent arithmetic. E026 audit pin/tree utilities are reused. Raw blends use new NumPy broadcasting; bootstrap is separately replayed. No production prediction_panel, score_panel or shared_intervals calls.",
+    "trading_actions": 0,
+    "untouched_validation": false
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "max_physical_gets": 10,
+  "minimum_spacing_seconds": 1,
+  "physical_gets": [
+    {
+      "request_started_at": "2026-09-06T19:57:37.193128+00:00",
+      "url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/refs"
+    },
+    {
+      "request_started_at": "2026-09-06T19:57:38.198129+00:00",
+      "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/main/README.md"
+    },
+    {
+      "request_started_at": "2026-09-06T19:57:39.199273+00:00",
+      "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/get_model.py"
+    },
+    {
+      "request_started_at": "2026-09-06T19:57:40.201024+00:00",
+      "url": "https://raw.githubusercontent.com/google-research/timesfm/master/README.md"
+    },
+    {
+      "request_started_at": "2026-09-06T19:57:41.204549+00:00",
+      "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small/raw/main/README.md"
+    },
+    {
+      "request_started_at": "2026-09-06T19:58:59.758877+00:00",
+      "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680/config.json"
+    },
+    {
+      "request_started_at": "2026-09-06T19:59:00.763846+00:00",
+      "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/models/tinytimemixer/modeling_tinytimemixer.py"
+    },
+    {
+      "request_started_at": "2026-09-06T19:59:01.767908+00:00",
+      "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/models/tinytimemixer/configuration_tinytimemixer.py"
+    },
+    {
+      "request_started_at": "2026-09-06T19:59:48.650812+00:00",
+      "url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/revision/cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680"
+    },
+    {
+      "request_started_at": "2026-09-06T20:00:11.844391+00:00",
+      "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/time_series_preprocessor.py"
+    }
+  ],
+  "protected_data": false,
+  "protocol_record_id": 128523,
+  "requests": [
+    {
+      "key": "ttm-branches",
+      "url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/refs"
+    },
+    {
+      "key": "ttm-card",
+      "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/main/README.md"
+    },
+    {
+      "key": "ttm-model-selector",
+      "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/get_model.py"
+    },
+    {
+      "key": "timesfm-family",
+      "url": "https://raw.githubusercontent.com/google-research/timesfm/master/README.md"
+    },
+    {
+      "key": "moirai2-card",
+      "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small/raw/main/README.md"
+    }
+  ],
+  "results": [
+    {
+      "bytes": 2566,
+      "key": "ttm-branches",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:57:37.386650+00:00",
+          "body_sha256": "e4e5e7c69b46df45101eaaabc166acca6ad0f075a53f568a1d0d059e8dbe134e",
+          "id": 128534,
+          "key": "ttm-branches",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "https://huggingface.co",
+              "access-control-expose-headers": "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash",
+              "access-control-max-age": "86400",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-type": "application/json; charset=utf-8",
+              "cross-origin-opener-policy": "same-origin",
+              "date": "Sun, 06 Sep 2026 19:57:37 GMT",
+              "etag": "W/\"a06-0MaMRZcb3jRePDzkXZ5pW4DA7eo\"",
+              "ratelimit": "\"api\";r=499;t=250",
+              "ratelimit-policy": "\"fixed window\";\"api\";q=500;w=300",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin, Accept-Encoding",
+              "via": "1.1 9418ec5c8ad0c320eddf5061646e3d88.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "6N7IMAwz2gSlMhjYbLCWBZwqzLYoSsjgeyFQnmMAd3YpSAGuR1FouQ==",
+              "x-amz-cf-pop": "AMS58-P3",
+              "x-cache": "Miss from cloudfront",
+              "x-powered-by": "huggingface-moon",
+              "x-request-id": "Root=1-6a9dc5b1-227d15857417ad1332571eeb"
+            },
+            "received_at": "2026-09-06T19:57:37.386650+00:00",
+            "request_started_at": "2026-09-06T19:57:36.188283+00:00",
+            "status": 200,
+            "url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/refs"
+          }
+        }
+      ],
+      "record_id": 128534,
+      "requested_url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/refs",
+      "status": 200
+    },
+    {
+      "bytes": 18233,
+      "key": "ttm-card",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:57:38.313834+00:00",
+          "body_sha256": "e20234ff1a9eec054fd643d5ef7a4683857c8b24c7b00b466a9f55b6e22728ff",
+          "id": 128543,
+          "key": "ttm-card",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "https://huggingface.co",
+              "access-control-expose-headers": "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash",
+              "access-control-max-age": "86400",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "connection": "keep-alive",
+              "content-disposition": "inline; filename*=UTF-8''README.md; filename=\"README.md\";",
+              "content-encoding": "gzip",
+              "content-security-policy": "default-src 'none'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-opener-policy": "same-origin",
+              "date": "Sun, 06 Sep 2026 19:57:38 GMT",
+              "etag": "W/\"4c00db826f5c4d4d7ef741fba28b4d7251112551\"",
+              "ratelimit": "\"resolvers\";r=2999;t=249",
+              "ratelimit-policy": "\"fixed window\";\"resolvers\";q=3000;w=300",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin, Accept-Encoding",
+              "via": "1.1 9418ec5c8ad0c320eddf5061646e3d88.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "E49pmbxS4pPcGIIg_RANpAcmND3bDszGCUg_qV1KlQH1eUFsuaYrkQ==",
+              "x-amz-cf-pop": "AMS58-P3",
+              "x-cache": "Miss from cloudfront",
+              "x-powered-by": "huggingface-moon",
+              "x-repo-commit": "d6a79570cac0f33d526601cd3a0fc7c80a8f9a2f",
+              "x-request-id": "Root=1-6a9dc5b2-0ad1d64168ac8f3d05020b00"
+            },
+            "received_at": "2026-09-06T19:57:38.313834+00:00",
+            "request_started_at": "2026-09-06T19:57:37.389894+00:00",
+            "status": 200,
+            "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/main/README.md"
+          }
+        }
+      ],
+      "record_id": 128543,
+      "requested_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/main/README.md",
+      "status": 200
+    },
+    {
+      "bytes": 34975,
+      "key": "ttm-model-selector",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:57:39.475854+00:00",
+          "body_sha256": "9795817467036f05fe31117a6e46db665d06578419ff16b1a253a4f9909fdb89",
+          "id": 128553,
+          "key": "ttm-model-selector",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-origin": "*",
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "6936",
+              "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-resource-policy": "cross-origin",
+              "date": "Sun, 06 Sep 2026 19:57:39 GMT",
+              "etag": "W/\"d4fe5c49d740ef09acc1f003ee870c099735b547899bc2a0be0d85d7a24ae3f7\"",
+              "expires": "Sun, 06 Sep 2026 20:02:39 GMT",
+              "source-age": "0",
+              "strict-transport-security": "max-age=31536000",
+              "vary": "Authorization,Accept-Encoding",
+              "via": "1.1 varnish",
+              "x-cache": "MISS",
+              "x-cache-hits": "0",
+              "x-content-type-options": "nosniff",
+              "x-fastly-request-id": "4aaf8bfbacf6e027f9c059bea2d91b01bccdb930",
+              "x-frame-options": "deny",
+              "x-github-edge-region": "fra",
+              "x-github-request-id": "ACA0:1AC2C5:2F93AA0:3449521:6A9DC5B2",
+              "x-served-by": "cache-ams-eham8680078-AMS",
+              "x-timer": "S1788724659.258578,VS0,VE221",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:57:39.475854+00:00",
+            "request_started_at": "2026-09-06T19:57:38.393001+00:00",
+            "status": 200,
+            "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/get_model.py"
+          }
+        }
+      ],
+      "record_id": 128553,
+      "requested_url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/get_model.py",
+      "status": 200
+    },
+    {
+      "bytes": 7979,
+      "key": "timesfm-family",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:57:40.403720+00:00",
+          "body_sha256": "b59a9795a70b636a3e1fb405fc4edede9810d2376878d9e2b09c2c60b11c7b00",
+          "id": 128561,
+          "key": "timesfm-family",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-origin": "*",
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "3073",
+              "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-resource-policy": "cross-origin",
+              "date": "Sun, 06 Sep 2026 19:57:40 GMT",
+              "etag": "W/\"97983f9658403b7f123e50087ba720f1bc051096de55ac9d15b4c90403dd49a7\"",
+              "expires": "Sun, 06 Sep 2026 20:02:40 GMT",
+              "source-age": "0",
+              "strict-transport-security": "max-age=31536000",
+              "vary": "Authorization,Accept-Encoding",
+              "via": "1.1 varnish",
+              "x-cache": "HIT",
+              "x-cache-hits": "0",
+              "x-content-type-options": "nosniff",
+              "x-fastly-request-id": "d6d25dfae39e26485c83dfa8bc58873a6f2d4bee",
+              "x-frame-options": "deny",
+              "x-github-edge-region": "fra",
+              "x-github-request-id": "26DA:156D:1CD6FE4:1FA0821:6A9DC296",
+              "x-served-by": "cache-ams-eham8680078-AMS",
+              "x-timer": "S1788724660.221704,VS0,VE186",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:57:40.403720+00:00",
+            "request_started_at": "2026-09-06T19:57:39.478074+00:00",
+            "status": 200,
+            "url": "https://raw.githubusercontent.com/google-research/timesfm/master/README.md"
+          }
+        }
+      ],
+      "record_id": 128561,
+      "requested_url": "https://raw.githubusercontent.com/google-research/timesfm/master/README.md",
+      "status": 200
+    },
+    {
+      "bytes": 3170,
+      "key": "moirai2-card",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:57:41.329649+00:00",
+          "body_sha256": "f6dbd74f440ef637ba986147717c2ddf38979b3fba3c35ed6768939822aec73a",
+          "id": 128570,
+          "key": "moirai2-card",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "https://huggingface.co",
+              "access-control-expose-headers": "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash",
+              "access-control-max-age": "86400",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "connection": "keep-alive",
+              "content-disposition": "inline; filename*=UTF-8''README.md; filename=\"README.md\";",
+              "content-encoding": "gzip",
+              "content-security-policy": "default-src 'none'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-opener-policy": "same-origin",
+              "date": "Sun, 06 Sep 2026 19:57:41 GMT",
+              "etag": "W/\"c8833bb32cb3909694efb546c58f857e54f4603a\"",
+              "ratelimit": "\"resolvers\";r=2998;t=246",
+              "ratelimit-policy": "\"fixed window\";\"resolvers\";q=3000;w=300",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin, Accept-Encoding",
+              "via": "1.1 9418ec5c8ad0c320eddf5061646e3d88.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "UoXNi7QA2NNFW2W8y3w4I692ICsVYJwYUf6oajj6xHliagE2VzTuhw==",
+              "x-amz-cf-pop": "AMS58-P3",
+              "x-cache": "Miss from cloudfront",
+              "x-powered-by": "huggingface-moon",
+              "x-repo-commit": "30f43ff08c8494f4943ae1521e9d4e94a0fbb389",
+              "x-request-id": "Root=1-6a9dc5b5-6e5c22f601e752de0fb23ab6"
+            },
+            "received_at": "2026-09-06T19:57:41.329649+00:00",
+            "request_started_at": "2026-09-06T19:57:40.481038+00:00",
+            "status": 200,
+            "url": "https://huggingface.co/Salesforce/moirai-2.0-R-small/raw/main/README.md"
+          }
+        }
+      ],
+      "record_id": 128570,
+      "requested_url": "https://huggingface.co/Salesforce/moirai-2.0-R-small/raw/main/README.md",
+      "status": 200
+    },
+    {
+      "bytes": 1647,
+      "key": "ttm-90-config",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:58:59.959134+00:00",
+          "body_sha256": "3e4eb820370eefcfde695f5fcc9539b185913aa9a8f57550e1fd64689d0f37c6",
+          "id": 129570,
+          "key": "ttm-90-config",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "https://huggingface.co",
+              "access-control-expose-headers": "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash",
+              "access-control-max-age": "86400",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "connection": "keep-alive",
+              "content-disposition": "inline; filename*=UTF-8''config.json; filename=\"config.json\";",
+              "content-encoding": "gzip",
+              "content-security-policy": "default-src 'none'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-opener-policy": "same-origin",
+              "date": "Sun, 06 Sep 2026 19:58:59 GMT",
+              "etag": "W/\"ff280da9c4f7fdeb9eb7cea4080578ef8eea6549\"",
+              "ratelimit": "\"resolvers\";r=2997;t=168",
+              "ratelimit-policy": "\"fixed window\";\"resolvers\";q=3000;w=300",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin, Accept-Encoding",
+              "via": "1.1 b744839339b269ebb49818cc6c300b6a.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "xrtI_i5L8wbHLsoSbyeFEIUWneqTMtuBz5lXWs78qUoS6JFfgmWPFQ==",
+              "x-amz-cf-pop": "AMS58-P3",
+              "x-cache": "Miss from cloudfront",
+              "x-powered-by": "huggingface-moon",
+              "x-repo-commit": "cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680",
+              "x-request-id": "Root=1-6a9dc603-371b027d66ad9e8a5bc54190"
+            },
+            "received_at": "2026-09-06T19:58:59.959134+00:00",
+            "request_started_at": "2026-09-06T19:58:58.754955+00:00",
+            "status": 200,
+            "url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680/config.json"
+          }
+        }
+      ],
+      "record_id": 129570,
+      "requested_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2/raw/cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680/config.json",
+      "status": 200
+    },
+    {
+      "bytes": 177260,
+      "key": "ttm-core-source",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:59:01.023930+00:00",
+          "body_sha256": "6c4cbcaa417ea09f643ee83918524e7bca6ac369b6b3500a5073c7ccc868dc14",
+          "id": 129581,
+          "key": "ttm-core-source",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-origin": "*",
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "33320",
+              "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-resource-policy": "cross-origin",
+              "date": "Sun, 06 Sep 2026 19:59:01 GMT",
+              "etag": "W/\"8d65244bc3420127a9e4325be27751166d704fbb24f61609fcbe9b1b921916a1\"",
+              "expires": "Sun, 06 Sep 2026 20:04:01 GMT",
+              "source-age": "0",
+              "strict-transport-security": "max-age=31536000",
+              "vary": "Authorization,Accept-Encoding",
+              "via": "1.1 varnish",
+              "x-cache": "MISS",
+              "x-cache-hits": "0",
+              "x-content-type-options": "nosniff",
+              "x-fastly-request-id": "3c0ddd0e00df96c468821637f05f343cff02c528",
+              "x-frame-options": "deny",
+              "x-github-edge-region": "fra",
+              "x-github-request-id": "5E78:120B6:2F2F78E:33E6E3B:6A9DC604",
+              "x-served-by": "cache-ams-eham8680041-AMS",
+              "x-timer": "S1788724741.824258,VS0,VE198",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:59:01.023930+00:00",
+            "request_started_at": "2026-09-06T19:58:59.962431+00:00",
+            "status": 200,
+            "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/models/tinytimemixer/modeling_tinytimemixer.py"
+          }
+        }
+      ],
+      "record_id": 129581,
+      "requested_url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/models/tinytimemixer/modeling_tinytimemixer.py",
+      "status": 200
+    },
+    {
+      "bytes": 21785,
+      "key": "ttm-default-config",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:59:01.970367+00:00",
+          "body_sha256": "7af726377d99ee08a03c50d2615b222f8b52bc47f5069146b79b2ecb91408558",
+          "id": 129589,
+          "key": "ttm-default-config",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-origin": "*",
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "5438",
+              "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-resource-policy": "cross-origin",
+              "date": "Sun, 06 Sep 2026 19:59:01 GMT",
+              "etag": "W/\"4ad9211d2cba1c60e9a02acea73951160361dcfe956f0300d425b7f1e0d2c211\"",
+              "expires": "Sun, 06 Sep 2026 20:04:01 GMT",
+              "source-age": "0",
+              "strict-transport-security": "max-age=31536000",
+              "vary": "Authorization,Accept-Encoding",
+              "via": "1.1 varnish",
+              "x-cache": "MISS",
+              "x-cache-hits": "0",
+              "x-content-type-options": "nosniff",
+              "x-fastly-request-id": "17f1a1d3432b2908238c8bdf05bd89f6868ff3d9",
+              "x-frame-options": "deny",
+              "x-github-edge-region": "fra",
+              "x-github-request-id": "2002:25C0DB:31211D5:35D6FAC:6A9DC604",
+              "x-served-by": "cache-ams-eham8680041-AMS",
+              "x-timer": "S1788724742.785392,VS0,VE190",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:59:01.970367+00:00",
+            "request_started_at": "2026-09-06T19:59:01.031811+00:00",
+            "status": 200,
+            "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/models/tinytimemixer/configuration_tinytimemixer.py"
+          }
+        }
+      ],
+      "record_id": 129589,
+      "requested_url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/models/tinytimemixer/configuration_tinytimemixer.py",
+      "status": 200
+    },
+    {
+      "bytes": 1774,
+      "key": "ttm-90-model-metadata",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:59:48.907941+00:00",
+          "body_sha256": "fcf8f8c99f9204800d260aed6d332ce6448b3dd30aebc63ed4c0d09414086961",
+          "id": 129712,
+          "key": "ttm-90-model-metadata",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "https://huggingface.co",
+              "access-control-expose-headers": "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash",
+              "access-control-max-age": "86400",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-type": "application/json; charset=utf-8",
+              "cross-origin-opener-policy": "same-origin",
+              "date": "Sun, 06 Sep 2026 19:59:48 GMT",
+              "etag": "W/\"6ee-QCfZjYyooZ3wD9vn0+zBzVOlbMI\"",
+              "ratelimit": "\"api\";r=498;t=119",
+              "ratelimit-policy": "\"fixed window\";\"api\";q=500;w=300",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin, Accept-Encoding",
+              "via": "1.1 ed6e39eea0e39e463514b9421b7a2806.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "jsrRw5-HbaBJixCk1fqwqQjQPDTnm0kYOEBZRuG13UK3bewxZ5keVQ==",
+              "x-amz-cf-pop": "AMS58-P3",
+              "x-cache": "Miss from cloudfront",
+              "x-powered-by": "huggingface-moon",
+              "x-request-id": "Root=1-6a9dc634-6f13fc173116fba447ea33f8"
+            },
+            "received_at": "2026-09-06T19:59:48.907941+00:00",
+            "request_started_at": "2026-09-06T19:59:47.645798+00:00",
+            "status": 200,
+            "url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/revision/cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680"
+          }
+        }
+      ],
+      "record_id": 129712,
+      "requested_url": "https://huggingface.co/api/models/ibm-granite/granite-timeseries-ttm-r2/revision/cd2ad2a54ba5531fbcf6ba3b7a763a6e14223680",
+      "status": 200
+    },
+    {
+      "bytes": 51860,
+      "key": "ttm-preprocessor-source",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T20:00:12.093506+00:00",
+          "body_sha256": "616a79c1e11aa38c38a7c1748b93bff74bce6e0e6243dcc7793d9db723d0a99f",
+          "id": 129739,
+          "key": "ttm-preprocessor-source",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-origin": "*",
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "12073",
+              "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+              "content-type": "text/plain; charset=utf-8",
+              "cross-origin-resource-policy": "cross-origin",
+              "date": "Sun, 06 Sep 2026 20:00:12 GMT",
+              "etag": "W/\"be7e5eb27a5dc87dae958af678f8ffe1d347e12b617b03a63ea47c135f1185d9\"",
+              "expires": "Sun, 06 Sep 2026 20:05:12 GMT",
+              "source-age": "0",
+              "strict-transport-security": "max-age=31536000",
+              "vary": "Authorization,Accept-Encoding",
+              "via": "1.1 varnish",
+              "x-cache": "MISS",
+              "x-cache-hits": "0",
+              "x-content-type-options": "nosniff",
+              "x-fastly-request-id": "02d451434b32bef794791ff2a78668b4b0aefea4",
+              "x-frame-options": "deny",
+              "x-github-edge-region": "fra",
+              "x-github-request-id": "293C:20377:3108E0B:35BFEC2:6A9DC64B",
+              "x-served-by": "cache-rtm-ehrd2290032-RTM",
+              "x-timer": "S1788724812.905682,VS0,VE191",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T20:00:12.093506+00:00",
+            "request_started_at": "2026-09-06T20:00:10.839521+00:00",
+            "status": 200,
+            "url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/time_series_preprocessor.py"
+          }
+        }
+      ],
+      "record_id": 129739,
+      "requested_url": "https://raw.githubusercontent.com/ibm-granite/granite-tsfm/main/tsfm_public/toolkit/time_series_preprocessor.py",
+      "status": 200
+    }
+  ],
+  "round": "pretrained-paths-20260906",
+  "scope": "Official documentation, model metadata and source only; no weights, measurements, fitting or inference",
+  "strategy_scores": 0,
+  "weather_scores": 0
+}

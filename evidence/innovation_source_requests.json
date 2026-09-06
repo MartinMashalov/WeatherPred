@@ -1,0 +1,803 @@
+{
+  "max_physical_gets": 20,
+  "minimum_spacing_seconds": 1,
+  "physical_gets": [
+    {
+      "request_started_at": "2026-09-06T19:14:10.711795+00:00",
+      "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami?last_sec=600&detailed=true"
+    },
+    {
+      "request_started_at": "2026-09-06T19:14:11.716685+00:00",
+      "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami/calibrations"
+    },
+    {
+      "request_started_at": "2026-09-06T19:14:12.718644+00:00",
+      "url": "https://aviationweather.gov/data/api/"
+    },
+    {
+      "request_started_at": "2026-09-06T19:14:13.723635+00:00",
+      "url": "https://docs.synopticdata.com/services/metadata"
+    },
+    {
+      "request_started_at": "2026-09-06T19:14:14.728661+00:00",
+      "url": "https://mesonet.agron.iastate.edu/geojson/network/FL_ASOS.geojson"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:23.445411+00:00",
+      "url": "https://aviationweather.gov/data/schema/openapi.yaml"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:24.445575+00:00",
+      "url": "https://aviationweather.gov/api/data/stationinfo?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:25.449043+00:00",
+      "url": "https://aviationweather.gov/api/data/metar?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json&hours=2"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:26.454066+00:00",
+      "url": "https://docs.synopticdata.com/services/latency"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:27.459117+00:00",
+      "url": "https://api.synopticdata.com/v2/stations/metadata?stid=KMIA1M%2CKOPF1M%2CKFLL1M%2CKFXE1M%2CKPMP1M"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:28.461596+00:00",
+      "url": "https://mesonet.agron.iastate.edu/request/download.phtml"
+    },
+    {
+      "request_started_at": "2026-09-06T19:15:29.464291+00:00",
+      "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/"
+    },
+    {
+      "request_started_at": "2026-09-06T19:16:56.268198+00:00",
+      "url": "https://www.weather.gov/documentation/services-web-api"
+    },
+    {
+      "request_started_at": "2026-09-06T19:16:57.273266+00:00",
+      "url": "https://api.weather.gov/stations/KMIA/observations?limit=10"
+    },
+    {
+      "request_started_at": "2026-09-06T19:16:58.277446+00:00",
+      "url": "https://mesonet.agron.iastate.edu/request/asos/1min.phtml"
+    },
+    {
+      "request_started_at": "2026-09-06T19:16:59.278342+00:00",
+      "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/readme.txt"
+    },
+    {
+      "request_started_at": "2026-09-06T19:17:00.280337+00:00",
+      "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami?last_sec=600&detailed=true"
+    },
+    {
+      "request_started_at": "2026-09-06T19:17:01.283817+00:00",
+      "url": "https://aviationweather.gov/api/data/metar?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json&hours=2"
+    }
+  ],
+  "protected_data": false,
+  "protocol_record_id": 111428,
+  "results": [
+    {
+      "bytes": 3564,
+      "key": "miami-live-schema",
+      "params": {
+        "detailed": "true",
+        "last_sec": 600
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:14:11.114970+00:00",
+          "body_sha256": "bb15c55ebcc4181df35137571f19749e43e6509ab80f3304b6109ef918f03b67",
+          "id": 111433,
+          "key": "miami-live-schema",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "public, max-age=1",
+              "connection": "keep-alive",
+              "content-security-policy": "default-src 'none';",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:14:11 GMT",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Language",
+              "x-content-type-options": "nosniff"
+            },
+            "received_at": "2026-09-06T19:14:11.114970+00:00",
+            "request_started_at": "2026-09-06T19:14:09.708351+00:00",
+            "status": 200,
+            "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami?last_sec=600&detailed=true"
+          }
+        }
+      ],
+      "record_id": 111433,
+      "requested_url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami",
+      "status": 200
+    },
+    {
+      "bytes": 4393,
+      "key": "miami-calibration-schema",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:14:11.828431+00:00",
+          "body_sha256": "148e0b48624be6820f43d4752c9f3c0299802eb6e1302413783e0d07565c4e16",
+          "id": 111435,
+          "key": "miami-calibration-schema",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "public, max-age=1",
+              "connection": "keep-alive",
+              "content-security-policy": "default-src 'none';",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:14:11 GMT",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Language",
+              "x-content-type-options": "nosniff"
+            },
+            "received_at": "2026-09-06T19:14:11.828431+00:00",
+            "request_started_at": "2026-09-06T19:14:11.117471+00:00",
+            "status": 200,
+            "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami/calibrations"
+          }
+        }
+      ],
+      "record_id": 111435,
+      "requested_url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami/calibrations",
+      "status": 200
+    },
+    {
+      "bytes": 42564,
+      "key": "awc-api-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:14:12.975331+00:00",
+          "body_sha256": "f13e038f7a6f920f13d6781df7326d6c818044136f89646a2ccecf8dda36771a",
+          "id": 111438,
+          "key": "awc-api-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-type": "text/html",
+              "date": "Sun, 06 Sep 2026 19:14:12 GMT",
+              "etag": "W/\"6a98744b-a644\"",
+              "last-modified": "Wed, 02 Sep 2026 19:08:59 GMT",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding",
+              "x-azure-ref": "20260906T191412Z-15d589cbfbdflj8shC1BER5hpn0000001v8g000000001bfc",
+              "x-cache": "TCP_REVALIDATED_HIT",
+              "x-cache-info": "L2_T2",
+              "x-fd-int-roxy-purgeid": "66959002"
+            },
+            "received_at": "2026-09-06T19:14:12.975331+00:00",
+            "request_started_at": "2026-09-06T19:14:12.122500+00:00",
+            "status": 200,
+            "url": "https://aviationweather.gov/data/api/"
+          }
+        }
+      ],
+      "record_id": 111438,
+      "requested_url": "https://aviationweather.gov/data/api/",
+      "status": 200
+    },
+    {
+      "bytes": 43746,
+      "key": "synoptic-metadata-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:14:14.083924+00:00",
+          "body_sha256": "fc12b0c8b88a1192c2a8a1a5a3f845fc5ce481a7bea6d919f7e8d8471b7766f4",
+          "id": 111443,
+          "key": "synoptic-metadata-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-type": "text/html",
+              "date": "Sun, 06 Sep 2026 19:14:14 GMT",
+              "etag": "W/\"f2a28d0c7924434806a6b4e280b172db\"",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=604800",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding",
+              "via": "1.1 5fee70391560223c206b9f4887737d74.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "BI3ZBEvMlCALQ_FW14Qe4sBjg73655OpGrg4Hel7VcayfPySuDdWOg==",
+              "x-amz-cf-pop": "AMS58-P1",
+              "x-cache": "Miss from cloudfront",
+              "x-content-type-options": "nosniff"
+            },
+            "received_at": "2026-09-06T19:14:14.083924+00:00",
+            "request_started_at": "2026-09-06T19:14:13.123546+00:00",
+            "status": 200,
+            "url": "https://docs.synopticdata.com/services/metadata"
+          }
+        }
+      ],
+      "record_id": 111443,
+      "requested_url": "https://docs.synopticdata.com/services/metadata",
+      "status": 200
+    },
+    {
+      "bytes": 71143,
+      "key": "florida-station-directory",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:14:15.484827+00:00",
+          "body_sha256": "521e42c3a023041fd45480965c8b3a0b65402d689f2b6b7dfa703f12780b4e5b",
+          "id": 111446,
+          "key": "florida-station-directory",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-type": "application/vnd.geo+json",
+              "date": "Sun, 06 Sep 2026 19:14:15 GMT",
+              "keep-alive": "timeout=5, max=100",
+              "server": "Apache/2.4.62 (AlmaLinux) OpenSSL/3.5.5 mod_fcgid/2.3.9 mod_wsgi/6.0.4 Python/3.14",
+              "transfer-encoding": "chunked",
+              "x-iem-serverid": "iemvs39-dc.agron.iastate.edu"
+            },
+            "received_at": "2026-09-06T19:14:15.484827+00:00",
+            "request_started_at": "2026-09-06T19:14:14.124998+00:00",
+            "status": 200,
+            "url": "https://mesonet.agron.iastate.edu/geojson/network/FL_ASOS.geojson"
+          }
+        }
+      ],
+      "record_id": 111446,
+      "requested_url": "https://mesonet.agron.iastate.edu/geojson/network/FL_ASOS.geojson",
+      "status": 200
+    },
+    {
+      "bytes": 87776,
+      "key": "awc-openapi",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:23.968892+00:00",
+          "body_sha256": "d7a6f291187d57c5d4d8a4d59277115a4eecfe79afcec37d97548031fbf0c25c",
+          "id": 111602,
+          "key": "awc-openapi",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-length": "87776",
+              "content-type": "application/octet-stream",
+              "date": "Sun, 06 Sep 2026 19:15:23 GMT",
+              "etag": "\"6a987448-156e0\"",
+              "last-modified": "Wed, 02 Sep 2026 19:08:56 GMT",
+              "x-azure-ref": "20260906T191523Z-r1b89f57c959x8lnhC1FRA8bns0000000xwg00000000qh2f",
+              "x-cache": "TCP_MISS",
+              "x-fd-int-roxy-purgeid": "66959002"
+            },
+            "received_at": "2026-09-06T19:15:23.968892+00:00",
+            "request_started_at": "2026-09-06T19:15:22.440505+00:00",
+            "status": 200,
+            "url": "https://aviationweather.gov/data/schema/openapi.yaml"
+          }
+        }
+      ],
+      "record_id": 111602,
+      "requested_url": "https://aviationweather.gov/data/schema/openapi.yaml",
+      "status": 200
+    },
+    {
+      "bytes": 3491,
+      "key": "awc-nearby-stationinfo",
+      "params": {
+        "format": "json",
+        "ids": "K2IS,KBCT,KDJT,KF45,KFLL,KFXE,KHST,KHWO,KIMM,KK70,KLNA,KMIA,KMKY,KMTH,KOPF,KPMP,KTMB"
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:24.754850+00:00",
+          "body_sha256": "913d78cf95de1272f9e15a412ca84c955d2d85447bf75079553f07bfeb81829a",
+          "id": 111606,
+          "key": "awc-nearby-stationinfo",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "max-age=300",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-security-policy": "frame-ancestors 'self' *.weather.gov",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:15:24 GMT",
+              "etag": "W/\"da3-pchgwry5hCvpgnc85+glgmoCTDY\"",
+              "strict-transport-security": "max-age=63072000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding",
+              "x-azure-ref": "20260906T191524Z-r1b89f57c959x8lnhC1FRA8bns0000000xwg00000000qh5q",
+              "x-cache": "TCP_MISS",
+              "x-fd-int-roxy-purgeid": "66959002",
+              "x-frame-options": "SAMEORIGIN"
+            },
+            "received_at": "2026-09-06T19:15:24.754850+00:00",
+            "request_started_at": "2026-09-06T19:15:23.972664+00:00",
+            "status": 200,
+            "url": "https://aviationweather.gov/api/data/stationinfo?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json"
+          }
+        }
+      ],
+      "record_id": 111606,
+      "requested_url": "https://aviationweather.gov/api/data/stationinfo",
+      "status": 200
+    },
+    {
+      "bytes": 36770,
+      "key": "awc-nearby-metar-2h",
+      "params": {
+        "format": "json",
+        "hours": 2,
+        "ids": "K2IS,KBCT,KDJT,KF45,KFLL,KFXE,KHST,KHWO,KIMM,KK70,KLNA,KMIA,KMKY,KMTH,KOPF,KPMP,KTMB"
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:25.707542+00:00",
+          "body_sha256": "44f1e9fcd62043df6da5efaf978fbf678d262bdae724335bd434d40373e3de27",
+          "id": 111609,
+          "key": "awc-nearby-metar-2h",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "max-age=60",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-security-policy": "frame-ancestors 'self' *.weather.gov",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:15:25 GMT",
+              "etag": "W/\"8fa2-L/Mi9hwk6UgqU0offpEawWhBKF0\"",
+              "strict-transport-security": "max-age=63072000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding",
+              "x-azure-ref": "20260906T191525Z-r1b89f57c959x8lnhC1FRA8bns0000000xwg00000000qh89",
+              "x-cache": "TCP_MISS",
+              "x-fd-int-roxy-purgeid": "66959002",
+              "x-frame-options": "SAMEORIGIN"
+            },
+            "received_at": "2026-09-06T19:15:25.707542+00:00",
+            "request_started_at": "2026-09-06T19:15:24.977039+00:00",
+            "status": 200,
+            "url": "https://aviationweather.gov/api/data/metar?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json&hours=2"
+          }
+        }
+      ],
+      "record_id": 111609,
+      "requested_url": "https://aviationweather.gov/api/data/metar",
+      "status": 200
+    },
+    {
+      "bytes": 45674,
+      "key": "synoptic-latency-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:26.768469+00:00",
+          "body_sha256": "d109d4f63ce07b1f78059b209988b1eb2b7ee515165b1489eedcafea6413c5e7",
+          "id": 111612,
+          "key": "synoptic-latency-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-type": "text/html",
+              "date": "Sun, 06 Sep 2026 19:15:26 GMT",
+              "etag": "W/\"17fb545c38dbb16de99f36c6b63d4096\"",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=604800",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding",
+              "via": "1.1 480845f7432fb94c1c6d81f7845a67fe.cloudfront.net (CloudFront)",
+              "x-amz-cf-id": "bOWF_XOPK47gUzRqEnldrHN3G5b9gq_FVxDvbyVhRjLnAXcijSZ0tA==",
+              "x-amz-cf-pop": "AMS58-P1",
+              "x-cache": "RefreshHit from cloudfront",
+              "x-content-type-options": "nosniff"
+            },
+            "received_at": "2026-09-06T19:15:26.768469+00:00",
+            "request_started_at": "2026-09-06T19:15:25.981210+00:00",
+            "status": 200,
+            "url": "https://docs.synopticdata.com/services/latency"
+          }
+        }
+      ],
+      "record_id": 111612,
+      "requested_url": "https://docs.synopticdata.com/services/latency",
+      "status": 200
+    },
+    {
+      "error": "HTTPStatusError: Client error '401 Unauthorized' for url 'https://api.synopticdata.com/v2/stations/metadata?stid=KMIA1M%2CKOPF1M%2CKFLL1M%2CKFXE1M%2CKPMP1M'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+      "key": "synoptic-anonymous-metadata",
+      "params": {
+        "stid": "KMIA1M,KOPF1M,KFLL1M,KFXE1M,KPMP1M"
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:28.014564+00:00",
+          "body_sha256": "7a3578da72c9257c46acd8c1f3c5197e45e04c6f1a2e9b2a66a9f5f45157e3c1",
+          "id": 111616,
+          "key": "synoptic-anonymous-metadata",
+          "kind": "http_error",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-headers": "x-requested-with",
+              "access-control-allow-methods": "POST, GET, OPTIONS",
+              "access-control-allow-origin": "*",
+              "connection": "keep-alive",
+              "content-length": "112",
+              "content-type": "application/json; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:15:27 GMT",
+              "server": "nginx",
+              "vary": "Accept-Encoding"
+            },
+            "received_at": "2026-09-06T19:15:28.014564+00:00",
+            "request_started_at": "2026-09-06T19:15:26.986252+00:00",
+            "status": 401,
+            "url": "https://api.synopticdata.com/v2/stations/metadata?stid=KMIA1M%2CKOPF1M%2CKFLL1M%2CKFXE1M%2CKPMP1M"
+          }
+        }
+      ],
+      "requested_url": "https://api.synopticdata.com/v2/stations/metadata"
+    },
+    {
+      "bytes": 70274,
+      "key": "iem-asos-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:29.096316+00:00",
+          "body_sha256": "832f5caff6f6e2f113e51b3d2ca8cd6fdbce09d71d8e9bbea534030f1de7c222",
+          "id": 111620,
+          "key": "iem-asos-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:15:28 GMT",
+              "keep-alive": "timeout=5, max=100",
+              "server": "Apache/2.4.62 (AlmaLinux) OpenSSL/3.5.5 mod_fcgid/2.3.9 mod_wsgi/6.0.4 Python/3.14",
+              "transfer-encoding": "chunked",
+              "x-iem-serverid": "iemvs36-dc.agron.iastate.edu",
+              "x-powered-by": "PHP/8.4.25"
+            },
+            "received_at": "2026-09-06T19:15:29.096316+00:00",
+            "request_started_at": "2026-09-06T19:15:28.017263+00:00",
+            "status": 200,
+            "url": "https://mesonet.agron.iastate.edu/request/download.phtml"
+          }
+        }
+      ],
+      "record_id": 111620,
+      "requested_url": "https://mesonet.agron.iastate.edu/request/download.phtml",
+      "status": 200
+    },
+    {
+      "bytes": 7775,
+      "key": "ncei-minute-directory",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:15:30.351998+00:00",
+          "body_sha256": "d9e15cf7f10482b4c7578d035d33af632092afa6353c5cb163fdd6ef43385005",
+          "id": 111623,
+          "key": "ncei-minute-directory",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-headers": "X-Requested-With, Content-Type",
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-encoding": "gzip",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:15:30 GMT",
+              "keep-alive": "timeout=3, max=100",
+              "server": "Apache",
+              "strict-transport-security": "max-age=31536000",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding"
+            },
+            "received_at": "2026-09-06T19:15:30.351998+00:00",
+            "request_started_at": "2026-09-06T19:15:29.097744+00:00",
+            "status": 200,
+            "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/"
+          }
+        }
+      ],
+      "record_id": 111623,
+      "requested_url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/",
+      "status": 200
+    },
+    {
+      "bytes": 48922,
+      "key": "nws-api-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:16:56.674994+00:00",
+          "body_sha256": "6e147aa56472c62d5dbc70832a8a488cacc8b591835d4c3b23f4f6c714f8713d",
+          "id": 111820,
+          "key": "nws-api-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "cache-control": "max-age=180",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "12155",
+              "content-security-policy": "default-src 'self'           *.weather.gov *.noaa.gov           code.jquery.com           cdn.gov.cfigroup.com           s.go-mpulse.net           *.digitalgov.gov           *.google-analytics.com           www.googletagmanager.com           *.arcgis.com *.arcgisonline.com            *.google.com           *.youtube.com *.youtube-nocookie.com           *.twitter.com *.x.com           *.facebook.com           data: * mediastream: * blob: * about: * 'unsafe-eval' 'unsafe-inline'",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:16:56 GMT",
+              "expires": "Sun, 06 Sep 2026 19:19:56 GMT",
+              "referrer-policy": "no-referrer",
+              "server": "Apache",
+              "strict-transport-security": "max-age=31536000 ; includeSubDomains ; preload",
+              "vary": "Accept-Encoding",
+              "x-content-security-policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' *",
+              "x-content-type-options": "nosniff",
+              "x-xss-protection": "1; mode=block"
+            },
+            "received_at": "2026-09-06T19:16:56.674994+00:00",
+            "request_started_at": "2026-09-06T19:16:55.261829+00:00",
+            "status": 200,
+            "url": "https://www.weather.gov/documentation/services-web-api"
+          }
+        }
+      ],
+      "record_id": 111820,
+      "requested_url": "https://www.weather.gov/documentation/services-web-api",
+      "status": 200
+    },
+    {
+      "bytes": 45405,
+      "key": "nws-miami-observations",
+      "params": {
+        "limit": 10
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:16:57.458618+00:00",
+          "body_sha256": "bd62131c0c2168c0b52bfbe3f3c2cfd8fdfe3f10e06413e5125a8dc37ea43aa3",
+          "id": 111823,
+          "key": "nws-miami-observations",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "access-control-expose-headers": "X-Correlation-Id, X-Request-Id, X-Server-Id",
+              "cache-control": "public, max-age=243, s-maxage=120",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "2192",
+              "content-type": "application/geo+json",
+              "date": "Sun, 06 Sep 2026 19:16:57 GMT",
+              "expires": "Sun, 06 Sep 2026 19:21:00 GMT",
+              "server": "nginx/1.28.3",
+              "strict-transport-security": "max-age=31536000 ; includeSubDomains ; preload",
+              "vary": "Accept-Encoding, Accept,Feature-Flags,Accept-Language",
+              "x-correlation-id": "6af9155f",
+              "x-edge-request-id": "113124e0",
+              "x-request-id": "01a07826-221e-779c-8112-5a04f295ab24",
+              "x-server-id": "vm-bldr-api-ops-app7.ncep.noaa.gov"
+            },
+            "received_at": "2026-09-06T19:16:57.458618+00:00",
+            "request_started_at": "2026-09-06T19:16:56.678798+00:00",
+            "status": 200,
+            "url": "https://api.weather.gov/stations/KMIA/observations?limit=10"
+          }
+        }
+      ],
+      "record_id": 111823,
+      "requested_url": "https://api.weather.gov/stations/KMIA/observations",
+      "status": 200
+    },
+    {
+      "bytes": 49029,
+      "key": "iem-one-minute-docs",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:16:58.985134+00:00",
+          "body_sha256": "f036524c578887358a06641f560a0a720e570ddec3fb141fc8234d19c75d39ce",
+          "id": 111827,
+          "key": "iem-one-minute-docs",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-type": "text/html; charset=UTF-8",
+              "date": "Sun, 06 Sep 2026 19:16:58 GMT",
+              "keep-alive": "timeout=5, max=100",
+              "server": "Apache/2.4.62 (AlmaLinux) OpenSSL/3.5.5 mod_fcgid/2.3.9 mod_wsgi/6.0.4 Python/3.14",
+              "transfer-encoding": "chunked",
+              "x-iem-serverid": "iemvs44-dc.agron.iastate.edu",
+              "x-powered-by": "PHP/8.4.25"
+            },
+            "received_at": "2026-09-06T19:16:58.985134+00:00",
+            "request_started_at": "2026-09-06T19:16:57.683997+00:00",
+            "status": 200,
+            "url": "https://mesonet.agron.iastate.edu/request/asos/1min.phtml"
+          }
+        }
+      ],
+      "record_id": 111827,
+      "requested_url": "https://mesonet.agron.iastate.edu/request/asos/1min.phtml",
+      "status": 200
+    },
+    {
+      "bytes": 1887,
+      "key": "ncei-minute-readme",
+      "params": null,
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:16:59.658927+00:00",
+          "body_sha256": "14dc778ce76e09edcc0a1db7446b499d7d1e2679f7364d53e7923f57b1a2e9a0",
+          "id": 111830,
+          "key": "ncei-minute-readme",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "accept-ranges": "bytes",
+              "access-control-allow-headers": "X-Requested-With, Content-Type",
+              "access-control-allow-origin": "*",
+              "connection": "Keep-Alive",
+              "content-length": "1887",
+              "content-type": "text/plain",
+              "date": "Sun, 06 Sep 2026 19:16:59 GMT",
+              "etag": "\"75f-4fc876f018e00\"",
+              "keep-alive": "timeout=3, max=100",
+              "last-modified": "Mon, 23 Jun 2014 21:22:00 GMT",
+              "server": "Apache",
+              "strict-transport-security": "max-age=31536000"
+            },
+            "received_at": "2026-09-06T19:16:59.658927+00:00",
+            "request_started_at": "2026-09-06T19:16:58.989351+00:00",
+            "status": 200,
+            "url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/readme.txt"
+          }
+        }
+      ],
+      "record_id": 111830,
+      "requested_url": "https://www.ncei.noaa.gov/pub/data/asos-onemin/readme.txt",
+      "status": 200
+    },
+    {
+      "bytes": 3561,
+      "key": "miami-live-repeat",
+      "params": {
+        "detailed": "true",
+        "last_sec": 600
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:17:00.717455+00:00",
+          "body_sha256": "54030649c43768c747c0b9edee17f0692e7c724bd5610afaa4ed83cd97eb1d4d",
+          "id": 111833,
+          "key": "miami-live-repeat",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "public, max-age=1",
+              "connection": "keep-alive",
+              "content-security-policy": "default-src 'none';",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:17:00 GMT",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Language",
+              "x-content-type-options": "nosniff"
+            },
+            "received_at": "2026-09-06T19:17:00.717455+00:00",
+            "request_started_at": "2026-09-06T19:16:59.994395+00:00",
+            "status": 200,
+            "url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami?last_sec=600&detailed=true"
+          }
+        }
+      ],
+      "record_id": 111833,
+      "requested_url": "https://external-api.kalshi.com/trade-api/v2/live_data/weather/miami",
+      "status": 200
+    },
+    {
+      "bytes": 37586,
+      "key": "awc-nearby-metar-repeat",
+      "params": {
+        "format": "json",
+        "hours": 2,
+        "ids": "K2IS,KBCT,KDJT,KF45,KFLL,KFXE,KHST,KHWO,KIMM,KK70,KLNA,KMIA,KMKY,KMTH,KOPF,KPMP,KTMB"
+      },
+      "receipts": [
+        {
+          "available_at": "2026-09-06T19:17:01.699001+00:00",
+          "body_sha256": "ca7e7e584c31795066250431d89142f52ff5d614edb91c1fd1655b55f75b3e07",
+          "id": 111836,
+          "key": "awc-nearby-metar-repeat",
+          "kind": "innovation_source_http",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "cache-control": "max-age=60",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-security-policy": "frame-ancestors 'self' *.weather.gov",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 06 Sep 2026 19:17:01 GMT",
+              "etag": "W/\"92d2-g4GdhPwKIN2QoXXyc8RcjLFerfE\"",
+              "strict-transport-security": "max-age=63072000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "vary": "Accept-Encoding",
+              "x-azure-ref": "20260906T191701Z-r1b89f57c95tfppfhC1FRAmdt00000000y7g000000009mdw",
+              "x-cache": "TCP_MISS",
+              "x-fd-int-roxy-purgeid": "66959002",
+              "x-frame-options": "SAMEORIGIN"
+            },
+            "received_at": "2026-09-06T19:17:01.699001+00:00",
+            "request_started_at": "2026-09-06T19:17:00.995653+00:00",
+            "status": 200,
+            "url": "https://aviationweather.gov/api/data/metar?ids=K2IS%2CKBCT%2CKDJT%2CKF45%2CKFLL%2CKFXE%2CKHST%2CKHWO%2CKIMM%2CKK70%2CKLNA%2CKMIA%2CKMKY%2CKMTH%2CKOPF%2CKPMP%2CKTMB&format=json&hours=2"
+          }
+        }
+      ],
+      "record_id": 111836,
+      "requested_url": "https://aviationweather.gov/api/data/metar",
+      "status": 200
+    }
+  ],
+  "round": "innovation-source-feasibility-20260906",
+  "strategy_scores": 0,
+  "weather_scores": 0
+}

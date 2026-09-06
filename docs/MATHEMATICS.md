@@ -926,6 +926,44 @@ trading return or an independent validation result. See the
 [complete study](../research/STATION_FORECASTS.md) and
 [all eight candidates](../evidence/E022_station_forecasts.json).
 
+## 27. Fixed physical and transformer combinations
+
+This forecast experiment asks whether operational physical guidance and
+learned station patterns supply complementary information. Let $n_i$ be the
+original NBH temperature forecast for case $i$, $c_i$ the saved pretrained
+transformer's point forecast, and $q_{i,\tau}$ its raw quantile at level $\tau$.
+Three fixed neural weights define three distinct candidates:
+
+$$
+w\in\{0.25,0.50,0.75\},\qquad
+\widehat y_i^{(w)}=(1-w)n_i+wc_i,\qquad
+\widehat q_{i,\tau}^{(w)}=(1-w)n_i+wq_{i,\tau}.
+$$
+
+This averages corresponding quantiles. It does not assume a normal
+distribution for NBH's reported temperature spread, and it is not a mixture
+of the two forecast distribution functions. The additive calibration and
+monotonic rearrangement in Section 26 are then estimated separately for each
+candidate using only July 6–19. No blending weight is fitted or selected from
+the July 20–August 16 development scores.
+
+Each combination is compared with NBH, pretrained Chronos, adapted Chronos
+and ridge-100: twelve paired mean-error contrasts. Shared seven-day blocks
+preserve the same sampled days across all contrasts; a maximum standardized
+statistic gives a simultaneous descriptive interval. All candidates, missing
+cases, negative contrasts and interval-width changes must remain visible.
+Design **124922** precedes the first NBH error score. Implementation
+registration **129863** acknowledges that the NBH benchmark was known by then;
+the weights and comparison family remain unchanged. Report **131549** retains
+all three combinations on the full original case grid. Their mean absolute
+errors are 1.6608°F, 1.6023°F and 1.6866°F in increasing neural-weight order,
+versus 1.8345°F for NBH. All twelve descriptive intervals are below zero.
+The 50/50 candidate has the lowest observed error among these three; it is not
+selected as a production strategy. These are retrospective station forecasts,
+not settlement probabilities or validated trading returns.
+[Design](../evidence/E029_design.json),
+[all results](../evidence/E029_fixed_combinations.json).
+
 ## Further reading used in the project
 
 - [Gneiting et al., calibrated probabilistic forecasting](https://sites.stat.washington.edu/people/raftery/Research/PDF/gneiting2005.pdf): distributional calibration.

@@ -1,0 +1,12 @@
+{
+  "dataset_record_id": 128360,
+  "preparation_protocol_id": 128266,
+  "registration_rejected": true,
+  "error": "Source files changed after dataset preparation; review a new preparation before registration",
+  "changed_source": "tests/test_e024_annual_replay_v2.py",
+  "prepared_sha256": "9555048b244e30401b39b4a47daa36a3e28b44b3c944f461e47d9c4bba4a3528",
+  "observed_current_sha256": "b672d1fc6d3d22653449abd6446d2334085cebe15d457ef760f5314ff051e0d8",
+  "strategy_scores_computed": 0,
+  "next_step": "Preserve expanded tests in a new file and restore exact original prepared test bytes; do not weaken or remove any test.",
+  "record_id": 129710
+}

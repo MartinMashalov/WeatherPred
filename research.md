@@ -396,3 +396,62 @@ physical forecasts before further neural complexity. The local adaptation adds
 only 1.05% beyond pretraining. Unverified historical publication, 28 dependent
 weather days, settlement-target differences and missing executable-price joins
 prevent an inference about trading profits. No RL or model promotion occurs.
+
+### Next forecast mechanisms and a retained acquisition failure
+
+The [innovation queue](research/INNOVATION_QUEUE.md) ranks ten specific
+hypotheses with primary sources, fixed candidate counts and tests that could
+reject them. The immediate modeling question is whether a small learned model
+adds information to an operational physical forecast on the same target and
+decision times. It should also predict the exact settlement quantity and
+recognize uncertainty caused by stale or incomplete inputs.
+
+The [physical benchmark design](research/PHYSICAL_STATION_BASELINE.md) uses
+NOAA's hourly NBH bulletin, with exact leads of 3, 5 and 8 hours, against the
+eight existing saved E022 candidates. NBH already combines physical forecasts
+and statistical postprocessing. Its TSD field is not a justified substitute for
+an empirical probability distribution; calibration will use earlier cases.
+
+Acquisition registration 111273 failed on nine original objects because the
+strict parser omitted an actual UTC-row trailing space. Its resource cap
+stopped the run, preserving 180 failed cases and 9,690 unattempted cases;
+forecast errors remain uncomputed. Report 111377 is retained while a separate
+revision is prepared. [Failure evidence](evidence/E025_v1_acquisition_failure.json).
+This engineering failure cannot justify changing model candidates, forecast
+runs, case inclusion or evaluation thresholds.
+
+### Combining physical guidance and learned station patterns
+
+E029 design registration **124922** precedes the first E026 physical-forecast
+score. It fixes three combinations of NBH and the saved pretrained Chronos
+forecast, with neural weights 0.25, 0.50 and 0.75. Earlier calibration remains
+separate from the 28 development days, and all twelve comparisons with NBH,
+pretrained Chronos, adapted Chronos and ridge-100 will be reported together.
+No neural retraining or weight optimization is part of this experiment.
+
+The mechanism is complementary information: operational guidance contains
+physical weather information while the transformer extrapolates station
+history. Forecast-combination theory distinguishes averaging quantiles from
+averaging distribution functions; neither automatically guarantees calibration.
+[Gneiting and Ranjan](https://arxiv.org/abs/1106.1638) motivates checking both
+error and distribution reliability instead of assuming an ensemble is better.
+The proposed calculation averages raw quantiles and recalibrates them on the
+original earlier cases. [Design and fixed limits](evidence/E029_design.json).
+
+Chronos-2 also supports related series and covariates through group attention,
+which motivates a future physical-guidance or nearby-station input experiment.
+That capability is documented in the [original model paper](https://arxiv.org/abs/2510.15821);
+it has not yet been tested in this project's weather-market setting. A dedicated
+idea scout continues checking feasible models, source identity and falsifiable
+mechanisms while the benchmark and execution work proceeds.
+
+E026 subsequently finds NBH slightly ahead of the standalone transformers,
+with intervals for those differences including zero. The three predeclared
+E029 combinations all improve the four reference forecasts. Their mean
+absolute errors are 1.6608°F, 1.6023°F and 1.6866°F; all twelve descriptive
+intervals favor the combinations. The separate audit reconstructs raw blends
+exactly and all score arithmetic within 1.42e−14. This supports complementary
+forecast information on the reused development panel. It does not select a
+production model or establish an executable edge.
+[Full study](research/HYBRID_FORECASTS.md),
+[independent audit](evidence/E029_result_audit.json).

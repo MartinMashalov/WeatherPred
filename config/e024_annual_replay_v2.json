@@ -1,0 +1,141 @@
+{
+  "experiment": "E024-restricted-annual-walk-forward-v2",
+  "acquisition_protocol_id": 99015,
+  "acquisition_amendment_protocol_ids": [
+    116002
+  ],
+  "event_manifest_id": 92494,
+  "expected_events": 1736,
+  "expected_series": [
+    "KXHIGHAUS",
+    "KXHIGHCHI",
+    "KXHIGHDEN",
+    "KXHIGHLAX",
+    "KXHIGHMIA",
+    "KXHIGHNY",
+    "KXHIGHPHIL"
+  ],
+  "source_windows_path": "config/e002_source_windows.json",
+  "parent_policy_config": "config/e013_autoresearch.json",
+  "policy_count": 576,
+  "risk_fractions": [
+    "0.005",
+    "0.01",
+    "0.025",
+    "0.05"
+  ],
+  "initial_cash": "200.00",
+  "requested_start": "2025-09-06",
+  "requested_end_exclusive": "2026-09-06",
+  "training_start": "2026-01-01",
+  "mandatory_cash_end_exclusive": "2026-07-01",
+  "mandatory_cash_days": 298,
+  "maximum_active_calendar_days": 67,
+  "selection_dates": [
+    "2026-07-01",
+    "2026-08-01",
+    "2026-09-01"
+  ],
+  "decision_buffer_days": 5,
+  "minimum_training_calendar_days": 180,
+  "minimum_release_days_per_scenario": 60,
+  "bootstrap_block_days": [
+    1,
+    7,
+    14
+  ],
+  "bootstrap_resamples": 10000,
+  "bootstrap_seeds": [
+    6202401,
+    6202402,
+    6202403
+  ],
+  "familywise_alpha": 0.05,
+  "alpha_divisor_looks": 3,
+  "max_training_evaluations": 13824,
+  "max_bootstrap_evaluations": 9,
+  "max_event_fraction": "0.05",
+  "max_cluster_fraction": "0.10",
+  "max_total_fraction": "0.25",
+  "drawdown_kill_fraction": "0.20",
+  "conditional_depth_cap": 100,
+  "execution_budget_seconds": 5400,
+  "cpu_threads": 2,
+  "minimum_free_disk_bytes": 5368709120,
+  "stop_file": "data/STOP_E024",
+  "scenarios": [
+    {
+      "name": "costed",
+      "entry_coefficient": "0.07",
+      "exit_coefficient": "0.07",
+      "entry_delay_hours": 1,
+      "slippage": "0.01"
+    },
+    {
+      "name": "stress",
+      "entry_coefficient": "0.07",
+      "exit_coefficient": "0.07",
+      "entry_delay_hours": 2,
+      "slippage": "0.02"
+    }
+  ],
+  "selection": "At each of three fixed dates, all576policies times4risk fractions times2cost cases use the same contiguous prior calendar and a five-day decision buffer. Require180calendar days,60release days in BOTH scenarios, no pending orders or holdings, positive net cash profit, and strictly positive nondegenerate simultaneous bounds for BOTH scenarios at ALL1/7/14day block lengths. Use alpha0.05/3 at each look. Rank by seven-day costed lower bound; ties by policy ID then numeric risk fraction. Otherwise cash. No performance-based family shrinkage or parameter updates.",
+  "chronology": "Gate event dates, decision timestamps and every quote/terminal timestamp before consulting corresponding values. Only cash flows released strictly before a selection can enter its training score. Archive each choice before its month portfolio prefix. Later prefixes may reveal old terminal information, but earlier daily states and order journal entries must remain exactly identical.",
+  "coverage": "Require the complete seven-series248-day1736-event census with all acquisition checkpoints complete, raw contract census equality and source-hash verification before normalization or scoring. Retain missing exact endpoints and unsupported contract-window rules as abstentions; never fill missing days/quotes with manufactured prices. Market inception and exact source windows remain explicit constraints.",
+  "execution": "Quotes are exact later candle bid/ask endpoints, with no carried values, midpoint fills, OHLC extremes, or volume-derived fills. Use an explicitly assumed100contract cap, original limit at decision, aggregate integer-order fees and source receipts actually acquired inSeptember2026. Assumed historical endpoint availability is unverified; verified mode must refuse it. A cash regime blocks only new decisions and preserves prior orders, holdings, exits, limits and drawdown.",
+  "fees": "Costed and stress use an assumed0.07quadratic coefficient with aggregate cent rounding on entry and sale; settlement no transaction fee. This is not contemporaneous fee evidence and must remain labeled a sensitivity assumption.",
+  "annual_classification": "Restricted-policy retrospective conditional replay:298mandatory cash days, at most67active calendar days, one200dollar account without deposits or monthly resets. A complete path under these restrictions is not a full-year market-opportunity audit, an ex-post best policy, or a rewrite ofE023. Separate free/reserved cash, open principal, cost-basis equity and unavailable liquidation value; do not credit after-year settlements at year-end.",
+  "holdout": "No October-December2025 prices, outcomes, settlements or derived features are opened. The cash-only prefix is explicitly part of this new restricted policy. No change to original validation, holdout-release or promotion law.",
+  "termination": "Finite13,824training-account and9bootstrap budget. First execution establishes an absolute90minute deadline excluding acquisition/normalization and including subsequent pauses. Stop files permit resuming only fully completed hashed units within that same deadline. Interrupted/failed units and deadline expiry are terminal; no silent retry or new fit. Drawdown stops new orders but outstanding cash flows are still accounted.",
+  "promotion_eligible": false,
+  "historical_availability_verified": false,
+  "profitability_proven": false,
+  "normalization_revision": {
+    "prior_preparation_protocol_id": 123242,
+    "prior_preparation_failure_id": 124068,
+    "diagnostic_protocol_id": 125267,
+    "diagnostic_report_id": 125381,
+    "source_cutoff_id": 123234,
+    "source_cutoff_at": "2026-09-06T19:48:05.160651+00:00",
+    "expected_contracts": 10416,
+    "expected_categorical_cases": 4,
+    "event": "KXHIGHMIA-26APR11",
+    "tickers": [
+      "KXHIGHMIA-26APR11-B76.5",
+      "KXHIGHMIA-26APR11-B82.5",
+      "KXHIGHMIA-26APR11-T76",
+      "KXHIGHMIA-26APR11-T83"
+    ],
+    "metadata_record_id": 108042,
+    "metadata_body_sha256": "ba2ae40b7157ec7e5d08ecd78a931f95f2c1cf95be979b657dd24f1c3d754021",
+    "checkpoint_record_id": 108049,
+    "allowed_expiration_value": "No",
+    "official_result": "no",
+    "numeric_corroboration": "categorical_result_only",
+    "policy_math_dates_and_limits_unchanged": true,
+    "original_failure_preserved": true,
+    "interpretation": "Exactly four pinned categorical No strings corroborate official no results only; they are not numeric temperatures. Preserve raw values, full census and all numeric contradiction checks. Empty/None behavior unchanged. Other nonnumeric/nonfinite values remain errors."
+  },
+  "revision_evidence": [
+    {
+      "id": 123242,
+      "kind": "e024_dataset_preparation_protocol",
+      "body_sha256": "56d2209566c21f6238fa5e159ad77a101564741d25f335d65641db425f2580e3"
+    },
+    {
+      "id": 124068,
+      "kind": "e024_dataset_preparation_failed",
+      "body_sha256": "6c8ab7324ee557a8b51d2cfc8740eca1431da5fa698799581f8bbe0ee885d5cf"
+    },
+    {
+      "id": 125267,
+      "kind": "e024_expiration_diagnostic_protocol",
+      "body_sha256": "436c3a3bc29da97f5acc96cae0906116f2286f247a4eea569ae0de153d1067a1"
+    },
+    {
+      "id": 125381,
+      "kind": "e024_expiration_diagnostic_report",
+      "body_sha256": "d2dbc7cac119aede8ab8e3f09a11fcd71a04e24ce89786999f6a0f13d30db1d4"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "protocol_id": 119764,
+  "attempts": [
+    {
+      "url": "https://www.cs.unc.edu/~welch/kalman/media/pdf/Kalman1960.pdf",
+      "request_started_at": "2026-09-06T19:41:46.539267+00:00"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1115/1.3662552",
+      "request_started_at": "2026-09-06T19:43:48.795129+00:00"
+    },
+    {
+      "url": "https://api.crossref.org/works?query.bibliographic=Bar+Shalom+Update+with+out-of-sequence+measurements+in+tracking+exact+solution&rows=1",
+      "request_started_at": "2026-09-06T19:43:49.799708+00:00"
+    }
+  ],
+  "results": [
+    {
+      "key": "kalman-original-paper",
+      "error": "Client error '404 Not Found' for url 'https://www.cs.unc.edu/~welch/kalman/media/pdf/Kalman1960.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+      "receipts": [
+        {
+          "id": 119776,
+          "kind": "http_error",
+          "available_at": "2026-09-06T19:41:47.286402+00:00",
+          "body_sha256": "5301dcccc52829eafc4595bc97f12cb3c3ea4b19b8888858a9a7f7c312e3526e",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "connection": "close",
+              "content-length": "301",
+              "content-type": "text/html; charset=iso-8859-1",
+              "date": "Sun, 06 Sep 2026 19:41:47 GMT",
+              "server": "Apache",
+              "strict-transport-security": "max-age=15552000; includeSubDomains; preload"
+            },
+            "received_at": "2026-09-06T19:41:47.286402+00:00",
+            "request_started_at": "2026-09-06T19:41:45.534277+00:00",
+            "status": 404,
+            "url": "https://www.cs.unc.edu/~welch/kalman/media/pdf/Kalman1960.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "key": "kalman-publisher-metadata",
+      "record_id": 120788,
+      "status": 200,
+      "bytes": 3300,
+      "receipts": [
+        {
+          "id": 120788,
+          "kind": "live_bridge_documentation",
+          "available_at": "2026-09-06T19:43:49.169174+00:00",
+          "body_sha256": "90c90508f734b624e375c5ab1d821ea843797e36fea3039a5be89bb35f7c34e8",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-headers": "X-Requested-With, Accept, Accept-Encoding, Accept-Charset, Accept-Language, Accept-Ranges, Cache-Control",
+              "access-control-allow-origin": "*",
+              "access-control-expose-headers": "Link",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "1492",
+              "content-type": "application/json",
+              "date": "Sun, 06 Sep 2026 19:43:49 GMT",
+              "permissions-policy": "interest-cohort=()",
+              "server": "Jetty(9.4.40.v20210413)",
+              "vary": "Accept-Encoding",
+              "x-api-pool": "public-single",
+              "x-concurrency-limit": "1",
+              "x-rate-limit-interval": "1s",
+              "x-rate-limit-limit": "5"
+            },
+            "received_at": "2026-09-06T19:43:49.169174+00:00",
+            "request_started_at": "2026-09-06T19:43:47.790156+00:00",
+            "status": 200,
+            "url": "https://api.crossref.org/works/10.1115/1.3662552"
+          }
+        }
+      ]
+    },
+    {
+      "key": "out-of-sequence-primary-metadata",
+      "record_id": 120795,
+      "status": 200,
+      "bytes": 3189,
+      "receipts": [
+        {
+          "id": 120795,
+          "kind": "live_bridge_documentation",
+          "available_at": "2026-09-06T19:43:49.987423+00:00",
+          "body_sha256": "94fb05e2a0553a3ca2fd900b2093e0aaaa6a433967a4eb67ba0bb7fd244fd395",
+          "metadata": {
+            "attempt": 0,
+            "conditional_request_headers": {},
+            "headers": {
+              "access-control-allow-headers": "X-Requested-With, Accept, Accept-Encoding, Accept-Charset, Accept-Language, Accept-Ranges, Cache-Control",
+              "access-control-allow-origin": "*",
+              "access-control-expose-headers": "Link",
+              "connection": "keep-alive",
+              "content-encoding": "gzip",
+              "content-length": "1410",
+              "content-type": "application/json",
+              "date": "Sun, 06 Sep 2026 19:43:49 GMT",
+              "permissions-policy": "interest-cohort=()",
+              "server": "Jetty(9.4.40.v20210413)",
+              "vary": "Accept-Encoding",
+              "x-api-pool": "public-array",
+              "x-concurrency-limit": "1",
+              "x-rate-limit-interval": "1s",
+              "x-rate-limit-limit": "1"
+            },
+            "received_at": "2026-09-06T19:43:49.987423+00:00",
+            "request_started_at": "2026-09-06T19:43:49.171054+00:00",
+            "status": 200,
+            "url": "https://api.crossref.org/works?query.bibliographic=Bar+Shalom+Update+with+out-of-sequence+measurements+in+tracking+exact+solution&rows=1"
+          }
+        }
+      ]
+    }
+  ],
+  "additional_plan_record_id": 120775
+}

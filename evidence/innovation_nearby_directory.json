@@ -1,0 +1,322 @@
+{
+  "source_record_id": 111446,
+  "anchor": "KMIA",
+  "anchor_coordinates": [
+    -80.3169,
+    25.7881
+  ],
+  "radius_km": 150,
+  "stations": [
+    {
+      "iem_id": "2IS",
+      "distance_km": 127.897,
+      "lon": -81.0468,
+      "lat": 26.7339,
+      "online": true,
+      "name": "Clewiston",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "IS_AWOS": "1",
+        "GHCNH_ID": "USI0000K2IS",
+        "METAR_RESET_MINUTE": "55"
+      },
+      "archive_begin": "2019-10-11",
+      "archive_end": null
+    },
+    {
+      "iem_id": "BCT",
+      "distance_km": 68.984,
+      "lon": -80.11,
+      "lat": 26.38,
+      "online": true,
+      "name": "BOCA RATON AIRPORT",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "METAR_RESET_MINUTE": "53",
+        "GHCNH_ID": "USW00012803"
+      },
+      "archive_begin": "1942-12-01",
+      "archive_end": null
+    },
+    {
+      "iem_id": "DJT",
+      "distance_km": 102.03,
+      "lon": -80.0994,
+      "lat": 26.6847,
+      "online": true,
+      "name": "WEST PALM BEACH",
+      "attributes": {
+        "GHCNH_ID": "USW00012844",
+        "METAR_RESET_MINUTE": "53",
+        "HASTAF": "1",
+        "HAS1MIN": "1",
+        "WAS": "PBI",
+        "HAS_PHOUR": "1"
+      },
+      "archive_begin": "1938-07-01",
+      "archive_end": null
+    },
+    {
+      "iem_id": "EGC",
+      "distance_km": 106.962,
+      "lon": -81.3833,
+      "lat": 25.85,
+      "online": false,
+      "name": "Everglades City",
+      "attributes": {
+        "": ""
+      },
+      "archive_begin": "2002-11-30",
+      "archive_end": "2006-08-05"
+    },
+    {
+      "iem_id": "F45",
+      "distance_km": 117.999,
+      "lon": -80.2223,
+      "lat": 26.8459,
+      "online": true,
+      "name": "West Palm Beach",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "GHCNH_ID": "USI0000KF45",
+        "METAR_RESET_MINUTE": "0"
+      },
+      "archive_begin": "2018-02-02",
+      "archive_end": null
+    },
+    {
+      "iem_id": "FLL",
+      "distance_km": 35.825,
+      "lon": -80.1622,
+      "lat": 26.0787,
+      "online": true,
+      "name": "Fort Lauderdale - Hollywood",
+      "attributes": {
+        "GHCNH_ID": "USW00012849",
+        "HAS_PHOUR": "1",
+        "HAS1MIN": "1",
+        "METAR_RESET_MINUTE": "53",
+        "HASTAF": "1"
+      },
+      "archive_begin": "1945-12-31",
+      "archive_end": null
+    },
+    {
+      "iem_id": "FXE",
+      "distance_km": 48.097,
+      "lon": -80.17,
+      "lat": 26.2,
+      "online": true,
+      "name": "FORT LAUDERDALE",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "HASTAF": "1",
+        "METAR_RESET_MINUTE": "53",
+        "GHCNH_ID": "USW00012885",
+        "HAS1MIN": "1"
+      },
+      "archive_begin": "1984-09-08",
+      "archive_end": null
+    },
+    {
+      "iem_id": "HST",
+      "distance_km": 33.991,
+      "lon": -80.3837,
+      "lat": 25.4884,
+      "online": true,
+      "name": "HOMESTEAD AFB",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "METAR_RESET_MINUTE": "56",
+        "GHCNH_ID": "USW00012826"
+      },
+      "archive_begin": "1943-02-01",
+      "archive_end": null
+    },
+    {
+      "iem_id": "HWO",
+      "distance_km": 24.707,
+      "lon": -80.2412,
+      "lat": 25.9996,
+      "online": true,
+      "name": "HOLLYWOOD/N. PERRY",
+      "attributes": {
+        "METAR_RESET_MINUTE": "53",
+        "HAS_PHOUR": "1",
+        "GHCNH_ID": "USW00092809",
+        "HAS1MIN": "1"
+      },
+      "archive_begin": "1999-04-30",
+      "archive_end": null
+    },
+    {
+      "iem_id": "IMM",
+      "distance_km": 129.854,
+      "lon": -81.401,
+      "lat": 26.4332,
+      "online": true,
+      "name": "Immokalee Auxiliary",
+      "attributes": {
+        "GHCNH_ID": "USI0000KIMM",
+        "METAR_RESET_MINUTE": "55",
+        "IS_AWOS": "1"
+      },
+      "archive_begin": "2013-10-16",
+      "archive_end": null
+    },
+    {
+      "iem_id": "K70",
+      "distance_km": 51.738,
+      "lon": -80.2757,
+      "lat": 25.3243,
+      "online": true,
+      "name": "Key Largo - Ocean Reef",
+      "attributes": {
+        "METAR_RESET_MINUTE": "55",
+        "HAS_PHOUR": "1"
+      },
+      "archive_begin": "2022-07-20",
+      "archive_end": null
+    },
+    {
+      "iem_id": "LNA",
+      "distance_km": 92.395,
+      "lon": -80.0848,
+      "lat": 26.5925,
+      "online": true,
+      "name": "Lantana",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "GHCNH_ID": "USI0000KLNA",
+        "IS_AWOS": "1",
+        "METAR_RESET_MINUTE": "55"
+      },
+      "archive_begin": "2017-04-27",
+      "archive_end": null
+    },
+    {
+      "iem_id": "MBF",
+      "distance_km": 18.537,
+      "lon": -80.1333,
+      "lat": 25.7667,
+      "online": false,
+      "name": "Miami Beach",
+      "attributes": {
+        "": ""
+      },
+      "archive_begin": "2002-12-20",
+      "archive_end": "2006-08-05"
+    },
+    {
+      "iem_id": "MIA",
+      "distance_km": 0.011,
+      "lon": -80.3169,
+      "lat": 25.788,
+      "online": true,
+      "name": "MIAMI INTL AIRPORT",
+      "attributes": {
+        "HASTAF": "1",
+        "GHCNH_ID": "USW00012839",
+        "HAS_PHOUR": "1",
+        "HAS1MIN": "1",
+        "METAR_RESET_MINUTE": "53"
+      },
+      "archive_begin": "1932-07-01",
+      "archive_end": null
+    },
+    {
+      "iem_id": "MKY",
+      "distance_km": 137.542,
+      "lon": -81.6725,
+      "lat": 25.995,
+      "online": true,
+      "name": "Marco Island",
+      "attributes": {
+        "METAR_RESET_MINUTE": "56",
+        "GHCNH_ID": "USI0000KMKY"
+      },
+      "archive_begin": "2013-05-13",
+      "archive_end": null
+    },
+    {
+      "iem_id": "MTH",
+      "distance_km": 139.277,
+      "lon": -81.0514,
+      "lat": 24.7262,
+      "online": true,
+      "name": "Marathon",
+      "attributes": {
+        "GHCNH_ID": "USW00012896",
+        "HAS1MIN": "1",
+        "METAR_RESET_MINUTE": "53",
+        "HASTAF": "1",
+        "HAS_PHOUR": "1"
+      },
+      "archive_begin": "1988-03-18",
+      "archive_end": null
+    },
+    {
+      "iem_id": "OCR",
+      "distance_km": 54.507,
+      "lon": -80.2667,
+      "lat": 25.3,
+      "online": false,
+      "name": "Ocean Reef",
+      "attributes": {
+        "": ""
+      },
+      "archive_begin": "2002-12-20",
+      "archive_end": "2003-04-12"
+    },
+    {
+      "iem_id": "OPF",
+      "distance_km": 13.999,
+      "lon": -80.2828,
+      "lat": 25.9102,
+      "online": true,
+      "name": "MIAMI/OPA LOCKA",
+      "attributes": {
+        "METAR_RESET_MINUTE": "53",
+        "HASTAF": "1",
+        "HAS1MIN": "1",
+        "GHCNH_ID": "USW00012882",
+        "HAS_PHOUR": "1"
+      },
+      "archive_begin": "1952-12-31",
+      "archive_end": null
+    },
+    {
+      "iem_id": "PMP",
+      "distance_km": 54.957,
+      "lon": -80.111,
+      "lat": 26.2464,
+      "online": true,
+      "name": "POMPANO BEACH",
+      "attributes": {
+        "HAS_PHOUR": "1",
+        "GHCNH_ID": "USW00092805",
+        "METAR_RESET_MINUTE": "53",
+        "HAS1MIN": "1"
+      },
+      "archive_begin": "1988-06-21",
+      "archive_end": null
+    },
+    {
+      "iem_id": "TMB",
+      "distance_km": 20.053,
+      "lon": -80.4347,
+      "lat": 25.6423,
+      "online": true,
+      "name": "MIAMI/KENDALL-TAMIA",
+      "attributes": {
+        "HASTAF": "1",
+        "HAS1MIN": "1",
+        "HAS_PHOUR": "1",
+        "GHCNH_ID": "USW00012888",
+        "METAR_RESET_MINUTE": "53"
+      },
+      "archive_begin": "1976-06-19",
+      "archive_end": null
+    }
+  ]
+}

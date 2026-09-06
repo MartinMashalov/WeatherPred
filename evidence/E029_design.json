@@ -1,0 +1,45 @@
+{
+  "record_id": 124922,
+  "kind": "e029_design_protocol",
+  "actual_available_at": "2026-09-06T19:50:32.099612+00:00",
+  "body_sha256": "7cdf374eaee4c706a4d014db7bc1ea9f952c06a98d77a0cadf6fc6eb2bb20b0f",
+  "record_sha256": "0c05f6e16b1f17a493c0848ee256be9664aae87867f80d03ed44d4294fd0142a",
+  "payload": {
+    "bootstrap": {
+      "block_days": 7,
+      "comparisons": "Each of3hybrids minus each of NBH,pretrainedChronos,fixedFitChronos,ridge100 =12 pairedMAE contrasts, simultaneous centeredmaxabsstandardized descriptiveintervals.",
+      "confidence": 0.95,
+      "resamples": 10000,
+      "seed": 6202901
+    },
+    "budgets": {
+      "attempts": 1,
+      "execution_seconds": 600,
+      "network_requests": 0,
+      "neural_fits": 0,
+      "neural_inferences": 0,
+      "trading_actions": 0
+    },
+    "calibration": "Original E022 additive per-horizon residual quantiles on July6-19 common-available calibration cases only, then monotonic rearrangement; no weight fitting or additional hyperparameters.",
+    "candidate_neural_weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "case_grid": "Exact E0229870 cases; physical acquisition completeness and raw source audit inherited E026. Missingness determined before labels. Compare all8E022 candidates,NBH,andall3hybrids on identical retained IDs.",
+    "experiment": "E029-fixed-physical-transformer-combinations-v1",
+    "formula": "point=(1-w)*NBH_TMP+w*Chronos_point; raw_quantile_tau=(1-w)*NBH_TMP+w*Chronos_raw_quantile_tau",
+    "implementation_registration_required_before_execution": true,
+    "known_results": "E022 all8 aggregate/subgroup scores known; E026 NBH scores notyetcomputed; allforecasts are retrospective development, not untouchedvalidation or exchange-settlement predictions.",
+    "metrics": "Original day-weighted raw MAE/RMSE, calibrated pinball loss and 80/90 interval coverage/width, all28 original development days July20-Aug16.",
+    "neural_model": "chronos_pretrained",
+    "parent_forecast_registration_id": 105314,
+    "physical_acquisition_registration_id": 113137,
+    "physical_comparison_registration_id": 117527,
+    "primary_sources": [
+      "https://arxiv.org/abs/1106.1638",
+      "https://arxiv.org/abs/2510.15821"
+    ],
+    "success_interpretation": "Do not select a weight, claim profit, or promote. Report everycandidate andnegativecontrast. Futureprospectiveprotocol required for anytrading claim."
+  }
+}

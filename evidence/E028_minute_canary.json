@@ -1,0 +1,42 @@
+{
+  "record_id": 122603,
+  "kind": "e028_report",
+  "actual_available_at": "2026-09-06T19:46:47.234299+00:00",
+  "body_sha256": "88f5079118c528efdf58c5d72fa0fd68f26baa0c2a546db409f0cba82caeaefe",
+  "record_sha256": "1bb27f80a8005dae6405f9eba411760f5e7f58f648a4fd2c77653def14849e81",
+  "payload": {
+    "bulk_acquisition_authorized": false,
+    "historical_public_availability_verified": false,
+    "measurement_values_normalized": 0,
+    "model_fits": 0,
+    "physical_attempts": 3,
+    "protocol_record_id": 119562,
+    "responses": [
+      {
+        "body_sha256": "5a6c2f856cb12ebd611e2d302d57a66b97ff846fbfe1c1c7567e57ae650fb3cf",
+        "bytes": 52,
+        "error": null,
+        "key": "oldest-supported-seven",
+        "record_id": 122584,
+        "status": 200
+      },
+      {
+        "body_sha256": "cda76374cb6116309a09387cadb07427b63369020d5783b4af499524c386947d",
+        "bytes": 18489,
+        "error": null,
+        "key": "newest-supported-seven",
+        "record_id": 122593,
+        "status": 200
+      },
+      {
+        "body_sha256": "5a6c2f856cb12ebd611e2d302d57a66b97ff846fbfe1c1c7567e57ae650fb3cf",
+        "bytes": 52,
+        "error": null,
+        "key": "homestead-unsupported-directory",
+        "record_id": 122602,
+        "status": 200
+      }
+    ],
+    "scores_computed": 0
+  }
+}

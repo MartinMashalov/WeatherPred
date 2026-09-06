@@ -1,0 +1,50 @@
+{
+  "registration_id": 122996,
+  "verified_frame_record_id": 124027,
+  "verified_frame_available_at": "2026-09-06T19:48:45.537846+00:00",
+  "frame_body_sha256": "5b7d146c20802580f6fa1a2bbc3721034bc20a2f19ebc082a60ee9060be3ae93",
+  "station_ids": [],
+  "first_cycle": {
+    "slot": 0,
+    "scheduled_at": "2026-09-06T19:48:04.271244+00:00",
+    "actual_started_at": "2026-09-06T19:48:04.666049+00:00",
+    "signals": 0,
+    "scores": 0,
+    "fills": 0,
+    "orders": 0
+  },
+  "latest_progress_snapshot": {
+    "registration_id": 122996,
+    "frame_record_id": 125218,
+    "slot": 3,
+    "scheduled_slots": 1440,
+    "stop_at": "2026-09-07T19:48:04.271244+00:00",
+    "requests_total": 212,
+    "charged_payload_bytes": 4519522,
+    "metar_reports": 90,
+    "metar_missing": [],
+    "selected_contracts": 706,
+    "metadata_current": true,
+    "complete_universe_at_refresh": true,
+    "universe_limit_reasons": [],
+    "prior_run_usage": {
+      "charged_payload_bytes": 7009789,
+      "requests": 408
+    },
+    "prior_receipts_reused": false,
+    "market_exclusions": {},
+    "market_refresh_errors": 0,
+    "new_metar_versions": 0,
+    "new_index_versions": 2,
+    "index_timestamp_gaps": 1,
+    "book_batches": 8,
+    "missing_book_contracts": 0,
+    "book_batch_errors": 0,
+    "errors": [],
+    "signals": 0,
+    "scores": 0,
+    "fills": 0,
+    "orders": 0
+  },
+  "profitability_proven": false
+}

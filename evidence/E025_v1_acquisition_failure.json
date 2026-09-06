@@ -1,0 +1,35 @@
+{
+  "available_cases": 0,
+  "case_count": 9870,
+  "charged_payload_bytes_including_interrupted_reservations": 256011386,
+  "failure_reasons": {
+    "Malformed NBH field width: UTC": 180,
+    "not_yet_attempted": 9690
+  },
+  "full_panel_complete": false,
+  "full_panel_incomplete": true,
+  "historical_public_availability_verified": false,
+  "newly_attempted": 10,
+  "objects_attempted": 9,
+  "objects_total": 498,
+  "registration_id": 111273,
+  "reported_at": "2026-09-06T19:13:47.415409+00:00",
+  "scores_computed": false,
+  "scoring_authorized": false,
+  "stop_reason": "full_object_recovery_cap",
+  "report_record_id": 111377,
+  "body_sha256": "9dcebb770e3ef7e7bea8767938704090269588c78261c690542d0a72ddf5b437",
+  "object_record_ids": [
+    111294,
+    111305,
+    111314,
+    111324,
+    111334,
+    111344,
+    111354,
+    111364,
+    111373
+  ],
+  "diagnosis": "First retained object111293 has one trailing ASCII space on its UTC row; TMP/TSD rows retain their declared fixed widths. The v1 parser rejected this formatting before scores. A separately registered revision is required; original source/config/results are preserved.",
+  "forecast_errors_computed": 0
+}
