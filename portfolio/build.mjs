@@ -30,6 +30,7 @@ function documentPage(source, title, filename) {
     if (/^(https?:|#)/.test(href)) return all;
     if (href === 'MATHEMATICS.md') return 'href="weatherpred-math.html"';
     if (href === 'STRATEGIES.md') return 'href="weatherpred-strategies.html"';
+    if (href === 'INTERVIEW_GUIDE.md') return 'href="weatherpred-interview.html"';
     return `href="${repo + path.posix.normalize('docs/' + href)}"`;
   });
   const headings = [];
@@ -38,7 +39,7 @@ function documentPage(source, title, filename) {
     headings.push(`<a href="#${id}">${heading}</a>`);
     return `<h2 id="${id}">${heading}</h2>`;
   });
-  const hero = `<section class="hero doc-hero"><p class="eyebrow">WeatherPred / Technical guide</p><h1 class="doc-title">${title}</h1><p class="lede">Implemented methods, worked examples and the limits of the evidence.</p><div class="project-links"><a href="weatherpred.html">Project overview</a><a href="weatherpred-strategies.html">Strategies</a><a href="weatherpred-math.html">Mathematics</a><a href="${repo}docs/${source}">Source document ↗</a></div><nav class="contents" aria-label="Guide contents">${headings.join('')}</nav></section>`;
+  const hero = `<section class="hero doc-hero"><p class="eyebrow">WeatherPred / Technical guide</p><h1 class="doc-title">${title}</h1><p class="lede">Implemented methods, worked examples and the limits of the evidence.</p><div class="project-links"><a href="weatherpred.html">Project overview</a><a href="weatherpred-strategies.html">Strategies</a><a href="weatherpred-math.html">Mathematics</a><a href="weatherpred-interview.html">Project brief</a><a href="${repo}docs/${source}">Source document ↗</a></div><nav class="contents" aria-label="Guide contents">${headings.join('')}</nav></section>`;
   fs.writeFileSync(path.join(site, filename), wrap(title, filename, hero + `<article class="article-body">${html}</article>`));
   return { page: filename, formulas: formulas.length, sections: headings.length };
 }
@@ -47,3 +48,4 @@ for (const file of ['weatherpred.css', 'weatherpred.js']) fs.copyFileSync(path.j
 fs.copyFileSync(path.join(root, 'evidence/explorer.html'), path.join(site, 'weatherpred-results.html'));
 console.log(JSON.stringify(documentPage('MATHEMATICS.md', 'The math behind WeatherPred', 'weatherpred-math.html')));
 console.log(JSON.stringify(documentPage('STRATEGIES.md', 'Every strategy, explained', 'weatherpred-strategies.html')));
+console.log(JSON.stringify(documentPage('INTERVIEW_GUIDE.md', 'Project brief and interview guide', 'weatherpred-interview.html')));

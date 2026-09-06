@@ -1,0 +1,264 @@
+{
+  "published_at": "2026-09-06T15:53:44.410676+00:00",
+  "purpose": "Later forward audit checkpoint; the original evidence/summary.json remains unchanged.",
+  "first_settled_event": {
+    "event": "KXTEMPMIAH-26SEP0610",
+    "source_record_id": 43062,
+    "source_received_at": "2026-09-06T15:11:11.719685+00:00",
+    "alternative_accounts": 32,
+    "minimum_realized_pnl_usd": "-4.1605",
+    "maximum_realized_pnl_usd": "-0.4800",
+    "all_alternative_accounts_lost": true,
+    "independent_weather_events": 1,
+    "account_results": [
+      {
+        "account": "original_10m_persistence_gaussian:taker_1s_full",
+        "realized_pnl_usd": "-2.1218"
+      },
+      {
+        "account": "original_10m_persistence_gaussian:taker_5s_half",
+        "realized_pnl_usd": "-2.2900"
+      },
+      {
+        "account": "original_10m_persistence_gaussian:taker_30s_quarter",
+        "realized_pnl_usd": "-2.2267"
+      },
+      {
+        "account": "original_10m_persistence_gaussian:maker_5s_queue",
+        "realized_pnl_usd": "-1.0100"
+      },
+      {
+        "account": "original_10m_trend_gaussian:taker_1s_full",
+        "realized_pnl_usd": "-3.7130"
+      },
+      {
+        "account": "original_10m_trend_gaussian:taker_5s_half",
+        "realized_pnl_usd": "-3.7948"
+      },
+      {
+        "account": "original_10m_trend_gaussian:taker_30s_quarter",
+        "realized_pnl_usd": "-3.6985"
+      },
+      {
+        "account": "original_10m_trend_gaussian:maker_5s_queue",
+        "realized_pnl_usd": "-1.0100"
+      },
+      {
+        "account": "original_10m_persistence_empirical:taker_1s_full",
+        "realized_pnl_usd": "-2.1218"
+      },
+      {
+        "account": "original_10m_persistence_empirical:taker_5s_half",
+        "realized_pnl_usd": "-2.2900"
+      },
+      {
+        "account": "original_10m_persistence_empirical:taker_30s_quarter",
+        "realized_pnl_usd": "-2.2267"
+      },
+      {
+        "account": "original_10m_persistence_empirical:maker_5s_queue",
+        "realized_pnl_usd": "-1.0100"
+      },
+      {
+        "account": "original_10m_trend_empirical:taker_1s_full",
+        "realized_pnl_usd": "-4.1605"
+      },
+      {
+        "account": "original_10m_trend_empirical:taker_5s_half",
+        "realized_pnl_usd": "-4.1133"
+      },
+      {
+        "account": "original_10m_trend_empirical:taker_30s_quarter",
+        "realized_pnl_usd": "-3.9197"
+      },
+      {
+        "account": "original_10m_trend_empirical:maker_5s_queue",
+        "realized_pnl_usd": "-0.5676"
+      },
+      {
+        "account": "fresh_5m_persistence_gaussian:taker_1s_full",
+        "realized_pnl_usd": "-2.5574"
+      },
+      {
+        "account": "fresh_5m_persistence_gaussian:taker_5s_half",
+        "realized_pnl_usd": "-2.6089"
+      },
+      {
+        "account": "fresh_5m_persistence_gaussian:taker_30s_quarter",
+        "realized_pnl_usd": "-2.5456"
+      },
+      {
+        "account": "fresh_5m_persistence_gaussian:maker_5s_queue",
+        "realized_pnl_usd": "-0.5676"
+      },
+      {
+        "account": "fresh_5m_trend_gaussian:taker_1s_full",
+        "realized_pnl_usd": "-2.7467"
+      },
+      {
+        "account": "fresh_5m_trend_gaussian:taker_5s_half",
+        "realized_pnl_usd": "-2.5007"
+      },
+      {
+        "account": "fresh_5m_trend_gaussian:taker_30s_quarter",
+        "realized_pnl_usd": "-2.4131"
+      },
+      {
+        "account": "fresh_5m_trend_gaussian:maker_5s_queue",
+        "realized_pnl_usd": "-0.5676"
+      },
+      {
+        "account": "fresh_5m_persistence_empirical:taker_1s_full",
+        "realized_pnl_usd": "-3.4801"
+      },
+      {
+        "account": "fresh_5m_persistence_empirical:taker_5s_half",
+        "realized_pnl_usd": "-3.6037"
+      },
+      {
+        "account": "fresh_5m_persistence_empirical:taker_30s_quarter",
+        "realized_pnl_usd": "-3.6034"
+      },
+      {
+        "account": "fresh_5m_persistence_empirical:maker_5s_queue",
+        "realized_pnl_usd": "-0.5676"
+      },
+      {
+        "account": "fresh_5m_trend_empirical:taker_1s_full",
+        "realized_pnl_usd": "-3.0450"
+      },
+      {
+        "account": "fresh_5m_trend_empirical:taker_5s_half",
+        "realized_pnl_usd": "-3.1050"
+      },
+      {
+        "account": "fresh_5m_trend_empirical:taker_30s_quarter",
+        "realized_pnl_usd": "-2.9849"
+      },
+      {
+        "account": "fresh_5m_trend_empirical:maker_5s_queue",
+        "realized_pnl_usd": "-0.4800"
+      }
+    ]
+  },
+  "audits": {
+    "E009": {
+      "generated_at": "2026-09-06T15:52:12.165596+00:00",
+      "run_record_id": 21756,
+      "last_journal_record_id": 53596,
+      "paper_events_replayed": 10999,
+      "accounts_reproduced": 32,
+      "orders_reproduced": 234,
+      "taker_fills_reproduced_from_future_books": 177,
+      "maker_fills_reproduced_from_trade_through": 37,
+      "settled_positions_reproduced": 57,
+      "source_records_checked": 48,
+      "cash_and_fees_reproduced": true,
+      "network_requests": 0,
+      "real_money_orders": 0,
+      "profitability_proven": false
+    },
+    "E015": {
+      "generated_at": "2026-09-06T15:52:08.670499+00:00",
+      "run_record_id": 42731,
+      "last_journal_record_id": 53535,
+      "journal_events": 3014,
+      "event_counts": {
+        "account": 9,
+        "order": 740,
+        "abstain": 206,
+        "slot": 16,
+        "arrival": 716,
+        "queue": 260,
+        "fill": 158,
+        "mark": 270,
+        "cancel": 639
+      },
+      "raw_records_checked": 746,
+      "actual_arrival_seconds": {
+        "optimistic": {
+          "n": 230,
+          "min": 1.712622,
+          "max": 10.630196,
+          "mean": 4.752947917391304
+        },
+        "realistic": {
+          "n": 243,
+          "min": 6.492191,
+          "max": 13.47315,
+          "mean": 9.79384318106996
+        },
+        "pessimistic": {
+          "n": 243,
+          "min": 15.93104,
+          "max": 23.482376,
+          "mean": 18.769961930041152
+        }
+      },
+      "cash_fees_positions_reproduced": true,
+      "quotes_reproduced_from_prior_books_and_inventory": true,
+      "future_queue_and_tape_fills_reproduced": true,
+      "network_requests": 0,
+      "real_money_orders": 0,
+      "profitability_proven": false,
+      "scope_limit": "Independent arithmetic and source-lineage audit. Not actual exchange fills or independent trading days; absence of omitted eligible signals is not proven by this replay."
+    },
+    "E016": {
+      "generated_at": "2026-09-06T15:51:50.310772+00:00",
+      "run_record_id": 45913,
+      "last_journal_record_id": 53562,
+      "journal_events": 1303,
+      "event_counts": {
+        "account": 9,
+        "order": 328,
+        "abstain": 52,
+        "slot": 6,
+        "arrival": 325,
+        "queue": 122,
+        "fill": 82,
+        "mark": 99,
+        "cancel": 280,
+        "nettings_reproduced": 33
+      },
+      "raw_records_checked": 320,
+      "actual_arrival_seconds": {
+        "optimistic": {
+          "n": 108,
+          "min": 1.646867,
+          "max": 10.301662,
+          "mean": 5.643514611111112
+        },
+        "realistic": {
+          "n": 110,
+          "min": 7.345753,
+          "max": 11.615196,
+          "mean": 9.315360581818181
+        },
+        "pessimistic": {
+          "n": 107,
+          "min": 15.85308,
+          "max": 24.315246,
+          "mean": 18.58477344859813
+        }
+      },
+      "cash_fees_positions_reproduced": true,
+      "quotes_reproduced_from_prior_books_and_inventory": true,
+      "future_queue_and_tape_fills_reproduced": true,
+      "network_requests": 0,
+      "real_money_orders": 0,
+      "profitability_proven": false,
+      "scope_limit": "Independent arithmetic and source-lineage audit. Not actual exchange fills or independent trading days; absence of omitted eligible signals is not proven by this replay."
+    }
+  },
+  "limitations": [
+    "Each audit has its own immutable journal cutoff and generation timestamp.",
+    "Alternative accounts reuse weather events, quotes and trades; counts are not independent samples.",
+    "Simulated fills are not actual exchange fills. Audits establish accounting and source consistency, not profitability.",
+    "E015 locks both sides until settlement as an overcollateralized stress case; E016 returns matched cash.",
+    "Matched offsets can realize small gains while unmatched inventory makes overall returns negative.",
+    "The full local raw archive is not bundled in this repository."
+  ],
+  "real_money_orders": 0,
+  "profitability_proven": false,
+  "verification_log": "verification-2026-09-06-1552.txt"
+}

@@ -59,7 +59,7 @@ Code: [calibration.py](../weatherpred/calibration.py).
 
 ## 3. Daily weather distributions — E003 and E010
 
-**Idea.** Turn NOAA guidance into a full distribution of final temperature,
+**Idea.** Turn NOAA's National Blend of Models (NBM) guidance into a full distribution of final temperature,
 then calculate each bracket's probability. A distribution expresses how
 uncertain the forecast is instead of betting on a single predicted degree.
 
@@ -152,6 +152,12 @@ At the published 14:28 UTC checkpoint on September 6, 2026, there were 88 orders
 64 taker fill records and 22 maker fill records. None had settled. Those fills
 share one underlying event and cannot demonstrate profitability. Unfinalized
 closed positions are carried at cost, which is not a realizable account value.
+
+**Later result, September 6 at 15:12 UTC.** That first event finalized at 84.56°F.
+All 32 alternative accounts lost between $0.48 and $4.16 on it. The audit replayed
+57 settled positions. This is one weather outcome, not 32 independent losses;
+it is also not enough evidence to infer the performance of reversing the models.
+See the separately dated [forward audit update](../evidence/forward-update-2026-09-06.json).
 
 Code: [paper.py](../weatherpred/paper.py),
 [paper runner](../research/experiments/e009_paper.py),
@@ -274,6 +280,29 @@ Sources: [Kalshi netting](https://news.kalshi.com/p/collateral-return),
 [current settlement behavior](https://docs.kalshi.com/getting_started/market_settlement).
 Code: [atomic netting ledger](../weatherpred/netted_paper.py),
 [forward cohort and identical-fill replay](../research/experiments/e016_netted_maker.py).
+
+## 11. Supporting experiment: observation timing — E017
+
+**Question.** When a station report reaches this system, has the market already
+reacted? Answering that requires original receipt times and surrounding quotes,
+not just a retrospective weather file with an observation timestamp.
+
+The recorder saves METAR reports, which are standardized aviation weather
+observations, for eight explicit stations. Each one-minute cycle receives a
+market-book batch, the weather batch, and another market-book batch. It retains
+the observation time, provider receipt time, original report, every changed
+version and the system's own first receipt. Chicago uses Midway (KMDW), not a
+substitute from O'Hare (KORD).
+
+**Status.** Registered on September 6 at 15:36 UTC as data acquisition. Old
+reports returned in the initial two-hour batch are marked as backfill. Neither
+provider receipt time nor the report's nominal time proves the first public
+availability. One-minute sampling cannot establish an advantage measured in
+seconds. METAR observations also do not replace the contract's official
+settlement source. No trading rule or profitable reaction effect is claimed.
+
+Source: [NOAA Aviation Weather Center data API](https://aviationweather.gov/data/api/).
+Code: [registered receipt collector](../research/experiments/e017_station_receipts.py).
 
 ## What is still a research idea
 

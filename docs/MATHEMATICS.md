@@ -5,6 +5,12 @@ illustrations, not trading recommendations. Where a model relies on an assumptio
 that assumption is part of the explanation. The system has not established a
 profitable strategy or a validated probability of reaching a bankroll target.
 
+Start with contracts and fees, then the forecast distributions, then execution
+and validation. A probability is a belief about an outcome; an executable price
+is what an order can actually pay or receive. Every trade calculation needs both.
+The final worked example connects these steps. The [project brief](INTERVIEW_GUIDE.md)
+also defines the main modeling and trading terms.
+
 ## 1. Contracts, prices and profit
 
 Let $Y\in\{0,1\}$ be a YES contract's final payout, $p=P(Y=1)$ its estimated
@@ -94,9 +100,11 @@ Implementation: [calibration.py](../weatherpred/calibration.py).
 
 ## 5. Turning temperature forecasts into bracket probabilities
 
-Let $T$ denote a latent temperature with Gaussian distribution
+Let $T$ denote the temperature before reporting-rounding, with Gaussian distribution
 $T\sim\mathcal N(\mu,\sigma^2)$, and let $\Phi$ be the standard-normal cumulative
-distribution function. For an inclusive integer bracket $L\leq T_{\rm published}
+distribution function: the probability mass below a given standardized value.
+Here $\mu$ is the mean and $\sigma$ the standard deviation, which describes spread.
+For an inclusive integer bracket $L\leq T_{\rm published}
 \leq U$, the model's rounding-cell approximation gives
 
 $$P(L\leq T_{\rm published}\leq U)=
@@ -318,7 +326,9 @@ For illustration, if $p'=0.65$ and total cost $c=0.55$, quarter Kelly allocates
 about 5.56%; the 5% event cap limits a $100 account to $5 before quantity
 rounding. This is only useful if the probability estimate is trustworthy.
 
-Cash is never recycled before exit or settlement. Open positions use provisional
+In the original E009 cohort, position cash is not recycled before exit or
+settlement. The separate E016 cohort also returns cash through a same-contract
+offset, as explained below. Open positions use provisional
 liquidating bid marks without exit fees; closed but unfinalized positions are
 carried at cost. Consequently reported interim equity and drawdown are limited
 measures, not a validated liquidation or ruin-risk distribution.
@@ -424,15 +434,18 @@ terminal profit under normal binary settlement is
 $$\Pi(Y)=q_Y Y+q_N(1-Y)-C.$$
 
 Thus the minimum and maximum payouts on already filled positions are
-$\min(q_Y,q_N)$ and $\max(q_Y,q_N)$. Across accounts, cash $K$ already includes
-acquisition costs. Bounds relative to initial capital $W_0$ are
+$\min(q_Y,q_N)$ and $\max(q_Y,q_N)$. Within one account, cash $K$ already includes
+acquisition costs. Summing over its contracts $j$, bounds relative to initial
+capital $W_0$ are
 
 $$\Pi_{\min}=K+\sum_j\min(q_{Y,j},q_{N,j})-W_0,$$
 
 $$\Pi_{\max}=K+\sum_j\max(q_{Y,j},q_{N,j})-W_0.$$
 
 These bounds exclude future fills from outstanding orders and assume normal
-binary settlement. They are not an expected return. E015 holds the matched cash
+binary settlement. Related contracts may make the individual extremes impossible
+to reach together, so the bounds can be loose. They are not an expected return.
+E015 holds the matched cash
 until settlement as a capital stress assumption; E016 corrects same-contract
 cash return below. Averaging each leg's cost allows a decomposition into matched-pair profit
 and unmatched cost at risk, but only their combined result is portfolio profit.
@@ -487,6 +500,46 @@ contracts. Earlier E015 results remain an overcollateralized stress comparator.
 
 Implementation: [netted_paper.py](../weatherpred/netted_paper.py),
 [identical-fill replay and future cohort](../research/experiments/e016_netted_maker.py).
+
+## 19. Worked example: forecast to an order decision
+
+This numerical illustration joins the methods above. It is not an observed
+trade or a claim that the assumed forecast probabilities are calibrated.
+
+Suppose an earlier fitted weather model gives a final temperature mean of 78°F
+and standard deviation of 2°F. Consider a contract for a reported integer high
+of 77–78°F. Under the rounding-cell model,
+
+$$p=\Phi(0.25)-\Phi(-0.75)\approx0.372079.$$
+
+The model assigns about 37.21% probability to YES. An ask of 30¢ is below that
+probability, but the gap is not the net edge. For one contract under the
+illustrated cent-balance taker schedule, the model fee is
+$0.07(0.30)(0.70)=0.0147$ dollars, and the isolated cash debit rounds to 32¢.
+
+| Step | Calculation | Meaning |
+|---|---|---|
+| Cost | 30¢ ask + 2¢ rounded fee = 32¢ | Cash spent if that isolated fill occurs. |
+| Expected settlement profit | 37.21¢ − 32¢ = about 5.21¢ | An average under the assumed model, not a certain payout. |
+| Probability haircut | 37.21% − 3 percentage points = 34.21% | The paper rule's fixed allowance for model uncertainty. |
+| Adjusted edge | 34.21¢ − 32¢ = about 2.21¢ | Still conditional on the model and the fill. |
+| Quarter-Kelly allocation | 0.25 × (0.342079 − 0.32) / (1 − 0.32) ≈ 0.00812 | About 0.81% of bankroll, or 81¢ for a $100 account, before further limits. |
+
+The system then applies available-cash and exposure limits, rounds the intended
+quantity and fixes the order limit. A later eligible book must support the
+purchase. If the ask moves above the limit or there is no eligible depth, the
+unfilled quantity is cancelled. Multiple partial fills use the fee accumulator,
+so their fees are not computed by simply multiplying this isolated example.
+
+Even if the one-contract purchase fills at 30¢ with a 2¢ fee, its realized
+settlement result is either **+68¢ or −32¢**. The expected 5.21¢ is neither of
+those outcomes. Validation asks whether many independent future decisions
+support the probability and execution assumptions behind that expectation.
+
+For a maker, there is another distinction. Buying one YES for 42¢ and one NO for
+55¢ would lock in 3¢ before any applicable fees **if both fill**. Receiving only
+the YES fill leaves 42¢ at risk. The paired-maker experiments track that unmatched
+risk and the queue evidence required for each side separately.
 
 ## Further reading used in the project
 

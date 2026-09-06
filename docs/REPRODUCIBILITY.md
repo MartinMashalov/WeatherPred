@@ -79,7 +79,7 @@ queries at registration, writes every candidate and abstention, and stops when
 independent statistical evidence. E009 similarly pins its source files and
 protects the active paper run with an operating-system lock.
 
-E015 is a separate forward experiment, registered as42731. With its original
+E015 is a separate forward experiment, registered as 42731. With its original
 archive, `uv run python research/experiments/e015_audit.py` checks recorded quote,
 queue, fill and cash evidence without networking. Its runner resumes with
 `--run-record-id 42731` only if source hashes still match. The process lock is
@@ -87,7 +87,7 @@ queue, fill and cash evidence without networking. Its runner resumes with
 stops it. A new run needs new future dates and registration before decisions.
 Its initial panel and short observation window cannot establish profitability.
 
-E016 registration45913 adds same-contract netting with a separate journal. Use
+E016 registration 45913 adds same-contract netting with a separate journal. Use
 `uv run python research/experiments/e015_audit.py --run-record-id 45913` for its
 raw-source audit, or `uv run python research/experiments/e016_netted_maker.py
 --project-locked-run 42731` for an identical-fill cash projection of E015. The
@@ -98,8 +98,8 @@ its pinned code while the registered cohort is running.
 ## Evidence and limitations
 
 The [validation protocol](../config/validation.json) requires independent
-chronological and forward evidence before promotion. July–September2025 remains
-development data even after many experiments. October–December2025 has not been
+chronological and forward evidence before promotion. July–September 2025 remains
+development data even after many experiments. October–December 2025 has not been
 opened. Historical source modification/issue timestamps do not independently
 establish publication to traders; paper records use actual receipt timestamps.
 

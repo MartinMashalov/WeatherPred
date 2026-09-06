@@ -4,6 +4,7 @@
 
 [Project case study](https://martinmashalov.github.io/weatherpred.html) ·
 [Strategy guide](docs/STRATEGIES.md) · [Mathematics](docs/MATHEMATICS.md) ·
+[Project brief](https://martinmashalov.github.io/weatherpred-interview.html) ·
 [Explore results](https://martinmashalov.github.io/weatherpred-results.html) ·
 [Reproduce the checks](docs/REPRODUCIBILITY.md)
 
@@ -49,6 +50,11 @@ E015 separately registered nine paired-maker alternatives before its first
 locked capital. E016 corrects same-contract offsetting in a separately registered
 15:40 cohort. The original evidence snapshot above remains dated and unchanged.
 See the [experiment ledger](EXPERIMENTS.md) for the source records and limits.
+The [later forward audit checkpoint](evidence/forward-update-2026-09-06.json)
+contains replay reports for E009, E015 and E016, including simulated fills and
+matched cash offsets. Its [verification log](evidence/verification-2026-09-06-1552.txt)
+records 95 passing tests. Audit counts across alternatives are not independent
+trades or proof of profitability.
 
 ## What is implemented
 
@@ -103,7 +109,7 @@ acquisition or a recorded experiment.
 | Document | Purpose |
 |---|---|
 | [Strategy guide](docs/STRATEGIES.md) | Each implemented strategy, its rationale, code and result |
-| [Mathematics](docs/MATHEMATICS.md) | Equations, assumptions and worked examples for the models, fees, fills, sizing and validation |
+| [Mathematics](docs/MATHEMATICS.md) | Equations, assumptions and a forecast-to-order example for the models, fees, fills, sizing and validation |
 | [Interview guide](docs/INTERVIEW_GUIDE.md) | A concise project explanation, defensible résumé bullets and technical discussion points |
 | [Experiment ledger](EXPERIMENTS.md) | Registered hypotheses, amendments, failures and subsequent decisions |
 | [Research sources](research.md) | Primary literature and documentation connected to experiments |
